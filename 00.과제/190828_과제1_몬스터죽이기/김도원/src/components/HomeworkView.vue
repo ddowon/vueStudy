@@ -3,48 +3,90 @@
 		<div>야생의 {{name}}</div>
 		<div>HP : {{hp}}</div>
 		<div class="bar">
+			<div></div>
 			<el-progress :text-inside="true" :stroke-width="26" :percentage="hp"></el-progress>
 		</div>
-		<el-button type="primary" round @click="hitMontster">때리기</el-button>
-		<div v-if="isDied">
-			<img src="@/assets/cookie_2.jpg" alt="">
-			<p>{{name}}가 {{txt1}}</p>
-			<el-button type="danger" round @click="hpReset">쿠키몬스터 살리기</el-button>
+		<el-button type="primary" round :disabled="isDied" @click="hitMonster">{{name}} 때리기</el-button>
+		<!-- <div :class="{ active: !isDied }"> -->
+		<div class="full" :class="state">
+			<img v-if="isDied" src="@/assets/monster.png" :alt="msg">
+			<img v-else src="@/assets/monster.png" :alt="msg">
 		</div>
-		<div v-else>
-			<img src="@/assets/cookie_1.jpg" alt="">
-			<p>{{name}}가 {{txt2}}</p>
-			<el-button type="danger" round disabled>쿠키몬스터 살리기</el-button>
-		</div>
+		<p>{{name}}가 {{msg}}</p>
+
+
+
+	<ul>
+		<li v-for="item in basket" :key="item.name">
+			{{item.name}} - {{item.num}}
+		</li>
+	</ul>
+
+		<el-button type="danger" round :disabled="!isDied" @click="hpReset">{{name}} 살리기</el-button>
 	</div>
 </template>
 
 <script>
 export default {
-	data : () => ({
-		name: "쿠키몬스터",
-		hp: 100,		
-		isDied : false,
-		txt1 : "죽고 말았습니다...아아아 ㅜㅜㅜ",
-		txt2 : "아직 살아있어요 뿌샤뿌샤"
+	data: () => ({
+		basket: [
+			{
+				name: '사과',
+				num: 3
+			},
+			{
+				name: '배',
+				num: 2
+			},
+			{
+				name: '딸기',
+				num: 5
+			}
+		],
+
+		// monsters: [{
+			name: "와조스키",
+			hp: 100,
+			isDied: false,
+			state:{ 
+				danger: false,
+				died: false
+			}
+		// }]
 	}),
-	methods : {
-		hitMontster(){			
-			if( this.hp > 0 && !this.isDied ){
+	computed: {
+		msg() {
+			return (!this.isDied) ? "아직 살아있어요 뿌샤뿌샤" : "죽고 말았습니다...아아아ㅜㅜㅜ"
+		}
+	},
+	methods: {
+		hitMonster(){
+			if (!this.isDied) {
 				this.hp -= 10
-				if( this.hp === 0){
+				if (this.hp <= 0) {
 					this.isDied = true;
+					this.state.died = true;
+
+				} else if (this.hp <= 30) {
+					this.state.danger = true;
+
 				}
 			}
 		},
-		hpReset(){			
+		hpReset() {
 			this.hp = 100;
 			this.isDied = false;
+			this.state.danger = false;
+			this.state.died = false;
 		}
 	}
 }
 </script>
-
 <style scoped>
-	.bar { width: 600px;}
+	.bar { width: 600px }
+	/* .active { border: 10px solid lightseagreen; background-color: yellow } */
+	.full { background-color: #409eff }
+	.danger { background-color :#e6a23c }
+	.died { background-color :#f56c6c }
+
 </style>
