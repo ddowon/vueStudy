@@ -1,6 +1,6 @@
 <template>
 	<div class="Homework">
-		<p class="gauge"><span v-text="hp" v-bind:style="{width : width + '%'}"></span></p>
+		<p class="gauge"><span v-text="hp" v-bind:style="{width : width + '%'}" class="default" :class="{green: isChange}"></span></p>
 		<p><button type="button" @click="test">때리기</button></button></p>
 		<img :src="afterImage" class="after" v-if="isDied">
 		<img :src="beforeImage" class="before" v-else>
@@ -20,16 +20,22 @@ export default {
 			afterImage : require('../assets/after.png'),
 			hp : 100,
 			isDied : false,
+			isChange : false,
 			width : 100
+			
 		}
 	},
 	methods: {
 		test : function(){
 			
 
-			if(this.hp <= 0){
+			if(this.hp == 0){
 				this.isDied = true
 				this.hp = 0;
+			}else if(this.hp == 30){
+				this.isChange = true;
+				this.hp = this.hp - 10;
+				this.width = this.width -10;
 			}else{
 				this.hp = this.hp - 10;
 				this.width = this.width -10;
@@ -44,5 +50,6 @@ export default {
 
 <style scoped>
 	.gauge {width:50%; height:30px; background:#ccc;}
-	.gauge span {display:block; width:100%; height:100%; background:#ee4d4d}
+	.gauge span {display:block; width:100%; height:100%; background:#ee4d4d; transition:all 0.3s;}
+	.gauge span.green {background:#82e995}
 </style>
