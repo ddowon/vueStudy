@@ -1,0 +1,19 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+import List from './views/List.vue'
+import AddBookmark from './views/AddBookmark.vue'
+import Homework from './views/Homework.vue'
+import Monster from './views/Monster.vue'
+
+Vue.use(Router)
+
+export default new Router({
+	routes: [
+		{ path: '/', name: 'home', meta: { title: '첫 화면' }, component: Home },
+		{ path: '/list', name: 'list', meta: { title: '내 북마크 목록' }, component: List },
+		{ path: '/add', name: 'addBookmark', meta: { title: '북마크 추가' }, component: AddBookmark },
+		{ path: '/homework', name: 'homework', meta: { title: '과제' }, component: Homework },
+		{ path: '/Monster', name: 'Monster', meta: { title: '몬스터죽이기' }, component: Monster }
+	]
+})
