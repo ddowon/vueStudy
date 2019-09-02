@@ -1,70 +1,83 @@
 <template>
 	<div>
 		<ul>
-			<li v-for="monster in monsters" :key="monster.name">
-				<div>야생의 {{monster.name}}</div>
-				<div>HP : {{monster.hp}}</div>
-				<div class="bar">
-					<div></div>
-					<el-progress :text-inside="true" :stroke-width="26" :percentage="(monster.hp/monster.fullHp)*100"></el-progress>
-				</div>
-				<el-button type="primary" round :disabled="monster.isDied" @click="hitMonster(monster)">{{monster.name}} 때리기</el-button>
-			
-				<div class="full">
-					<img v-if="monster.isDied" src="@/assets/cookie_2.jpg" alt="msg">
-					<img v-else src="@/assets/cookie_1.jpg" alt="msg">
-				</div>
-				
-				<p>{{monster.name}}가</p>
-				<button @click='showMonster(monster)'>{{monster.name}} 자세히보기</button>
-				<el-divider></el-divider>
+			<!-- monster.name이 겹치지 않는다는 가정 하에 v-bind:key를 monster.name으로 설정합니다. -->
+			<li v-for="(monster, index) in monsters" :key="monster.name">
+				<!-- monster 배열을 0번부터 순환하므로 index에 1을 더해줍니다. -->
+				<h2>{{ index + 1 }}번 몬스터 - {{ monster.name }}</h2>
+				<p><button @click="viewMonsterInfo(monster)">{{ monster.name }} 자세히 보기</button></p>
+				<dl>
+					<dt><strong>이름</strong></dt>
+					<dd>{{ monster.name }}</dd>
+					<dt><strong>나이</strong></dt>
+					<dd>{{ monster.age }}</dd>
+					<dt><strong>설명</strong></dt>
+					<dd>{{ monster.desc }}</dd>
+				</dl>
 			</li>
-		</ul>	
-		<button @click="addMonster">몬스터 추가하기</button>
+		</ul>
+
+		<el-divider></el-divider>
+		<!-- 자식에서 부모 데이터를 건드리려면 어떻게 해야할까요? -->
+		<!--
+			'몬스터 추가하기' 버튼을 클릭했을 때 자식(MonsterList.vue)의 sendAddMonster 메소드를 호출,
+			자식의 sendAddMonster 메소드에서 $emit을 사용해 부모(Monster.vue)로 add 이벤트가 발생했음을 알려줍니다.
+			부모 컴포넌트에서 자식의 속성명으로 바인딩한 @add(v-on:add와 같음)를 받아 새로운 메소드 addRealMonster를 호출합니다.
+		-->
+		<p><button @click="sendAddMonster">몬스터 추가하기</button></p>
+
+		<!-- @과제: -->
+		<!--
+			as-is: 지금은 MonsterModal.vue 대신 각 몬스터의 <li> 아래 세부 내용(이름, 나이, 설명)이 나타나고 있죠?
+			to-be: 몬스터의 세부 내용을 MonsterModal.vue에 옮겨 몬스터 자세히 보기 버튼 클릭 시 MonsterModal 컴포넌트를 호출, 세부 내용(이름, 나이, 설명)을 보여줍니다.
+			힌트: 2회 질문 가능
+		-->
+		<MonsterModal :isShowing="isShowing" :selectedMonster="selectedMonster" @closeModal="closeModal"/>
 	</div>
 </template>
-
 <script>
+import MonsterModal from '@/components/MonsterModal.vue'
+
 export default {
-	
-	props: ['monsters'],
-
-	data: () => ({
-		isDied : false
-	}),
-	computed: {
-		msg() {
-			return (!monster.isDied) ? "아직 살아있어요 뿌샤뿌샤" : "죽고 말았습니다...아아아ㅜㅜㅜ"
-		}
+	props: ['monsters','isShowing'],
+	components : {
+		MonsterModal
 	},
+	data: () => ({
+		selectedMonster
+	}),
 	methods: {
-		hitMonster(monster){
+		sendAddMonster() {
+			// 자식 -> 부모 컴포넌트 이벤트 전달 형식
+			// this.$emit('부모 컴포넌트에 발생시킬 이벤트 명')
 
-			if (!monster.isDied) {
-				monster.hp -= 10
-				if (monster.hp <= 0) {
-					monster.isDied = true;
-					monster.state.died = true;
-
-				} else if (monster.hp <= 30) {
-					monster.state.danger = true;
-
+			this.monsters.push( {
+				name: '새몬스터',
+				age: -100,
+				desc: '어떤 몬스터가 추가될까요?',
+				hp: 100,
+				fullHp: 100,
+				state: { 
+					danger: false, 
+					died: false 
 				}
-			}
+			} )
+			this.$emit('add')
 		},
-		showMonster (monster) {
+		viewMonsterInfo(monster) {
+			// 무엇을 어떻게 해야할까요?
+			this.isShowing = !this.isShowing
 
-			this.$emit('showMonster', monster)
-			
+			this.selectedMonster = monster
+
 		},
-		addMonster () {
-
-			this.monsters.push( {name : '새몬스터', fullHp: 100, hp: 100, desc: '새몬스터 설명', isDied: false, state: { danger: false, died: false } } )
+		closeModal() {
+			this.isShowing = !this.isShowing
 		}
 	}
-
 }
 </script>
+
 <style scoped>
-	.bar { width: 600px }
+	
 </style>
