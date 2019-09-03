@@ -1,23 +1,7 @@
-<!-- tmemplate 안에는 반드시 1개의 root element가 존재해야 합니다. -->
-<!--
-	// 아래와 같이 작성 시 에러남
-	<template>
-		<div></div>
-		<ul></ul>
-	</template>
-
-	// 아래처럼 컴포넌트의 root element는 1개만 존재
-	<template>
-		<div>
-			<ul></ul>
-		</div>
-	</template>
--->
 <template>
 	<div id="app">
 		<AppNav/>
 		<el-main>
-			<!-- router-view에 src/router.js에서 작성한 path, component와 일치하는 컴포넌트가 보여집니다. -->
 			<router-view :page-title="pageTitle"/>
 		</el-main>
 		<AppFooter/>
@@ -33,7 +17,7 @@ export default {
 		AppNav, AppFooter
 	},
 	data: () => ({
-		docTitle: '간단 북마크',
+		docTitle: '과제2 - 명소희',
 		pageTitle: null
 	}),
 	mounted () {

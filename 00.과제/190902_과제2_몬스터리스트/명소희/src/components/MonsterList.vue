@@ -5,8 +5,7 @@
 			<li v-for="(monster, index) in monsters" :key="monster.name">
 				<!-- monster 배열을 0번부터 순환하므로 index에 1을 더해줍니다. -->
 				<h2>{{ index + 1 }}번 몬스터 - {{ monster.name }}</h2>
-				<p><button @click="viewMonsterInfo(monster, index)">{{ monster.name }} 자세히 보기</button></p>
-
+				<p><button @click="viewMonsterInfo(monster)">{{ monster.name }} 자세히 보기</button></p>
 			</li>
 		</ul>
 
@@ -25,31 +24,37 @@
 			to-be: 몬스터의 세부 내용을 MonsterModal.vue에 옮겨 몬스터 자세히 보기 버튼 클릭 시 MonsterModal 컴포넌트를 호출, 세부 내용(이름, 나이, 설명)을 보여줍니다.
 			힌트: 2회 질문 가능
 		-->
-			
+		<MonsterModal v-show="isShow" :monster="currentMonster" @close="closeMonsterInfo" />
 	</div>
 </template>
 
 <script>
-
+import MonsterModal from '@/components/MonsterModal.vue'
 
 export default {
+	components: { 
+		MonsterModal
+	},
 	props: ['monsters'],
-	data(){
-		return {
-			isShow : false
-		}
+	data: () => ({
+		isShow: false,
+		currentMonster: []
+	}),
+	mounted() {
+
 	},
 	methods: {
 		sendAddMonster() {
 			// 자식 -> 부모 컴포넌트 이벤트 전달 형식
 			// this.$emit('부모 컴포넌트에 발생시킬 이벤트 명') 
-			
 			this.$emit('add')
 		},
-		viewMonsterInfo(target, idx) {
-			// console.log(target)
-			// target.isShow = true
-			this.$emit('pop', target, idx)
+		viewMonsterInfo(target) {
+			this.isShow = true
+			this.currentMonster = target
+		},
+		closeMonsterInfo() {
+			this.isShow = false
 		}
 	}
 }

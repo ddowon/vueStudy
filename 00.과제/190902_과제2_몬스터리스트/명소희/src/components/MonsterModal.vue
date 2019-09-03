@@ -1,30 +1,24 @@
 <template>
-	<div class="modal" v-if="monsters[clickCnt].isShow">
+	<div class="modal">
 		<dl>
 			<dt><strong>이름</strong></dt>
-			<dd>{{ monsters[clickCnt].name }}</dd>
+			<dd>{{ monster.name }}</dd>
 			<dt><strong>나이</strong></dt>
-			<dd>{{ monsters[clickCnt].age }}</dd>
+			<dd>{{ monster.age }}</dd>
 			<dt><strong>설명</strong></dt>
-			<dd>{{ monsters[clickCnt].desc }}</dd>
+			<dd>{{ monster.desc }}</dd>
 		</dl>
-		<p class="btn close" @click="modalClose(monsters[clickCnt])"><button type="button">닫기</button></p>
+		<p class="btn close" @click="modalClose"><button type="button">닫기</button></p>
 	</div>
 
 </template>
 
 <script>
 export default {
-	props: ['monsters', 'clickCnt'],
-	data: () => ({
-		showModal: false
-	}),
-	mounted () {
-
-	},
+	props: ['monster'],
 	methods: {
-		modalClose(target) {
-			this.$emit('close', target)
+		modalClose() {
+			this.$emit('close')
 		}
 	}
 }
