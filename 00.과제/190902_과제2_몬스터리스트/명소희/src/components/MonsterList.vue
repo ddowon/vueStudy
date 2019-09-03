@@ -38,7 +38,7 @@ export default {
 	props: ['monsters'],
 	data: () => ({
 		isShow: false,
-		currentMonster: []
+		currentMonster: {}
 	}),
 	mounted() {
 

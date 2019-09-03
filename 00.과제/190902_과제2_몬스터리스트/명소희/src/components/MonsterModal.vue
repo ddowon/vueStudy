@@ -1,5 +1,5 @@
 <template>
-	<div class="modal">
+	<div v-if="monster.name" class="modal">
 		<dl>
 			<dt><strong>이름</strong></dt>
 			<dd>{{ monster.name }}</dd>
