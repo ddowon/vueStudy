@@ -2,7 +2,7 @@
 	<div id="app">
 		<AppNav/>
 		<el-main>
-			<router-view :pageTitle="pageTitle"/>
+			<router-view :page-title="pageTitle"/>
 		</el-main>
 		<AppFooter/>
 	</div>
@@ -17,16 +17,17 @@ export default {
 		AppNav, AppFooter
 	},
 	data: () => ({
+		docTitle: '과제2 - 김도원',
 		pageTitle: null
 	}),
 	mounted () {
-		document.title = this.$route.meta.title + ' :: 간단 북마크' || '간단 북마크'
-		this.pageTitle = this.$route.meta.title
+		document.title = (this.$route.meta.title) ? `${this.$route.meta.title} :: ${this.docTitle}` : this.docTitle
+		this.pageTitle = (this.$route.meta.title) ? this.$route.meta.title : this.docTitle
 	},
 	watch: {
 		$route(to, from) {
-			document.title = to.meta.title + ' :: 간단 북마크' || '간단 북마크'
-			this.pageTitle = to.meta.title || '간단 북마크'
+			document.title = (to.meta.title) ? `${to.meta.title} :: ${this.docTitle}` : this.docTitle
+			this.pageTitle = (to.meta.title) ? to.meta.title : this.docTitle
 		}
 	}
 }

@@ -28,7 +28,7 @@
 			****** :add="addRealMonster" (X)
 			****** @add="addRealMonster" (O)
 		-->
-		<MonsterList :monsters="monsters" :isShowing="isShowing" @add="addRealMonster"/>
+		<MonsterList :monsters="monsters" @add="addRealMonster"/>
 	</div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
 				desc: '똑똑하고 지적이에요. 쿠키를 좋아해요.',
 				hp: 100,
 				fullHp: 100,
-				state: { 
+				state: {
 					danger: false, 
 					died: false 
 				}
@@ -61,7 +61,7 @@ export default {
 				desc: '귀여워요. 새내기라 어리버리해서 많이 알려줘야 해요.',
 				hp: 100,
 				fullHp: 100,
-				state: { 
+				state: {
 					danger: false, 
 					died: false 
 				}
@@ -72,7 +72,7 @@ export default {
 				desc: '천재이자 맥주 마스터예요. 실제 나이는 3000살이라는 소문이...',
 				hp: 100,
 				fullHp: 100,
-				state: { 
+				state: {
 					danger: false, 
 					died: false 
 				}
@@ -83,7 +83,7 @@ export default {
 				desc: '옆집 사는 성훈이 바라기예요. 마음만은 열일곱이라는데...',
 				hp: 100,
 				fullHp: 100,
-				state: { 
+				state: {
 					danger: false, 
 					died: false 
 				}
@@ -94,7 +94,7 @@ export default {
 				desc: '은서는 천사예요. 아빠보단 엄마를 좋아한다고..!',
 				hp: 100,
 				fullHp: 100,
-				state: { 
+				state: {
 					danger: false, 
 					died: false 
 				}
@@ -105,21 +105,30 @@ export default {
 				desc: '뭔가 이상해요. 하는 꼴을 보면 아직 알에서 부화하지 않은 것 같아요. 실체가 없어요.',
 				hp: 100,
 				fullHp: 100,
-				state: { 
+				state: {
 					danger: false, 
 					died: false 
 				}
 			}
-		],
-		isShowing: false
+		]
 	}),
 
 	methods: {
 		addRealMonster() {
 			// console.log 대신 monsters에 몬스터를 추가해야겠죠?
 			// 무엇을 어떻게 해야할까요?
+			this.monsters.push({
+				name: '새몬스터',
+				age: -100,
+				desc: '어떤 몬스터가 추가될까요?',
+				hp: 100,
+				fullHp: 100,
+				state: {
+					danger: false, 
+					died: false 
+				}
+			})
 			console.log('몬스터를 추가했습니다!')
-
 		}
 	}
 }

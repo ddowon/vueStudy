@@ -6,14 +6,6 @@
 				<!-- monster 배열을 0번부터 순환하므로 index에 1을 더해줍니다. -->
 				<h2>{{ index + 1 }}번 몬스터 - {{ monster.name }}</h2>
 				<p><button @click="viewMonsterInfo(monster)">{{ monster.name }} 자세히 보기</button></p>
-				<dl>
-					<dt><strong>이름</strong></dt>
-					<dd>{{ monster.name }}</dd>
-					<dt><strong>나이</strong></dt>
-					<dd>{{ monster.age }}</dd>
-					<dt><strong>설명</strong></dt>
-					<dd>{{ monster.desc }}</dd>
-				</dl>
 			</li>
 		</ul>
 
@@ -32,47 +24,34 @@
 			to-be: 몬스터의 세부 내용을 MonsterModal.vue에 옮겨 몬스터 자세히 보기 버튼 클릭 시 MonsterModal 컴포넌트를 호출, 세부 내용(이름, 나이, 설명)을 보여줍니다.
 			힌트: 2회 질문 가능
 		-->
-		<MonsterModal :isShowing="isShowing" :selectedMonster="selectedMonster" @closeModal="closeModal"/>
+		<MonsterModal v-show="isShowing" :monster="selectedMonster" @closeModal="closeModal"/>
 	</div>
 </template>
 <script>
 import MonsterModal from '@/components/MonsterModal.vue'
 
 export default {
-	props: ['monsters','isShowing'],
+	props: ['monsters'],
 	components : {
 		MonsterModal
 	},
 	data: () => ({
-		selectedMonster
+		isShowing: false,
+		selectedMonster: {}
 	}),
 	methods: {
 		sendAddMonster() {
 			// 자식 -> 부모 컴포넌트 이벤트 전달 형식
 			// this.$emit('부모 컴포넌트에 발생시킬 이벤트 명')
-
-			this.monsters.push( {
-				name: '새몬스터',
-				age: -100,
-				desc: '어떤 몬스터가 추가될까요?',
-				hp: 100,
-				fullHp: 100,
-				state: { 
-					danger: false, 
-					died: false 
-				}
-			} )
 			this.$emit('add')
 		},
 		viewMonsterInfo(monster) {
 			// 무엇을 어떻게 해야할까요?
-			this.isShowing = !this.isShowing
-
+			this.isShowing = true
 			this.selectedMonster = monster
-
 		},
 		closeModal() {
-			this.isShowing = !this.isShowing
+			this.isShowing = false
 		}
 	}
 }
