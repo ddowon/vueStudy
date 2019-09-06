@@ -5,7 +5,7 @@
 			<li v-for="(monster, index) in monsters" :key="monster.name">
 				<!-- monster 배열을 0번부터 순환하므로 index에 1을 더해줍니다. -->
 				<h2>{{ index + 1 }}번 몬스터 - {{ monster.name }}</h2>
-				<p>{{monster.hp ? '안죽었다' : '죽었다'}}</p>
+				<p>{{monster.isDied ? '죽었다' : '안죽었다'}}</p>
 				<p><button @click="viewMonsterInfo(monster)">{{ monster.name }} 자세히 보기</button></p>
 			</li>
 		</ul>

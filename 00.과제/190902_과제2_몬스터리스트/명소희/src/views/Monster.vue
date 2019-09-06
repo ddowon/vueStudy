@@ -48,61 +48,55 @@ export default {
 				name: '쿠키몬스터',
 				age: 3,
 				desc: '똑똑하고 지적이에요. 쿠키를 좋아해요.',
-				beforeImage : require('../assets/before.png'),
-				afterImage : require('../assets/after.png'),
-				stateTxt : '안죽었다',
 				hp : 100,
-				isDied : false
+				fullHp: 100,
+				isDied : false,
+				imgName: 'sohee1'
 			},
 			{
 				name: '무릉이',
 				age: 1,
 				desc: '귀여워요. 새내기라 어리버리해서 많이 알려줘야 해요.',
-				beforeImage : require('../assets/before.png'),
-				afterImage : require('../assets/after.png'),
-				stateTxt : '안죽었다',
 				hp : 100,
-				isDied : false
+				fullHp: 100,
+				isDied : false,
+				imgName: 'sohee2'
 			},
 			{
 				name: '또원이',
 				age: 3000,
 				desc: '천재이자 맥주 마스터예요. 실제 나이는 3000살이라는 소문이...',
-				beforeImage : require('../assets/before.png'),
-				afterImage : require('../assets/after.png'),
-				stateTxt : '안죽었다',
 				hp : 100,
-				isDied : false
+				fullHp: 100,
+				isDied : false,
+				imgName: 'sohee3'
 			},
 			{
 				name: '망소',
 				age: 17,
 				desc: '옆집 사는 성훈이 바라기예요. 마음만은 열일곱이라는데...',
-				beforeImage : require('../assets/before.png'),
-				afterImage : require('../assets/after.png'),
-				stateTxt : '안죽었다',
 				hp : 100,
-				isDied : false
+				fullHp: 100,
+				isDied : false,
+				imgName: 'sohee4'
 			},
 			{
 				name: '은서',
 				age: 2,
 				desc: '은서는 천사예요. 아빠보단 엄마를 좋아한다고..!',
-				beforeImage : require('../assets/before.png'),
-				afterImage : require('../assets/after.png'),
-				stateTxt : '안죽었다',
 				hp : 100,
-				isDied : false
+				fullHp: 100,
+				isDied : false,
+				imgName: 'sohee5'
 			},
 			{
 				name: 'JJ',
 				age: -100,
 				desc: '뭔가 이상해요. 하는 꼴을 보면 아직 알에서 부화하지 않은 것 같아요. 실체가 없어요.',
-				beforeImage : require('../assets/before.png'),
-				afterImage : require('../assets/after.png'),
-				stateTxt : '안죽었다',
 				hp : 100,
-				isDied : false
+				fullHp: 100,
+				isDied : false,
+				imgName: 'sohee6'
 			},
 		]
 	}),
@@ -110,7 +104,7 @@ export default {
 		addRealMonster() {
 			// console.log 대신 monsters에 몬스터를 추가해야겠죠?
 			// 무엇을 어떻게 해야할까요?
-			this.monsters.push({ name: '새 몬스터', age: 20, desc: '새로 생긴 몬스터예요.',beforeImage : require('../assets/before.png'), afterImage : require('../assets/after.png'), stateTxt : '안죽었다', hp : 100, isDied : false })
+			this.monsters.push({ name: '새 몬스터', age: 20, desc: '새로 생긴 몬스터예요.',beforeImage : require('../assets/before.png'), afterImage : require('../assets/after.png'), hp : 100, isDied : false })
 			console.log('몬스터를 추가했습니다!')
 		}
 	}
