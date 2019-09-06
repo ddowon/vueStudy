@@ -33,6 +33,13 @@
 </template>
 
 <script>
+// 이미지
+import monsterImg1 from '@/assets/cookie_1.jpg'
+import monsterImg2 from '@/assets/cookie_2.jpg'
+import monsterImg3 from '@/assets/monster.png'
+import monsterImg4 from '@/assets/monster_30.jpg'
+
+
 import MonsterList from '@/components/MonsterList.vue'
 export default {
 	components: { 
@@ -53,7 +60,8 @@ export default {
 				state: {
 					danger: false, 
 					died: false 
-				}
+				},
+				img: monsterImg1
 			},
 			{
 				name: '무릉이',
@@ -64,7 +72,8 @@ export default {
 				state: {
 					danger: false, 
 					died: false 
-				}
+				},
+				img: monsterImg2
 			},
 			{
 				name: '또원이',
@@ -75,7 +84,8 @@ export default {
 				state: {
 					danger: false, 
 					died: false 
-				}
+				},
+				img: monsterImg3
 			},
 			{
 				name: '망소',
@@ -86,7 +96,8 @@ export default {
 				state: {
 					danger: false, 
 					died: false 
-				}
+				},
+				img: monsterImg4
 			},
 			{
 				name: '은서',
@@ -97,7 +108,8 @@ export default {
 				state: {
 					danger: false, 
 					died: false 
-				}
+				},
+				img: monsterImg1
 			},
 			{
 				name: 'JJ',
@@ -108,7 +120,8 @@ export default {
 				state: {
 					danger: false, 
 					died: false 
-				}
+				},
+				img: monsterImg2
 			}
 		]
 	}),
