@@ -33,12 +33,6 @@
 </template>
 
 <script>
-// 이미지
-import monsterImg1 from '@/assets/cookie_1.jpg'
-import monsterImg2 from '@/assets/cookie_2.jpg'
-import monsterImg3 from '@/assets/monster.png'
-import monsterImg4 from '@/assets/monster_30.jpg'
-
 
 import MonsterList from '@/components/MonsterList.vue'
 export default {
@@ -57,11 +51,11 @@ export default {
 				desc: '똑똑하고 지적이에요. 쿠키를 좋아해요.',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				},
-				img: monsterImg1
+				imgPath: 'cookie'
 			},
 			{
 				name: '무릉이',
@@ -69,11 +63,11 @@ export default {
 				desc: '귀여워요. 새내기라 어리버리해서 많이 알려줘야 해요.',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				},
-				img: monsterImg2
+				imgPath: 'wazowski'
 			},
 			{
 				name: '또원이',
@@ -81,11 +75,11 @@ export default {
 				desc: '천재이자 맥주 마스터예요. 실제 나이는 3000살이라는 소문이...',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				},
-				img: monsterImg3
+				imgPath: 'cookie'
 			},
 			{
 				name: '망소',
@@ -93,11 +87,11 @@ export default {
 				desc: '옆집 사는 성훈이 바라기예요. 마음만은 열일곱이라는데...',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				},
-				img: monsterImg4
+				imgPath: 'wazowski'
 			},
 			{
 				name: '은서',
@@ -105,11 +99,11 @@ export default {
 				desc: '은서는 천사예요. 아빠보단 엄마를 좋아한다고..!',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				},
-				img: monsterImg1
+				imgPath: 'cookie'
 			},
 			{
 				name: 'JJ',
@@ -117,11 +111,11 @@ export default {
 				desc: '뭔가 이상해요. 하는 꼴을 보면 아직 알에서 부화하지 않은 것 같아요. 실체가 없어요.',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				},
-				img: monsterImg2
+				imgPath: 'wazowski'
 			}
 		]
 	}),
@@ -136,7 +130,7 @@ export default {
 				desc: '어떤 몬스터가 추가될까요?',
 				hp: 100,
 				fullHp: 100,
-				state: {
+				status: {
 					danger: false, 
 					died: false 
 				}
