@@ -2,13 +2,12 @@
 	<div>
 		{{ Number($route.params.id) + 1 }}번 몬스터 자세히 보기
 
-		<!-- n번 몬스터의 정보를 보여주려면 무엇을 어떻게 해야할까요? -->
-
 		<ul class="tab">
 			<li v-for="(tab, idx) in tabs" :key="tab" :class="{ 'active': activeTab == idx }"><button type="button" @click="switchTab(idx)">{{ tab }}</button></li>
 		</ul>
 		<div v-show="activeTab === 0" class="tab_cont">
 			<p>{{monster.name}}</p>
+			
 			<dl>
 				<dt><strong>나이</strong></dt>
 				<dd>{{ monster.age }}</dd>
@@ -17,6 +16,8 @@
 				<dt><strong>상태</strong></dt>
 				<dd>{{ monster.status.died ? '죽었다' : '안죽었다' }}</dd>
 			</dl>
+			<button @click="removeMonster">삭제하기</button>
+
 		</div>
 		<div v-show="activeTab === 1" class="tab_cont">
 			<div class="bar">
@@ -28,6 +29,7 @@
 			<p>{{ monster.status.died ? '죽었다' : '안죽었다' }}</p>
 		</div>
 
+
 	</div>
 </template>
 
@@ -35,23 +37,20 @@
 import { store, mutations } from '@/store/index'
 export default {
 	data: () => ({
-		monster: [],
+		monster: {},
 		activeTab: null,
 		tabs: [ '몬스터 정보', '몬스터 때리기' ],
 		 colors: [
           {color: '#f56c6c', percentage: 20},
           {color: '#e6a23c', percentage: 40},
 		  {color: '#6f7ad3', percentage: 100}
-        ]
+		]
 	}),
-	mounted() {
-		this.activeTab = 0,
+	created(){
 		this.monster = store.monsters[Number(this.$route.params.id)]
 	},
-	watch: {
-		$route(to, from){
-			this.monster = store.monsters[Number(this.$route.params.id)]
-		}
+	mounted() {
+		this.activeTab = 0
 	},
 	computed: {
 		imgPath() {
@@ -70,6 +69,15 @@ export default {
 			return this.monster.hp / this.monster.fullHp * 100
 		}
 	},
+	// beforeRouteUpdate(to, from, next){
+	// 	this.monster = store.monsters[to.params.id]
+	// 	next()
+	// },
+	watch: {
+		$route(to,from){
+			this.monster = store.monsters[to.params.id]
+		}
+	},
 	methods: {
 		switchTab(idx) {
 			this.activeTab = idx
@@ -85,15 +93,22 @@ export default {
 					this.monster.status.sick = true
 				}
 			}
-		}
+		},
+		removeMonster( ) {
+			mutations.removeMonster( this.$route.params.id  )
 
+			let vm = this
+			setTimeout( () => {
+				vm.$router.push({ name: 'monster' })
+			},1000 )
+		}
 	}
 }
 </script>
 <style scoped>
 	.tab {overflow: hidden; width: 100%;}
 	.tab li {float: left; width: 50%; height: 50px; }
-	.tab li button {width: 100%; height: 100%; display: block;}
+	.tab li button {width: 100%; height: 100%; display: block; }
 	dl {display:block}
 	.tab_cont img { display: block; max-height: 400px; }
 </style>

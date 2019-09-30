@@ -6,10 +6,10 @@
 
 		<!-- 예시 form입니다. 아래 내용을 토대로 addMonster를 호출하는 onSubmit 메소드를 작성하세요. Element-UI를 활용해도 좋습니다. -->
 		<form @submit.prevent="onSubmit">
-			<label>몬스터 이름: <input v-model="name"></label>
-			<label>몬스터 나이: <input v-model.number="age" type="number"></label>
-			<label>몬스터 설명: <input v-model="desc"></label>
-			<label>몬스터 hp: <input v-model.number="hp" type="number"></label>
+			<el-input placeholder="몬스터 이름" v-model="name"></el-input>
+			<el-input placeholder="몬스터 나이" v-model.number="age" type="number"></el-input>
+			<el-input placeholder="몬스터 설명" v-model="desc"></el-input>
+			<el-input placeholder="몬스터 hp" v-model.number="hp" type="number"></el-input>
 
 			<p><button type="submit">몬스터 추가하기</button></p>
 		</form>
@@ -23,13 +23,18 @@ export default {
 	data: () => ({
 		monsters: [],
 		newMonster: '',
-		name: ''
+		name: '',
+		age: '',
+		desc: '',
+		hp: ''
 	}),
 	mounted() {
 		this.monsters = store.monsters
+		
 	},
 	methods: {
 		onSubmit() {
+
 			this.newMonster = { 
 				name: this.name, 
 				age: this.age, 
@@ -40,9 +45,13 @@ export default {
 					danger: false,
 					sick: false, 
 					died: false
-				},
+				}
 			}
-			store.monsters.push(this.newMonster)
+			mutations.addMonster(this.newMonster)
+			
+			alert( '몬스터를 추가하였습니다!' )
+			this.$router.push({ name: 'monster' })
+			
 
 		},
 		addMonster() {
