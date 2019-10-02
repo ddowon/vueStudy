@@ -6,10 +6,9 @@
 		<li><a href="rootURL/monster/add">몬스터 추가하기</a></li>
 	-->
 	<ul>
-		<li v-for="(item, index) in $router.options.routes[1].children" :key="index" v-if="item.meta.useMenu != false">
+		<li v-for="(item, index) in $router.options.routes[menuIdx].children" :key="index" v-if="item.meta.useMenu != false">
 			<router-link :to="{ name: item.name }">{{item.meta.title}}</router-link>
 		</li>
-
 	</ul>
 </template>
 

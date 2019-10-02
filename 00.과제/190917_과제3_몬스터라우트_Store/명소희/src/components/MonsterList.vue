@@ -14,42 +14,23 @@
 					this.$router.push({ name: router.js에서 정해준 라우트 이름, params: { id: 몬스터 숫자 }})
 				-->
 				<p><button @click="goToMonsterInfo(index)">{{ monster.name }} 자세히 보기</button></p>
-				<!-- <li v-for="(item, index) in $router.options.routes[1].children" :key="index" v-if="item.meta.useMenu != false">
-					<router-link :to="item.name">{{item.meta.title}}</router-link>
-				</li> -->
-				<!-- <p><button @click="viewMonsterInfo(monster)">{{ monster.name }} 모달창 자세히 보기</button></p> -->
 			</li>
 		</ul>
-
-		<MonsterModal v-show="isShowing" :monster="currentMonster" @closeModal="closeModal"/>
 	</div>
 </template>
 <script>
 import { store, mutations } from '@/store/index'
-import MonsterModal from '@/components/MonsterModal.vue'
 
 export default {
-	components : {
-		MonsterModal
-	},
 	data: () => ({
-		monsters: [],
-		isShowing: false,
-		currentMonster: {}
+		monsters: []
 	}),
 	mounted() {
 		this.monsters = store.monsters
 	},
 	methods: {
-		viewMonsterInfo(monster) {
-			this.isShowing = true
-			this.currentMonster = monster
-		},
 		goToMonsterInfo(idx) {
 			this.$router.push({ name: 'monsterView', params: { id: idx }})
-		},
-		closeModal() {
-			this.isShowing = false
 		}
 	}
 }
