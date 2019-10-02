@@ -6,17 +6,10 @@ export const store = Vue.observable({
 })
 
 export const mutations = {
-	// 여기에 addMonster와 removeMonster를 구현해 보세요.
-
-	addMonster( monster ) {
-
-		store.monsters.push( monster )
+	addMonster(monster) {
+		store.monsters.push(monster)
 	},
-
-	removeMonster( monsterIdx ) {
-		
-		store.monsters.splice( monsterIdx, 1 )
-		
+	removeMonster(monsterIdx) {
+		store.monsters.splice(monsterIdx, 1)
 	}
-
 }

@@ -22,27 +22,11 @@
 import { store, mutations } from '@/store/index'
 
 export default {
-	components : {
-	},
 	data: () => ({
-		monsters: [],
-		isShowing: false,
-		currentMonster: {}
+		monsters: []
 	}),
 	mounted() {
 		this.monsters = store.monsters
-	},
-	methods: {
-		viewMonsterInfo(monster) {
-			this.isShowing = true
-			this.currentMonster = monster
-		},
-		goToMonsterInfo(idx) {
-			
-		},
-		closeModal() {
-			this.isShowing = false
-		}
 	}
 }
 </script>
