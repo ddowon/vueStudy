@@ -3,8 +3,8 @@
 		<ul>
 			<li v-for="(monster, index) in monsters" :key="index">
 				<h2>{{ index + 1 }}번 몬스터 - {{ monster.name }}</h2>
-				<p>{{monster.status.died ? '죽었다' : '안죽었다'}}</p>
-
+				<p v-if="monster.hp <= 0">죽었다.</p>
+				<p v-else>안 죽었다.</p>
 				<!-- 자세히 보기 버튼 클릭 시 모달창 대신 http://localhost:8080/#/monster/view/몬스터 숫자(= 배열 인덱스)로 이동하도록 수정해 보세요. -->
 				<!--
 					[힌트] 2가지 방법이 있습니다.
@@ -19,14 +19,12 @@
 	</div>
 </template>
 <script>
-import { store, mutations } from '@/store/index'
-
+import { mapState } from 'vuex'
 export default {
-	data: () => ({
-		monsters: []
-	}),
-	mounted() {
-		this.monsters = store.monsters
+	computed: {
+		...mapState('monster', [
+			'monsters'
+		])
 	}
 }
 </script>

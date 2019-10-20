@@ -43,6 +43,7 @@ export default new Router({
 			]
 		},
 		{ path: '/test', name: 'vuexTest', meta: { title: 'Vuex 실습' }, component: VuexTest },
-		{ path: '*', name: 'notFound', meta: { title: '페이지를 찾을 수 없습니다.', useMenu: false }, component: NotFound }
+		{ path: '/404', name: 'notFound', meta: { title: '페이지를 찾을 수 없습니다.', useMenu: false }, component: NotFound },
+		{ path: '*', meta: { title: '페이지를 찾을 수 없습니다.', useMenu: false }, component: NotFound },
 	]
 })
