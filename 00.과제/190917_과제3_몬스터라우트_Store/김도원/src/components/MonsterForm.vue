@@ -12,7 +12,6 @@
 	</div>
 </template>
 <script>
-import { store, mutations } from '@/store/index'
 
 export default {
 	data: () => ({
@@ -36,10 +35,10 @@ export default {
 		},
 		addMonster() {
 			if (confirm('추가하시겠습니까?')) {
-				mutations.addMonster(this.monster)
+				this.$store.dispatch('addMonster', this.monster)
 				alert(`몬스터 ${this.monster.name}님을 추가했습니다.`)
 				setTimeout(() => {
-					this.$router.push({ name: 'monsterView', params: { id: store.monsters.length - 1 } })
+					this.$router.push({ name: 'monsterView', params: { id: this.$store.state.monsters.length - 1 } })
 				}, 300)
 			}
 		}

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul>
-			<li v-for="(monster, index) in monsters" :key="index">
+			<li v-for="(monster, index) in $store.state.monsters" :key="index">
 				<h2>{{ index + 1 }}번 몬스터 - {{ monster.name }}</h2>
 				<p>{{monster.status.died ? '죽었다' : '안죽었다'}}</p>
 
@@ -19,15 +19,10 @@
 	</div>
 </template>
 <script>
-import { store, mutations } from '@/store/index'
 
 export default {
-	data: () => ({
-		monsters: []
-	}),
-	mounted() {
-		this.monsters = store.monsters
-	}
+
+
 }
 </script>
 
