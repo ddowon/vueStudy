@@ -19,14 +19,11 @@
 	</div>
 </template>
 <script>
-import { store, mutations } from '@/store/index'
+import { mapState } from 'vuex'
 
-export default {
-	data: () => ({
-		monsters: []
-	}),
-	mounted() {
-		this.monsters = store.monsters
+export default { 
+	computed: {
+		...mapState(['monsters'])
 	},
 	methods: {
 		goToMonsterInfo(idx) {

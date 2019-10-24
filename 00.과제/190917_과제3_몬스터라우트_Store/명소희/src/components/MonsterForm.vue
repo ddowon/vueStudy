@@ -12,7 +12,7 @@
 	</div>
 </template>
 <script>
-import { store, mutations } from '@/store/index'
+import { mapActions } from 'vuex'
 
 export default {
 	data: () => ({
@@ -31,17 +31,11 @@ export default {
 	methods: {
 		onSubmit() {
 			this.newObj.fullHp = this.newObj.hp
-			this.addMonster()
+			this.addMonster(this.newObj)
 		},
-		addMonster() {
-			if (confirm('추가하시겠습니까?')) {
-				mutations.addMonster(this.newObj)
-				alert(`몬스터 ${this.newObj.name}님을 추가했습니다.`)
-				setTimeout(() => {
-					this.$router.push({ name: 'monsterView', params: { id: store.monsters.length - 1 } })
-				}, 300)
-			}
-		}
+		...mapActions(['addMonster'])
+
+
 	}
 }
 </script>
