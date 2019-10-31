@@ -6,10 +6,10 @@
       <button class="done" @click="currentList('yet')">미완료</button>
     </div>
     <ul class="list_wrap">
-      <li v-for="(item, idx) in getTodoList()" :key="idx" :class="{'done' : item.done}">
+      <li v-for="(item, idx) in getTodoList" :key="idx" :class="{'done' : item.done}">
         <div>
-          <input type="checkbox" :id="'itemCheck'+idx" v-model="item.done">
-          <label :for="'itemCheck'+idx" ></label>
+          <input type="checkbox" :id="'itemCheck'+item.id" v-model="item.done" @click="checkItem(item.id)">
+          <label :for="'itemCheck'+item.id" ></label>
         </div>
         <div>{{idx + 1}}. </div>
         <div class="title">{{item.title}}</div>
@@ -19,10 +19,11 @@
         </div>
       </li>
     </ul>
-    <!-- <div class="search">
-      <input type="text" v-model="search_input">
-      <button class="btn_search" @click="searchList(search_input)">찾기</button>
-    </div> -->
+    <button class="btn_delete_all" @click="resetItems">전체삭제</button>
+    <div class="search">
+      <input type="text" v-model="searchKeyword">
+      <button class="btn_search" @click="searchList(searchKeyword)">찾기</button>
+    </div>
     <Modal v-show="modalStatus.isShowing" :item="selectedItem" :type="type"/>
   </div>
 </template>
@@ -37,31 +38,26 @@ export default {
   data: ()=>({
     type: '', 
     selectedItem: {},
-    search_input: ''
+    searchKeyword: ''
   }),
   computed: {
     ...mapState([
-      'todoList','modalStatus'
+      'todoList','modalStatus', 'searchedList'
     ]),
     ...mapGetters([
-      'getModalStatus','sortList', 'getTodoList'
+      'getModalStatus', 'getTodoList', 'getSearchedList'
     ])
   },
  
   methods: {
     ...mapActions([
-      'deleteItem','openModal','currentList'
+      'deleteItem', 'openModal', 'currentList', 'searchList', 'resetItems', 'checkItem'
     ]),
     setModal (item, type) {
       this.type = type
       this.selectedItem = item
       this.openModal('openModal')
     }
-    // searchList () {
-    //   var list = this.todoList.filter( item => {
-    //     return item.title.includes(this.search_input) === true
-    //   })
-    // }
   }
   
 }

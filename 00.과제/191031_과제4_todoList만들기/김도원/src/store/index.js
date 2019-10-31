@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import fn from '../util/helpers'
 
 Vue.use(Vuex)
 
@@ -11,7 +12,8 @@ const state = {
     isShowingModal: false,
     modalTitle: 'default',
     currentList : 'all',
-    todoList : JSON.parse(localStorage.getItem('todoList') ) || []
+    todoList : JSON.parse(localStorage.getItem('todoList') ) || [],
+    searchedList: []
 }
 
 const mutations = {
@@ -20,10 +22,9 @@ const mutations = {
         state.modalStatus.isShowing = false
     },
     addItem (state, payload) {
-        var todoListLen = parseInt(state.todoList.length)
         var lastId = 0
-        if (todoListLen) {
-            lastId = parseInt(state.todoList[todoListLen-1].id)
+        if (state.todoList.length) {
+            lastId = state.todoList[state.todoList.length-1].id
         }
         state.todoList.push({title: payload, id: lastId+1, done: false})
         localStorage.setItem('todoList', JSON.stringify(state.todoList))
@@ -34,6 +35,16 @@ const mutations = {
             return list.id === payload.idx
         })
         state.todoList[itemIdx].title = payload.editItem
+        localStorage.setItem('todoList', JSON.stringify(state.todoList))
+        
+    },
+    checkItem (state, payload) {
+        let itemIdx = fn.findListById(state.todoList, payload)
+        state.todoList[itemIdx].done = !state.todoList[itemIdx].done
+        localStorage.setItem('todoList', JSON.stringify(state.todoList))
+    },
+    resetItems (state) {
+        state.todoList = []
         localStorage.setItem('todoList', JSON.stringify(state.todoList))
         
     },
@@ -51,6 +62,12 @@ const mutations = {
     },
     currentList (state, payload) {
         state.currentList = payload
+        state.searchedList = []
+    },
+    searchList(state, payload) {
+        state.searchedList = state.todoList.filter(item => {
+            return item.title.includes(payload)
+        })
     }
 }
 
@@ -73,6 +90,12 @@ const actions = {
             payload.callback()
         }, 100)
     },
+    checkItem (context, payload) {
+        context.commit('checkItem', payload)
+    },
+    resetItems (context) {
+        context.commit('resetItems')
+    },
     openModal (context, payload) {
         context.commit('openModal', payload)
     },
@@ -81,27 +104,32 @@ const actions = {
     },
     currentList (context, payload) {
         context.commit('currentList', payload)
+    },
+    searchList({ commit }, payload) {
+        commit('searchList', payload)
     }
-
 }
 
 const getters = {
-    getTodoList () {
-        return function(){
-            let list
-            if ( state.currentList === 'done') {
-                list = state.todoList.filter( item => {
-                    return item.done === true
+    getTodoList(state) {
+        if (state.searchedList.length) {
+            return state.searchedList
+        } else {
+            if (state.currentList === 'done') {
+                return state.todoList.filter(item => {
+                    return item.done
                 })
-            } else if  ( state.currentList === 'yet') {
-                list = state.todoList.filter( item => {
-                    return item.done === false
+            } else if (state.currentList === 'yet') {
+                return state.todoList.filter(item => {
+                    return !item.done
                 })
             } else {
-                list = state.todoList
+                return state.todoList
             }
-            return list
         }
+    },
+    getSearchedList(state) {
+        return state.searchedList
     }
 }
 

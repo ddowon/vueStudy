@@ -4,7 +4,7 @@
         <div class="contents">
           <div v-if="type === 'edit'">
             <p>수정 하시겠습니까?</p>
-            <input type="text" placehodler="" v-model="editInput">
+            <input type="text" placehodler="" v-model="item.title">
             <button @click="editItem(item.id)" class="btn_edit">수정하기</button>
           </div>
           <div v-else-if="type === 'delete'">
@@ -28,9 +28,6 @@ export default {
       'modalStatus'
     ])
   },
-  data: () =>({
-    editInput : ''
-  }),
   methods: {
     ...mapActions([
       'editItem',
@@ -39,7 +36,7 @@ export default {
     ]),
     editItem (idx) {
       let vm = this
-      let editItem = this.editInput
+      let editItem = this.item.title
       this.$store.dispatch('editItem', {idx, editItem, callback(){
         vm.editInput = ''
       }})
