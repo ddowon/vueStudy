@@ -8,6 +8,6 @@ Vue.config.productionTip = false
 Vue.use(ElementUi)
 
 new Vue({
-  store,
-  render: h => h(App),
+	store,
+	render: h => h(App),
 }).$mount('#app')

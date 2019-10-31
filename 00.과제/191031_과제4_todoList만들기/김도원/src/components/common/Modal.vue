@@ -1,47 +1,24 @@
 <template>
-  <div>
-      <div class="modal_wrap" :class="type">
-        <div class="contents">
-          <div v-if="type === 'edit'">
-            <p>수정 하시겠습니까?</p>
-            <input type="text" placehodler="" v-model="item.title">
-            <button @click="editItem(item.id)" class="btn_edit">수정하기</button>
-          </div>
-          <div v-else-if="type === 'delete'">
-            <p>삭제 하시겠습니까?</p>
-            <button @click="deleteItem(item.id)" class="btn_delete">삭제하기</button>
-          </div>
-        </div> 
-       <button class="btn_close" @click="closeModal"><i class="el-icon-close"></i><span>모달 닫기</span></button>
-      </div> 
-      <div class="overlay"></div>
-  </div>
+	<div>
+		<div class="modal_wrap">
+			<div class="contents">
+				<slot name="body">
+					기본 모달 body
+				</slot>
+			</div>
+			<button class="btn_close" @click="closeModal"><i class="el-icon-close"></i><span>모달 닫기</span></button>
+		</div> 
+		<div class="overlay"></div>
+	</div>
 </template>
 
 <script>
-
-import {mapState,mapActions} from 'vuex'
 export default {
-  props: ['type','item'],
-  computed: {
-    ...mapState([
-      'modalStatus'
-    ])
-  },
-  methods: {
-    ...mapActions([
-      'editItem',
-      'deleteItem',
-      'closeModal'
-    ]),
-    editItem (idx) {
-      let vm = this
-      let editItem = this.item.title
-      this.$store.dispatch('editItem', {idx, editItem, callback(){
-        vm.editInput = ''
-      }})
-    }
-  }
+	methods: {
+		closeModal() {
+			this.$store.commit('closeModal')
+		}
+	}
 }
 </script>
 
