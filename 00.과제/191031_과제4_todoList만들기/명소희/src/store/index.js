@@ -38,26 +38,12 @@ export default new Vuex.Store({
       state.plans.push(payload)
       localStorage.setItem('plans', JSON.stringify(state.plans))
       
-      console.log(payload)
-
-      // if(state.plans.length){
-      //   state.plans[state.plans.length].id = payload.id + 1 ;
-      // }
-        
-      
-
-      
-      
-      // state.plans.push(payload)
-      // console.log(state.plans)
-      // localStorage.setItem('plans', JSON.stringify(state.plans))
       
       
     },
     showList(state, payload){
-      
       state.showType = payload
-      console.log(state.showType)
+
     },
     openModal(state, payload) {
       state.modalShow = true
@@ -81,12 +67,14 @@ export default new Vuex.Store({
       
     },
     removeTodo(state, payload) {
-        console.log(payload)
+      console.log(payload)
       state.plans.splice(payload, 1)
+      state.plans.map(function(ele, key) {
+        // console.log(ele + '/' + key)
+        state.plans[key].id = key
+      });
       localStorage.setItem('plans', JSON.stringify(state.plans))
 
-      
-      
     },
     switchCurrent(state, payload) {
       state.showType = payload
@@ -94,13 +82,10 @@ export default new Vuex.Store({
   },
   actions : {
     addTodo(context, payload) {
-//여기에서 id값을 수정하도록 해보세요.
-        
-        context.commit('addTodo', payload)
+
+      context.commit('addTodo', payload)
         // console.log(payload)
 
-      
-      
     },
     showList(context, payload){
       context.commit('showList', payload)
@@ -115,7 +100,6 @@ export default new Vuex.Store({
     },
     removeTodo(context, payload){
       if(confirm('삭제 하시겠습니까?')){
-
         context.commit('removeTodo', payload)
       }
      
