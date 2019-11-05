@@ -1,28 +1,63 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <TodoInput/>
+    <TodoStatus/>
+		<TodoList/>
+    <TodoSearch/>
   </div>
 </template>
 
+
+
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Header from '@/components/Header.vue'
+import TodoInput from '@/components/TodoInput.vue'
+import TodoStatus from '@/components/TodoStatus.vue'
+import TodoList from '@/components/TodoList.vue'
+import TodoSearch from '@/components/TodoSearch.vue'
+
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+	components: {
+		Header, TodoInput, TodoStatus, TodoList, TodoSearch
+	},data: () => ({
+
+	}),
+	mounted () {
+
+	},
+	watch: {
+		
+	}
 }
 </script>
 
 <style>
+/* RESET DEFAULT ELEMENTS STYLE */
+body,section,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}
+dl,ul,ol,menu,li {list-style:none}
+img,fieldset,iframe {border:0 none}
+img {vertical-align:top}
+input,select,textarea,button {vertical-align:middle}
+a {text-decoration:none}
+a:hover {text-decoration:underline}
+a:active {background-color:transparent}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,main {display:block}
+blockquote,q {quotes:none}
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none}
+
+html, body {width:100%; background:#FFF}
+
+.blind {display:block;overflow:hidden;visibility:hidden;text-indent:-9999px;font-size:0;height:0}
+.ir {display:block;overflow:hidden;text-align:left;text-indent:-9999px;font-size:0 !important;background-repeat:no-repeat;background-position:0 0}
+.loader {z-index:512;position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	background-color:#fff;
+	/* max-width:1280px; */
+	margin:0 auto
 }
 </style>
