@@ -1,5 +1,5 @@
 <template>
-	<div class="monster">
+	<div class="vuex">
 		<h1>{{ pageTitle }}</h1>
 		<el-divider></el-divider>
 		<AppSubNav :menuIdx="2" />
@@ -18,3 +18,9 @@ export default {
 	props: ['pageTitle']
 }
 </script>
+
+<style scoped>
+.vuex {color:#fafafa;background-color:#212121}
+.vuex >>> ul a {color:#ededed}
+.el-divider {background-color:#373737}
+</style>

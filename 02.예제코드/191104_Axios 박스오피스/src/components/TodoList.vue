@@ -35,8 +35,6 @@ export default {
 
 <style scoped>
 section {
-	background-color: #f5f7f9;
-    border: 1px solid #e6ecf1;
     padding: 1.25rem;
     border-radius: .25rem;
 }

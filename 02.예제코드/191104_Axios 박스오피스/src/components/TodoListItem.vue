@@ -83,10 +83,8 @@ export default {
 
 <style scoped>
 section {
-	background-color: #f5f7f9;
-    border: 1px solid #e6ecf1;
-    padding: 1.25rem;
-    border-radius: .25rem;
+    margin-top: 1em;
+	padding: 0 !important;
 }
 ul {
 	clear:both;
@@ -102,7 +100,7 @@ li {
 	line-height: 50px;
 	margin: 0.5rem 0;
 	padding: 0 0.9rem;
-	background: white;
+	background: #2e2e2e;
 	border-radius: 5px;
 	cursor:pointer;
 }

@@ -58,4 +58,7 @@ html, body {width:100%;min-width:1340px;background:#f9f9f9}
 	max-width:1280px;
 	margin:0 auto
 }
+.el-main {padding:0}
+.el-main > div {padding:20px}
+.el-menu.el-menu--horizontal {border:none}
 </style>
