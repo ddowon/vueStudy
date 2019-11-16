@@ -3,6 +3,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/ko'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -11,7 +12,7 @@ import store from './store'
 import router from './router'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 Vue.use(VueAxios, axios)
 
 new Vue({
