@@ -25,7 +25,7 @@ export default {
     this.pageTitle = (this.$route.meta.title) ? this.$route.meta.title : this.docTitle
   },
   watch: {
-    $route(to, from) {
+    $route( ) {
       document.title = (this.$route.meta.title) ? `${this.$route.meta.title} :: ${this.docTitle}` : this.docTitle
       this.pageTitle = (this.$route.meta.title) ? this.$route.meta.title : this.docTitle
     }

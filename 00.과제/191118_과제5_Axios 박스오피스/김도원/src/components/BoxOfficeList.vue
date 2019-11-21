@@ -1,10 +1,17 @@
   <template>
     <section class="boxOfficeMovieSection">
-      <h2 class="section-title">박스오피스<p class="lead">{{ `${year}.${month}.${date}` }}기준</p></h2>
+      <h2 class="section-title">박스오피스</h2>
+      <el-date-picker
+        v-model="targetDt"
+        type="date"
+        placeholder="Pick a day"
+        value-format="yyyyMMdd"
+        @change="fetchItems">
+      </el-date-picker>
       <template v-if="isLoading">
         <p>로딩중입니다.</p>
       </template>
-      <template v-else-if="rankList">
+      <template v-else-if="rankList.length && pagedList.length">
         <slick ref="slick" :options="slickOptions">
           <div class="movie-item" v-for="movie in rankList" :key="movie.movieNm">
           <a class="movie-item__image" :href="movie.naverLink" target="_blank">
@@ -18,21 +25,33 @@
           </div>
           </div>
         </slick>
-        <BoxofficeListItem :list="rankList"/>>
+        <BoxofficeListItem :list="pagedList"/>
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="pageOptions.total"
+          :page-size="pageOptions.itemPerPage"
+          :current-page="pageOptions.currentPage"
+          @current-change="changeCurrentPage">
+        </el-pagination>
       </template>
     </section>
   </template>
 
   <script>
+  import { format } from '@/utils/mixin'
+
   import BoxofficeListItem from '@/components/BoxOfficeListItem.vue'
   import Slick from 'vue-slick'
 
   export default {
     components: { BoxofficeListItem, Slick },
+    mixins: [ format ],
     data: () => ({
       rankList: null,
       isLoading: false,
       today: new Date(),
+      targetDt: '',
       slickOptions: {
         slidesToShow: 6,
         slidesToScroll: 6,
@@ -47,8 +66,12 @@
         draggable: true,
         edgeFriction: 0.30,
         swipe: true
+      },
+      pageOptions: {
+        itemPerPage: 5,
+        total: 0,
+        currentPage: 1
       }
-
     }),
     computed: {
       year() {
@@ -65,55 +88,100 @@
       },
       topRankList() {
         return this.rankList.fliter(item => item.rank < 4)
+      },
+      targetYear() {
+        return this.targetDt.substring(0, 4)
+      },
+      startNum() {
+        return (this.pageOptions.currentPage - 1) * this.pageOptions.itemPerPage
+      },
+      endNum() {
+        return this.pageOptions.currentPage * this.pageOptions.itemPerPage
+      },
+      pagedList() {
+        return this.rankList.slice(this.startNum, this.endNum)
       }
     },
     created() {
+      this.targetDt = `${this.year}${this.month}${this.date}`
       this.fetchItems()
     },
     methods: {
+      test() {
+        console.log(`선택한 날짜 : ${this.targetDt}`)
+      },
+      resetItems() {
+        console.log('없음')
+
+        this.isLoading = false
+        this.rankList = []
+        this.targetDt = `${this.year}${this.month}${this.date}` 
+        this.fetchItems()
+      },
+      changeCurrentPage(pageNum) {
+        console.log(`바뀌나?!${pageNum}`)
+
+        this.pageOptions.currentPage = pageNum
+
+      },
       fetchItems() {
+
+
+        console.log(`선택한 날짜 : ${this.targetDt}`)
+
         const KOBIS_API_KEY = '3549202564fc55c0fb1f6709f54aaeaf'
         const NAVER_API_CLIENT_ID = 'en2dK9JlGCsq365jNFUX'
         const NAVER_API_CLIENT_SECRET = 'Ahjy1Yy7Zx'
 
-        let yearfrom = this.year - 1 
-        let yearto = this.year + 1
-        let targetDt = `${this.year}${this.month}${this.date}`
+        let yearfrom = Number(this.targetYear) - 5
+        let yearto = Number(this.targetYear) + 1
         let promises = []
 
         this.isLoading = true
-        this.axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KOBIS_API_KEY}&targetDt=${targetDt}`)
+        this.axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KOBIS_API_KEY}&targetDt=${this.targetDt}`)
         .then((res) => {
 
-          console.log(targetDt)
           console.log(res)
           //서버로부터 정상적으로 응답이 왔을 때 실행
-        	this.rankList = res.data.boxOfficeResult.dailyBoxOfficeList
-          this.rankList.map((movie) => {
-            promises.push(
-              this.axios.get(`/api/v1/search/movie.json?query=${encodeURI(movie.movieNm)}&yearfrom=${yearfrom}&yearto=${yearto}&display=1&start=1`, {
-                headers: {
-                  'X-Naver-Client-Id': NAVER_API_CLIENT_ID,
-                  'X-Naver-Client-Secret': NAVER_API_CLIENT_SECRET
-                }
-              })
-            )
-          })
-          this.axios.all(promises)
-          .then(this.axios.spread((...args) => {
-            args.map((movie, idx) => {
-              this.rankList[idx].imgPath = movie.data.items[0].image || require(`@/assets/default.png`)
-              this.rankList[idx].naverLink = movie.data.items[0].link
-              this.rankList[idx].director = movie.data.items[0].actor
-              this.rankList[idx].userRating = movie.data.items[0].userRating
+
+          if (res.data.boxOfficeResult.dailyBoxOfficeList.length) {
+            
+            this.rankList = res.data.boxOfficeResult.dailyBoxOfficeList
+            this.pageOptions.total = this.rankList.length
+            this.rankList.map((movie) => {
+              promises.push(
+                this.axios.get(`/api/v1/search/movie.json?query=${encodeURI(movie.movieNm)}&yearfrom=${yearfrom}&yearto=${yearto}&display=1&start=1`, {
+                  headers: {
+                    'X-Naver-Client-Id': NAVER_API_CLIENT_ID,
+                    'X-Naver-Client-Secret': NAVER_API_CLIENT_SECRET
+                  }
+                })
+              )
             })
-            console.log('네이버 영화 이미지 데이터 박스오피스에 삽입 완료')
-            this.isLoading = false
-          }))
+            this.axios.all(promises)
+            .then(this.axios.spread((...args) => {
+              args.map((movie, idx) => {
+                this.rankList[idx].imgPath = movie.data.items[0].image || require(`@/assets/default.png`)
+                this.rankList[idx].naverLink = movie.data.items[0].link
+                this.rankList[idx].director = movie.data.items[0].director
+                this.rankList[idx].actor = movie.data.items[0].actor
+                this.rankList[idx].userRating = movie.data.items[0].userRating
+              })
+              console.log('네이버 영화 이미지 데이터 박스오피스에 삽입 완료')
+              this.isLoading = false
+            }))
+          } else {
+            this.$message.error({
+              message: '데이터가 없습니다',
+              duration: 1000
+            })
+            this.resetItems()
+            
+          }
         })
         .catch((err) => {
           // 서버로부터 응답이 정상적으로 처리되지 못했을 때 실행
-          console.log(err)
+          
         })
       },
       next() {
@@ -126,17 +194,6 @@
         this.$nextTick(() => {
           this.$refs.slick.reSlick()
         })
-      }
-    },
-    filters: {
-      formatNumber(val) {
-        if (!val) return ''
-        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-      },
-      formatStaff(val) {
-        if(!val) return ''
-        let str = val.split('|').join(', ')
-        return str.substring(0, (str.length - 2))
       }
     }
   }

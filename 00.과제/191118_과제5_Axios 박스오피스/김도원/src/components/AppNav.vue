@@ -29,7 +29,7 @@
       this.activeLink = this.$route.path
     },
     watch: {
-      $route(to, from){
+      $route(to){
         this.activeLink = to.path
       }
     }
