@@ -5,7 +5,7 @@ import boxOffice from './modules/boxOffice'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    modules: {
-        boxOffice
-    }
+	modules: {
+		boxOffice
+	}
 })

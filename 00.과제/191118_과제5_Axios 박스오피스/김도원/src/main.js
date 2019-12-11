@@ -9,20 +9,19 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import * as firebase from 'firebase/app'
-
+import { FB_CONFIG } from '@/constant'
 import App from './App.vue'
 import store from './store'
 import router from './router'
 
-
 const firebaseConfig = {
-	apiKey: "AIzaSyBD1v79hHSAY7dMkKvZzy92VUpCaKnHoL8",
-	authDomain: "movie-dowon.firebaseapp.com",
-	databaseURL: "https://movie-dowon.firebaseio.com",
-	projectId: "movie-dowon",
-	storageBucket: "movie-dowon.appspot.com",
-	messagingSenderId: "712326595834",
-	appId: "1:712326595834:web:fd178d5c551951b844b543"
+	apiKey: FB_CONFIG.API_KEY,
+	authDomain: FB_CONFIG.AUTH_DOMAIN,
+	databaseURL: FB_CONFIG.DATABASE_URL,
+	projectId: FB_CONFIG.PROJECT_ID,
+	storageBucket: FB_CONFIG.STORAGE_BUCKET,
+	messagingSenderId: FB_CONFIG.MESSAGING_SENDER_ID,
+	appId: FB_CONFIG.APP_ID
 }
 
 firebase.initializeApp(firebaseConfig)

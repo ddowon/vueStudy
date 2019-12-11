@@ -1,49 +1,47 @@
 <template>
-    <section class="boxOfficeMovieSection">
-     	<h2 class="section-title">박스오피스</h2>
+	<section class="boxOfficeMovieSection">
+	 	<h2 class="section-title">박스오피스</h2>
 		<input
 			placeholder="검색어를 입력하세요"
 			v-model="searchKeyword"
 			@keyup.enter="fetchItems">
-		</input>
-     	<template v-if="isLoading">
-    		<p>로딩중입니다.</p>
-      	</template>
-      	<template v-else-if="searchedList.length && pagedList.length">
-        	<BoxofficeListItem :list="pagedList"/>
-        	<el-pagination
-          	background
-          	layout="prev, pager, next"
-          	:total="pageOptions.total"
-          	:page-size="pageOptions.itemPerPage"
-          	:current-page="pageOptions.currentPage"
-          	@current-change="changeCurrentPage">
-        	</el-pagination>
-      	</template>
-    </section>
+		<template v-if="isLoading">
+			<p>로딩중입니다.</p>
+		</template>
+		<template v-else-if="searchedList.length && pagedList.length">
+		<BoxOfficeListItem :list="pagedList"/>
+		<el-pagination
+		background
+		layout="prev, pager, next"
+		:total="pageOptions.total"
+		:page-size="pageOptions.itemPerPage"
+		:current-page="pageOptions.currentPage"
+		@current-change="changeCurrentPage">
+		</el-pagination>
+		</template>
+	</section>
 </template>
 
 <script>
 import { format } from '@/utils/mixin'
-
-import BoxofficeListItem from '@/components/BoxOfficeListItem.vue'
+import BoxOfficeListItem from '@/components/BoxOfficeListItem.vue'
 
 export default {
-    components: { BoxofficeListItem },
-    mixins: [ format ],
-    data: () => ({
-      	isLoading: false,
-      	searchKeyword: '',
+	components: { BoxOfficeListItem },
+	mixins: [ format ],
+	data: () => ({
+		isLoading: false,
+		searchKeyword: '',
 		searchedList: [],
 		pageOptions: {
 			itemPerPage: 5,
 			total: 0,
 			currentPage: 1
 		}
-    }),
-    computed: {
-      	startNum() {
-        	return (this.pageOptions.currentPage - 1) * this.pageOptions.itemPerPage
+	}),
+	computed: {
+		startNum() {
+			return (this.pageOptions.currentPage - 1) * this.pageOptions.itemPerPage
 		},
 		endNum() {
 			return this.pageOptions.currentPage * this.pageOptions.itemPerPage
@@ -51,25 +49,20 @@ export default {
 		pagedList() {
 			return this.searchedList.slice(this.startNum, this.endNum)
 		}
-    },
-    created() {
+	},
+	created() {
 
-    },
-    methods: {
-
+	},
+	methods: {
 		resetItems() {
-
 			this.isLoading = false
 			this.searchedList = []
 			this.searchKeyword = ''
 		},
 		changeCurrentPage(pageNum) {
-
 			this.pageOptions.currentPage = pageNum
-
 		},
 		fetchItems() {
-
 			const KOBIS_API_KEY = '3549202564fc55c0fb1f6709f54aaeaf'
 			const NAVER_API_CLIENT_ID = 'en2dK9JlGCsq365jNFUX'
 			const NAVER_API_CLIENT_SECRET = 'Ahjy1Yy7Zx'
@@ -106,16 +99,13 @@ export default {
 								this.searchedList[idx].director = movie.data.items[0].director
 								this.searchedList[idx].actor = movie.data.items[0].actor
 								this.searchedList[idx].userRating = movie.data.items[0].userRating
-
 							} else {
 								this.searchedList[idx].imgPath = require(`@/assets/default.png`)
 								this.searchedList[idx].naverLink = 'https://movie.naver.com/'
 								this.searchedList[idx].director = ''
 								this.searchedList[idx].actor = ''
 								this.searchedList[idx].userRating = 0
-
 							}
-
 						})
 						this.isLoading = false
 					}))
@@ -125,7 +115,6 @@ export default {
 						duration: 1000
 					})
 					this.resetItems()
-					
 				}
 			})
 			.catch((err) => {

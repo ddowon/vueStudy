@@ -1,30 +1,30 @@
 <template>
 	<table class="tbl-list">
 		<thead>
-		<tr>
-			<th>순위</th>
-			<th>영화정보</th>
-			<th>일 관람객</th>
-			<th>누적 관람객</th>
-		</tr>
+			<tr>
+				<th>순위</th>
+				<th>영화정보</th>
+				<th>일 관람객</th>
+				<th>누적 관람객</th>
+			</tr>
 		</thead>
 		<tbody>
 			<tr v-for="movie in list" :key="movie.movieNm" :class="{ top: movie.rank < 4 }">
-				<td class="rank"> {{ movie.rank }} </td>
+				<td class="rank">{{ movie.rank }}</td>
 				<td class="info">
 					<img :src="movie.imgPath" :alt="movie.movieNm">
 					<span class="info-title">
-						{{movie.movieNm}}
+						{{ movie.movieNm }}
 						<span class="info-rating">
 							<span class="info-rating-star" :style="`width:${movie.userRating * 10}%`"></span>
-						</span> 
+						</span>
 					</span>
 					<span class="info-opendate">개봉: {{ movie.openDt }}</span>
 					<span class="info-director">감독: {{ movie.director | formatStaff }}</span>
 					<span class="info-actor">출연: {{ movie.actor | formatStaff }}</span>
 				</td>
 				<td class="daily_count">{{ movie.audiCnt | formatNumber }}</td>
-				<td class="total_count">{{ movie.audiCnt | formatNumber }}</td>
+				<td class="total_count">{{ movie.audiAcc | formatNumber }}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -32,7 +32,6 @@
 
 <script>
 import { format } from '@/utils/mixin'
-
 export default {
 	props: [ 'list' ],
 	mixins: [ format ]

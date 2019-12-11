@@ -4,9 +4,9 @@
 		:router="true"
 		:default-active="activeLink"
 		mode="horizontal"
-		background-color="#073862"
-		text-color="#fff"
-		active-text-color="#b5dc11"
+		background-color="#191919"
+		text-color="#ededed"
+		active-text-color="#eed52e"
 		>
 			<template v-for="rule in $router.options.routes">
 				<template v-if="rule.meta.useMenu != false">  
@@ -27,13 +27,15 @@ export default {
 		this.activeLink = this.$route.path
 	},
 	watch: {
-		$route(to){
+		$route(to) {
 			this.activeLink = to.path
 		}
 	}
 }
-
 </script>
+
 <style scoped>
+	#nav {font-size:0;background-color:#191919}
+	.el-menu {text-align:center}
+	.el-menu--horizontal>.el-menu-item {float:none;display:inline-block}
 </style>
-  

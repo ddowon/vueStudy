@@ -1,19 +1,19 @@
 <template>
-<div class="login">
-	<h1>{{ pageTitle }}</h1>
-	<div id="firebaseui-auth-container">
-		<template v-if="user">
-			<img :src="user.photoURL" />
-			<p>이름: {{ user.displayName }}</p>
-			<p>이메일: {{ user.email }}</p>
-			<p>uid: {{ user.uid }}</p>
-			<p>로그인 방법: {{ user.providerData[0].providerId }}</p>
-			<div class="btn_logout">
-				<button type="button" @click="handleSignoutPressed">로그아웃</button>
-			</div>
-		</template>
+	<div class="login">
+		<h1>{{ pageTitle }}</h1>
+		<div id="firebaseui-auth-container">
+			<template v-if="user">
+				<img :src="user.photoURL" />
+				<p>이름: {{ user.displayName }}</p>
+				<p>이메일: {{ user.email }}</p>
+				<p>uid: {{ user.uid }}</p>
+				<p>로그인 방법: {{ user.providerData[0].providerId }}</p>
+				<div class="btn_logout">
+					<button type="button" @click="handleSignoutPressed">로그아웃</button>
+				</div>
+			</template>
+		</div>
 	</div>
-</div>
 </template>
 
 <script>
@@ -23,11 +23,10 @@ import 'firebaseui/dist/firebaseui.css'
 
 export default {
 	props: ['pageTitle'],
-	data: ()=>({
+	data: () => ({
 		user: null
-
 	}),
-	created(){
+	created() {
 		console.log('로그인??')
 		firebase.auth().onAuthStateChanged((user) => {
 			if (user) {
@@ -36,7 +35,6 @@ export default {
 				this.initFireBaseUI()
 			}
 		})
-
 	},
 	methods: {
 		initFireBaseUI() {
