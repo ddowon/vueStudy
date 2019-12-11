@@ -1,11 +1,11 @@
 <template>
-  	<BoxOfficeList/>
+	<UserViewList />
 </template>
 <script>
-import BoxOfficeList from '@/components/BoxOfficeList.vue'
+import UserViewList from '@/components/UserViewList.vue'
 export default {
 	components: {
-		BoxOfficeList
+		UserViewList
 	}
 }
 </script>

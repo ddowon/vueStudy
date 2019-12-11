@@ -2,40 +2,36 @@
 	<table class="tbl-list">
 		<thead>
 		<tr>
-			<th>순위</th>
-			<th>영화정보</th>
-			<th>일 관람객</th>
-			<th>누적 관람객</th>
+			<th>날짜</th>
+			<th>프로젝트</th>
+			<th>스펙/제목</th>
+			<th>진행</th>
+			<th>사업</th>
+			<th>디자인</th>
+			<th>UI</th>
+			<th>개발</th>
 		</tr>
 		</thead>
 		<tbody>
-			<tr v-for="movie in list" :key="movie.movieNm" :class="{ top: movie.rank < 4 }">
-				<td class="rank"> {{ movie.rank }} </td>
-				<td class="info">
-					<img :src="movie.imgPath" :alt="movie.movieNm">
-					<span class="info-title">
-						{{movie.movieNm}}
-						<span class="info-rating">
-							<span class="info-rating-star" :style="`width:${movie.userRating * 10}%`"></span>
-						</span> 
-					</span>
-					<span class="info-opendate">개봉: {{ movie.openDt }}</span>
-					<span class="info-director">감독: {{ movie.director | formatStaff }}</span>
-					<span class="info-actor">출연: {{ movie.actor | formatStaff }}</span>
-				</td>
-				<td class="daily_count">{{ movie.audiCnt | formatNumber }}</td>
-				<td class="total_count">{{ movie.audiCnt | formatNumber }}</td>
+			<tr v-for="item in list" :key="item.name">
+				<td>{{ item.open }}</td>
+				<td>{{ item.gameName }}</td>
+				<td>`{{ item.spec }}{{ item.subject }}`</td>
+				<td>{{ item.status }}</td>
+				<td>{{ item.business }}</td>
+				<td>{{ item.design }}</td>
+				<td>{{ item.ui }}</td>
+				<td>{{ item.dev }}</td>
 			</tr>
 		</tbody>
 	</table>
 </template>
 
 <script>
-import { format } from '@/utils/mixin'
 
 export default {
 	props: [ 'list' ],
-	mixins: [ format ]
+	
 }
 </script>
 

@@ -1,11 +1,11 @@
 <template>
-  	<BoxOfficeList/>
+	<SearchedList/>
 </template>
 <script>
-import BoxOfficeList from '@/components/BoxOfficeList.vue'
+import SearchedList from '@/components/SearchedList.vue'
 export default {
 	components: {
-		BoxOfficeList
+		SearchedList
 	}
 }
 </script>

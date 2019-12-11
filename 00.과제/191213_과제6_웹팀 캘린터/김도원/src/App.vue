@@ -1,10 +1,10 @@
 <template>
-  	<div id="app">
-    	<AppNav/>
-    	<el-main>
-      		<router-view :page-title="pageTitle"/>
-    	</el-main>
- 	</div>
+	<div id="app">
+		<AppNav/>
+		<el-main>
+			<router-view :page-title="pageTitle"/>
+		</el-main>
+	</div>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 		this.pageTitle = (this.$route.meta.title) ? this.$route.meta.title : this.docTitle
 		}
 	}
-  
+
 }
 </script>
 
