@@ -7,7 +7,7 @@
 	<template v-else-if="rankList">
 		<BoxOfficeDatepicker :date="targetDate ? targetDate : `${year}-${month}-${date}`" @change="changeDate" />
 		<slick ref="slick" :options="slickOptions">
-			<div class="movie-item" v-for="movie in rankList" :key="movie.movieNm">
+			<div class="movie-item" v-for="movie in topRankList(3)" :key="movie.movieNm">
 				<a class="movie-item__image" :href="movie.naverLink" target="_blank">
 					<span class="movie-item__image-rank" :class="{ top: movie.rank < 4 }">{{ movie.rank }}</span>
 					<img :src="movie.imgPath" :alt="movie.movieNm" class="image-cover">
@@ -26,12 +26,13 @@
 </template>
 
 <script>
-import { API } from '@/constant'
+
 import { format } from '@/utils/mixin'
 import BoxOfficeDatepicker from '@/components/BoxOfficeDatepicker.vue'
 import BoxOfficeListItem from '@/components/BoxOfficeListItem.vue'
 import BoxOfficeListPagination from '@/components/BoxOfficeListPagination.vue'
 import Slick from 'vue-slick'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
 	components: {
@@ -42,15 +43,6 @@ export default {
 	},
 	mixins: [ format ],
 	data: () => ({
-		rankList: null,
-		isLoading: false,
-		today: new Date(),
-		targetDate: '',
-		pageOptions: {
-			totalCount: 0,
-			itemPerPage: 5,
-			currentPage: 1
-		},
 		slickOptions: {
 			slidesToShow: 6,
 			slidesToScroll: 6,
@@ -68,24 +60,12 @@ export default {
 		}
 	}),
 	computed: {
-		year() {
-			return this.today.getFullYear()
-		},
-		month() {
-			let month = this.today.getMonth() + 1
-			return (month < 10) ? `0${month}` : month
-
-		},
-		date() {
-			let date = this.today.getDate() - 1
-			return (date < 10) ? `0${date}` : date
-		},
-		topRankList() {
-			return this.rankList.fliter(item => item.rank < 4)
-		},
-		targetYear() {
-			return this.targetDt.substring(0, 4)
-		},
+		...mapState('boxOffice', [
+			'today', 'targetDate', 'rankList', 'isLoading', 'pageOptions'
+		]),
+		...mapGetters('boxOffice', [
+			'year', 'month', 'date', 'topRankList','targetYear'
+		]),
 		startNum() {
 			return (this.pageOptions.currentPage - 1) * this.pageOptions.itemPerPage
 		},
@@ -101,69 +81,9 @@ export default {
 		this.fetchItems()
 	},
 	methods: {
-		changeDate(date) {
-			this.targetDate = date
-			this.fetchItems()
-		},
-		changeCurrentPage(currentPage) {
-			this.pageOptions.currentPage = currentPage
-		},
-		resetItems() {
-			this.targetDate = ''
-			this.rankList = null
-			this.$message({
-				message: '해당 일자의 데이터가 존재하지 않아 가장 최근 데이터를 다시 불러옵니다.',
-				type: 'error',
-				offset: 50,
-				duration: 2000,
-				onClose: this.fetchItems()
-			})
-		},
-		fetchItems() {
-			let targetDt = (this.targetDate) ? this.targetDate.replace(/[^0-9]/g, '') : `${this.year}${this.month}${this.date}`
-			let promises = []
-
-			this.isLoading = true
-			this.axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${API.KOBIS_KEY}&targetDt=${targetDt}`)
-			.then((res) => {
-				// 서버로부터 정상적으로 응답이 왔을 때 실행
-				if (res.data.boxOfficeResult.dailyBoxOfficeList.length) {
-					this.rankList = res.data.boxOfficeResult.dailyBoxOfficeList
-					this.rankList.map((movie) => {
-						let yearfrom = (movie.openDt && movie.openDt.trim() != '') ? movie.openDt.substr(0, 4) - 5 : this.year
-						let yearto = (movie.openDt && movie.openDt.trim() != '') ? movie.openDt.substr(0, 4) : this.year
-						promises.push(
-							this.axios.get(`/api/v1/search/movie.json?query=${encodeURI(movie.movieNm)}&yearfrom=${yearfrom}&yearto=${yearto}&display=1&start=1`, {
-								headers: {
-									'X-Naver-Client-Id': API.NAVER_CLIENT_ID,
-									'X-Naver-Client-Secret': API.NAVER_CLIENT_SECRET
-								}
-							})
-						);
-					})
-					this.axios.all(promises)
-					.then(this.axios.spread((...args) => {
-						args.map((movie, idx) => {
-							this.rankList[idx].imgPath = movie.data.items[0].image || require(`@/assets/default.png`)
-							this.rankList[idx].naverLink = movie.data.items[0].link
-							this.rankList[idx].director = movie.data.items[0].director
-							this.rankList[idx].actor = movie.data.items[0].actor
-							this.rankList[idx].userRating = movie.data.items[0].userRating
-						})
-						console.log('네이버 영화 이미지 데이터 박스오피스에 삽입 완료')
-						this.pageOptions.totalCount = this.rankList.length
-						this.isLoading = false
-					}))
-				} else {
-					this.resetItems()
-				}
-			})
-			.catch((err) => {
-				// 서버로부터 응답이 정상적으로 처리되지 못했을 때 실행
-				this.resetItems()
-				console.log(err)
-			})
-		},
+		...mapActions('boxOffice', [
+			'fetchItems', 'changeDate', 'changeCurrentPage'
+		]),
 		next() {
 			this.$refs.slick.next()
 		},
