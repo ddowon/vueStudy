@@ -4,6 +4,16 @@ const API = Object.freeze({
 	NAVER_CLIENT_SECRET: 'Ahjy1Yy7Zx'
 })
 
+const FIREBASE_UI = Object.freeze({
+	API_KEY: 'AIzaSyBFqLjVDV8G2b0pPRoZmapBfzcVdOC7juQ',
+	PROJECT_ID: 'movie-boxoffice',
+	AUTH_DOMAIN: 'movie-boxoffice.firebaseapp.com',
+	DATABASE_URL: 'https://movie-boxoffice.firebaseio.com',
+	STORAGE_BUCKET: 'movie-boxoffice.appspot.com',
+	MESSAGING_SENDER_ID: '482278849008'
+})
+
 export {
-	API
+	API,
+	FIREBASE_UI
 }

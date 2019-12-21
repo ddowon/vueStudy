@@ -18,7 +18,7 @@ export default {
 	},
 	methods: {
 		changeDate() {
-			this.$emit('change', this.pickDate)
+			this.$store.dispatch('boxOffice/changeDate', this.pickDate)
 		}
 	}
 }

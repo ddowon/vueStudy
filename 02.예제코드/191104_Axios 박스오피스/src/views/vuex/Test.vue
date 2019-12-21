@@ -13,7 +13,7 @@
 import { mapState, mapMutations, mapGetters, mapActions } from 'vuex'
 
 export default {
-	props: ['pageTitle'],
+	props: [ 'pageTitle' ],
 	data: () => ({
 		num: 1
 	}),

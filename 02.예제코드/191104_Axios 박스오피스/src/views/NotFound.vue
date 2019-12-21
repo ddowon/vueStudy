@@ -8,7 +8,7 @@
 
 <script>
 export default {
-	props: ['pageTitle'],
+	props: [ 'pageTitle' ],
 	data: () => ({
 		count: 3,
 		interval: null

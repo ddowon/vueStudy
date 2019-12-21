@@ -35,8 +35,8 @@ export default {
 
 <style scoped>
 section {
-    padding: 1.25rem;
-    border-radius: .25rem;
+	padding: 1.25rem;
+	border-radius: .25rem;
 }
 .btns {
 	overflow:hidden;
@@ -51,7 +51,7 @@ section {
 	color: #fff;
 	border:0;outline:0;border-radius:5px;
 	background-color: #11cdef;
-    border-color: #11cdef;
+	border-color: #11cdef;
 	box-shadow:0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 	cursor:pointer;
 }

@@ -15,7 +15,7 @@ export default {
 	components: {
 		AppSubNav
 	},
-	props: ['pageTitle']
+	props: [ 'pageTitle' ]
 }
 </script>
 
