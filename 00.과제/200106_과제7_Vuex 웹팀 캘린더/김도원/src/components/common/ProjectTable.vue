@@ -22,7 +22,7 @@
 				<col width="75">
 				<col width="75">
 			</colgroup>
-			<template v-for="(job, index) in getList">
+			<template v-for="(job, index) in pagedList">
 				<template v-if="!isSameDate(index)">
 					<tr class="divider" :class="{ 'no_height': index == 0 }"><th colspan="8"></th></tr>
 					<tr class="theader" :key="index">
@@ -48,20 +48,27 @@
 				</tr>
 			</template>
 		</table>
+		<Pagination :item-per-page="pageOptions.itemPerPage" @change="changeCurrentPage" :total="total"/>
 	</div>
 </template>
 
 <script>
+import Pagination from '@/components/common/Pagination.vue'
 import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
 	props: {
 		list: Array
 	},
+	components: {
+		Pagination,
+	},
 	data: () => ({
-		filterList: []
+		filterList: [],
+		
 	}),
 	computed: {
-		...mapState('calendar', [
+		...mapState('report', [
+			'pageOptions'
 		]),
 		startNum() {
 			return (this.pageOptions.currentPage - 1) * this.pageOptions.itemPerPage
@@ -70,13 +77,16 @@ export default {
 			return this.pageOptions.currentPage * this.pageOptions.itemPerPage
 		},
 		pagedList() {
-			return this.rankList.slice(this.startNum, this.endNum)
+			return this.filterList.slice(this.startNum, this.endNum)
 		},
 		getList() {
 			if(!this.filterList.length){
 				this.filterList = this.list
 			}
 			return this.filterList
+		},
+		total() {
+			return this.pageOptions.totalCount = this.getList.length
 		}
 	},
 	methods: {
@@ -98,6 +108,9 @@ export default {
 			} else {
 				this.filterList = this.list.filter(item => item.gameName.includes(val))
 			}
+		},
+		changeCurrentPage(currentPage) {
+			this.pageOptions.currentPage = currentPage
 		}
 	},
 	filters: {
