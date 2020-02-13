@@ -1,0 +1,88 @@
+@charset "UTF-8";
+@import url(http://js.nx.com/s3/closers/common/fonts.css);
+$folder-path: '~@/assets';
+
+/* Styles
+-------------------------------------------------------------- */
+html, body {width:100%;min-width:1340px;background:#1b1818}
+button {border:0 none;background-color:transparent;cursor:pointer}
+button:focus, a:focus {outline:0}
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {border-radius:0;-webkit-appearance:button}
+
+#app, #wrap, #contents {position:relative;min-width:1340px;margin:0 auto}
+#contents {overflow:hidden;max-width:1920px}
+
+.loader {z-index:190;position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000}
+.inner {position:relative;width:1280px;height:100%;margin:0 auto}
+.inner:after {content:'';display:block;clear:both}
+.layerPop .confirm button,
+.layerPop .close button,
+.ir {display:block;overflow:hidden;text-indent:-9999px;font-size:0 !important}
+
+
+.ani {position:absolute;text-indent:-9999px;font-size:0;line-height:0;background-repeat:no-repeat;background-position:0 0;z-index:3}
+.section {overflow:hidden;position:relative;display:block;width:100%}
+
+#sec1 {
+	height:2000px;background:url(#{$folder-path}/contents/img_cont1_3.jpg) no-repeat 50% 0;
+	.a1 {top:143px;left:480px;width:22px;height:21px;background-image:url(#{$folder-path}/visual/a1.png);animation:updown 800ms ease-in-out infinite}
+	.a2 {top:143px;left:880px;width:22px;height:21px;background-image:url(#{$folder-path}/visual/a1.png);animation:updown 800ms 400ms ease-in-out infinite}
+	.c1 {opacity:0;top:458px;left:-188px;width:365px;height:571px;background-image:url(#{$folder-path}/visual/c1.png)}
+	.c2 {opacity:0;top:499px;left:1099px;width:348px;height:525px;background-image:url(#{$folder-path}/visual/c2.png)}
+	.ytb_wrap {
+		position:absolute;top:417px;left:168px;z-index:1;
+		.ytb {
+			opacity:0;width:943px;height:530px;z-index:8;transform:scale(0.8);transition:all ease 400ms;
+			iframe {display:block;width:100%;height:100%}
+			&.active {opacity:1;transform:scale(1);z-index:11}
+		}
+		.btn_play {
+			top:0;left:0;width:100%;height:100%;z-index:10;animation:blink 1s linear infinite;
+			a {width:132px;height:175px;margin:177px auto 0;background:url(#{$folder-path}/btns/btn_play.png) no-repeat 0 0}
+		}
+	}
+}
+
+#sec2 {
+	height:1950px;background:url(#{$folder-path}/contents/img_cont2_3.jpg) no-repeat 50% 0;
+	.btn_showItemMore {
+		top:644px;left:973px;
+		a {width:197px;height:38px;background:url(#{$folder-path}/btns/btn_showItemMore.png) no-repeat 0 0;cursor:help}
+		.ir {background:url(#{$folder-path}/btns/btn_showItemMore_on.png) no-repeat 0 0}
+		.tooltip {opacity:0;position:absolute;display:block;top:-172px;left:-72px;width:339px;height:165px;background:url(#{$folder-path}/popup/pop_autoUseItem.png) no-repeat 0 0}
+		a:hover + .tooltip {opacity:1}
+	}
+}
+
+#sec3 {
+	height:1900px;background:url(#{$folder-path}/contents/img_cont3_3.jpg) no-repeat 50% 0;
+	.btn_goPetNotice {
+		top:813px;left:737px;
+		a {width:377px;height:105px;background:url(#{$folder-path}/btns/btn_goPetNotice.png) no-repeat 0 0}
+		.ir {background:url(#{$folder-path}/btns/btn_goPetNotice_on.png) no-repeat 0 0}
+	}
+	.btn_goEvent {
+		top:1407px;left:818px;
+		&:before {position:absolute;display:block;content:'';top:-30px;left:125px;width:60px;height:68px;background:url(#{$folder-path}/btns/btn_goEvent_before.png) no-repeat 0 0;z-index:11}
+		&:after {position:absolute;display:block;content:'';top:4px;left:185px;width:84px;height:178px;background:url(#{$folder-path}/btns/btn_goEvent_after.png) no-repeat 0 0;z-index:11}
+		a {width:230px;height:231px;background:url(#{$folder-path}/btns/btn_goEvent.png) no-repeat 0 0}
+		.ir {background:url(#{$folder-path}/btns/btn_goEvent_on.png) no-repeat 0 0}
+	}
+}
+
+/* Buttons */
+[class^="btn_"] {position:absolute;z-index:10}
+[class^="btn_"], [class^="btn_"] a, [class^="btn_"] .ir {display:block}
+[class^="btn_"] .ir {opacity:0;position:absolute;top:0;left:0;width:100%;height:100%}
+[class^="btn_"] a:hover .ir {opacity:1}
+
+/* Trnasitions */
+[class^="btn_"] .ir, .tooltip {display:table;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease}
+
+/* Animations */
+@keyframes updown { 0%, 100% { transform:translateY(3px) } 50% { transform:translateY(-5px) } }
+@keyframes blink { 0%, 100% { opacity: 0.6; transform:translateY(3px) } 50% { opacity: 1; transform:translateY(-5px) } }
+
+/* ETC Styling */
+#PS_Dimmed {position:fixed !important}
+iframe[name='google_conversion_frame'] {width:1px;height:1px;font-size:0;line-height:0;position:absolute;top:0;left:-1000%;overflow:hidden}
