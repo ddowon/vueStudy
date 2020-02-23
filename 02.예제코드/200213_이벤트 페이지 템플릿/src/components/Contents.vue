@@ -23,7 +23,7 @@
 					<a href="#pop_imgSlider" @click.prevent="showModal('pop_imgSlider')"><span class="ir">종이학 자세히 보기</span></a>
 				</div>
 
-				<!-- <Note id="note1" :item="notes[0]" v-if="notes[0]" /> -->
+				<Note id="note1" :item="notes[0]" v-if="notes[0]" />
 			</div>
 		</div>
 		<div id="sec2" class="section">
@@ -37,7 +37,7 @@
 					<a href="#" @click.prevent=""><span class="ir">자동 사용 가능 아이템 자세히 보기</span></a>
 					<span class="tooltip"></span>
 				</div>
-				<!-- <Note id="note2" :item="notes[1]" v-if="notes[1]" /> -->
+				<Note id="note2" :item="notes[1]" v-if="notes[1]" />
 			</div>
 		</div>
 		<div id="sec3" class="section">
@@ -85,6 +85,14 @@
 			<div class="pop_cont cont2" :class="{'active': sliderTab === 'tab2'}"><p class="blind">종이학 자세히 보기</p></div>
 		</template>
 	</Modal>
+	<Modal id="pop_dialog">
+		<template v-slot:body>
+			<p class="text">{{ msg }}</p>
+		</template>
+		<template v-slot:footer>
+			<button type="button" class="modal-btn-ok" @click="closeModal('pop_dialog')">확인</button>
+		</template>
+	</Modal>
 	<transition name="fade">
 	<div v-if="modal.order.length" class="modal-bg"></div>
 	</transition>
@@ -92,7 +100,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import { gsap } from 'gsap'
 import Note from '@/components/common/Note.vue'
 import Modal from '@/components/common/Modal.vue'
@@ -109,26 +117,22 @@ export default {
 		videoId: '0CjLv3XfLTc'
 	}),
 	computed: {
-		...mapState('event', [
-			'eventInfo', 'notes'
+		...mapGetters('event', [
+			'info', 'notes', 'msg'
 		]),
 		...mapState('ui', [
 			'modal'
 		])
 	},
-	created() {
-		// this.fetchEventInfo('17')
-	},
 	mounted() {
 		this.$nextTick(() => {
 			this.handleLoader()
 			setTimeout(this.playVisualAnimation, 300)
-
 		})
 	},
 	methods: {
 		...mapActions('event', [
-			'fetchEventInfo'
+			'fetchEventInfo', 'fetchEventAttentions'
 		]),
 		...mapActions('ui', [
 			'showModal', 'closeModal'
@@ -137,6 +141,10 @@ export default {
 			gsap.to('#wrap .loader', { delay: 0.3, duration: 0.6, opacity: 0, ease: 'sine.in',
 				onComplete: (e) => {
 					this.isPageLoaded = true
+					// 테스트용으로 여기에 넣어 봄
+					if (this.notes.length === 0) {
+						this.fetchEventAttentions('17')
+					}
 				} 
 			})
 		},
