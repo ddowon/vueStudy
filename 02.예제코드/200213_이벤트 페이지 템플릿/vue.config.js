@@ -1,6 +1,6 @@
 const devMode = process.env.NODE_ENV !== 'production'
 const path = require('path')
-const EV_CONFIG = require('./src/eventConfig.js')
+const EV_CONFIG = require('./src/config/event.config.js')
 const TextReplaceHtmlWebpackPlugin = require('text-replace-html-webpack-plugin')
 
 module.exports = {
@@ -9,6 +9,7 @@ module.exports = {
 	filenameHashing: false,
 	productionSourceMap: false,
 	configureWebpack: {
+		devtool: 'source-map',
 		output: {
 			filename: EV_CONFIG.fileName.js
 		},
@@ -19,6 +20,18 @@ module.exports = {
 	css: {
 		extract: true
 	},
+	devServer: {
+		proxy: {
+			'/api': {
+				target: EV_CONFIG.api.proxyTarget,
+				changeOrigin: true,
+				pathRewrite: {
+					'^/api': ''
+				}
+			}
+		}
+	},
+
 	chainWebpack: config => {
 		const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
 		types.forEach(type =>
@@ -46,7 +59,7 @@ module.exports = {
 				fallback: {
 					loader: 'file-loader',
 					options: {
-						publicPath: (devMode) ? '' : EV_CONFIG.filePath.image,
+						publicPath: (devMode) ? `${EV_CONFIG.folderName}` : EV_CONFIG.filePath.image,
 						outputPath: EV_CONFIG.folderName,
 						name: '[folder]/[name].[ext]'
 					}

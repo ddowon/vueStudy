@@ -4,7 +4,7 @@ $folder-path: '~@/assets';
 
 /* Styles
 -------------------------------------------------------------- */
-html, body {width:100%;min-width:1340px;background:#1b1818}
+html, body {min-width:1340px;background:#1b1818}
 button {border:0 none;background-color:transparent;cursor:pointer}
 button:focus, a:focus {outline:0}
 button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {border-radius:0;-webkit-appearance:button}
@@ -69,6 +69,52 @@ button, input[type='button'], input[type='submit'], input[type='reset'], input[t
 		.ir {background:url(#{$folder-path}/btns/btn_goEvent_on.png) no-repeat 0 0}
 	}
 }
+
+#note1 {
+	top:1120px;
+	ul > li:before {background:url('http://s.nx.com/s2/game/sky/event/200130_skyday_11i25/contents/ico_note1.png') no-repeat 0 0}
+}
+
+#note2 {
+	top:1377px;
+	ul > li:before {background:url('http://s.nx.com/s2/game/sky/event/200130_skyday_11i25/contents/ico_note1.png') no-repeat 0 0}
+	li {margin-bottom:5.5px}
+	li, p {color:#98dacc}
+	strong {color:#d6ecae}
+}
+
+#pop_imgSlider .modal-body {position:relative;width:1120px;height:665px;margin:0 auto 40px}
+#pop_imgSlider .modal-body .pop_tab {position:absolute;top:5px;left:236px;overflow:hidden;z-index:5}
+#pop_imgSlider .modal-body .pop_tab > li {display:block;float:left}
+#pop_imgSlider .modal-body .pop_tab > li a {display:block;width:324px;height:68px}
+#pop_imgSlider .modal-body .pop_tab > li.tab1 a {background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_slider1.png') no-repeat 0 0}
+#pop_imgSlider .modal-body .pop_tab > li.tab1 a .ir {background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_slider1_on.png') no-repeat 0 0}
+#pop_imgSlider .modal-body .pop_tab > li.tab2 a {background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_slider2.png') no-repeat 0 0}
+#pop_imgSlider .modal-body .pop_tab > li.tab2 a .ir {background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_slider2_on.png') no-repeat 0 0}
+#pop_imgSlider .modal-body .pop_cont {opacity:0;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;transition:opacity 400ms ease}
+#pop_imgSlider .modal-body .pop_cont.active {opacity:1;z-index:3}
+#pop_imgSlider .modal-body .pop_cont:nth-child(2) {background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/popup/img_slider1.png') no-repeat 0 0}
+#pop_imgSlider .modal-body .pop_cont:nth-child(3) {background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/popup/img_slider2.png') no-repeat 0 0}
+
+#pop_selectCharacter .modal-body {position:relative;width:580px;height:416px;margin:0 auto 40px;background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/popup/pop_selectItem2.png') no-repeat 0 0}
+#pop_selectCharacter select {position:absolute;left:66px;width:448px;height:46px;padding:0 10px;line-height:46px;font-size:16px;color:#fff;text-align:center;border:none}
+#pop_selectCharacter select.select1 {top:134px;background-color:#9894cf}
+#pop_selectCharacter select.select2 {top:188px;background-color:#b7b6c1}
+#pop_selectCharacter select.select3 {top:242px;background-color:#b7b6c1}
+#pop_selectCharacter .modal-btn-ok {bottom:33px;left:50%;width:254px;height:64px;margin-left:-127px;background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_ok.png') no-repeat 0 0}
+
+#pop_confirm .modal-body {position:relative;width:493px;height:349px;margin:0 auto 40px;background:url('http://s.nx.com/s2/game/sky/event/common/img_layer_item2.png') no-repeat 0 0}
+#pop_confirm .modal-btn-close {top:0;width:20px;height:20px;background:none}
+#pop_confirm .modal-btn-ok {top:270px;left:175px;width:142px;height:54px}
+
+.btn_showSlider1 {top:159px;left:909px}
+.btn_showSlider1 a {width:24px;height:24px;background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_showImg.png') no-repeat 0 0}
+.btn_showSlider2 {top:159px;left:1038px}
+.btn_showSlider2 a {width:24px;height:24px;background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_showImg.png') no-repeat 0 0}
+.btn_showSlider3 {top:159px;left:1138px}
+.btn_showSlider3 a {width:24px;height:24px;background:url('http://s.nx.com/s2/game/sky/event/200206_vtday_11i15/btns/btn_showImg.png') no-repeat 0 0}
+
+#pop_selectCharacter .modal-btn-ok.ok2 {left:600px}
 
 /* Buttons */
 [class^="btn_"] {position:absolute;z-index:10}

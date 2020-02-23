@@ -13,7 +13,7 @@
 		<div class="slideArea">
 			<div class="mask">
 				<ul v-if="bannerList.length" class="evLink clearFix">
-					<li v-for="(item, idx) in bannerList" :key="idx" :class="{ 'on': windowLocationHref.indexOf(item.link.split('?')[0]) > -1 }">
+					<li v-for="(item, idx) in bannerList" :key="idx" :class="{ 'on': windowLocationHref.includes(item.link.split('?')[0].trim()) }">
 						<a :href="item.link" :class="`m${idx}`" :data-idx="idx"><img :src="item.bg" :id="`gtmClickEvent_TopArea_Navi_${idx}`" class="gtmClickEventBanner"></a>
 					</li>
 				</ul>
