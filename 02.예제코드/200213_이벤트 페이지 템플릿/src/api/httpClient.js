@@ -3,6 +3,8 @@ import { cacheAdapterEnhancer, throttleAdapterEnhancer } from 'axios-extensions'
 import { api } from '@/config/event.config'
 // import appLocalStorage from '@/utils/storage'
 
+const devMode = process.env.NODE_ENV !== 'production'
+
 const cacheConfig = {
 	enabledByDefault: false, 
 	cacheFlag: 'useCache'
@@ -15,7 +17,7 @@ const throttleConfig = {
 // 지금은 webmw의 URL을 기본으로 사용
 // 먼 훗날 개발 이벤트 페이지 작업 시 두 개의 axios request 생성 필요
 const config = {
-	baseURL: api.webmvURL,
+	baseURL: (devMode) ? '' : api.webmvURL,
 	timeout: 3000,
 	headers: {
 		'Content-Type': 'application/json',
@@ -45,18 +47,20 @@ const responseInterceptor = (response) => {
 }
 
 const errorInterceptor = (error) => {
-	switch (error.response.status) {
-		case 400:
-			console.error(error.response.status, error.message)
-			break
-
-		case 401:
-			// 먼 훗날 인증 토큰을 사용하게 될 때를 대비
-			// appLocalStorage.removeItem('authToken')
-			break
-
-		default:
-			console.error(error.response.status, error.message)
+	if (error.response.status) {
+		switch (error.response.status) {
+			case 400:
+				console.error(error.response.status, error.message)
+				break
+	
+			case 401:
+				// 먼 훗날 인증 토큰을 사용하게 될 때를 대비
+				// appLocalStorage.removeItem('authToken')
+				break
+	
+			default:
+				console.error(error.response.status, error.message)
+		}
 	}
 	return Promise.reject(error)
 }

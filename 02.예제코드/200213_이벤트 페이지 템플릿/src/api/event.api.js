@@ -1,11 +1,10 @@
 import client from '@/api/httpClient'
 
-const END_POINT = '/api/page/total'
+const END_POINT = '/api/page'
 
-const getEventInfo = (eventId) => client.get(`${END_POINT}/${eventId}`)
+const getEventInfo = (eventId) => client.get(`${END_POINT}/total/${eventId}`)
 
-// TODO: 유의사항만 가져오는 API 경로가 뭐였지... 사무실에서 swagger 확인하기
-const getAllEventAttentions = (eventId) => client.get(`${END_POINT}/${eventId}`)
+const getAllEventAttentions = (eventId) => client.get(`${END_POINT}/attention/${eventId}`)
 
 export {
 	getEventInfo,

@@ -23,11 +23,8 @@ module.exports = {
 	devServer: {
 		proxy: {
 			'/api': {
-				target: EV_CONFIG.api.proxyTarget,
-				changeOrigin: true,
-				pathRewrite: {
-					'^/api': ''
-				}
+				target: EV_CONFIG.api.webmvURL,
+				changeOrigin: true
 			}
 		}
 	},

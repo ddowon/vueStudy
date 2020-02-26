@@ -1,6 +1,5 @@
 const api = {
-	webmvURL: process.env.VUE_APP_API_WEBMV_URL,
-	proxyTarget: process.env.VUE_APP_API_WEBMV_URL
+	webmvURL: process.env.VUE_APP_API_WEBMV_URL
 }
 const commonPath = {
 	js: 'http://js.nx.com/s1/closers/event/2020/',

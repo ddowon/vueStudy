@@ -13,7 +13,7 @@ const mutations = {
 		state.event.info = info
 	},
 	SET_EVENT_ATTENTIONS(state, attentions) {
-		state.event.notes = attentions
+		state.event.notes = attentions.map((note) => note.strHTMLDesc)
 	},
 	SET_EVENT_MESSAGE(state, msg) {
 		state.event.msg = msg
