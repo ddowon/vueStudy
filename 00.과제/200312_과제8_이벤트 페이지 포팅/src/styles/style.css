@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+/*!
+ * 창해의 로망스 코스튬 Stylesheet
+ * http://closers.nexon.com
+ */
+
+/* Styles
+-------------------------------------------------------------- */
+body, html {width:100%;height:100%;background:#629ac1;min-width:1280px;}
+body, input, button, textarea, select, table{line-height:1.2;font-family:'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size:14px;color:#555;}
+ol, ul{list-style:none;}
+/* #wrap .btn {cursor:default;} */
+/* 공통 */
+.loader {z-index:500;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:1;transition:all 0.5s}
+#wrap {margin:0 auto;position:relative;width:calc(100% - 0.5px);min-width:1280px;max-width:1920px;height:2330px;background:url(../assets/bg/bg_1.jpg) no-repeat center 0;overflow:hidden;}
+#wrap._0 {height:2330px;}
+#wrap._1 {height:2392px;}
+
+#wrap button,
+#wrap a {outline:none;}
+#wrap .btn button,
+#wrap .btn a {width:100%;height:100%;display:block;text-indent:-9999px;outline:none;}
+#wrap .innerWrap {position:relative;margin:0 auto;width:1280px;height:100%;}
+
+.visual {position:relative;left:0;top:0;width:calc(100% - 0.5px);height:870px;}
+.visual .innerWrap {z-index:10;}
+.visual .floatMenu { z-index:150;position:absolute;top:783px;left:44px;width:100%;height:89px;}
+.visual .floatMenu::before {transition:all 0.4s;transform:rotate(3deg)}
+.visual .floatMenu._0::before {position:absolute;top:42px;left:-85px;width:1388px;height:1449px;background:url(../assets/bg/bg_back1.png) no-repeat;content:'';transform:rotate(0deg)}
+.visual .floatMenu._1::before {position:absolute;top:33px;left:-90px;width:1388px;height:1500px;background:url(../assets/bg/bg_back2.png) no-repeat;content:'';transform:rotate(0deg)}
+.floatMenu ul {height:100%;}
+.floatMenu ul::after {display:block;clear:both;content:'';}
+.floatMenu li {float:left;}
+.floatMenu li button  {display:block;text-indent:-9999px;width:100%;height:100%;opacity:0;}
+.floatMenu li {float:left;position:relative;width:597px;height:100%;background:url(../assets/btns/tab_off.jpg) repeat;transition:top 0.3s;}
+.floatMenu li button {height:100%;background:url(../assets/btns/tab_on.jpg) no-repeat;opacity:0;transition:opacity 0.3s;}
+.floatMenu li.on button,
+.floatMenu li button:hover {opacity:1;}
+.floatMenu li:nth-child(1),
+.floatMenu li:nth-child(1) button {background-position:0px 0;} 
+.floatMenu li:nth-child(2),
+.floatMenu li:nth-child(2) button  {background-position:-597px 0;} 
+
+.visual .char .c1 {opacity:0;z-index:1;position:absolute;top:203px;left:231px;width:535px;height:711px;background:url(../assets/visual/char_1.png) no-repeat;}
+.visual .char .c2 {opacity:0;position:absolute;top:76px;left:256px;width:791px;height:838px;background:url(../assets/visual/char_2.png) no-repeat;}
+.visual .title .t1 {z-index:1;position:absolute;top:93px;left:587px;width:108px;height:603px;background:url(../assets/visual/t1_.png) no-repeat;opacity:0}
+.visual .title .t2 {z-index:1;position:absolute;top:354px;left:502px;width:0px;height:79px;background:url(../assets/visual/t2.png) no-repeat;opacity:0}
+.visual .title .sub p {position:absolute;width:55px;height:471px;background:url(../assets/visual/t_sub.png) no-repeat;opacity:0}
+.visual .title .sub p:nth-child(1) {top:90px;left:-43px;background-position:0 0;}
+.visual .title .sub p:nth-child(2) {top:20px;left:13px;background-position:-55px 0;}
+.visual .title .sub p:nth-child(3) {top:160px;left:68px;background-position:-110px 0;}
+.visual .bg {z-index:1;position:absolute;top:0;left:-320px;width:1920px;height:870px;background:url(../assets/bg/bg.jpg) no-repeat center 0;opacity:0;}
+
+.section {z-index:50;position:absolute;top:855px;left:0;width:100%;height:1475px;overflow:hidden;opacity:0;transition:all 0.3s;}
+.section.on {z-index:100;opacity:1;}
+#section0{height:1500px;}
+#section1{height:1521px;}
+#section0 {background:url(../assets/bg/con_1.png) no-repeat center 0;}
+#section1 {background:url(../assets/bg/con_2.png) no-repeat center 0;}
+
+#section0 .costumeDetail {z-index:1;position:absolute;top:439px;left:340px;}
+#section0 .commDir {z-index:100;position:absolute;left:0px;top:357px;}
+#section0 .commDir .btn {position:absolute;top:0;width:117px;height:120px;}
+#section0 .commDir .btn.prev {left:-87px;}
+#section0 .commDir .btn.next {left:581px;}
+#section0 .commDir .btn button {position:relative;top:0;left:0;width:100%;height:100%;background:url(../assets/btns/btn_dir.png) no-repeat;cursor:pointer}
+#section0 .commDir .btn.next button {background-position:-136px 0;}
+#section0 .commDir .btn button::after {position:absolute;top:0;width:100%;height:100%;display:block;background:url(../assets/btns/btn_dir_over.png) no-repeat;content:'';opacity:0;transition:opacity 0.2s;}
+#section0 .commDir .btn.prev button::after {background-position:50px 45px;}
+#section0 .commDir .btn.next button::after {background-position:-66px 45px;}
+#section0 .commDir .btn button:hover::after {opacity:1}
+
+#section0 .typeBtns {z-index:60;position:absolute;left:-44px;top:46px;width:108px;}
+#section0 .typeBtns li {width:100%;height:60px;}
+#section0 .typeBtns li:nth-child(2) {margin:1px 0 0 -2px;}
+#section0 .typeBtns li:nth-child(3) {margin:-17px 0 0 -1px;}
+#section0 .typeBtns li:nth-child(4) {margin:2px 0 0 -9px;}
+#section0 .typeBtns li button {width:100%;height:100%;display:block;text-indent:-9999px;background:url(../assets/btns/spr_type_off_.png) no-repeat;}
+#section0 .typeBtns li:nth-child(1) button {background-position:0 0px;}
+#section0 .typeBtns li:nth-child(2) button {background-position:0 -70px;}
+#section0 .typeBtns li:nth-child(3) button {background-position:0 -140px;}
+#section0 .typeBtns li:nth-child(4) button {background-position:0 -210px;}
+
+#section0 .typeBtns li button:hover,
+#section0 .typeBtns li.on button { background:url(../assets/btns/spr_type_on.png) no-repeat;}
+#section0 .typeBtns li:nth-child(1) button:hover,
+#section0 .typeBtns li:nth-child(1).on button {background-position:0 0px;}
+#section0 .typeBtns li:nth-child(2) button:hover,
+#section0 .typeBtns li:nth-child(2).on button {background-position:0px -70px;}
+#section0 .typeBtns li:nth-child(3) button:hover,
+#section0 .typeBtns li:nth-child(3).on button {background-position:0px -140px;}
+#section0 .typeBtns li:nth-child(4) button:hover,
+#section0 .typeBtns li:nth-child(4).on button {background-position:0px -210px;}
+
+#section0 .typeBtns li:nth-child(1) button::after { content:'A타입'}
+#section0 .typeBtns li:nth-child(2) button::after { content:'B타입'}
+#section0 .typeBtns li:nth-child(3) button::after { content:'C타입'}
+#section0 .typeBtns li:nth-child(4) button::after { content:'혼합'}
+
+#section0 .charNav {z-index:50;position:absolute;top:207px;left:141px;width:1280px;transition:opacity 0.3s;}
+#section0 .charNav ul {position:relative;width:1169px;height:191px;}
+#section0 .charNav ul::after {display:block;clear:both;content:'';}
+#section0 .charNav li {margin-right:49px;float:left;width:125px;height:165px;transition:opacity 0.2s;}
+#section0 .charNav li:nth-child(2) {margin-left:-7px;margin-right:41px;width:141px;}
+#section0 .charNav li button {display:block;text-indent:-9999px;width:100%;height:100%;background:url(../assets/btns/spr_btnChar_off.png) no-repeat;transition:all 0.3s;}
+#section0 .charNav li button:hover,
+#section0 .charNav li.on button {background:url(../assets/btns/spr_btnChar_on.png) no-repeat;}
+#section0 .charNav li:nth-child(1) button {background-position:0 0;} 
+#section0 .charNav li:nth-child(2) button {background-position:-167px 0;} 
+#section0 .charNav li:nth-child(3) button {background-position:-349px 0;} 
+#section0 .charNav li:nth-child(4) button {background-position:-523px 0;}
+#section0 .charNav li:nth-child(5) button {background-position:-698px 0;}
+#section0 .charNav li:nth-child(6) button {background-position:-872px 0;}
+
+#section0 .costumeChar {z-index:0;position:absolute}
+#section0 .costumeChar > li {position:absolute;top:0;opacity:0;transition:opacity 0.3s;}
+#section0 .costumeChar > li.on { opacity:1;}
+#section0 .costumeChar .img_char li {position:absolute;top:-28px;left:-28px;opacity:0;transition:opacity 0.3s;}
+#section0 .costumeChar .img_char li.on { opacity:1;}
+
+.loader {z-index:500;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:1;}
+.overlay {z-index:19999999;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.8;filter:alpha(opacity = 70);display:none;}
+
+.layerPop {z-index:20000000;position:fixed;left:50%;top:50%;}
+.layerPop .close {position:absolute;right:0;top:0px;width:60px;height:60px;}
+.layerPop .close button { display:block;text-indent:-9999px;width:45px;height:45px;}
+.layerPop .confirm {position:absolute;bottom:45px;left:266px;}
+.layerPop .confirm button {display:block;text-indent:-9999px;width:103px;height:46px;}
+
+#popAlert {padding:20px;width:320px;min-height:90px;background:#fff;border:4px #272a2e solid;}
+#popAlert .text { margin:0 0 10px 0; color:#4e5256;text-align:center;font-size:16px;font-family:나눔고딕, 'NanumGothic', 'Nanum Gothic';letter-spacing:-0.02em;line-height:18px; }
+#popAlert .close {position:absolute;top:13px;right:13px;left:auto;margin:0;width:15px;height:15px;}
+#popAlert .close button {width:15px;height:15px;background:url(http://s.nx.com/s2/game/closers/2019/events/190228_teaserMain_sqq8h/ico_popClose.png) no-repeat;}
+#popAlert .confirm { position:static;}
+#popAlert .confirm button {margin:10px auto 0;display:block;width:121px;height:37px;background:#272a2e;color:#fff;font-size:16px;line-height:35px;text-indent:0px;}
+
+#PS_Dimmed {position:fixed !important;}
+iframe[name='google_conversion_frame'] {width:1px;height:1px;font-size:0;line-height:0;position:absolute;top:0;left:-1000%;overflow:hidden;}
+
+.footer {position:absolute;bottom:44px;left:50%;margin-left:-309px;width:619px;height:21px;background:url(../assets/bg/footer.png) no-repeat;}

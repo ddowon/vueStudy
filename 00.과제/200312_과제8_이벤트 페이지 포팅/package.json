@@ -1,0 +1,25 @@
+{
+  "name": "vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "buildDev": "vue-cli-service build --mode development"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.6.4",
+    "es6-promise": "^4.2.8",
+    "gsap": "^3.2.4",
+    "vue": "^2.6.11",
+    "vue-axios": "^2.1.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "text-replace-html-webpack-plugin": "^1.0.3",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
