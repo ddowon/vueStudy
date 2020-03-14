@@ -1,0 +1,29 @@
+{
+	"banners": [
+		{
+			"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5629592000564036680",
+			"link": "/events/2020/03/12/Costume.aspx ",
+			"target": "_self"
+		},
+		{
+			"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5341361675951932380",
+			"link": "/board/16777344/2636/ ",
+			"target": "_self"
+		},
+		{
+			"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=4692843260891104309",
+			"link": "/board/16777344/2644/ ",
+			"target": "_self"
+		},
+		{
+			"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5125188859478410169",
+			"link": "/events/2020/02/27/NewReturnPlayer.aspx ",
+			"target": "_self"
+		},
+		{
+			"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5701649551652291807",
+			"link": "/events/2019/12/19/samyang.aspx",
+			"target": "_self"
+		}
+	]
+}

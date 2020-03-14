@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+/* Styles
+-------------------------------------------------------------- */
+html, body {min-width:1340px;background:#000}
+button {border:0 none;background-color:transparent;cursor:pointer}
+button:focus, a:focus {outline:0}
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {border-radius:0;-webkit-appearance:button}
+
+#app, #wrap, #contents {position:relative;min-width:1340px;margin:0 auto}
+#contents {overflow:hidden;max-width:1920px}
+body, input, button, textarea, select, table{line-height:1.2; font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', sans-serif; font-size:14px; color:#555; letter-spacing:-1px;}
+
+body.locked-scroll {height:100%;padding-right:16px;overflow:hidden}
+.loader {z-index:190;position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000}
+.innerWrap {position:relative;width:1280px;height:100%;margin:0 auto}
+.innerWrap:after {content:'';display:block;clear:both}
+.modal .confirm button,
+.modal .close button,
+.ir {display:block;overflow:hidden;text-indent:-9999px;font-size:0 !important}
+
+.fade-enter-active, .fade-leave-active {transition:opacity 600ms ease}
+.fade-enter, .fade-leave-to {opacity:0}
+
+#wrap .btn button,
+#wrap .btn a {width: 100%;height: 100%; display: block;  outline:none; text-indent: -9999px;}
+
+.section {overflow:hidden;position:relative;display:block;width:100%}
+
+
+#visual {width: 100%; height: 1725px; overflow:hidden; background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/bg_visual.jpg) no-repeat center 0;}
+
+#section0 {height: 726px; background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/bg_section0.jpg) no-repeat center 0;}
+#section1 {height: 3152px;  background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/bg_section1_ver1.jpg) no-repeat center 0;}
+#section2 {height: 2114px; background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/bg_section2_ver1.jpg) no-repeat center 0;}
+
+
+#section1 .expandEvent {position: absolute; top: 0; left: 0; width: 100%; }
+#section1 .missionList {position: absolute; top: 684px; left: 0;}
+#section1 .missionList li {float: left;}
+#section1 .missionList li.dep1 {position: relative; margin-right:11px; width: 231px; }
+#section1 .missionList li.dep1:first-child {margin-left:41px;}
+#section1 .missionList li.dep1 .missionInfo {padding-top:45px; text-align: center; font-size:36px; color:#ffe400; font-weight:bold;}
+#section1 .missionList li.dep1 .missionInfo span {color:#fff;}
+
+#section1 .missionList .benefit {position: absolute; top: 345px; width: 100%;}
+#section1 .missionList .benefit li {width: 102px; height: 47px;}
+#section1 .missionList .benefit li .btn {width: 100%; height: 100%; }
+#section1 .missionList .benefit li:first-child {margin-left:11px; margin-right:7px;}
+#section1 .missionList .benefit li .noneGet {background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/btn_get_default.png) no-repeat;}
+#section1 .missionList .benefit li .noneGet button {cursor:default;}
+#section1 .missionList .benefit li .get {background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/btn_get_over.png) no-repeat;}
+#section1 .missionList .benefit .state {position: absolute; top: 74px; left: 0; width: 100%; font-size:18px; color:#cce3ff; text-align: center;}
+#section1 .missionList .benefit .state.beforeLogin {color:#5b82b1;}
+#section1 .missionList .myList {position: absolute; top: 488px; left: 336px; width: 611px; height: 93px; background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/btn_myList.png) no-repeat;}
+
+
+
+#section1 .updateEvent {position: absolute; top: 1736px; left: 0; width: 100%;}
+#section1 .updateEvent .link0 {position: absolute; top: 975px; left: 463px; width: 351px; height: 104px; background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/btn_detail0.png) no-repeat;}
+
+
+#pop_itemClear {margin:-146px 0 0 -317px; width: 634px;height: 293px; background:url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/popup/bg_clear.png) no-repeat;}
+
+#pop_choiceChar {margin:-220px 0 0 -317px; width: 634px; height: 440px; background: url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/popup/bg_choiceChar.png) no-repeat;}
+.customSelect {position: absolute;left:136px; top:189px;width:360px; height:25px; }
+.customSelect .txt{padding-bottom:0; width:100%; height:100%; line-height:25px; background:none; text-indent:10px; position:absolute; left:0; top:0; _display:none; color:#070707; font-size:13px; text-align:left;}
+.customSelect select{width:100%; height:100%; cursor:pointer; position:relative; opacity:0; filter:alpha(opacity=0);}
+
+#pop_winList {margin:-297px 0 0 -317px; width: 634px; height: 595px;  background: url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/popup/bg_list.png) no-repeat;}
+#pop_winList .tableArea {margin:184px 0 0 41px; width: 552px; height: 286px; overflow-y: auto; overflow-x: hidden; background:#fff;}
+#pop_winList .tableArea table {width: 552px; border-collapse: collapse;}
+#pop_winList .tableArea table .noList {text-align: center; line-height:30px;}
+#pop_winList .tableArea table td {padding:5px; height: 30px; border-right:1px solid #cccfd4; border-bottom: 1px solid #cccfd4; text-align: left; font-size:14px;  color: #2e2e2e}
+#pop_winList .tableArea table tr td:last-child {padding-right: 20px;}
+#pop_winList .tableArea table .date {text-align: center;}
+#pop_winList .tableArea table .nick {text-align: center;}
+
+
+#pop_nexonCash {margin:-260px 0 0 -317px; width: 634px; height: 520px;  background: url(http://s.nx.com/s2/game/closers/2020/events/200204_update_785416an/popup/bg_nxCash.png) no-repeat;}
+#pop_nexonCash .pin, 
+#pop_nexonCash .codeArea {position: absolute; top: 189px; left: 86px; width: 460px; height: 65px; color:#2c2c2c; font-size:28px; font-weight:bold; text-align: center; line-height:64px;}
+
+#PS_Dimmed {position: fixed !important;}
+iframe[name='google_conversion_frame'] {width:1px; height:1px; font-size:0; line-height:0; position:absolute; top:0; left:-1000%; overflow:hidden;}
+
+.note {position: absolute; font-size:16px; color:#667b90; line-height:23px; text-align: left;}
+#note1 {top: 1318px; left: 208px;}
+#note2 {top: 1126px; left: 208px;}
