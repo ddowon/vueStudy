@@ -5,6 +5,7 @@ const TextReplaceHtmlWebpackPlugin = require('text-replace-html-webpack-plugin')
 module.exports = {
 	publicPath: '',
 	filenameHashing: false,
+	productionSourceMap: false,
 	configureWebpack: {
 		output: {
 			filename: 'event.ui.js'
@@ -40,7 +41,8 @@ module.exports = {
 			.options({
 				name: '[folder]/[name].[ext]',
 				limit: -1,
-				publicPath: (devMode)? '' : 'http://s.nx.com/s2/game/closers/2020/events/200312_costume0iro4/'
+				publicPath: (devMode) ? '' : 'http://s.nx.com/s2/game/closers/2020/events/200312_costume0iro4/',
+				outputPath: '200312_costume0iro4'
 			})
 
 		// process.env.NODE_ENV가 development면, dist/index.html에 style.css, event.ui.js로 태그 삽입

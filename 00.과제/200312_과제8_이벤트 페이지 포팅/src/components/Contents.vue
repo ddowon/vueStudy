@@ -36,17 +36,12 @@
 			<div class="innerWrap">
 				<div class="charNav">
 					<ul>
-						<li v-for="(char, idx) in charArr" :key="char.name" :class="{on : currentChar === idx}">
+						<li v-for="(char, idx) in characters" :key="char.name" :class="{on : currentChar === idx}">
 							<button type="button" @click="changeChar(idx)">{{char.name}}</button>
 						</li>
 					</ul>
 				</div>
 				<div class="costumeDetail">
-					<ul class="typeBtns">
-						<li v-for="cnt in typeCnt" :key="cnt" :class="{on : cnt === charType}">
-							<button type="button" @click="changeType(cnt)"></button>
-						</li>
-					</ul>
 					<div class="commDir">
 						<p class="btn prev">
 							<button type="button" @click="prevView()">이전</button>
@@ -57,13 +52,16 @@
 					</div>
 					<ul class="costumeChar">
 						<!-- 캐릭터들 코스튬 뷰-->
-						<li v-for="(char, idx) in charArr" :key="char.name" :class="{on : idx === currentChar}">
-							<ul class="img_char">
-								<!-- 캐릭터 하나 타입 4종  -->
-								<li v-for="cnt in typeCnt" :key="cnt" :class="{on : cnt === charType}">
-									<img :src="require(`@/assets/${char.name}/img_${cnt}.png`)" :alt="char.name">
+						<li v-for="(char, idx) in characters" :key="char.name" :class="{on : idx === currentChar}">
+							<ul class="typeBtns">
+								<li v-for="num in char.typeNum" :key="num" :class="{on : num === currentCharType}">
+									<button type="button" @click="changeType(num)"></button>
 								</li>
 							</ul>
+							<!-- 캐릭터 하나당 타입별 이미지  -->
+							<div class="img_char">
+								<img v-for="cnt in char.typeNum" :key="cnt" :src="require(`@/assets/${char.name}/img_${cnt}.png`)" :class="{on : cnt === currentCharType}" :alt="char.name" >
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -89,7 +87,6 @@
 </template>
 
 <script>
-import '@/styles/style.css'
 import SideBanner from '@/components/SideBanner.vue'
 import { gsap } from "gsap";
 
@@ -105,21 +102,15 @@ export default {
 		],
 		currentTab: 0,
 		currentChar: 0,
-		typeCnt: 4,
-		charType: 1,
-		charArr: [{
-			name : 'j',
-		}, {
-			name : 'mis',
-		}, {
-			name : 'revia',
-		}, {
-			name : 'violet',
-		}, {
-			name : 'luna',
-		}, {
-			name : 'seth2',
-		}]
+		currentCharType: 1,
+		characters: [
+			{name: 'j', typeNum: 1}, 
+			{name: 'mis', typeNum: 2}, 
+			{name: 'revia', typeNum: 4}, 
+			{name: 'violet', typeNum: 3}, 
+			{name: 'luna', typeNum: 4}, 
+			{name: 'seth2', typeNum: 4}
+		]
 	}),
 	mounted(){
 		this.$nextTick(()=>{
@@ -135,25 +126,25 @@ export default {
 		},
 		changeChar(idx) {
 			this.currentChar = idx
-			this.charType = 1
+			this.currentCharType = 1
 		},
 		changeType(cnt) {
-			this.charType = cnt
+			this.currentCharType = cnt
 		},
 		prevView() {
-			if (this.currentChar != 0){
+			if (this.currentChar !== 0) {
 				this.currentChar -= 1
-				this.charType = 1
-			}else if (this.charType != 1) {
-				this.charType -= 1
+				this.currentCharType = 1
+			}else if (this.currentCharType !== 1) {
+				this.currentCharType -= 1
 			}
 		},
 		nextView() {
-			if(this.charType != this.typeCnt){
-				this.charType += 1
-			} else if ( this.currentChar != this.charArr.length-1 ){
+			if (this.currentCharType !== this.characters[this.currentChar].typeNum) {
+				this.currentCharType += 1
+			} else if (this.currentChar !== this.characters.length-1) {
 				this.currentChar += 1
-				this.charType = 1
+				this.currentCharType = 1
 			}
 		},
 		visualAnimate() {

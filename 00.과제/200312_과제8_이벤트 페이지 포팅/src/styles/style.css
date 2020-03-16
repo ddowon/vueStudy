@@ -116,8 +116,8 @@ ol, ul{list-style:none;}
 #section0 .costumeChar {z-index:0;position:absolute}
 #section0 .costumeChar > li {position:absolute;top:0;opacity:0;transition:opacity 0.3s;}
 #section0 .costumeChar > li.on { opacity:1;}
-#section0 .costumeChar .img_char li {position:absolute;top:-28px;left:-28px;opacity:0;transition:opacity 0.3s;}
-#section0 .costumeChar .img_char li.on { opacity:1;}
+#section0 .costumeChar .img_char img {position:absolute;top:-28px;left:-28px;opacity:0;transition:opacity 0.3s;}
+#section0 .costumeChar .img_char img.on { opacity:1;}
 
 .loader {z-index:500;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:1;}
 .overlay {z-index:19999999;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.8;filter:alpha(opacity = 70);display:none;}
