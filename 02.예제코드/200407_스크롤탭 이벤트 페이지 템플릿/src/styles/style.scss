@@ -1,0 +1,260 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+// $folder-path: '~@/assets';
+$folder-path: 'http://s.nx.com/s2/game/sky/event/200409_event_3a5c';
+
+/* Styles
+-------------------------------------------------------------- */
+html, body {min-width:1340px;background:#000}
+button {border:0 none;background-color:transparent;cursor:pointer}
+button:focus, a:focus {outline:0}
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {border-radius:0;-webkit-appearance:button}
+
+#app, #wrap, #contents {position:relative;min-width:1340px;margin:0 auto}
+#contents {overflow:hidden;max-width:1920px}
+body, input, button, textarea, select, table{line-height:1.2; font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', sans-serif; font-size:14px; color:#555; letter-spacing:-1px;}
+
+body.locked-scroll {height:100%;padding-right:16px;overflow:hidden}
+.loader {z-index:190;position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000}
+.inner {position:relative;width:1280px;height:100%;margin:0 auto}
+.inner:after {content:'';display:block;clear:both}
+.ir {display:block;overflow:hidden;text-indent:-9999px;font-size:0 !important}
+
+.fade-enter-active, .fade-leave-active {transition:opacity 600ms ease}
+.fade-enter, .fade-leave-to {opacity:0}
+
+.ani {position:absolute;text-indent:-9999px;font-size:0;line-height:0;background-repeat:no-repeat;background-position:0 0;z-index:3}
+.section {overflow:hidden;position:relative;display:block;width:100%}
+
+// #sec1 {
+// 	height:2000px;background:url(#{$folder-path}/contents/img_cont1_3.jpg) no-repeat 50% 0;
+// 	.a1 {top:143px;left:480px;width:22px;height:21px;background-image:url(#{$folder-path}/visual/a1.png);animation:updown 800ms ease-in-out infinite}
+// 	.a2 {top:143px;left:880px;width:22px;height:21px;background-image:url(#{$folder-path}/visual/a1.png);animation:updown 800ms 400ms ease-in-out infinite}
+// 	.c1 {opacity:0;top:458px;left:-188px;width:365px;height:571px;background-image:url(#{$folder-path}/visual/c1.png)}
+// 	.c2 {opacity:0;top:499px;left:1099px;width:348px;height:525px;background-image:url(#{$folder-path}/visual/c2.png)}
+// 	.ytb_wrap {
+// 		position:absolute;top:417px;left:168px;z-index:1;
+// 		.ytb {
+// 			opacity:0;width:943px;height:530px;z-index:8;transform:scale(0.8);transition:all ease 400ms;
+// 			iframe {display:block;width:100%;height:100%}
+// 			&.active {opacity:1;transform:scale(1);z-index:11}
+// 		}
+// 		.btn_play {
+// 			top:0;left:0;width:100%;height:100%;z-index:10;animation:blink 1s linear infinite;
+// 			a {width:132px;height:175px;margin:177px auto 0;background:url(#{$folder-path}/btns/btn_play.png) no-repeat 0 0}
+// 		}
+// 	}
+// }
+
+// #sec2 {
+// 	height:1950px;background:url(#{$folder-path}/contents/img_cont2_3.jpg) no-repeat 50% 0;
+// 	.btn_showItemMore {
+// 		top:644px;left:973px;
+// 		a {width:197px;height:38px;background:url(#{$folder-path}/btns/btn_showItemMore.png) no-repeat 0 0;cursor:help}
+// 		.ir {background:url(#{$folder-path}/btns/btn_showItemMore_on.png) no-repeat 0 0}
+// 		.tooltip {opacity:0;position:absolute;display:block;top:-172px;left:-72px;width:339px;height:165px;background:url(#{$folder-path}/popup/pop_autoUseItem.png) no-repeat 0 0}
+// 		a:hover + .tooltip {opacity:1}
+// 	}
+// }
+
+// #sec3 {
+// 	height:1900px;background:url(#{$folder-path}/contents/img_cont3_3.jpg) no-repeat 50% 0;
+// 	.btn_goPetNotice {
+// 		top:813px;left:737px;
+// 		a {width:377px;height:105px;background:url(#{$folder-path}/btns/btn_goPetNotice.png) no-repeat 0 0}
+// 		.ir {background:url(#{$folder-path}/btns/btn_goPetNotice_on.png) no-repeat 0 0}
+// 	}
+// 	.btn_goEvent {
+// 		top:1407px;left:818px;
+// 		&:before {position:absolute;display:block;content:'';top:-30px;left:125px;width:60px;height:68px;background:url(#{$folder-path}/btns/btn_goEvent_before.png) no-repeat 0 0;z-index:11}
+// 		&:after {position:absolute;display:block;content:'';top:4px;left:185px;width:84px;height:178px;background:url(#{$folder-path}/btns/btn_goEvent_after.png) no-repeat 0 0;z-index:11}
+// 		a {width:230px;height:231px;background:url(#{$folder-path}/btns/btn_goEvent.png) no-repeat 0 0}
+// 		.ir {background:url(#{$folder-path}/btns/btn_goEvent_on.png) no-repeat 0 0}
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Common Page Size */
+#header {position:fixed;left:0;top:0;z-index:10;width:100%;height:100px;min-width:1500px;background: url('http://s.nx.com/s2/game/sky/event/200409_event_3a5c/navBg.png') repeat}
+#header .logo {display:none;position:absolute;left:20px;top:30px}
+#header .aside {position:absolute;right:24px;top:30px;z-index:10}
+#header .aside .list li {margin:0 6px 0 0;float:left}
+#header .aside .list a {width:41px;height:41px}
+#header .aside .list a.btnStart {width:119px;background-position:-410px -1px;margin-right:10px}
+#header .aside .list a.btnStart:hover {background-position:-410px -51px}
+#header .aside .list a.btnHome {background-position:-545px -1px}
+#header .aside .list a.btnHome:hover {background-position:-545px -51px}
+#header .aside .list a.btnFacebook {background-position:-592px -1px}
+#header .aside .list a.btnFacebook:hover {background-position:-592px -51px}
+#header .aside .list a.btnTwitter {background-position:-639px -1px}
+#header .aside .list a.btnTwitter:hover {background-position:-639px -51px}
+#header .eventNav {width:960px;height:100%;margin:0 auto}
+#header .eventNav ul {display:table;width:894px;height:100%}
+#header .eventNav ul li {display:table-cell;width:240px;height:100%;border-left:2px solid #d7d7d7}
+#header .eventNav ul li:first-child {width:168px;border-left:none}
+#header .eventNav ul li a {position:relative;display:block;width:100%;height:100%;overflow:hidden;text-indent:-50000px}
+#header .eventNav ul li a:before {content:'';position:absolute;top:0;left:0;display:block;width:100%;height:0;background-color:#fff;z-index:1;transition:height 0.3s ease;-moz-transition:height 0.3s ease;-o-transition:height 0.3s ease;-webkit-transition:height 0.3s ease}
+#header .eventNav ul li a:after {content:'';position:relative;display:block;height:100%;margin:8px auto 0;background-image: url('http://s.nx.com/s2/game/sky/event/200409_event_3a5c/tab.png');background-repeat:no-repeat;z-index:2}
+
+
+#header .eventNav ul li a.active:before {height:100px}
+#header .eventNav ul li.event_0 a:after {width:43px;height:13px;margin-top:23px;background-position:-905px -31px}
+#header .eventNav ul li.event_0 a.active:after {background-position:-905px -131px}
+#header .eventNav ul li.event_1 a:after {width:137px;height:42px;background-position:-72px -16px}
+#header .eventNav ul li.event_1 a.active:after {background-position:-72px -116px}
+#header .eventNav ul li.event_2 a:after {width:190px;height:42px;background-position:-329px -16px}
+#header .eventNav ul li.event_2 a.active:after {background-position:-329px -116px}
+#header .eventNav ul li.event_3 a:after {width:150px;height:42px;background-position:-634px -16px}
+#header .eventNav ul li.event_3 a.active:after {background-position:-634px -116px}
+
+
+.hideLogo {top:-6px !important;z-index:11 !important;background-position:-231px -100px}
+.hideLogo.fixHeader {position:fixed}
+
+/* Contents 영역 */
+#container {position:relative;overflow:hidden;min-width:1500px;max-width:1920px;margin:0 auto;z-index:2}
+#container .inner {position:relative;width:1280px;height:100%;margin:0 auto}
+#container .inner:after {content:'';display:block;clear:both}
+#container .section {position:relative;width:100%}
+#section0 {height:755px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/contents/bg_visual.jpg') no-repeat 50% 0;z-index:2}
+#tab_wrap {position:relative;overflow:hidden;width:100%;height:1565px;min-height:1565px;background-color:#9d0f0f;z-index:1}
+#tab_wrap .tab_cont {position:absolute;width:100%;z-index:1}
+#tab_wrap .tab_cont.active {z-index:5}
+
+#tab1 {height:1565px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/contents/img_tab1.jpg') no-repeat 50% 0}
+#tab2 {height:2945px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/contents/img_tab2.jpg') no-repeat 50% 0}
+#tab3 {height:2000px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/contents/img_tab2.jpg') no-repeat 50% 0}
+
+#tab1 .btn_newStartItem {top:1014px;left:221px}
+#tab1 .btn_joinItem {top:1014px;left:819px}
+#tab1 [class^="btn_"] {position:absolute;z-index:10}
+#tab1 [class^="btn_"]:hover {animation:shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;transform:translate3d(0, 0, 0);backface-visibility:hidden;perspective:1000px}
+#tab1 [class^="btn_"] button {position:relative;display:block;width:242px;height:99px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/btn_getItem.png') no-repeat 0 0;text-align:left;text-indent:-9999px;font-size:0}
+#tab1 [class^="btn_"] button:after {content:'';opacity:0;position:absolute;display:block;top:0;left:0;width:100%;height:100%;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/btn_getItem_on.png') no-repeat 0 0}
+#tab1 [class^="btn_"]:hover button:after {opacity:1}
+
+/* Tab Navigation 영역 */
+#cont_nav {position:absolute;bottom:-175px;left:36px;width:1280px;height:119px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/bg_btn_tab.png') no-repeat 0 0}
+#cont_nav:after {content:'';display:block;position:absolute;left:-4px;bottom:-20px;width:1214px;height:30px;z-index:2;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/bg_btn_tab_cover.jpg') no-repeat 0 0}
+#cont_nav li {position:absolute;display:block;z-index:1}
+#cont_nav li > a {position:relative;display:block;width:588px;height:134px}
+#cont_nav li > a .ir {position:absolute;top:0;left:0;width:588px;height:134px;background-image:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/spr_tab.png');background-repeat:no-repeat;transition:top 350ms cubic-bezier(0.38, -0.54, 0.42, 1.6)}
+#cont_nav li.active > a .ir,
+#cont_nav li > a:hover .ir {top:20px}
+#cont_nav li.cnv1 {top:-26px;left:15px}
+#cont_nav li.cnv2 {top:-26px;right:85px}
+#cont_nav li.cnv1 > a .ir {background-position:0 0}
+#cont_nav li.cnv1.active > a .ir,
+#cont_nav li.cnv1 > a:hover .ir {background-position:0 -146px}
+#cont_nav li.cnv2 > a .ir {background-position:-611px 0}
+#cont_nav li.cnv2.active > a .ir,
+#cont_nav li.cnv2 > a:hover .ir {background-position:-611px -146px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Trnasitions */
+[class^="btn_"] button:after,
+.timeRewardList > li .on button:after {display:table;-webkit-transition:all 350ms ease;-moz-transition:all 350ms ease;transition:all 350ms ease;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+
+/* Popup_Common */
+body.locked-scroll {height:100%;padding-right:16px;overflow:hidden;box-sizing:border-box}
+body.locked-scroll .commonLayer {left:0}
+.commonLayer {display:none;position:fixed;top:0;left:0;width:100%;height:100%;overflow-y:auto;z-index:300}
+.commonLayer .layerBody {position:relative;margin:0 auto 40px}
+.commonLayer .btnClose {position:absolute;top:-30px;right:0;width:20px;height:20px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/btn_close.png') no-repeat 0 0;cursor:pointer;outline:none}
+.commonLayer .btnConfirm {position:absolute;top:240px;left:175px;width:142px;height:54px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/btns/btn_confirm.png') no-repeat 0 0}
+.commonLayer.inactive .layerBody:after {content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0.7}
+.commonLayer.inactive .btnClose {display:none}
+.overlay {display:none;position:fixed;z-index:299;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0.8}
+
+
+
+
+// #note1 {
+// 	top:1120px;
+// 	ul > li:before {background:url('http://s.nx.com/s2/game/sky/event/200130_skyday_11i25/contents/ico_note1.png') no-repeat 0 0}
+// }
+
+// #note2 {
+// 	top:1377px;
+// 	ul > li:before {background:url('http://s.nx.com/s2/game/sky/event/200130_skyday_11i25/contents/ico_note1.png') no-repeat 0 0}
+// 	li {margin-bottom:5.5px}
+// 	li, p {color:#98dacc}
+// 	strong {color:#d6ecae}
+// }
+
+
+
+
+
+/* 시스템 유의사항 */
+.note {position:absolute;display:table;left:50%;width:1280px;margin-left:-640px;text-align:left;font-size:13.5px;font-weight:400;font-family:'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', sans-serif;letter-spacing:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+.note:before {display:block;content:'';position:absolute;top:50%;left:224px;width:132px;height:26px;margin-top:-12px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/tit_note.png') no-repeat 0 0}
+.note > ul {display:table-cell;vertical-align:middle;padding-left:410px;padding-right:65px}
+.note > ul ul {margin-left:12px}
+.note > ul li {position:relative}
+.note > ul li:before {content:'';position:absolute;top:8px;left:-9px;display:block;width:4px;height:2px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/ico_note.png') no-repeat 0 0}
+.note li {margin-bottom:4px}
+.note li:last-child {margin-bottom:0}
+.note li, .note p {color:#f89595}
+.note li, .note p, .note a {line-height:1.45}
+.note a {color:#ffe3e3}
+.note a:hover {text-decoration:underline}
+.note strong {color:#ffe3e3;font-weight:400}
+.note span {vertical-align:1px}
+.note li, .note p, .note a, .note strong, .note span {font-size:13px}
+#note1 {top:1253px;height:232px}
+#note2 {top:610px;height:207px;z-index:0}
+#note2:before {display:none}
+#note2 > ul {padding-left:582px;padding-right:20px}
+#note2 li {margin-bottom:5px}
+#note2 > ul li:before {top:8px;left:-8px;height:4px;background:url('http://s.nx.com/s2/game/sky/event/200409_giftattend_11i15/ico_note2.png') no-repeat 0 0}
+#note2 li, #note2 p, #note2 a, #note2 strong, #note2 span {color:#fff;font-size:14px;font-weight:300;line-height:1.4;letter-spacing:-0.5px}
+#note3 {top:2651px;height:232px}
+#note3:before {left:230px}
+#note3 > ul {padding-left:415px}
+
+
+
+
+
+
+
+
+/* Buttons */
+[class^="btn_"] {position:absolute;z-index:10}
+[class^="btn_"], [class^="btn_"] a, [class^="btn_"] .ir {display:block}
+[class^="btn_"] .ir {opacity:0;position:absolute;top:0;left:0;width:100%;height:100%}
+[class^="btn_"] a:hover .ir {opacity:1}
+
+/* Trnasitions */
+[class^="btn_"] .ir, .tooltip {display:table;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease}
+
+/* Animations */
+@keyframes updown { 0%, 100% { transform:translateY(3px) } 50% { transform:translateY(-5px) } }
+@keyframes blink { 0%, 100% { opacity: 0.6; transform:translateY(3px) } 50% { opacity: 1; transform:translateY(-5px) } }
+
+/* ETC Styling */
+#PS_Dimmed {position:fixed !important}
+iframe[name='google_conversion_frame'] {width:1px;height:1px;font-size:0;line-height:0;position:absolute;top:0;left:-1000%;overflow:hidden}

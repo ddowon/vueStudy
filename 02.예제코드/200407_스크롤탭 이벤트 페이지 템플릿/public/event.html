@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="<%= htmlWebpackPlugin.options.desc %>" />
+<meta name="copyright" content="<%= htmlWebpackPlugin.options.copyright %>" />
+<meta name="author" content="<%= htmlWebpackPlugin.options.author %>"/>
+<meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>"/>
+<meta property="og:url" content="<%= htmlWebpackPlugin.options.url %>" />
+<meta property="og:image" content="<%= htmlWebpackPlugin.options.image %>" />
+<meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
+<meta property="og:description" content="<%= htmlWebpackPlugin.options.desc %>" />
+<title><%= htmlWebpackPlugin.options.title %></title>
+
+<link rel="shortcut icon" type="image/x-icon" href="http://s.nx.com/s2/game/closers/cbt/common/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="http://s.nx.com/s2/game/closers/cbt/common/favicon.ico" />    
+<script type="text/javascript" src="http://js.nx.com/s1/closers/common/jquery.min.js"></script>
+
+<!-- [S] UI 파트 스크립트 -->
+<link rel="stylesheet" type="text/css" href="http://s.nx.com/s3/closers/event/2018/templete/style.common.css">
+<link rel="stylesheet" type="text/css" href="http://s.nx.com/s3/closers/event/2017/templete/style.topBar.css"/>
+<!-- [E] //UI 파트 스크립트 -->
+
+<!-- [S] 개발 파트 WebJs, 사이드 배너 리스트 -->
+<script type="text/javascript">
+	var topBar = {};
+	topBar.json = '[{"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=4764900884993803358","link": "/events/2020/02/13/Pet.aspx ","target": "_self"},{"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5413419222745220208","link": "/events/2020/02/13/Costume.aspx ","target": "_self"},{"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5701649594601964647","link": "/events/2020/02/04/Winter.aspx ","target": "_self"},{"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5485476833963017276","link": "/events/2020/02/04/Update.aspx ","target": "_self"},{"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5413419239925089817","link": "/events/2020/01/16/NewReturnPlayer.aspx","target": "_self"},{"bg": "http://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5701649551652291807","link": "/events/2019/12/19/samyang.aspx","target": "_self"}]';
+</script>
+<!-- //[E] 개발 파트 WebJs, 사이드 배너 리스트 -->
+
+<!-- [S] 유의사항 테스트 -->
+<script type="text/javascript">
+	var arrAttention = '["<ul><li>이벤트 보상은 게임 화면 좌측 하단 [EV] 버튼을 통해 수령 가능합니다.</li><li>누적 출석일 수에 따라 보상이 활성화됩니다.</li><li>이벤트 기준 시간은 매일 자정입니다.</li><li>모든 보상은 계정당 1회 수령 가능합니다.</li><li>출석 체크 보상은 2020년 05월 14일(목) 오전 08시까지 획득 가능합니다.</li><li>[고급 위상 섬유]를 제외한 나머지 보상 중 미사용/미개봉한 아이템은 2020년 07월 16일(목) 오전 08<br>시에 일괄 삭제됩니다. 단, [컬러렌즈 랜덤 상자], [특정 캐릭터 펫 알 보관함], [핑크 수트 풀세트 상자]<br>에서 획득한 아이템은 무기한입니다.</li><li>[유니온 아카데미 [C타입] 풀세트 상자 (15일제)], [샤이닝 스타 풀세트 상자 (1일제)], [핑크 수트 풀세<br>트 상자] 개봉 시, 개봉하는 캐릭터만 착용 가능한 코스튬으로 지급되며, 거래/재포장/계정창고 이동<br>이 불가합니다. 개봉 시 주의해주세요!</li></ul>","<ul><li>레벨 달성 이벤트 보상은 필요 레벨 달성 후 게임 화면 좌측 하단 [EV] 버튼을 통해 수령 가능합니다.</li><li>계정 내 최고 레벨 캐릭터의 레벨을 기준으로 보상이 활성화되며, 보상 수령은 계정 내 모든 캐릭터로 가능합니다. (단, 이벤트 기간 중 최고 레벨의 <br>캐릭터로 1회 이상 접속해야만 다른 캐릭터로도 보상 수령 가능)</li><li>레벨 달성 이벤트 보상은 2020년 05월 14일(목) 오전 08시까지 획득 가능합니다.</li><li>미사용한 상자 및 소모품류 아이템은 2020년 07월 16일(목) 오전 08시에 일괄 삭제됩니다.</li><li>장비류 상자 개봉 시 개봉하는 캐릭터의 타입에 맞는 아이템으로 지급됩니다. 개봉한 캐릭터 외의 다른 캐릭터는 사용이 불가능할 수 있습니다.</li></ul>","-","-","-","-","-","-","-","-","-","-","-","-","-"]'
+</script>
+<!-- //[E] 유의사항 테스트 -->
+</head>
+<body>
+	<div id="wrap"></div>
+<!-- NX Global GNB -->
+<script src="http://rs.nxfs.nexon.com/common/js/gnb.min.js" data-gamecode="106497" data-ispublicbanner="false"></script>
+</body>
+</html>
