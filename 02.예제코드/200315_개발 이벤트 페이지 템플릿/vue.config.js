@@ -61,9 +61,10 @@ module.exports = {
 				fallback: {
 					loader: 'file-loader',
 					options: {
-						publicPath: (devMode) ? `${EV_CONFIG.folderName}` : EV_CONFIG.filePath.image,
+						publicPath: (devMode) ? EV_CONFIG.folderName : EV_CONFIG.filePath.image,
 						outputPath: EV_CONFIG.folderName,
-						name: '[folder]/[name].[ext]'
+						name: '[path][name].[ext]',
+						context: 'src/assets'
 					}
 				}
 			}))
