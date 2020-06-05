@@ -1,0 +1,295 @@
+/* 100sang 2019-03-19 lim.cheolho : main, lee.eunhye : sub */
+@charset "utf-8";
+@import "font.css";
+@import "sub.css";
+
+/* reset */
+body, div, p, pre, dl, dt, dd, input, form, fieldset, legend, h1, h2, h3, h4, h5, h6, ul, ol, li{margin:0;padding:0;}
+body{font-size:16px;line-height:1.25;font-family:"Noto Sans KR","Malgun Gothic","맑은 고딕",tahoma,sans-serif;font-weight:300;letter-spacing:-0.075em;}
+body, a {color:#2a2a2a;}
+ul, li, ol{list-style: outside none none;}
+a, a:active, a:hover, a:visited{text-decoration:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}/* ff style bug */
+em,address{font-style:normal;}
+img, fieldset{border:0;}
+img {vertical-align:top;}
+hr{display:none;}
+article,aside,dialog,header,section,footer,nav,figure{display:block;margin:0;padding:0;} /* html5 */
+table{padding:0;margin:0;border-spacing:0;border:0;border-collapse:collapse;}
+caption, legend, .blind{position:absolute;top:-9999em;height:0;overflow:hidden;visibility:hidden;}
+/* Button */
+button{overflow:visible;margin:0;padding:0;border:0;background:none;white-space:nowrap;cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+button span{position:relative;}
+textarea, input {-webkit-appearance: none; -webkit-border-radius: 0;}
+
+/* common */
+.loaded .main-page a.box-btn span,
+.loaded a {transition:all .3s;}
+.container-wrap {min-width:1340px; padding-top:90px;}
+.container-inner {width:1340px; margin:0 auto;}
+.header-wrap {z-index:10; left:0; top:0; right:0; min-width:1340px; height:88px; background-color:#fff; border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;
+	position: absolute;
+	transform: translate3d(0,0,0);
+	transition: top .3s linear;
+}
+.header-wrap .container-inner {position:relative;}
+.header-wrap .logo {position:absolute; left:30px; top:14px;}
+.header-wrap .logo a {display:block;  width:174px; height:62px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/header-logo.png) no-repeat 0 0; text-indent:-999em;}
+.header-wrap .gnb {position:absolute; right:30px; top:30px; min-width:800px; text-align:right;}
+.header-wrap .gnb ul {float:right; font-size:19px;}
+.header-wrap .gnb ul:after {content:""; display:block; clear:both;}
+.header-wrap .gnb li {float:left; padding:0 17.5px; text-align:center;}
+.header-wrap .gnb a {font-size:19px; font-weight:300; white-space:nowrap;
+	transition: none;
+}
+.header-wrap .gnb a:focus,
+.header-wrap .gnb a:hover {font-weight:500;}
+.header-wrap .gnb li.m2 a:focus,
+.header-wrap .gnb li.m2 a:hover {margin:0 -1px;}
+.footer-wrap {position:relative; height:220px; background-color:#001111; color:#fff;}
+.footer-wrap:after {content:''; position:absolute; left:0; top:0; right:0; height:10px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/bg-line.png) no-repeat 50% 0 / cover;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/bg-line.png', sizingMethod='scale');
+}
+.footer-wrap .container-inner {position:relative;}
+.footer-wrap .publisher {position:absolute; left:30px; top:80px;}
+.footer-wrap .logo {width:329px; height:28px; overflow:hidden; background:url('http://images.jtbc.joins.com/baeksang/footer-logo.png') no-repeat 0 0; text-indent:-999em;}
+.footer-wrap .with {margin-top:10px;}
+.footer-wrap .with dl {position:relative; padding-left:50px;}
+.footer-wrap .with dt {position:absolute; left:0; top:0; width:50px; height:30px; color:#808888; letter-spacing:0; line-height:30px; font-size:16px;}
+.footer-wrap .with dd {display:table; width:auto;height:30px;}
+.footer-wrap .with dd span {display:table-cell; padding-left:14px; vertical-align:middle;}
+.footer-wrap .copyright {margin-top:20px; color:#cccfcf; font-size:15px; font-weight:100; letter-spacing:0;}
+.footer-wrap .sponsor {position:absolute; right:30px; top:63px;}
+.footer-wrap .sponsor dl {position:relative; margin-top:6px; padding-left:119px;}
+.footer-wrap .sponsor dl:first-child {margin-top:0;}
+.footer-wrap .sponsor dt {position:absolute; left:0; top:0; width:117px; height:30px; border:1px solid #667070; font-size:15px; font-weight:100; letter-spacing:0; line-height:30px; text-align:center;}
+.footer-wrap .sponsor dd {display:table; width:auto; height:32px;}
+.footer-wrap .sponsor dd span {display:table-cell; padding-left:18px; vertical-align:middle;}
+.footer-wrap .sponsor dd span img {height:21px;}
+.footer-wrap .sponsor dd span.logo-vlive img {height:27px;}
+.banner-layerpopup {display:none;}
+.banner-layerpopup.on {position:absolute; top:156px; left:50%; margin-left:-625px; padding:25px 25px 17px; display:block; width:420px; height:482px; box-sizing:border-box; font-size:16px; color:#000;}
+.banner-layerpopup.megabox {background: url('http://images.jtbc.joins.com/baeksang/banner_layerpopup_megabox_bg.png') no-repeat; z-index:5;}
+.banner-layer-check {position:relative; zoom:1;}
+.banner-layer-check:after {display:block; content:""; clear:both;}
+.popup-check {display:inline-block; float:left; background:url('http://images.jtbc.joins.com/baeksang/popup_check.png') 0 12px no-repeat;}
+.popup-check.on {background:url('http://images.jtbc.joins.com/baeksang/popup_check_on.png') 0 12px no-repeat;}
+.popup-check label {display:inline-block; height:40px; cursor:pointer;}
+.popup-check input {width:16px; height:16px; visibility:hidden;}
+.popup-check span {padding-left:8px; height:40px; line-height:40px;}
+.popup-close {display:inline-block; float:right;}
+.popup-close button {display:block; height:40px; line-height:40px; }
+.popup-close button span {font-size:16px; color:#000;}
+.popup-close button img {margin:10px 7px 0 9px;}
+/* animation */
+.reforeunload * {
+	transition:none;
+	visibility:hidden;
+}
+/*.main-page {position:relative; opacity:0; visibility:hidden;
+	transition:none;
+}
+.loaded .main-page {
+	transition:translateZ(0);
+}*/
+.visual-wrap .visual > div,
+.info-wrap p,
+.info-wrap h2,
+.info-wrap a,
+.dday-wrap .dday h2,
+.dday-wrap .dday .cnt,
+.dday-wrap .dday .txt,
+.dday-wrap .dday em,
+.vod-wrap .wrap,
+.vod-wrap .more a,
+.sector-wrap h2,
+.sector-wrap .button {position:relative; opacity:0; visibility:hidden;}
+.dday-wrap .dday h2,
+.dday-wrap .dday .txt {position:absolute;}
+/* action */
+.visual-wrap .visual > div,
+.info-wrap p,
+.info-wrap h2,
+.info-wrap a,
+.dday-wrap .dday h2,
+.dday-wrap .dday em,
+.dday-wrap .dday .cnt,
+.vod-wrap .wrap,
+.vod-wrap .more a,
+.sector-wrap h2,
+.sector-wrap .button {top:30px;}
+.dday-wrap .dday .txt {bottom:-38px;}
+/* transition */
+.loaded .visual-wrap .visual > div,
+.loaded .info-wrap p,
+.loaded .info-wrap h2,
+.loaded .info-wrap a,
+.loaded .dday-wrap .dday h2,
+.loaded .dday-wrap .dday .cnt,
+.loaded .dday-wrap .dday .txt,
+.loaded .dday-wrap .dday em,
+.loaded .vod-wrap .wrap,
+.loaded .vod-wrap .more a,
+.loaded .sector-wrap h2,
+.loaded .sector-wrap .button {
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0, 1.0);
+	transition:all .3s linear;
+}
+/* visible */
+.loaded .main-page,
+.loaded .ani-visible.visual-wrap .visual > div,
+.loaded .ani-visible.info-wrap p,
+.loaded .ani-visible.info-wrap h2,
+.loaded .ani-visible.info-wrap a,
+.loaded .ani-visible.vod-wrap .wrap,
+.loaded .ani-visible.vod-wrap .more a,
+.loaded .ani-visible.sector-wrap h2,
+.loaded .ani-visible.sector-wrap .button {top:0; opacity:1; visibility:visible;}
+.loaded .ani-visible.dday-wrap .dday h2,
+.loaded .ani-visible.dday-wrap .dday em,
+.loaded .ani-visible.dday-wrap .dday .cnt {top:0; opacity:1; visibility:visible;}
+.loaded .ani-visible.dday-wrap .dday .txt {bottom:-18px; opacity:1; visibility:visible;}
+/* timeline */
+.loaded .ani-visible.visual-wrap .visual > div {transition-delay:0s;}
+.loaded .ani-visible.info-wrap p {transition-delay:.5s;}
+.loaded .ani-visible.info-wrap h2 {transition-delay:1s;}
+.loaded .ani-visible.info-wrap a {transition-delay:1.5s;}
+.loaded .ani-visible.dday-wrap .dday h2 {transition-delay:0s;}
+.loaded .ani-visible.dday-wrap .dday .cnt:nth-child(1) {transition-delay:.1s;}
+.loaded .ani-visible.dday-wrap .dday .txt:nth-child(1) {transition-delay:.1s;}
+.loaded .ani-visible.dday-wrap .dday .cnt:nth-child(2) {transition-delay:.2s;}
+.loaded .ani-visible.dday-wrap .dday .txt:nth-child(2) {transition-delay:.2s;}
+.loaded .ani-visible.dday-wrap .dday .cnt:nth-child(3) {transition-delay:.3s;}
+.loaded .ani-visible.dday-wrap .dday .txt:nth-child(3) {transition-delay:.3s;}
+.loaded .ani-visible.dday-wrap .dday em:nth-child(1) {transition-delay:.1s;}
+.loaded .ani-visible.dday-wrap .dday em:nth-child(2) {transition-delay:.2s;}
+.loaded .ani-visible.vod-wrap .wrap {transition-delay:0s;}
+.loaded .ani-visible.vod-wrap .more a {transition-delay:.5s;}
+.loaded .ani-visible.sector-wrap h2 {transition-delay:0s;}
+.loaded .ani-visible.sector-wrap .button {transition-delay:.5s;}
+
+/* main */
+.main-page a.box-btn {display:inline-block; width:288px; overflow:hidden; border:1px solid #aaa; text-align:center; vertical-align:top;}
+.main-page a.box-btn span {display:block; /* margin:-5px 0 -3px 0; */ font-size:22px; font-weight:400; line-height:59px;}
+.main-page a.box-btn:focus span,
+.main-page a.box-btn:hover span {background-color:#00306e; border-color:#00306e; color:#fff;}
+.visual-wrap {position:relative; height:670px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/bg-visual.png) no-repeat 50% 50% / cover;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/bg-visual.png', sizingMethod='scale');
+}
+.visual-wrap .visual {position:absolute; left:50%; top:50%; margin:-373px 0 0 -373px;}
+.info-wrap {height:350px; background-color:#efe9e4; text-align:center;}
+.info-wrap p {padding-top:83px; font-size:20px;}
+.info-wrap h2 {margin-top:11px; font-size:35px;}
+.info-wrap h2 strong {font-weight:500;}
+.info-wrap h2 span {font-weight:300;}
+.info-wrap a {margin-top:34px;}
+.info-wrap a span {width:288px;}
+.dday-wrap {display:none; height:80px; background-color:#001838; color:#ddd; text-align:center;}
+.dday-wrap .dday {position:relative; top:16px; display:inline-block; padding-left:150px; vertical-align:top;}
+.dday-wrap .dday h2 {position:absolute; left:0; top:0; font-size:28px; font-weight:100; letter-spacing:2px;}
+.dday-wrap .dday span,
+.dday-wrap .dday em {display:inline-block; vertical-align:top;}
+.dday-wrap .dday em {width:15px; margin-top:-3px;}
+.chrome .dday-wrap .dday em {margin-top:1px;}
+.dday-wrap .timer {letter-spacing:6px;}
+.dday-wrap .day,
+.dday-wrap .hour,
+.dday-wrap .sec {position:relative;}
+.dday-wrap .cnt,
+.dday-wrap .dday em {font-size:28px; line-height:32px}
+.dday-wrap .txt {position:absolute; left:0; bottom:-18px; right:0; font-size:12px; line-height:22px;}
+.vod-wrap {height:890px; background:url(http://images.jtbc.joins.com/baeksang/bg-vod.png) #000 no-repeat 50% 50% / 2540px auto; text-align:center;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/bg-vod.png', sizingMethod='scale');
+}
+.vod-wrap .wrap {position:relative; margin-top:90px; display:inline-block; vertical-align:top;}
+.vod-wrap .list {position:relative; width:1008px; height:567px;}
+/* .vod-wrap .list ul {position:absolute; left:0; top:0; width:1000%;} */
+.vod-wrap .list .vod-item {float:left; width:1008px; height:576px;}
+.vod-wrap .list .vod-item a {position:relative; display:block; color:#dcdcdc;}
+.vod-wrap .list .vod-item a:after {content:''; position:absolute; left:50%; top:50%; width:125px; height:125px; overflow:hidden; margin:-62.5px 0 0 -62.5px; background:url(http://images.jtbc.joins.com/baeksang/btn-play.png) no-repeat 50% 50%;}
+.vod-wrap .thumb {display:block;}
+.vod-wrap .thumb img {width:1008px; height:567px;}
+.vod-wrap .title {position:absolute; left:0; bottom:0; right:0; height:94px; padding:29px 0 0 38px; background-color:#000; background-color:rgba(0,0,0,0.8); text-align:left;}
+.vod-wrap .title strong {display:block; font-size:30px; font-weight:400;}
+.vod-wrap .title span {display:block; margin-top:4px; font-size:20px;}
+.vod-wrap .list button {position:absolute; top:50%; width:45px; height:62px; overflow:hidden; background:none no-repeat 50% 50%; margin-top:-31px; text-indent:-999em;}
+.vod-wrap .list button.slick-prev {left:-61px; background-image:url(http://images.jtbc.joins.com/baeksang/btn-prev.png);}
+.vod-wrap .list button.slick-next {right:-61px; background-image:url(http://images.jtbc.joins.com/baeksang/btn-next.png);}
+.vod-wrap .more {margin-top:62px;}
+.vod-wrap .more a {color:#fff;}
+.vod-wrap .more a:focus span,
+.vod-wrap .more a:hover span {background-color:#fff; border-color:#fff; color:#000;}
+.sector-wrap {height:450px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/bg-line.png) repeat-y 50% 0 / cover; text-align:center;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/bg-line.png', sizingMethod='scale');
+}
+.sector-wrap.final {height:320px;}
+.sector-wrap h2 {margin:92px 0 69px; color:#fff; font-size:35px; font-weight:300;}
+.sector-wrap h2 strong {font-weight:500;}
+.sector-wrap .button {display:inline-block; vertical-align:top}
+.sector-wrap .button:after {content:''; display:block; clear:both;}
+.sector-wrap .button a {position:relative; float:left; width:412px; margin-left:15px; background:none no-repeat 0 0; border:0 none; box-sizing:content-box;
+	transition: none;
+}
+.sector-wrap .button a.tv span {color:#c4e9e8;}
+.sector-wrap .button a.movie span {border-color:#ff9a9e; color:#ff9a9e;}
+.sector-wrap .button a span {z-index:1; position:relative; border:2px solid #c4e9e8; font-size:30px; line-height:135px;}
+.sector-wrap .button a:first-child {margin-left:0;}
+.sector-wrap .button a span:after {content:''; z-index:-1; position:absolute; left:0; right:0; top:0; bottom:0; background:none no-repeat 0 0; opacity:0;
+	transition: opacity .3s;
+}
+.sector-wrap .button a:focus span,
+.sector-wrap .button a:hover span {color:#003372;}
+.sector-wrap .button a.tv:focus span:after,
+.sector-wrap .button a.tv:hover span:after {background-color:#c4e9e8; border-color:#c4e9e8; opacity:1;}
+.sector-wrap .button a.movie:focus span:after,
+.sector-wrap .button a.movie:hover span:after {background-color:#ff9a9e; border-color:#ff9a9e; opacity:1;}
+.notice-wrap {background-color:#fff;}
+.notice-wrap .container-inner {width:1160px; padding:94px 0 130px;}
+.notice-wrap h2 {color:#2a2a2a; font-size:35px; font-weight:300; text-align:center;}
+.notice-wrap h2 strong {font-weight:500;}
+.notice-wrap .desc {margin-top:13px; color:#454545; font-size:20px; text-align:center;}
+.notice-wrap .notice {margin-top:57px; border-top:1px solid #ddd;}
+.notice-wrap .head {position:relative; padding:23px 0 25px 11px;}
+.notice-wrap .head h3 {font-size:24px; font-weight:700}
+.notice-wrap .head a {position:absolute; right:2px; top:50%; margin-top:-10.5px;}
+.notice-wrap .head a span {display:block; height:21px; padding-right:31px; background:url(http://images.jtbc.joins.com/baeksang/btn-more.png) no-repeat 100% 0; color:#454545; font-size:16px; line-height:21px;}
+.notice-wrap .list {}
+.notice-wrap .list ul {}
+.notice-wrap .list li {margin-top:12px;}
+.notice-wrap .list li:first-child {margin-top:0;}
+.notice-wrap .list a {position:relative; display:block; padding:17px 20px 18px 30px; border:1px solid #ddd;}
+.notice-wrap .list a:focus,
+.notice-wrap .list a:hover {box-shadow:0 0 9px rgba(0,0,0,0.2);}
+.notice-wrap .list a:focus i,
+.notice-wrap .list a:hover i {border-bottom:1px solid #666;}
+.notice-wrap .list a strong {display:block; margin-right:115px; font-size:20px; font-weight:700;}
+.notice-wrap .list a span {display:block; max-height:70px; overflow:hidden; margin-top:11px; padding-bottom:1px; color:#666; font-size:16px; font-weight:100; letter-spacing:0; line-height:23px;}
+.notice-wrap .list a i {font-style:normal;}
+.notice-wrap .list a em {position:absolute; right:20px; top:20px; color:#454545; font-size:18px; font-weight:100;}
+.notice-wrap .share {margin-top:30px; text-align:right;}
+.notice-wrap .share a {display:inline-block; width:67px; height:68px; overflow:hidden; margin-left:4px; background:none no-repeat 0 0; text-align:left; text-indent:-999em; vertical-align:top;}
+.notice-wrap .share a:first-child {margin-left:0;}
+.notice-wrap .share a.insta {background-image:url(http://images.jtbc.joins.com/baeksang/instagram_icon.png);}
+.notice-wrap .share a.insta:focus,
+.notice-wrap .share a.insta:hover {box-shadow:inset 0 0 0 3px #fff, 0 0 1px rgba(0, 0, 0, 0);}
+.notice-wrap .share a.facebook {background-image:url(http://images.jtbc.joins.com/baeksang/btn-facebook.gif);}
+.notice-wrap .share a.facebook:focus,
+.notice-wrap .share a.facebook:hover {box-shadow:inset 0 0 0 3px #fff, 0 0 1px rgba(0, 0, 0, 0);}
+.notice-wrap .share a.youtube {background-image:url(http://images.jtbc.joins.com/baeksang/btn-youtube.gif);}
+.notice-wrap .share a.youtube:focus,
+.notice-wrap .share a.youtube:hover {box-shadow:inset 0 0 0 3px #fff, 0 0 1px rgba(0, 0, 0, 0);}
+.notice-wrap .banner {margin-top:62px; text-align:center;}
+.notice-wrap .banner a,
+.notice-wrap .banner img {display:block;}
+
+/* 수상 후 */
+.sector-wrap .button a.nominate-end {width:732px;}
+.sector-wrap .button a.nominate-end span .bar {display:inline-block; margin:0 14px 0 15px; width:1px;height:21px; background:#c4e9e8;}
+.sector-wrap .button a.nominate-end:hover span .bar {background:#003372;}
+.sector-wrap .button a.nominate-end span .bg {display:inline-block; margin-left:14px; width:14px; height:25px; background:url(http://images.jtbc.joins.com/baeksang/btn_bg_nominate_end.png) no-repeat;}
+.sector-wrap .button a.nominate-end:hover span .bg {background:url(http://images.jtbc.joins.com/baeksang/btn_bg_nominate_end_on.png) no-repeat;}
+
+/* //css */

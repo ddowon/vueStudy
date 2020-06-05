@@ -1,0 +1,362 @@
+/* 100sang 2019-03-25 lee.eunhye */
+@charset "utf-8";
+
+/* sub common */
+.sub-page .footer-wrap .container-inner,
+.sub-page .header-wrap .container-inner {width:1340px;}
+.hidden{position:absolute;left:-5000px;top:0;visibility:hidden;overflow:hidden;line-height:0.1%;font-size:0.1%;width:0.1%;height:0.1%;}
+.sub-page .header-wrap .container-inner,
+.sub-page .footer-wrap .container-inner {min-height:0;}
+.sub-page .container-inner {width:1160px;}
+.sub-page .sub-title {position:relative; padding:90px 0 45px;background:#fff2f0;}
+.sub-page .sub-title:after {position:absolute; bottom:-9px; left:50%; display:block; content:""; margin-left:-9px; width:0; height:0; border-left:9px solid transparent; border-right:9px solid transparent; border-top:9px solid #fff2f0; z-index:1;}
+.sub-page .sub-title h2 {font-size:48px; font-weight:bold;text-align:center;}
+.sub-page .sub-title .button {margin-top:59px; display:inline-block; vertical-align:top}
+.sub-page .sub-title .button a {float:left; line-height:66px; text-align:center; box-sizing:content-box; }
+.sub-page .sub-title .button a:first-child {margin-right:0;}
+.sub-page .sub-title .button a.on,
+.sub-page .sub-title .button a.on:hover {color:#fff; font-weight:600;}
+.sub-page .sub-title .button a span {font-size:20px; line-height:22px;}
+.sub-page .sub-title .button a:hover span {font-weight:600; text-decoration:underline;}
+.sub-page .sub-title .button a.on:hover span {color:#fff; text-decoration:none;}
+.sub-page .sector-title {padding:78px 0 27px; font-size:0; line-height:0; border-bottom:2px solid #2a2a2a;}
+.sub-page .sector-title strong {font-size:24px; line-height:28px;}
+.sub-page .sector-title .nominee-award {position:relative; display:inline-block; margin-right:17px; padding-right:14px; font-size:24px; line-height:28px; font-weight:bold; vertical-align:middle;}
+.sub-page .sector-title .nominee-award:after {position:absolute; right:0; top:7px; display:block; content:""; width:1px; height:14px; background:#949494;}
+.sub-page .sector-title .nominee-sector {display:inline-block; padding:0 8px; height:24px; font-size:14px; line-height:24px; color:#fff; vertical-align:middle;}
+.sub-page .top-wrap {position:fixed; right:60px; bottom:60px; display:inline-block; z-index:1;}
+.dim-wrap { position:fixed;left:0; top:0; right:0; bottom:0; width:100%; height:100%; background:rgba(0, 0, 0, .9); z-index:10;
+	transition:all .3s;
+}
+
+.dim-wrap .dim-con {position:absolute; left:50%; top:50%; display:block; margin:-347px 0 0 -504px; width:1008px; height:630px; text-align:right; vertical-align:center; vertical-align:middle; }
+.dim-wrap .dim-con > button {margin-bottom:13px;}
+.dim-wrap .dim-con .replay-area {position:relative; width:1008px; height:567px; text-align:left;}
+.ie7 .dim-wrap.on,
+.ie8 .dim-wrap.on {display:block; background:#000;}
+a.btn_file_save.big{font-size:14px;line-height:36px;display:inline-block;width:138px;height:38px;padding:0;text-align:center;color:#2a2a2a;border:1px solid #ddd}
+a.btn_file_save.big em{display:inline-block;width:13px;height:14px;margin-right:6px;vertical-align:-1px;background:url('http://images.jtbc.joins.com/baeksang/btn_file_save.png') no-repeat}
+a.btn_file_save.big:focus,a.btn_file_save.big:hover{background:#f5f5f5}
+
+.notice-page .notice-title-wrap.sub-title,
+.awards-page .awards-title-wrap.sub-title,
+.vote-page .notice-title-wrap.sub-title {padding-bottom:90px;}
+/*! BOARD - View */
+.tb_view{margin:0 0 14px;border-top:2px solid #555}
+.tb_view.position01{position:relative}
+.tb_view .veiw_tit{font-size:18px;font-weight:700;line-height:26px;padding:18px 22px 16px;color:#2a2a2a; border-bottom:1px solid #000;}
+.tb_view .veiw_tit .ico_status2{margin-right:12px}
+.tb_view .veiw_tit .view_copy{font-size:16px;font-weight:400;line-height:16px;display:block;padding:10px 0 0}
+.tb_view .view_cont{position:relative; border-bottom:1px solid #ddd}
+.tb_view .view_cont_txt{overflow:hidden; min-height:250px;padding:20px 20px 57px}
+.tb_view .view_cont_txt .write_tbl01{margin:10px 0 0}
+.tb_view .view_cont_txt img{display:block; max-width:700px; margin:10px auto;}
+.tb_view .view_cont_txt.no_sns{padding-bottom:30px}
+.tb_view .view_cont_txt p{font-size:18px; line-height:28px; color:#454545; }
+.tb_view .view_cont_txt p strong{font-weight:700}
+.tb_view .view_cont_txt p em{font-style:italic}
+.tb_view .share_btn_group{right:0}
+/*! BOARD - view (next/prev) :from.jtbc.joins.com */
+.tbl_other{margin:60px 0 0;border-top:1px solid #eaeaea}
+.tbl_other li{padding:19px 0 20px;border-bottom:1px solid #eaeaea}
+.tbl_other li>strong{display:inline-block; padding-left:20px; width:140px; font-size:18px; color:#666; font-weight:normal;}
+.tbl_other a {font-size:18px;color:#454545;}
+.tbl_other a:focus,
+.tbl_other a:hover{color:#00306e; text-decoration:underline}
+.tbl_other li strong .ico{display:inline-block;width:12px;height:7px;margin-left:26px;vertical-align:middle;}
+.tbl_other li.pre strong .ico{background:url('http://images.jtbc.joins.com/baeksang/list_prev.png') no-repeat;}
+.tbl_other li.nex strong .ico {margin-left:30px; background:url('http://images.jtbc.joins.com/baeksang/list_next.png') no-repeat;}
+.tb_view .filesave_wrap{position:relative; margin:0 0 40px 20px;}
+.tb_view .filesave_wrap .filesave_list.on{display:block}
+.tb_view .filesave_wrap .filesave_list{position:absolute;z-index:1;top:0;left:150px;display:none;min-width:200px;padding:15px 34px 15px 20px;border:1px solid #ccc;background:#fff;box-shadow:3px 3px 3px #ececec}
+.tb_view .filesave_wrap .filesave_list li{padding-left:16px;background:url('http://images.jtbc.joins.com/baeksang/ico_file_save.png') left 5px no-repeat}
+.tb_view .filesave_wrap .filesave_list li:first-child{margin-bottom:7px}
+.tb_view .filesave_wrap .filesave_list li a{color:#2a2a2a}
+.tb_view .filesave_wrap .filesave_list li a:focus,.tb_view .filesave_wrap .filesave_list li a:hover{text-decoration:underline}
+.tb_view .filesave_wrap .filesave_list .bnt_close{position:absolute;top:0;right:0;display:block;width:8px;height:9px;padding:7px;text-indent:-999em;background:url(/images/common/btn_filesave_close.png) 7px 7px no-repeat}
+/*! SelectBox :from.jtbc.joins.com */
+.selectbox_wrap{font-weight:400;position:relative;display:inline-block;width:195px;height:42px;padding-left:0;text-align:left;vertical-align:-9px;border:1px solid #aaa;background:#f0f0f0}
+.ie7 .selectbox_wrap.active{z-index:5}
+.selectbox_wrap .select_result{font-size:18px;line-height:42px;display:block;overflow:hidden;width:200px;height:42px;padding:0 40px 0 0;text-indent:18px;}
+.selectbox_wrap .select_result:hover,.selectbox_wrap .select_result:link,.selectbox_wrap .select_result:visited{text-decoration:none;color:#1b2637}
+.selectbox_wrap .select_arrow{position:absolute;top:0;right:0;display:block;width:36px;height:30px;outline:0}
+.selectbox_wrap .selectbox_wrapDisabled{border:1px solid #515151;background-color:#3c3c3c}
+.selectbox_wrap .sel_list{position:absolute;z-index:5;top:42px;left:-924px;display:none;overflow-y:auto;width:235px;margin:0;padding:0;list-style:none;border:1px solid #aaa;background-color:#fff}
+.selectbox_wrap.active .sel_list {display:block; padding:0 55px 20px; width:1048px;}
+.selectbox_wrap.active .sel_list:before {display:block; padding:40px 0 30px;content:"회차를 선택해 주세요"; font-size:22px; color:#000; font-weight:bold; text-align:center;}
+.selectbox_wrap .sel_list.reversal{top:auto;bottom:36px}
+.selectbox_wrap .sel_list li {float:left; margin:0 20px; width:65px;}
+.selectbox_wrap .sel_list li.on a,
+.selectbox_wrap .sel_list li:hover a {font-weight:bold; color:#00306e; text-decoration:underline;}
+.selectbox_wrap .sel_list a{line-height:39px;display:block;overflow:hidden;height:39px; font-size:16px; color:#454545; text-align:center; outline:0}
+.selectbox_wrap .sel_list .sbDisabled{display:block;padding:7px 0 7px 3px;color:#999}
+.selectbox_wrap .sel_list a:focus{outline:dotted 1px}
+.selectbox_wrap select{display:none}
+.selectbox{display:inline}
+.selectbox.block{display:block}
+.selectbox_wrap.disabled .select_result{background:url(/images/common/select_arrow_disabled.gif) right 3px no-repeat #eee}
+.selectbox_wrap {position:absolute; right:0; top:72px; height:42px;vertical-align:middle}
+.selectbox_wrap .select_result{line-height:42px;height:42px;background-position:right top}
+.selectbox_wrap .select_result .ico-select {position:absolute;right:0; top:0; margin:-1px; width:44px; height:44px; background:url('http://images.jtbc.joins.com/baeksang/ico_list_more.png') center no-repeat; border-left:1px solid #aaa;}
+.selectbox_wrap.active .select_result .ico-select {background:#2a2a2a url('http://images.jtbc.joins.com/baeksang/ico_list_more_up.png') center no-repeat; }
+
+/* null page */
+.null-page {padding-top:35px; padding-bottom:130px;text-align:center;}
+.null-page .more {margin-top:57px;}
+.null-page a.box-btn {display:inline-block; width:288px; overflow:hidden; border:1px solid #aaa; text-align:center; vertical-align:top;}
+.null-page a.box-btn span {display:block; font-size:22px; font-weight:400; line-height:59px;}
+.null-page a.box-btn:focus,
+.null-page a.box-btn:hover {background-color:#00306e; border-color:#00306e; color:#fff;}
+
+/* 시상식 소개 */
+.about-page .about-title-wrap {text-align:center;}
+.about-page .sub-title:after {display:none;}
+.about-page .about-title-wrap h2 {}
+.about-page .about-title-wrap strong {display:block; padding-top:20px; font-size:22px; line-height:52px; }
+.about-page .about-title-wrap p {padding-bottom:56px; font-size:20px; line-height:30px;}
+.about-page .about-title-wrap img {margin-bottom:-137px;}
+.about-page .schedule-wrap {padding:166px 0 0;}
+.about-page .schedule-wrap h3 {padding:0 0 53px; font-size:35px; line-height:46px; text-align:center;}
+.about-page .schedule-con {position:relative; padding:6px 0 80px;border-top:2px solid #000;}
+.about-page .schedule-con:after {display:block; content:"";clear:both;}
+.about-page .schedule-con dl {float:left; padding:0 0 0 90px;width:50%; box-sizing:border-box; border-bottom:1px solid #ddd;}
+.about-page .schedule-con dt,
+.about-page .schedule-con dd {float:left; line-height:70px;}
+.about-page .schedule-con dt {width:68px; font-size:22px; font-weight:bold;}
+.about-page .schedule-con dd {display:block; width:auto; font-size:20px; color:#454545;}
+.about-page .schedule-con dd span {float:left; padding-right:16px; vertical-align:middle;}
+.about-page .schedule-con dd span img {margin-top:-6px; height:24px; vertical-align:middle;}
+.about-page .schedule-con dd span.logo-vlive img {height:29px;}
+.about-page .guideline-wrap {padding:95px 0 110px;color:#fff; text-align:center; background:url(http://images.jtbc.joins.com/baeksang/bg-line.png) repeat-y 50% 0 / cover;}
+.about-page .guideline-wrap h3 {font-size:35px; line-height:43px;}
+.about-page .guideline-wrap .guideline-sector {margin-top:70px; border:1px solid #8099b8;}
+.about-page .guideline-wrap .guideline-sector .guideline-title {position:relative; margin-top:-20px;padding-bottom:20px;}
+.about-page .guideline-wrap .guideline-sector .guideline-title span {position:relative; display:inline-block; padding:0 34px; font-size:28px; background:#00316f; z-index:1;}
+.about-page .guideline-wrap .guideline-sector .guideline-con {padding-bottom:30px; font-size:18px; line-height:28px;}
+.about-page .sector-title-wrap {padding-bottom:110px;}
+.about-page .sector-title-wrap:after {display:none;}
+.about-page .sector-title-wrap h3 {padding-bottom:57px; font-size:35px; text-align:center; }
+.about-page .sector-title-wrap .prize-sector {border-top:2px solid #000;}
+.about-page .sector-title-wrap .prize-sector dl {position:relative; }
+.about-page .sector-title-wrap .prize-sector dl:after {display:block; content:"";clear:both;}
+.about-page .sector-title-wrap .prize-sector dt,
+.about-page .sector-title-wrap .prize-sector dd {float:left; padding-top:20px; padding-bottom:20px; height:30px; line-height:30px; border-bottom:1px solid #a0a0a0;}
+.about-page .sector-title-wrap .prize-sector dt {width:122px; font-size:22px; color:#fff; text-align:center; }
+.about-page .sector-title-wrap .prize-sector .tv dt {background:#00306e;}
+.about-page .sector-title-wrap .prize-sector .movie dt {background:#f0565e;}
+.about-page .sector-title-wrap .prize-sector .drama dt {background:#1486bf;}
+.about-page .sector-title-wrap .prize-sector dd {padding-right:24px; padding-left:24px; width:990px; font-size:18px; color:#454545;}
+.about-page .contact-wrap {padding:94px 0 120px;}
+.about-page .contact-wrap h3 {padding-bottom:55px; font-size:35px; line-height:43px; text-align:center;}
+.about-page .contact-wrap .map-area {}
+.about-page .contact-wrap .map-area .wrap_controllers {display:none;}
+.about-page .contact-wrap .button {margin-top:0; margin-bottom:78px;}
+.about-page .contact-wrap .publie-transit {padding:34px 0 38px; font-size:22px; font-weight:bold; text-align:center; }
+.about-page .contact-wrap .info-publie-transit {width:1132px; height:121px; background:url('http://images.jtbc.joins.com/baeksang/bg_info_publie_transit.png') 0 0 no-repeat;}
+.about-page .contact-wrap .info-publie-transit table {display:none;}
+.about-page .contact-wrap .info-publie-transit th {padding-left:12px; font-size:22px; font-weight:bold; text-align:left; vertical-align:top;}
+.about-page .contact-wrap .info-publie-transit th.subway {padding-left:0; text-align:center; vertical-align:top;}
+.about-page .contact-wrap .info-publie-transit td {font-size:20px; line-height:30px; vertical-align:top;}
+.about-page .contact-wrap .info-publie-transit dd ul {}
+.about-page .contact-wrap .info-publie-transit li {padding-top:8px; padding-left:39px; }
+.about-page .contact-wrap .info-publie-transit li:first-child {padding-top:0;}
+.about-page .contact-wrap .info-publie-transit span { font-weight:bold;}
+.about-page .contact-wrap .info-publie-transit .line9 { background:url('http://images.jtbc.joins.com/baeksang/bg_line9.png') 0 4px no-repeat;}
+.about-page .contact-wrap .line9 span {color:#ca8b2c;}
+.about-page .contact-wrap .info-publie-transit .line2 {background:url('http://images.jtbc.joins.com/baeksang/bg_line2.png') 0 10px no-repeat}
+.about-page .contact-wrap .citybus-green, 
+.about-page .contact-wrap .line2 span {color:#3e9337;}
+.about-page .contact-wrap .citybus-night {color:#006fa7;}
+.about-page .contact-wrap {}
+.about-page .contact-wrap {}
+.about-page .contact-wrap {}
+.about-page {}
+
+/* 후보자 작품 */
+.candidate-page {}
+.candidate-page .nominee-title-wrap .button a {width:578px;}
+.candidate-page .nominee-title-wrap .button .tv {border:1px solid #999;}
+.candidate-page .nominee-title-wrap .button .movie {border:1px solid #999;}
+.candidate-page .nominee-title-wrap .button .tv.on,
+.candidate-page .nominee-title-wrap .button .tv.on:hover {background:#00306e; border:1px solid #00306e;}
+.candidate-page .nominee-title-wrap .button .movie.on,
+.candidate-page .nominee-title-wrap .button .movie.on:hover {background:#f0565e; border:1px solid #f0565e;}
+.candidate-page .nominee-title-wrap .button .tv:hover {background:transparent; border:1px solid #00306e;}
+.candidate-page .nominee-title-wrap .button .movie:hover {background:transparent; border:1px solid #f0565e;}
+.candidate-page .nominee-title-wrap .button .tv:hover span {color:#00306e}
+.candidate-page .nominee-title-wrap .button .movie:hover span {color:#f0565e;}
+.candidate-page .nominated-wrap {background:url('http://images.jtbc.joins.com/baeksang/bg-line.png') repeat-y 50% 0 / cover;}
+.candidate-page .nominated-wrap .nominnated-list {position:relative; padding:34px 2px 25px 3px;}
+.candidate-page .nominated-wrap .nominnated-list:after {display:block; content:""; clear:both;}
+.candidate-page .nominated-wrap .nominnated-list li {float:left; display:inline-block; margin-bottom:7px;width:165px; text-align:center;}
+.candidate-page .nominated-wrap .nominnated-list li a {position:relative; display:inline-block; padding-bottom:2px;}
+.candidate-page .nominated-wrap .nominnated-list li a span {padding-bottom:2px;}
+.candidate-page .nominated-wrap .nominnated-list li.on a span,
+.candidate-page .nominated-wrap .nominnated-list li a:hover span {font-weight:500; }
+.candidate-page .nominated-wrap .nominnated-list li.on a span:before {position:absolute; left:0; bottom:0; display:block; width:100%; height:2px; content:""; background:#fff; opacity:1;}
+
+.candidate-page .nominated-wrap .nominnated-list li.on a:hover span:before {width:100%;}
+
+.candidate-page .nominated-wrap .nominnated-list li a span:before,
+.candidate-page .nominated-wrap .nominnated-list li a span:after {
+	position:absolute; bottom:0; content:""; width:0; height:2px; 
+	transition:all 0.2s ease-in-out; transition-duration:0.25s; opacity:0; }
+.candidate-page .nominated-wrap .nominnated-list li a:hover span:before,
+.candidate-page .nominated-wrap .nominnated-list li a:hover span:after {width:50%; opacity:1;}
+.candidate-page .nominated-wrap .nominnated-list li a span:before {left:calc(50%); background:#fff;}
+.candidate-page .nominated-wrap .nominnated-list li a span:after {right:calc(50%); background:#fff;}
+.candidate-page .nominated-wrap .nominnated-list li a span {width:100%; font-size:18px; line-height:30px;color:#fff;}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector01 {background:#00306e;}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector02 {background:#f0565e;}
+.candidate-page .nominee-list-wrap .nominee-list {position:relative; margin:0 -20px; padding:30px 0 0; zoom:1;}
+.candidate-page .nominee-list-wrap .nominee-list:after {display:block; content:""; clear:both;}
+.candidate-page .nominee-list-wrap .nominee-list li {float:left; margin:0 20px 10px; width:200px; height:405px;}
+.candidate-page .nominee-list-wrap .nominee-list li .list-thumb {overflow:hidden; display:block; margin-bottom:25px; width:200px; height:280px; background:#eaeaea;}
+.candidate-page .nominee-list-wrap .nominee-list li img {max-width:200px; max-height:280px; width:100%; height:auto; vertical-align:middle;}
+.candidate-page .nominee-list-wrap .nominee-list li .title {}
+.candidate-page .nominee-list-wrap .nominee-list li .title strong {overflow:hidden; display:block; padding:0 1px; max-height:50px; font-size:20px; line-height:25px; }
+.candidate-page .nominee-list-wrap .nominee-list li .title .name {overflow:hidden; display:block; padding:3px 1px 0; height:72px;font-size:20px; line-height:24px;}
+
+/* 다시보기 */
+.vod-page {padding-bottom:130px;}
+.vod-page .notice-title-wrap .button .box-btn {margin-left:-1px; width:385px; border:1px solid #999;}
+.vod-page .notice-title-wrap .button .timeof55,
+.vod-page .notice-title-wrap .button .timeof54 {}
+.vod-page .notice-title-wrap .button .timeof55.on,
+.vod-page .notice-title-wrap .button .timeof54.on {background:#00306e; border-color:#00306e;}
+.vod-page .notice-title-wrap .button .timeof55:hover,
+.vod-page .notice-title-wrap .button .timeof54:hover {border:1px solid #00306e;}
+.vod-page .notice-title-wrap .button .timeof55 span,
+.vod-page .notice-title-wrap .button .timeof54 span {}
+.vod-page .notice-title-wrap .button .timeof55:hover span,
+.vod-page .notice-title-wrap .button .timeof54:hover span {color:#00306e;}
+.vod-page .notice-title-wrap .button .more-btn {}
+.vod-page .notice-title-wrap .button .more-btn:hover {border:1px solid #f0565e;}
+.vod-page .notice-title-wrap .button .more-btn span {display:inline-block; height:22px;}
+.vod-page .notice-title-wrap .button .more-btn:hover span {text-decoration:none; color:#f0565e;}
+.vod-page .notice-title-wrap .button .more-btn .ico-more {display:inline-block; margin-left:7px; width:7px; height:20px; background:url('http://images.jtbc.joins.com/baeksang/ico_more.png') 0 5.5px no-repeat;}
+.vod-page .notice-title-wrap .button .more-btn:hover .ico-more {background:url('http://images.jtbc.joins.com/baeksang/ico_more_hover.png') 0 5.5px no-repeat;}
+.vod-page .sub-title:after {display:none;}
+.vod-page .sector-title .nominee-award:after {display:none;}
+.vod-page .replay-list {position:relative; margin-right:-23px; padding-top:30px;}
+.vod-page .replay-list:after {display:block; content:""; clear:both;}
+.vod-page .replay-list li {float:left; margin-right:22px; width:273px; height:260px;}
+.vod-page .replay-list li a {display:block; }
+.vod-page .replay-list li .list-thumb {position:relative; overflow:hidden; display:block; width:273px; height:154px; text-align:center; background:#eaeaea;}
+.vod-page .replay-list li .list-thumb img {
+	width:auto; height:auto; max-width:273px; height:154px;
+	transition:transform 2s cubic-bezier(.175,.885,.32,1.275);transform:scale(1)}
+.vod-page .replay-list li a:hover .list-thumb img {transform:scale(1.05) rotate(.02deg)}
+.vod-page .replay-list li a .list-thumb-over {display:none; position:absolute; left:0; top:0; height:100%; z-index:1;}
+.vod-page .replay-list li a:hover .list-thumb .list-thumb-over {display:block; }
+.vod-page .replay-list li .list-thumb .play-time {position:absolute; right:0; bottom:0; display:block; min-width:94px; height:30px; font-size:15px; line-height:30px; color:#fff; text-align:center; letter-spacing:0.5px; background:rgba(0, 0, 0, 0.7);}
+.vod-page .replay-list li .list-title {overflow:hidden; display:block; padding-top:10px; height:78px; font-size:18px; line-height:26px; color:#2a2a2a; font-weight:400;}
+.vod-page .replay-list li a:hover .list-title {color:#00306e; text-decoration:underline;}
+.list-more,
+.about-page .button,
+.notice-page .button {margin-top:62px; text-align:center; }
+.list-more a.box-btn,
+.about-page a.box-btn,
+.notice-page a.box-btn {display:inline-block; width:288px; overflow:hidden; color:#2a2a2a; border:1px solid #aaa; text-align:center; vertical-align:top;}
+.list-more a.box-btn span,
+.about-page a.box-btn span,
+.notice-page a.box-btn span {display:inline-block; font-size:22px; font-weight:400; line-height:59px;}
+.list-more .ico-more {display:inline-block; margin-left:7px; padding-bottom:4px; width:12px; height:12px; background:url('http://images.jtbc.joins.com/baeksang/ico_list_more.png') 0 center no-repeat;}
+.list-more a:hover .ico-more {background:url('http://images.jtbc.joins.com/baeksang/ico_list_more_over.png') 0 center no-repeat;}
+.list-more a.box-btn:hover,
+.about-page a.box-btn:hover,
+.notice-page  a.box-btn:hover {background-color:#00306e; border-color:#00306e; color:#fff;}
+/* 투표하기 */
+.vote-page {}
+.vote-page .sub-title:after {display:none;}
+.vote-page .sector-title {padding:100px 0 153px; text-align:center;}
+.vote-page .container-inner {position:relative;}
+.vote-page .button {position:absolute; top:484px; width:100%; text-align:center;}
+.vote-page .button a {overflow:hidden; display:inline-block; margin:0 7px; width:416px; color:#2a2a2a; text-align:center; vertical-align:top; border:1px solid #aaaaaa;}
+.vote-page .button a .ico-more {display:inline-block; margin-left:9px; width:10px; height:30px; background:url('http://images.jtbc.joins.com/baeksang/ico_vote.png') 0 8.5px no-repeat;}
+.vote-page .button a span {display:inline-block; font-size:30px ;font-weight:400; line-height:133px;}
+.vote-page .button a:hover {color:#fff;}
+.vote-page .button a:hover .ico-more {background-image:url('http://images.jtbc.joins.com/baeksang/ico_vote_w.png');}
+.vote-page .button .male:hover {background-color:#00306e; border-color:#00306e;}
+.vote-page .button .female:hover {background-color:#f0565e; border-color:#f0565e;}
+
+/* 역대수상 */ 
+.awards-page .container-inner {position:relative;}
+.awards-page .sub-title:after {display:none;}
+.awards-page .award-sector-title {position:relative; padding:46px 0 16px;}
+.awards-page .award-sector-title:after {position:absolute; top:78px; display:block; margin-top:-6px; width:100%; height:1px; content:""; clear:both; background:#ddd; }
+.awards-page .award-sector-title h3 {position:relative; display:inline-block; width:282px; height:50px; font-size:26px; line-height:50px; text-align:center; color:#fff; z-index:1;}
+.awards-page .awards-con {position:relative; padding-bottom:74px; zoom:1;}
+.awards-page .awards-con:after {display:block; content:""; clear:both;}
+.awards-page .awards-con span,
+.awards-page .awards-con strong,
+.awards-page .awards-con em {display:block;}
+.awards-page .awards-prize {float:left; padding-right:20px; width:282px; }
+.awards-page .awards-prize-con {padding-bottom:26px;}
+.awards-page .awards-prize .list-thumb {overflow:hidden; position:relative;display:block; margin-bottom:7px; width:282px; height:367px; line-height:282px; background:#eaeaea; background-size:100% 100%;}
+.awards-page .awards-prize .list-thumb:after {position:absolute; display:block; left:0; top:0; bottom:0; right:0; content:""; background:url('http://images.jtbc.joins.com/baeksang/bg_list_thumb.png') no-repeat;}
+.awards-page .awards-prize .list-thumb img {position:absolute; left: 50%; top:50%; margin:-142px 0 0 -109px; width:218px; height:284px; z-index:1;}
+/* .awards-page .awards-prize .list-thumb img {max-width:282px; width:100%; height:auto; vertical-align:middle;} */
+.awards-page .awards-prize .title-prize {font-size:28px; line-height:53px; font-weight:500; }
+
+.awards-page .awards-sector-wrap.sector01 .title-prize,
+.awards-page .awards-sector-wrap.sector01.awarded-list li .title-prize {color:#00306e;}
+.awards-page .sector01 .award-sector-title h3 {background:#00306e}
+.awards-page .awards-sector-wrap.sector02 .title-prize,
+.awards-page .awards-sector-wrap.sector02 .awarded-list li .title-prize {color:#f0565e;}
+.awards-page .sector02 .award-sector-title h3 {background:#f0565e}
+.awards-page .awards-sector-wrap.sector03 .title-prize,
+.awards-page .awards-sector-wrap.sector03.awarded-list li .title-prize {color:#1486bf;}
+.awards-page .sector03 .award-sector-title h3 {background:#1486bf}
+.awards-page .awards-sector-wrap.sector04 .title-prize,
+.awards-page .awards-sector-wrap.sector04 .awarded-list li .title-prize {color:#953a58;}
+.awards-page .sector04 .award-sector-title h3 {background:#666}
+
+.awards-page .awards-prize em {font-size:24px; line-height:33px; font-weight:bold; color:#2a2a2a;}
+.awards-page .awards-prize .name {font-size:24px; line-height:30px; color:#2a2a2a;}
+.awards-page .awards-awarded {float:left; width:858px;}
+.awards-page .awarded-list {position:relative; margin-right:-12px; zoom:1;}
+.awards-page .awarded-list:afrer {display:block; content:""; clear:both;}
+.awards-page .awarded-list li {float:left; margin:0 12px 0; padding-bottom:16px; width:150px; height:341px;}
+.awards-page .awards-sector-wrap.awarded-only-list .awards-awarded {width:100%;}
+.awards-page .awarded-only-list .awarded-list {margin:0 -26px;}
+.awards-page .awarded-only-list .awarded-list li {margin:0 26px}
+.awards-page .awarded-list li .list-thumb {overflow:hidden; display:block; margin-bottom:17px; width:150px; height:196px; line-height:196px; text-align:center; background:#eaeaea;}
+/*  .awards-page .awarded-list li .list-thumb img {max-width:150px;width:100%; height:auto; vertical-align:middle;} */
+.awards-page .awarded-list li .list-thumb img {margin-top:-5px; max-width:100%; max-height:100%; width:auto; height:auto; vertical-align:middle;}
+.awards-page .awarded-list li .title {}
+.awards-page .awarded-list li .title-prize {font-size:18px; line-height:23px; font-weight:500;}
+.awards-page .awarded-list li em {overflow:hidden; /* max-height:72px; */ font-size:18px; line-height:24px; font-weight:bold; color:#2a2a2a;}
+.awards-page .awarded-list li .name {overflow:hidden; /* max-height:24px; */ font-size:18px; line-height:24px; color:#2a2a2a;}
+.awards-page {}
+
+/* 공지사항 */
+.notice-page {}
+.notice-page .sector-title {border-bottom:none;}
+.notice-page .sub-title:after {display:none;}
+/* .notice-page .notice-title strong {font-size:24px; line-height:28px;} */
+.notice-page .tlb-wrap {padding-bottom:130px;}
+.notice-page table{width:100%;border-top:2px solid #686868;border-bottom:1px solid #eaeaea}
+.notice-page thead th {padding:15px 0; font-size:18px; line-height:30px;border-bottom:1px solid #000;}
+.notice-page td {padding:20px 0; line-height:30px; text-align:center; color:#454545; border-bottom:1px solid #ddd;}
+.notice-page .title { text-align:left;}
+.notice-page .title a {font-weight:400; color:#454545;}
+.notice-page .title a:hover {color:#00306e; text-decoration:underline;}
+.notice-page .title {text-align:left;}
+.notice-page tbody th,
+.notice-page tbody td{font-size:18px; }
+.notice-page tbody th{font-size:18px;}
+.notice-page 
+.paging{padding:60px 0 0; font-size:0; text-align:center}
+.paging a {display:inline-block; margin-left:-1px; min-width:44px; height:44px;  font-size:16px; line-height:44px; color:#454545; border:1px solid #aaa;}
+.paging .curpage.active, 
+.paging .curpage:hover{color:#fff; background:#00306e; border:1px solid #00306e;}
+.paging .btn-paging-next {}
+.btn-paging-prev,
+.btn-prev:hover {width:44px; height:44px; background:#fff url('http://images.jtbc.joins.com/baeksang/paging_left.png') center no-repeat;}
+.btn-paging-next {width:44px; height:44px; background:url('http://images.jtbc.joins.com/baeksang/paging_right.png') center no-repeat;}
+.btn-prev,
+.btn-next {font-size:0; line-height:0; text-indent:-9999px;}
+.notice-page .banner {margin-top:62px;}
+
+/* //css */

@@ -1,0 +1,146 @@
+/* 가오픈 */
+.pre-open .info-wrap p {padding-top:137px;}
+.pre-open .footer-wrap {display:flex; min-height:101px; height:auto; }
+.pre-open .footer-wrap .publisher {top:46px}
+.pre-open .footer-wrap .copyright {margin-top:0;}
+.pre-open {display:flex; height:100%; background:#001111;}
+.pre-open .main-page {width:100%;}
+
+/* 2020공통 */
+html {height: 100%;}
+body {min-height: 100%;}
+.container-wrap .header-wrap .logo a {background:url(http://images.jtbc.joins.com/baeksang/2020/header_logo2020.png) no-repeat 0 0}
+.main-page .visual-wrap {position:relative; height:670px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/2020/bg_visual2020.png) no-repeat 50% 50% / cover;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/2020/bg_visual2020.png', sizingMethod='scale');
+}
+.container-wrap .sector-wrap {height:450px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png) repeat-y 50% 0 / cover; text-align:center;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png', sizingMethod='scale');
+	background-size:100%;
+} 
+.container-wrap .sector-wrap .button a {width:312px;}
+.sector-wrap .button a span {line-height:99px;}
+.main-page.container-wrap a.drama:focus span, 
+.main-page.container-wrap a.drama:hover span {background-color:#cce3ea;}
+.sub-page.container-wrap .sector-title {border-bottom:1px solid #dddddd;}
+.container-wrap .list-more a.box-btn:hover, .about-page a.box-btn:hover,
+.container-wrap .notice-page a.box-btn:hover {background-color:#005124; border-color:#005124;}
+/* //2020공통 */
+.sub-page.container-wrap .sub-title {background:#fff5e7;}
+.container-wrap .footer-wrap:after {content:''; position:absolute; left:0; top:-1px; right:0; height:10px; overflow:hidden; background:url(http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png) no-repeat 50% 0 / cover;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png', sizingMethod='scale');
+}
+.footer-wrap .container-inner .logo {background:url('http://images.jtbc.joins.com/baeksang/2020/footer_logo.png') no-repeat 0 0; }
+.container-wrap .notice-wrap .head a span {background:url(http://images.jtbc.joins.com/baeksang/2020/btn_more.png) no-repeat 100% 0;}
+
+/* 메인 */
+.main-page .dday-wrap {display:block;}
+.main-page .dday-wrap {background:#003326;}
+.main-page .dday-wrap .dday h2 {margin-top:3px;}
+.main-page.container-wrap a.box-btn:hover span {background:#003326;}
+.container-wrap .sector-wrap .button a.tv span {border-color:#dfecda; color:#dfecda;}
+.container-wrap .sector-wrap .button a.tv:hover span {color:#005424;}
+.container-wrap .sector-wrap .button a.tv:hover span:after {background-color:#dfecda;}
+.container-wrap .sector-wrap .button a.movie span {border-color:#f6ccac; color:#f6ccac;}
+.container-wrap .sector-wrap .button a.movie:hover span {color:#ea4800;}
+.container-wrap .sector-wrap .button a.movie:hover span:after {background-color:#f6ccac;}
+.container-wrap .sector-wrap .button a.drama span {border-color:#cce3ea; color:#cce3ea;}
+.container-wrap .sector-wrap .button a.drama:hover span {color:#0069ac;background:#cce3ea;}
+.container-wrap .sector-wrap .button a.drama:hover span:after {background-color:#cce3ea;}
+
+/* 시상식 소개 */
+.about-page .guideline-wrap {background:url(http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png) repeat-y 50% 0 / cover; background-size:100% auto;}
+.container-wrap .about-page .guideline-wrap .guideline-sector .guideline-title span {background:linear-gradient( to right, #035424, #165420 )}
+.about-page .sector-title-wrap .prize-sector .movie dt {background:#fc621f}
+.about-page .sector-title-wrap .prize-sector .tv dt {background:#005424;}
+.about-page .sector-title-wrap .prize-sector .drama dt {background:#00a0d0;}
+.container-wrap .about-page .guideline-wrap .guideline-sector {border:1px solid rgba(255, 255, 255, 0.5);}
+
+/* 후보자 */
+.container-wrap .candidate-page .nominee-title-wrap .button a {width:384px;}
+.container-wrap .candidate-page .nominee-title-wrap .button .tv.on, 
+.container-wrap .candidate-page .nominee-title-wrap .button .tv.on:hover {background:#005124;border:1px solid #005124;}
+.container-wrap .candidate-page .nominee-title-wrap .button .box-btn {margin-left:-1px; border:1px solid #999;}
+.candidate-page .nominee-title-wrap .button .movie.on, 
+.candidate-page .nominee-title-wrap .button .movie.on:hover {background:#fc621f;border-color:#fc621f;}
+.container-wrap .candidate-page .nominee-title-wrap .button .drama:hover {background:transparent; }
+.candidate-page .nominee-title-wrap .button .tv:hover span {color:#005424;}
+.candidate-page .nominee-title-wrap .button .drama:hover span {color:#00a0d0;}
+.candidate-page .nominee-title-wrap .button .movie:hover span {color:#fc621f}
+.container-wrap .candidate-page .nominee-title-wrap .button .drama.on {background:#00a0d0; border-color:#00a0d0;}
+.container-wrap .candidate-page .nominated-wrap {background:url('http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png') repeat-y 50% 0 / cover; background-size:100%;}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector01 {background:#005424}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector02 {background:#fc621f;}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector03 {background:#00a0d0;}
+.candidate-page .about-page .guideline-wrap .guideline-sector {border:1px solid #82aa92;}
+
+/* 수상자 */ 
+.sub-page .awards-page .sector-title {border-color:#000000;}
+.container-wrap .awards-page .awards-prize .list-thumb:after {background:url('http://images.jtbc.joins.com/baeksang/2020/bg_list_thumb.png') no-repeat}
+.container-wrap .awards-page .sector01 .award-sector-title h3 {background:#0c5c2e;}
+.container-wrap .awards-page .sector02 .award-sector-title h3 {background:#fc621f;}
+.container-wrap .awards-page .sector03 .award-sector-title h3 {background:#00a0d0;}
+.container-wrap .awards-page .awards-sector-wrap.sector01 .title-prize, 
+.container-wrap .awards-page .awards-sector-wrap.sector01.awarded-list li .title-prize {color:#0c5c2e;}
+.container-wrap .awards-page .awards-sector-wrap.sector02 .title-prize, 
+.sub-page.container-wrap .awards-page .awards-sector-wrap.sector02.awarded-list li .title-prize {color:#fc621f !important;}
+.container-wrap .awards-page .awards-sector-wrap.sector03 .title-prize, 
+.container-wrap .awards-page .awards-sector-wrap.sector03.awarded-list li .title-prize {color:#00a0d0;}
+.container-wrap .awards-page .awards-sector-wrap.sector04 .title-prize, 
+.container-wrap .awards-page .awards-sector-wrap.sector04 .awarded-list li .title-prize {color:#5844a1;}
+
+/* 다시보기 */
+.vod-page .notice-title-wrap .button .timeof55:hover, 
+.vod-page .notice-title-wrap .button .timeof54:hover {border-color:#005124;}
+.container-wrap .vod-page .notice-title-wrap .button a.on {background:#005124; border-color:#005124;}
+.container-wrap .vod-page .notice-title-wrap .button a:hover span,
+.container-wrap .vod-page .replay-list li a:hover .list-title  {color:#005124;}
+.container-wrap .vod-page .notice-title-wrap .button a.on:hover span {color:#fff;}
+.vod-page .notice-title-wrap .button .more-btn:hover .ico-more {}
+.container-wrap .vod-page .notice-title-wrap .button .more-btn:hover {border:1px solid #fc621f;}
+.container-wrap .vod-page .notice-title-wrap .button .more-btn:hover span {color:#fc621f;}
+
+/* 공지사항 */
+.sub-page .notice-page .sector-title {border-bottom:none;}
+.paging .curpage.active, 
+.paging .curpage:hover {background:#005124; border:1px solid #005124;}
+
+/* 404 */
+.sub-page .null-page a.box-btn:focus, 
+.sub-page .null-page a.box-btn:hover {background:#005124; border-color:#005124;}
+
+/* 투표하기 */
+.container-wrap .vote-page {background:url('http://images.jtbc.joins.com/baeksang/2020/bg_vote.png') repeat-x;}
+.container-wrap .vote-page .sub-title {display:none;}
+.container-wrap .vote-page .sector-title {padding:0; }
+.container-wrap .vote-page .sector-title .container-inner {width:1340px; height:1260px; background:url('http://images.jtbc.joins.com/baeksang/2020/vote.png') no-repeat;}
+.vote-con {padding:529px 0 0 522px; width:638px}
+.movie-area {position:relative; }
+.vote-page .votelink-con {position:relative; padding-top:45px; width:650px; height:222px; font-size:0;}
+.votelink-con a {
+	display:inline-block; width:293px; height:95px; box-sizing:border-box; 
+	background:url('http://images.jtbc.joins.com/goldendisk/common/ico_btn.png') 225px 40px no-repeat;
+	font-size:21px; line-height:30px; color:#fff; text-align:center; border:1px solid #747474;}
+.votelink-con a:hover {color:#242424; background:#f1ae84 url('http://images.jtbc.joins.com/goldendisk/common/ico_btn_on.png') 225px 40px no-repeat;;border-color:#f1ae84;}
+.votelink-con .btn-vote-kor {padding-right:83px;}
+.votelink-con .btn-vote-eng {padding-right:55px;}
+.votelink-con .btn-vote-chn {padding-right:67px;}
+.votelink-con .btn-vote-jpn {padding-right:20px;}
+.votelink-con .vote-link {float:left; display:table; margin:0 12px 13px 0; width:313px; height:84px;}
+.votelink-con .img-qrcode,
+.votelink-con a {display:table-cell; height:90px; box-sizing:border-box; vertical-align:middle;}
+.votelink-con .img-qrcode {width:90px; }
+.votelink-con a {
+	 padding-left:24px;width:212px; box-sizing:border-+-box; font-weight:400;
+	background:url('http://images.jtbc.joins.com/goldendisk/common/ico_btn.png') 165px 35px no-repeat;
+	font-size:20px; line-height:25px; color:#fff; text-align:left; border:1px solid #747474;}
+.votelink-con a:hover {color:#242424; background:#f1ae84 url('http://images.jtbc.joins.com/goldendisk/common/ico_btn_on.png') 165px 35px no-repeat;border-color:#f1ae84;}
+
+/* 투표하기 영상가림 */
+/* .container-wrap .vote-page .movie-area {display:none;}
+.container-wrap .vote-page .votelink-con {padding-top:0;}
+.container-wrap .vote-page .sector-title .container-inner {height:920px;} */
+
+/* 팝업 */
+.banner-layerpopup.on.about {margin-left:-625px; padding:8px 8px 40px; display:block; width:456px; height:542px; color:#fff;background:#000;}
+.about .popup-check span,
+.about .popup-close button span {color:#fff;}
