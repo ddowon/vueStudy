@@ -1,0 +1,2430 @@
+{
+    "prizes": [
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T01",
+            "PRIZE_NM": "드라마 작품상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T02",
+            "PRIZE_NM": "예능 작품상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T03",
+            "PRIZE_NM": "교양 작품상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T04",
+            "PRIZE_NM": "연출상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T05",
+            "PRIZE_NM": "극본상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T06",
+            "PRIZE_NM": "예술상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T07",
+            "PRIZE_NM": "남자 최우수 연기상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T08",
+            "PRIZE_NM": "여자 최우수 연기상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T09",
+            "PRIZE_NM": "남자 조연상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T10",
+            "PRIZE_NM": "여자 조연상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T11",
+            "PRIZE_NM": "남자 신인 연기상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T12",
+            "PRIZE_NM": "여자 신인 연기상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T13",
+            "PRIZE_NM": "남자 TV예능상"
+        },
+        {
+            "DIVISION": "tv",
+            "PRIZE_CD": "T14",
+            "PRIZE_NM": "여자 TV예능상"
+        },
+        {
+            "DIVISION": "play",
+            "PRIZE_CD": "P01",
+            "PRIZE_NM": "백상 연극상"
+        },
+        {
+            "DIVISION": "play",
+            "PRIZE_CD": "P02",
+            "PRIZE_NM": "젊은 연극상"
+        },
+        {
+            "DIVISION": "play",
+            "PRIZE_CD": "P03",
+            "PRIZE_NM": "남자 최우수 연기상"
+        },
+        {
+            "DIVISION": "play",
+            "PRIZE_CD": "P04",
+            "PRIZE_NM": "여자 최우수 연기상"
+        },
+
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M01",
+            "PRIZE_NM": "작품상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M02",
+            "PRIZE_NM": "감독상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M03",
+            "PRIZE_NM": "시나리오상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M04",
+            "PRIZE_NM": "예술상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M05",
+            "PRIZE_NM": "신인 감독상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M06",
+            "PRIZE_NM": "남자 최우수 연기상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M07",
+            "PRIZE_NM": "여자 최우수 연기상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M08",
+            "PRIZE_NM": "남자 조연상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M09",
+            "PRIZE_NM": "여자 조연상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M10",
+            "PRIZE_NM": "남자 신인 연기상"
+        },
+        {
+            "DIVISION": "movie",
+            "PRIZE_CD": "M11",
+            "PRIZE_NM": "여자 신인 연기상"
+        }
+    ],
+    "candidates": [
+        {
+            "ORD": 1,
+            "CANDIDATE_ID": 301,
+            "PROGRAM_NM": "동백꽃 필 무렵",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T01",
+            "DIVISION": "tv",
+            "NAME": "KBS",
+            "PRIZE_NM": "드라마 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/01.jpg"
+        },
+        {
+            "ORD": 2,
+            "CANDIDATE_ID": 302,
+            "PROGRAM_NM": "사랑의 불시착",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T01",
+            "DIVISION": "tv",
+            "NAME": "tvN",
+            "PRIZE_NM": "드라마 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/02.jpg"
+        },
+        {
+            "ORD": 3,
+            "CANDIDATE_ID": 303,
+            "PROGRAM_NM": "스토브리그",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T01",
+            "DIVISION": "tv",
+            "NAME": "SBS",
+            "PRIZE_NM": "드라마 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/03.jpg"
+        },
+        {
+            "ORD": 4,
+            "CANDIDATE_ID": 304,
+            "PROGRAM_NM": "킹덤2",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T01",
+            "DIVISION": "tv",
+            "NAME": "넷플릭스",
+            "PRIZE_NM": "드라마 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/04.jpg"
+        },
+        {
+            "ORD": 5,
+            "CANDIDATE_ID": 305,
+            "PROGRAM_NM": "하이에나",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T01",
+            "DIVISION": "tv",
+            "NAME": "SBS",
+            "PRIZE_NM": "드라마 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/05.jpg"
+        },
+        {
+            "ORD": 6,
+            "CANDIDATE_ID": 306,
+            "PROGRAM_NM": "구해줘 홈즈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T02",
+            "DIVISION": "tv",
+            "NAME": "MBC",
+            "PRIZE_NM": "예능 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/06.jpg"
+        },
+        {
+            "ORD": 7,
+            "CANDIDATE_ID": 307,
+            "PROGRAM_NM": "놀면 뭐하니?",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T02",
+            "DIVISION": "tv",
+            "NAME": "MBC",
+            "PRIZE_NM": "예능 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/07.jpg"
+        },
+        {
+            "ORD": 8,
+            "CANDIDATE_ID": 308,
+            "PROGRAM_NM": "맛남의 광장",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T02",
+            "DIVISION": "tv",
+            "NAME": "SBS",
+            "PRIZE_NM": "예능 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/08.jpg"
+        },
+        {
+            "ORD": 9,
+            "CANDIDATE_ID": 309,
+            "PROGRAM_NM": "내일은 미스터트롯",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T02",
+            "DIVISION": "tv",
+            "NAME": "TV조선",
+            "PRIZE_NM": "예능 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/09.jpg"
+        },
+        {
+            "ORD": 10,
+            "CANDIDATE_ID": 310,
+            "PROGRAM_NM": "신서유기 외전",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T02",
+            "DIVISION": "tv",
+            "NAME": "tvN",
+            "PRIZE_NM": "예능 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/10.jpg"
+        },
+        {
+            "ORD": 11,
+            "CANDIDATE_ID": 311,
+            "PROGRAM_NM": "다큐 인사이트 - 아카이브 프로젝트 모던코리아",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T03",
+            "DIVISION": "tv",
+            "NAME": "KBS",
+            "PRIZE_NM": "교양 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/11.jpg"
+        },
+        {
+            "ORD": 12,
+            "CANDIDATE_ID": 312,
+            "PROGRAM_NM": "요즘책방 : 책 읽어드립니다",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T03",
+            "DIVISION": "tv",
+            "NAME": "tvN",
+            "PRIZE_NM": "교양 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/12.jpg"
+        },
+        {
+            "ORD": 13,
+            "CANDIDATE_ID": 313,
+            "PROGRAM_NM": "자이언트펭TV",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T03",
+            "DIVISION": "tv",
+            "NAME": "EBS",
+            "PRIZE_NM": "교양 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/13.jpg"
+        },
+        {
+            "ORD": 14,
+            "CANDIDATE_ID": 314,
+            "PROGRAM_NM": "PD수첩 - 검찰기자단",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T03",
+            "DIVISION": "tv",
+            "NAME": "MBC",
+            "PRIZE_NM": "교양 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/14.jpg"
+        },
+        {
+            "ORD": 15,
+            "CANDIDATE_ID": 315,
+            "PROGRAM_NM": "SBS 스페셜 - 요한 씨돌 용현",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T03",
+            "DIVISION": "tv",
+            "NAME": "SBS",
+            "PRIZE_NM": "교양 작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/15.jpg"
+        },
+        {
+            "ORD": 16,
+            "CANDIDATE_ID": 316,
+            "PROGRAM_NM": "김성윤",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T04",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰",
+            "PRIZE_NM": "연출상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/16.jpg"
+        },
+        {
+            "ORD": 17,
+            "CANDIDATE_ID": 317,
+            "PROGRAM_NM": "모완일",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T04",
+            "DIVISION": "tv",
+            "NAME": "부부의 세계",
+            "PRIZE_NM": "연출상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/17.jpg"
+        },
+        {
+            "ORD": 18,
+            "CANDIDATE_ID": 318,
+            "PROGRAM_NM": "이정효",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T04",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "연출상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/18.jpg"
+        },
+        {
+            "ORD": 19,
+            "CANDIDATE_ID": 319,
+            "PROGRAM_NM": "정동윤",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T04",
+            "DIVISION": "tv",
+            "NAME": "스토브리그",
+            "PRIZE_NM": "연출상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/19.jpg"
+        },
+        {
+            "ORD": 20,
+            "CANDIDATE_ID": 320,
+            "PROGRAM_NM": "차영훈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T04",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "연출상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/20.jpg"
+        },
+        {
+            "ORD": 21,
+            "CANDIDATE_ID": 321,
+            "PROGRAM_NM": "김루리",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T05",
+            "DIVISION": "tv",
+            "NAME": "하이에나",
+            "PRIZE_NM": "극본상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/21.jpg"
+        },
+        {
+            "ORD": 22,
+            "CANDIDATE_ID": 322,
+            "PROGRAM_NM": "박지은",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T05",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "극본상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/22.jpg"
+        },
+        {
+            "ORD": 23,
+            "CANDIDATE_ID": 323,
+            "PROGRAM_NM": "이신화",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T05",
+            "DIVISION": "tv",
+            "NAME": "스토브리그",
+            "PRIZE_NM": "극본상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/23.jpg"
+        },
+        {
+            "ORD": 24,
+            "CANDIDATE_ID": 324,
+            "PROGRAM_NM": "이우정",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T05",
+            "DIVISION": "tv",
+            "NAME": "슬기로운 의사생활",
+            "PRIZE_NM": "극본상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/24.jpg"
+        },
+        {
+            "ORD": 25,
+            "CANDIDATE_ID": 325,
+            "PROGRAM_NM": "임상춘",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T05",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "극본상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/25.jpg"
+        },
+        {
+            "ORD": 26,
+            "CANDIDATE_ID": 326,
+            "PROGRAM_NM": "김남식 류건희",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T06",
+            "DIVISION": "tv",
+            "NAME": "킹덤2/VFX",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/26.jpg"
+        },
+        {
+            "ORD": 27,
+            "CANDIDATE_ID": 327,
+            "PROGRAM_NM": "김지수",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T06",
+            "DIVISION": "tv",
+            "NAME": "쌉니다 천리마마트/미술",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/27.jpg"
+        },
+        {
+            "ORD": 28,
+            "CANDIDATE_ID": 328,
+            "PROGRAM_NM": "박성일",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T06",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰/음악",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/28.jpg"
+        },
+        {
+            "ORD": 29,
+            "CANDIDATE_ID": 329,
+            "PROGRAM_NM": "박지현",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T06",
+            "DIVISION": "tv",
+            "NAME": "유 퀴즈 온 더 블럭/VJ·촬영",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/29.jpg"
+        },
+        {
+            "ORD": 30,
+            "CANDIDATE_ID": 330,
+            "PROGRAM_NM": "장연옥",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T06",
+            "DIVISION": "tv",
+            "NAME": "대탈출3/미술",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/30.jpg"
+        },
+        {
+            "ORD": 31,
+            "CANDIDATE_ID": 331,
+            "PROGRAM_NM": "강하늘",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T07",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/31.jpg"
+        },
+        {
+            "ORD": 32,
+            "CANDIDATE_ID": 332,
+            "PROGRAM_NM": "남궁민",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T07",
+            "DIVISION": "tv",
+            "NAME": "스토브리그",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/32.jpg"
+        },
+        {
+            "ORD": 33,
+            "CANDIDATE_ID": 333,
+            "PROGRAM_NM": "박서준",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T07",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/33.jpg"
+        },
+        {
+            "ORD": 34,
+            "CANDIDATE_ID": 334,
+            "PROGRAM_NM": "주지훈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T07",
+            "DIVISION": "tv",
+            "NAME": "하이에나",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/34.jpg"
+        },
+        {
+            "ORD": 35,
+            "CANDIDATE_ID": 335,
+            "PROGRAM_NM": "현빈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T07",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/35.jpg"
+        },
+        {
+            "ORD": 36,
+            "CANDIDATE_ID": 336,
+            "PROGRAM_NM": "공효진",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T08",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/36.jpg"
+        },
+        {
+            "ORD": 37,
+            "CANDIDATE_ID": 337,
+            "PROGRAM_NM": "김혜수",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T08",
+            "DIVISION": "tv",
+            "NAME": "하이에나",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/37.jpg"
+        },
+        {
+            "ORD": 38,
+            "CANDIDATE_ID": 338,
+            "PROGRAM_NM": "김희애",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T08",
+            "DIVISION": "tv",
+            "NAME": "부부의 세계",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/38.jpg"
+        },
+        {
+            "ORD": 39,
+            "CANDIDATE_ID": 339,
+            "PROGRAM_NM": "손예진",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T08",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/39.jpg"
+        },
+        {
+            "ORD": 40,
+            "CANDIDATE_ID": 340,
+            "PROGRAM_NM": "이지은",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T08",
+            "DIVISION": "tv",
+            "NAME": "호텔 델루나",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/40.jpg"
+        },
+        {
+            "ORD": 41,
+            "CANDIDATE_ID": 341,
+            "PROGRAM_NM": "김영민",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T09",
+            "DIVISION": "tv",
+            "NAME": "부부의 세계",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/41.jpg"
+        },
+        {
+            "ORD": 42,
+            "CANDIDATE_ID": 342,
+            "PROGRAM_NM": "양경원",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T09",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/42.jpg"
+        },
+        {
+            "ORD": 43,
+            "CANDIDATE_ID": 343,
+            "PROGRAM_NM": "오정세",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T09",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/43.jpg"
+        },
+        {
+            "ORD": 44,
+            "CANDIDATE_ID": 344,
+            "PROGRAM_NM": "유재명",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T09",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/44.jpg"
+        },
+        {
+            "ORD": 45,
+            "CANDIDATE_ID": 345,
+            "PROGRAM_NM": "전석호",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T09",
+            "DIVISION": "tv",
+            "NAME": "하이에나",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/45.jpg"
+        },
+        {
+            "ORD": 46,
+            "CANDIDATE_ID": 346,
+            "PROGRAM_NM": "권나라",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T10",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/46.jpg"
+        },
+        {
+            "ORD": 47,
+            "CANDIDATE_ID": 347,
+            "PROGRAM_NM": "김선영",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T10",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/47.jpg"
+        },
+        {
+            "ORD": 48,
+            "CANDIDATE_ID": 348,
+            "PROGRAM_NM": "서지혜",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T10",
+            "DIVISION": "tv",
+            "NAME": "사랑의 불시착",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/48.jpg"
+        },
+        {
+            "ORD": 49,
+            "CANDIDATE_ID": 349,
+            "PROGRAM_NM": "손담비",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T10",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/49.jpg"
+        },
+        {
+            "ORD": 50,
+            "CANDIDATE_ID": 350,
+            "PROGRAM_NM": "염혜란",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T10",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/50.jpg"
+        },
+        {
+            "ORD": 51,
+            "CANDIDATE_ID": 351,
+            "PROGRAM_NM": "김강훈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T11",
+            "DIVISION": "tv",
+            "NAME": "동백꽃 필 무렵",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/51.jpg"
+        },
+        {
+            "ORD": 52,
+            "CANDIDATE_ID": 352,
+            "PROGRAM_NM": "안보현",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T11",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/52.jpg"
+        },
+        {
+            "ORD": 53,
+            "CANDIDATE_ID": 353,
+            "PROGRAM_NM": "안효섭",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T11",
+            "DIVISION": "tv",
+            "NAME": "낭만닥터 김사부2",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/53.jpg"
+        },
+        {
+            "ORD": 54,
+            "CANDIDATE_ID": 354,
+            "PROGRAM_NM": "옹성우",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T11",
+            "DIVISION": "tv",
+            "NAME": "열여덟의 순간",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/54.jpg"
+        },
+        {
+            "ORD": 55,
+            "CANDIDATE_ID": 355,
+            "PROGRAM_NM": "이재욱",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T11",
+            "DIVISION": "tv",
+            "NAME": "어쩌다 발견한 하루",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/55.jpg"
+        },
+        {
+            "ORD": 56,
+            "CANDIDATE_ID": 356,
+            "PROGRAM_NM": "김다미",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T12",
+            "DIVISION": "tv",
+            "NAME": "이태원 클라쓰",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/56.jpg"
+        },
+        {
+            "ORD": 57,
+            "CANDIDATE_ID": 357,
+            "PROGRAM_NM": "전미도",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T12",
+            "DIVISION": "tv",
+            "NAME": "슬기로운 의사생활",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/57.jpg"
+        },
+        {
+            "ORD": 58,
+            "CANDIDATE_ID": 358,
+            "PROGRAM_NM": "전여빈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T12",
+            "DIVISION": "tv",
+            "NAME": "멜로가 체질",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/58.jpg"
+        },
+        {
+            "ORD": 59,
+            "CANDIDATE_ID": 359,
+            "PROGRAM_NM": "정지소",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T12",
+            "DIVISION": "tv",
+            "NAME": "방법",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/59.jpg"
+        },
+        {
+            "ORD": 60,
+            "CANDIDATE_ID": 360,
+            "PROGRAM_NM": "한소희",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T12",
+            "DIVISION": "tv",
+            "NAME": "부부의 세계",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/60.jpg"
+        },
+        {
+            "ORD": 61,
+            "CANDIDATE_ID": 361,
+            "PROGRAM_NM": "김성주",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T13",
+            "DIVISION": "tv",
+            "NAME": "내일은 미스터트롯",
+            "PRIZE_NM": "남자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/61.jpg"
+        },
+        {
+            "ORD": 62,
+            "CANDIDATE_ID": 362,
+            "PROGRAM_NM": "김희철",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T13",
+            "DIVISION": "tv",
+            "NAME": "아는 형님",
+            "PRIZE_NM": "남자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/62.jpg"
+        },
+        {
+            "ORD": 63,
+            "CANDIDATE_ID": 363,
+            "PROGRAM_NM": "문세윤",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T13",
+            "DIVISION": "tv",
+            "NAME": "1박 2일 시즌4",
+            "PRIZE_NM": "남자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/63.jpg"
+        },
+        {
+            "ORD": 64,
+            "CANDIDATE_ID": 364,
+            "PROGRAM_NM": "유재석",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T13",
+            "DIVISION": "tv",
+            "NAME": "놀면 뭐하니?",
+            "PRIZE_NM": "남자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/64.jpg"
+        },
+        {
+            "ORD": 65,
+            "CANDIDATE_ID": 365,
+            "PROGRAM_NM": "장성규",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T13",
+            "DIVISION": "tv",
+            "NAME": "방구석 1열",
+            "PRIZE_NM": "남자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/65.jpg"
+        },
+        {
+            "ORD": 66,
+            "CANDIDATE_ID": 366,
+            "PROGRAM_NM": "김민경",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T14",
+            "DIVISION": "tv",
+            "NAME": "맛있는 녀석들",
+            "PRIZE_NM": "여자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/66.jpg"
+        },
+        {
+            "ORD": 67,
+            "CANDIDATE_ID": 367,
+            "PROGRAM_NM": "박나래",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T14",
+            "DIVISION": "tv",
+            "NAME": "나 혼자 산다",
+            "PRIZE_NM": "여자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/67.jpg"
+        },
+        {
+            "ORD": 68,
+            "CANDIDATE_ID": 368,
+            "PROGRAM_NM": "안영미",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T14",
+            "DIVISION": "tv",
+            "NAME": "라디오스타",
+            "PRIZE_NM": "여자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/68.jpg"
+        },
+        {
+            "ORD": 69,
+            "CANDIDATE_ID": 369,
+            "PROGRAM_NM": "장도연",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T14",
+            "DIVISION": "tv",
+            "NAME": "밥블레스유",
+            "PRIZE_NM": "여자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/69.jpg"
+        },
+        {
+            "ORD": 70,
+            "CANDIDATE_ID": 370,
+            "PROGRAM_NM": "홍현희",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "T14",
+            "DIVISION": "tv",
+            "NAME": "아내의 맛",
+            "PRIZE_NM": "여자 TV예능상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/tv/70.jpg"
+        },
+        {
+            "ORD": 1,
+            "CANDIDATE_ID": 427,
+            "PROGRAM_NM": "스푸트니크",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P01",
+            "DIVISION": "play",
+            "NAME": "작품",
+            "PRIZE_NM": "백상 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/02.jpg"
+        },
+        {
+            "ORD": 2,
+            "CANDIDATE_ID": 426,
+            "PROGRAM_NM": "신유청",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P01",
+            "DIVISION": "play",
+            "NAME": "그을린 사랑/연출",
+            "PRIZE_NM": "백상 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/01.jpg"
+        },
+        {
+            "ORD": 3,
+            "CANDIDATE_ID": 428,
+            "PROGRAM_NM": "이연주",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P01",
+            "DIVISION": "play",
+            "NAME": "이게 마지막이야/작가",
+            "PRIZE_NM": "백상 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/03.jpg"
+        },
+        {
+            "ORD": 4,
+            "CANDIDATE_ID": 429,
+            "PROGRAM_NM": "휴먼 푸가",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P01",
+            "DIVISION": "play",
+            "NAME": "작품",
+            "PRIZE_NM": "백상 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/04.jpg"
+        },
+        {
+            "ORD": 5,
+            "CANDIDATE_ID": 430,
+            "PROGRAM_NM": "0set 프로젝트",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P02",
+            "DIVISION": "play",
+            "NAME": "사랑 및 우정에서의 차별금지 및 권리구제에 관한 법률/극단",
+            "PRIZE_NM": "젊은 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/05.jpg"
+        },
+        {
+            "ORD": 6,
+            "CANDIDATE_ID": 431,
+            "PROGRAM_NM": "강훈구",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P02",
+            "DIVISION": "play",
+            "NAME": "진짜 진짜 마지막 황군/연출",
+            "PRIZE_NM": "젊은 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/06.jpg"
+        },
+        {
+            "ORD": 7,
+            "CANDIDATE_ID": 432,
+            "PROGRAM_NM": "송이원",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P02",
+            "DIVISION": "play",
+            "NAME": "신토불이 진품명품/연출",
+            "PRIZE_NM": "젊은 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/07.jpg"
+        },
+        {
+            "ORD": 8,
+            "CANDIDATE_ID": 433,
+            "PROGRAM_NM": "윤혜숙",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P02",
+            "DIVISION": "play",
+            "NAME": "우리는 이 도시에 함께 도착했다/연출",
+            "PRIZE_NM": "젊은 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/08.jpg"
+        },
+        {
+            "ORD": 9,
+            "CANDIDATE_ID": 434,
+            "PROGRAM_NM": "지미 세르",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P02",
+            "DIVISION": "play",
+            "NAME": "그을린 사랑/음악,음향",
+            "PRIZE_NM": "젊은 연극상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/09.jpg"
+        },
+        {
+            "ORD": 15,
+            "CANDIDATE_ID": 435,
+            "PROGRAM_NM": "김원영",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P03",
+            "DIVISION": "play",
+            "NAME": "사랑 및 우정에서의 차별금지 및 권리구제에 관한 법률",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/15.jpg"
+        },
+        {
+            "ORD": 16,
+            "CANDIDATE_ID": 436,
+            "PROGRAM_NM": "백석광",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P03",
+            "DIVISION": "play",
+            "NAME": "와이프(WIFE)",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/16.jpg"
+        },
+        {
+            "ORD": 17,
+            "CANDIDATE_ID": 437,
+            "PROGRAM_NM": "임영준",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P03",
+            "DIVISION": "play",
+            "NAME": "너에게",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/17.jpg"
+        },
+        {
+            "ORD": 10,
+            "CANDIDATE_ID": 438,
+            "PROGRAM_NM": "김신록",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P04",
+            "DIVISION": "play",
+            "NAME": "녹천에는 똥이 많다",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/10.jpg"
+        },
+        {
+            "ORD": 11,
+            "CANDIDATE_ID": 439,
+            "PROGRAM_NM": "김정",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P04",
+            "DIVISION": "play",
+            "NAME": "로테르담",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/11.jpg"
+        },
+        {
+            "ORD": 12,
+            "CANDIDATE_ID": 440,
+            "PROGRAM_NM": "이리",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P04",
+            "DIVISION": "play",
+            "NAME": "7번국도",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/12.jpg"
+        },
+        {
+            "ORD": 13,
+            "CANDIDATE_ID": 441,
+            "PROGRAM_NM": "이주영",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P04",
+            "DIVISION": "play",
+            "NAME": "그을린 사랑",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/13.jpg"
+        },
+        {
+            "ORD": 14,
+            "CANDIDATE_ID": 442,
+            "PROGRAM_NM": "이지현",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "P04",
+            "DIVISION": "play",
+            "NAME": "이게 마지막이야",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/drama/14.jpg"
+        },
+        {
+            "ORD": 1,
+            "CANDIDATE_ID": 371,
+            "PROGRAM_NM": "기생충",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M01",
+            "DIVISION": "movie",
+            "NAME": "",
+            "PRIZE_NM": "작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/01.jpg"
+        },
+        {
+            "ORD": 2,
+            "CANDIDATE_ID": 372,
+            "PROGRAM_NM": "남산의 부장들",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M01",
+            "DIVISION": "movie",
+            "NAME": "",
+            "PRIZE_NM": "작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/02.jpg"
+        },
+        {
+            "ORD": 3,
+            "CANDIDATE_ID": 373,
+            "PROGRAM_NM": "벌새",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M01",
+            "DIVISION": "movie",
+            "NAME": "",
+            "PRIZE_NM": "작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/03.jpg"
+        },
+        {
+            "ORD": 4,
+            "CANDIDATE_ID": 374,
+            "PROGRAM_NM": "엑시트",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M01",
+            "DIVISION": "movie",
+            "NAME": "",
+            "PRIZE_NM": "작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/04.jpg"
+        },
+        {
+            "ORD": 5,
+            "CANDIDATE_ID": 375,
+            "PROGRAM_NM": "82년생 김지영",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M01",
+            "DIVISION": "movie",
+            "NAME": "",
+            "PRIZE_NM": "작품상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/05.jpg"
+        },
+        {
+            "ORD": 6,
+            "CANDIDATE_ID": 376,
+            "PROGRAM_NM": "김보라",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M02",
+            "DIVISION": "movie",
+            "NAME": "벌새",
+            "PRIZE_NM": "감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/06.jpg"
+        },
+        {
+            "ORD": 7,
+            "CANDIDATE_ID": 377,
+            "PROGRAM_NM": "봉준호",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M02",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/07.jpg"
+        },
+        {
+            "ORD": 8,
+            "CANDIDATE_ID": 378,
+            "PROGRAM_NM": "우민호",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M02",
+            "DIVISION": "movie",
+            "NAME": "남산의 부장들",
+            "PRIZE_NM": "감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/08.jpg"
+        },
+        {
+            "ORD": 9,
+            "CANDIDATE_ID": 379,
+            "PROGRAM_NM": "이종언",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M02",
+            "DIVISION": "movie",
+            "NAME": "생일",
+            "PRIZE_NM": "감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/09.jpg"
+        },
+        {
+            "ORD": 10,
+            "CANDIDATE_ID": 380,
+            "PROGRAM_NM": "정지영",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M02",
+            "DIVISION": "movie",
+            "NAME": "블랙머니",
+            "PRIZE_NM": "감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/10.jpg"
+        },
+        {
+            "ORD": 46,
+            "CANDIDATE_ID": 416,
+            "PROGRAM_NM": "김보라",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M03",
+            "DIVISION": "movie",
+            "NAME": "벌새",
+            "PRIZE_NM": "시나리오상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/46.jpg"
+        },
+        {
+            "ORD": 47,
+            "CANDIDATE_ID": 417,
+            "PROGRAM_NM": "봉준호 한진원 ",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M03",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "시나리오상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/47.jpg"
+        },
+        {
+            "ORD": 48,
+            "CANDIDATE_ID": 418,
+            "PROGRAM_NM": "우민호 이지민",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M03",
+            "DIVISION": "movie",
+            "NAME": "남산의 부장들",
+            "PRIZE_NM": "시나리오상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/48.jpg"
+        },
+        {
+            "ORD": 49,
+            "CANDIDATE_ID": 419,
+            "PROGRAM_NM": "이상근",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M03",
+            "DIVISION": "movie",
+            "NAME": "엑시트",
+            "PRIZE_NM": "시나리오상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/49.jpg"
+        },
+        {
+            "ORD": 50,
+            "CANDIDATE_ID": 420,
+            "PROGRAM_NM": "임대형",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M03",
+            "DIVISION": "movie",
+            "NAME": "윤희에게",
+            "PRIZE_NM": "시나리오상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/50.jpg"
+        },
+        {
+            "ORD": 51,
+            "CANDIDATE_ID": 424,
+            "PROGRAM_NM": "이하준",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M04",
+            "DIVISION": "movie",
+            "NAME": "기생충/미술",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/54.jpg"
+        },
+        {
+            "ORD": 52,
+            "CANDIDATE_ID": 425,
+            "PROGRAM_NM": "홍경표",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M04",
+            "DIVISION": "movie",
+            "NAME": "기생충/촬영",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/55.jpg"
+        },
+        {
+            "ORD": 53,
+            "CANDIDATE_ID": 421,
+            "PROGRAM_NM": "김서희",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M04",
+            "DIVISION": "movie",
+            "NAME": "남산의 부장들/분장",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/51.jpg"
+        },
+        {
+            "ORD": 54,
+            "CANDIDATE_ID": 422,
+            "PROGRAM_NM": "김영호",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M04",
+            "DIVISION": "movie",
+            "NAME": "봉오동 전투/촬영",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/52.jpg"
+        },
+        {
+            "ORD": 55,
+            "CANDIDATE_ID": 423,
+            "PROGRAM_NM": "윤진율",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M04",
+            "DIVISION": "movie",
+            "NAME": "엑시트/무술",
+            "PRIZE_NM": "예술상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/53.jpg"
+        },
+        {
+            "ORD": 41,
+            "CANDIDATE_ID": 411,
+            "PROGRAM_NM": "강상우",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M05",
+            "DIVISION": "movie",
+            "NAME": "김군",
+            "PRIZE_NM": "신인 감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/41.jpg"
+        },
+        {
+            "ORD": 42,
+            "CANDIDATE_ID": 412,
+            "PROGRAM_NM": "김도영",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M05",
+            "DIVISION": "movie",
+            "NAME": "82년생 김지영",
+            "PRIZE_NM": "신인 감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/42.jpg"
+        },
+        {
+            "ORD": 43,
+            "CANDIDATE_ID": 413,
+            "PROGRAM_NM": "김보라",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M05",
+            "DIVISION": "movie",
+            "NAME": "벌새",
+            "PRIZE_NM": "신인 감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/43.jpg"
+        },
+        {
+            "ORD": 44,
+            "CANDIDATE_ID": 414,
+            "PROGRAM_NM": "김초희",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M05",
+            "DIVISION": "movie",
+            "NAME": "찬실이는 복도 많지",
+            "PRIZE_NM": "신인 감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/44.jpg"
+        },
+        {
+            "ORD": 45,
+            "CANDIDATE_ID": 415,
+            "PROGRAM_NM": "이상근",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M05",
+            "DIVISION": "movie",
+            "NAME": "엑시트",
+            "PRIZE_NM": "신인 감독상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/45.jpg"
+        },
+        {
+            "ORD": 11,
+            "CANDIDATE_ID": 381,
+            "PROGRAM_NM": "송강호",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M06",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/11.jpg"
+        },
+        {
+            "ORD": 12,
+            "CANDIDATE_ID": 382,
+            "PROGRAM_NM": "이병헌",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M06",
+            "DIVISION": "movie",
+            "NAME": "남산의 부장들",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/12.jpg"
+        },
+        {
+            "ORD": 13,
+            "CANDIDATE_ID": 383,
+            "PROGRAM_NM": "이제훈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M06",
+            "DIVISION": "movie",
+            "NAME": "사냥의 시간",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/13.jpg"
+        },
+        {
+            "ORD": 14,
+            "CANDIDATE_ID": 384,
+            "PROGRAM_NM": "조정석",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M06",
+            "DIVISION": "movie",
+            "NAME": "엑시트",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/14.jpg"
+        },
+        {
+            "ORD": 15,
+            "CANDIDATE_ID": 385,
+            "PROGRAM_NM": "한석규",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M06",
+            "DIVISION": "movie",
+            "NAME": "천문: 하늘에 묻는다",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/15.jpg"
+        },
+        {
+            "ORD": 16,
+            "CANDIDATE_ID": 386,
+            "PROGRAM_NM": "김소진",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M07",
+            "DIVISION": "movie",
+            "NAME": "미성년",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/16.jpg"
+        },
+        {
+            "ORD": 17,
+            "CANDIDATE_ID": 387,
+            "PROGRAM_NM": "김희애",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M07",
+            "DIVISION": "movie",
+            "NAME": "윤희에게",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/17.jpg"
+        },
+        {
+            "ORD": 18,
+            "CANDIDATE_ID": 388,
+            "PROGRAM_NM": "전도연",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M07",
+            "DIVISION": "movie",
+            "NAME": "생일",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/18.jpg"
+        },
+        {
+            "ORD": 19,
+            "CANDIDATE_ID": 389,
+            "PROGRAM_NM": "정유미",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M07",
+            "DIVISION": "movie",
+            "NAME": "82년생 김지영",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/19.jpg"
+        },
+        {
+            "ORD": 20,
+            "CANDIDATE_ID": 390,
+            "PROGRAM_NM": "조여정",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M07",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/20.jpg"
+        },
+        {
+            "ORD": 21,
+            "CANDIDATE_ID": 391,
+            "PROGRAM_NM": "김영민",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M08",
+            "DIVISION": "movie",
+            "NAME": "찬실이는 복도 많지",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/21.jpg"
+        },
+        {
+            "ORD": 22,
+            "CANDIDATE_ID": 392,
+            "PROGRAM_NM": "박명훈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M08",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/22.jpg"
+        },
+        {
+            "ORD": 23,
+            "CANDIDATE_ID": 393,
+            "PROGRAM_NM": "원현준",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M08",
+            "DIVISION": "movie",
+            "NAME": "신의 한 수: 귀수편",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/23.jpg"
+        },
+        {
+            "ORD": 24,
+            "CANDIDATE_ID": 394,
+            "PROGRAM_NM": "이광수",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M08",
+            "DIVISION": "movie",
+            "NAME": "나의 특별한 형제",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/24.jpg"
+        },
+        {
+            "ORD": 25,
+            "CANDIDATE_ID": 395,
+            "PROGRAM_NM": "이희준",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M08",
+            "DIVISION": "movie",
+            "NAME": "남산의 부장들",
+            "PRIZE_NM": "남자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/25.jpg"
+        },
+        {
+            "ORD": 26,
+            "CANDIDATE_ID": 396,
+            "PROGRAM_NM": "김국희",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M09",
+            "DIVISION": "movie",
+            "NAME": "유열의 음악앨범",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/26.jpg"
+        },
+        {
+            "ORD": 27,
+            "CANDIDATE_ID": 397,
+            "PROGRAM_NM": "김미경",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M09",
+            "DIVISION": "movie",
+            "NAME": "82년생 김지영",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/27.jpg"
+        },
+        {
+            "ORD": 28,
+            "CANDIDATE_ID": 398,
+            "PROGRAM_NM": "김새벽",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M09",
+            "DIVISION": "movie",
+            "NAME": "벌새",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/28.jpg"
+        },
+        {
+            "ORD": 29,
+            "CANDIDATE_ID": 399,
+            "PROGRAM_NM": "박소담",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M09",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/29.jpg"
+        },
+        {
+            "ORD": 30,
+            "CANDIDATE_ID": 400,
+            "PROGRAM_NM": "이정은",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M09",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "여자 조연상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/30.jpg"
+        },
+        {
+            "ORD": 31,
+            "CANDIDATE_ID": 401,
+            "PROGRAM_NM": "박명훈",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M10",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/31.jpg"
+        },
+        {
+            "ORD": 32,
+            "CANDIDATE_ID": 402,
+            "PROGRAM_NM": "박해수",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M10",
+            "DIVISION": "movie",
+            "NAME": "사냥의 시간",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/32.jpg"
+        },
+        {
+            "ORD": 33,
+            "CANDIDATE_ID": 403,
+            "PROGRAM_NM": "박형식",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M10",
+            "DIVISION": "movie",
+            "NAME": "배심원들",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/33.jpg"
+        },
+        {
+            "ORD": 34,
+            "CANDIDATE_ID": 404,
+            "PROGRAM_NM": "안지호",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M10",
+            "DIVISION": "movie",
+            "NAME": "보희와 녹양",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/34.jpg"
+        },
+        {
+            "ORD": 35,
+            "CANDIDATE_ID": 405,
+            "PROGRAM_NM": "정해인",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M10",
+            "DIVISION": "movie",
+            "NAME": "유열의 음악앨범",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/35.jpg"
+        },
+        {
+            "ORD": 36,
+            "CANDIDATE_ID": 406,
+            "PROGRAM_NM": "강말금",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M11",
+            "DIVISION": "movie",
+            "NAME": "찬실이는 복도 많지",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/36.jpg"
+        },
+        {
+            "ORD": 37,
+            "CANDIDATE_ID": 407,
+            "PROGRAM_NM": "김소혜",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M11",
+            "DIVISION": "movie",
+            "NAME": "윤희에게",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/37.jpg"
+        },
+        {
+            "ORD": 38,
+            "CANDIDATE_ID": 408,
+            "PROGRAM_NM": "김혜준",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M11",
+            "DIVISION": "movie",
+            "NAME": "미성년",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/38.jpg"
+        },
+        {
+            "ORD": 39,
+            "CANDIDATE_ID": 409,
+            "PROGRAM_NM": "박지후",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M11",
+            "DIVISION": "movie",
+            "NAME": "벌새",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/39.jpg"
+        },
+        {
+            "ORD": 40,
+            "CANDIDATE_ID": 410,
+            "PROGRAM_NM": "장혜진",
+            "AWARD_NUM": 56,
+            "PRIZE_CD": "M11",
+            "DIVISION": "movie",
+            "NAME": "기생충",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2020/nominee/movie/40.jpg"
+        }
+    ],
+    "winners": [
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "TV부문 대상",
+            "PROGRAM_NM": "김혜자",
+            "NAME": "눈이 부시게",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/1.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "드라마 작품상",
+            "PROGRAM_NM": "나의 아저씨",
+            "NAME": "tvN",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/2.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "예능 작품상",
+            "PROGRAM_NM": "전지적 참견 시점",
+            "NAME": "MBC",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/3.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "교양 작품상",
+            "PROGRAM_NM": "저널리즘 토크쇼J",
+            "NAME": "KBS 1TV",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/4.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "연출상",
+            "PROGRAM_NM": "조현탁",
+            "NAME": "SKY 캐슬",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/5.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PROGRAM_NM": "이병헌",
+            "NAME": "미스터 션샤인",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/6.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PROGRAM_NM": "염정아",
+            "NAME": "SKY 캐슬",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/7.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 조연상",
+            "PROGRAM_NM": "김병철",
+            "NAME": "SKY 캐슬",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/8.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 조연상",
+            "PROGRAM_NM": "이정은",
+            "NAME": "눈이 부시게",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/9.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PROGRAM_NM": "장기용",
+            "NAME": "이리와 안아줘",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/10.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PROGRAM_NM": "김혜윤",
+            "NAME": "SKY 캐슬",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/11.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 예능상",
+            "PROGRAM_NM": "전현무",
+            "NAME": "나 혼자 산다",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/12.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 예능상",
+            "PROGRAM_NM": "이영자",
+            "NAME": "전지적 참견 시점",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/13.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "극본상",
+            "PROGRAM_NM": "박해영",
+            "NAME": "나의 아저씨",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/14.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "tv",
+            "PRIZE_NM": "예술상",
+            "PROGRAM_NM": "박성진",
+            "NAME": "VFX-알함브라 궁전의 추억",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/15.png"
+        },
+
+
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "영화부문 대상",
+            "PROGRAM_NM": "정우성",
+            "NAME": "증인",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/1.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "작품상",
+            "PROGRAM_NM": "윤종빈",
+            "NAME": "공작",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/2.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "감독상",
+            "PROGRAM_NM": "강형철",
+            "NAME": "스윙키즈",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/3.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "신인 감독상",
+            "PROGRAM_NM": "이지원",
+            "NAME": "미쓰백",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/4.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PROGRAM_NM": "이성민",
+            "NAME": "공작",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/5.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PROGRAM_NM": "한지민",
+            "NAME": "미쓰백",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/6.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 조연상",
+            "PROGRAM_NM": "김주혁",
+            "NAME": "독전",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/7.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 조연상",
+            "PROGRAM_NM": "권소현",
+            "NAME": "미쓰백",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/8.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PROGRAM_NM": "김영광",
+            "NAME": "너의 결혼식",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/9.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PROGRAM_NM": "이재인",
+            "NAME": "사바하",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/10.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "시나리오상",
+            "PROGRAM_NM": "곽경택·김태균",
+            "NAME": "암수살인",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/11.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "movie",
+            "PRIZE_NM": "예술상",
+            "PROGRAM_NM": "홍경표",
+            "NAME": "촬영-버닝",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/12.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "play",
+            "PRIZE_NM": "젊은 연극상",
+            "PROGRAM_NM": "성수연",
+            "NAME": "배우-액트리스원: 국<br>민로봇배우 1호",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/drama/1.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "special",
+            "PRIZE_NM": "V LIVE 인기상",
+            "PROGRAM_NM": "도경수",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/special/1.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "special",
+            "PRIZE_NM": "V LIVE 인기상",
+            "PROGRAM_NM": "이지은",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/special/2.png"
+        },
+        {
+            "AWARD_NUM": 55,
+            "DIVISION": "special",
+            "PRIZE_NM": "바자 아이콘상",
+            "PROGRAM_NM": "김혜수",
+            "PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/special/3.png"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "TV부문 대상",
+            "PROGRAM_NM": "비밀의 숲",
+            "NAME": "tvN",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050400174618.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "드라마 작품상",
+            "PROGRAM_NM": "마더",
+            "NAME": "tvN",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032815352984.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "예능 작품상",
+            "PROGRAM_NM": "효리네 민박",
+            "NAME": "JTBC",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032814484623.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "교양 작품상",
+            "PROGRAM_NM": "떈뽀걸즈",
+            "NAME": "KBS",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032815423999.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "연출상",
+            "PROGRAM_NM": "김윤철",
+            "NAME": "품위있는 그녀",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032915504223.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PROGRAM_NM": "조승우",
+            "NAME": "비밀의 숲",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/20180328110357.2.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PROGRAM_NM": "김남주",
+            "NAME": "미스티",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032811113536.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 조연상",
+            "PROGRAM_NM": "박호산",
+            "NAME": "슬기로운 깜빵생활",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032811242636.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 조연상",
+            "PROGRAM_NM": "예지원",
+            "NAME": "키스 먼저 할까요?",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032916514592.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PROGRAM_NM": "양세종",
+            "NAME": "사랑의 온도",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/20180329155728.4.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PROGRAM_NM": "허율",
+            "NAME": "마더",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032916073444.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 예능상",
+            "PROGRAM_NM": "서장훈",
+            "NAME": "아는 형님, 너는 내 운명",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018033009133494.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 예능상",
+            "PROGRAM_NM": "송은이",
+            "NAME": "전지적 참견 시점, 컨텐츠랩비보 판벌려",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018033009213931.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "극본상",
+            "PROGRAM_NM": "이수연",
+            "NAME": "비밀의 숲",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032916580616.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "tv",
+            "PRIZE_NM": "예술상",
+            "PROGRAM_NM": "최성우",
+            "NAME": "촬영-순례",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040310164232.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "영화부문 대상",
+            "PROGRAM_NM": "장준환",
+            "NAME": "1987",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050400234593.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "작품상",
+            "PROGRAM_NM": "황동혁",
+            "NAME": "남한산성",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040316371095.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "감독상",
+            "PROGRAM_NM": "김용화",
+            "NAME": "신과함께-죄와 벌",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040316393535.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "신인 감독상",
+            "PROGRAM_NM": "강윤성",
+            "NAME": "범죄도시",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040316413289.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PROGRAM_NM": "김윤석",
+            "NAME": "1987",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040615412999.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PROGRAM_NM": "나문희",
+            "NAME": "아이 캔 스피크",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040615434117.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 조연상",
+            "PROGRAM_NM": "박희순",
+            "NAME": "1987",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040616362931.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 조연상",
+            "PROGRAM_NM": "이수경",
+            "NAME": "침묵",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040618071942.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PROGRAM_NM": "구교환",
+            "NAME": "꿈의 제인",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040317063538.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PROGRAM_NM": "최희서",
+            "NAME": "박열",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040615460425.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "시나리오상",
+            "PROGRAM_NM": "김경찬",
+            "NAME": "1987",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040915570020.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "movie",
+            "PRIZE_NM": "예술상",
+            "PROGRAM_NM": "진종현",
+            "NAME": "VFX-신과함께-죄와 벌",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040413294283.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "special",
+            "PRIZE_NM": "바자 아이콘상",
+            "PROGRAM_NM": "나나",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050323115395.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "special",
+            "PRIZE_NM": "스타센추리 남자 인기상",
+            "PROGRAM_NM": "정해인",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050400003454.jpg"
+        },
+        {
+            "AWARD_NUM": 54,
+            "DIVISION": "special",
+            "PRIZE_NM": "스타센추리 여자 인기상",
+            "PROGRAM_NM": "수지",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050322361673.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "TV부문 대상",
+            "PROGRAM_NM": "김은숙",
+            "NAME": "도깨비",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050319130874.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "드라마 작품상",
+            "PROGRAM_NM": "디어 마이 프렌즈",
+            "NAME": "tvN",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040313354887.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "예능 작품상",
+            "PROGRAM_NM": "SBS",
+            "NAME": "미운 우리 새끼",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040313564031.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "교양 작품상",
+            "PROGRAM_NM": "썰전",
+            "NAME": "JTBC",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/20170403134602.3.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "연출상",
+            "PROGRAM_NM": "유인식",
+            "NAME": "낭만닥터 김사부",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314072032.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PROGRAM_NM": "공유",
+            "NAME": "도깨비",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314245239.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PROGRAM_NM": "서현진",
+            "NAME": "또! 오해영",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314383015.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PROGRAM_NM": "김민석",
+            "NAME": "닥터스",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314400348.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PROGRAM_NM": "이세영",
+            "NAME": "월계수 양복점 신사들",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314511103.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 예능상",
+            "PROGRAM_NM": "양세형",
+            "NAME": "양세형의 숏터뷰",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040315030026.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 예능상",
+            "PROGRAM_NM": "박나래",
+            "NAME": "나 혼자 산다",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040618145569.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "극본상",
+            "PROGRAM_NM": "노희경",
+            "NAME": "디어 마이 프렌즈",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314541454.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "남자 인기상",
+            "PROGRAM_NM": "박보검",
+            "NAME": "구르미 그린 달빛",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050318250922.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "tv",
+            "PRIZE_NM": "여자 인기상",
+            "PROGRAM_NM": "김유정",
+            "NAME": "구르미 그린 달빛",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050318290063.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "영화부문 대상",
+            "PROGRAM_NM": "박찬욱",
+            "NAME": "아가씨",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503192115.8.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "작품상",
+            "PROGRAM_NM": "나홍진",
+            "NAME": "곡성",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040313120218.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "감독상",
+            "PROGRAM_NM": "김지운",
+            "NAME": "밀정",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040618244266.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "신인 감독상",
+            "PROGRAM_NM": "연상호",
+            "NAME": "부산행",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040622235956.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 최우수 연기상",
+            "PROGRAM_NM": "송강호",
+            "NAME": "밀정",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040416434701.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 최우수 연기상",
+            "PROGRAM_NM": "손예진",
+            "NAME": "덕혜옹주",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040416534493.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 조연상",
+            "PROGRAM_NM": "김의성",
+            "NAME": "부산행",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314184013.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 조연상",
+            "PROGRAM_NM": "김소진",
+            "NAME": "더킹",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040612280375.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 신인 연기상",
+            "PROGRAM_NM": "류준열",
+            "NAME": "더킹",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040618163964.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 신인 연기상",
+            "PROGRAM_NM": "이상희",
+            "NAME": "연애담",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040416455917.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "시나리오상",
+            "PROGRAM_NM": "윤가은",
+            "NAME": "우리들",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040517465134.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "남자 인기상",
+            "PROGRAM_NM": "도경수",
+            "NAME": "형",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503183026.1.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "movie",
+            "PRIZE_NM": "여자 인기상",
+            "PROGRAM_NM": "윤아",
+            "NAME": "공조",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050318321739.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "special",
+            "PRIZE_NM": "공로상",
+            "PROGRAM_NM": "김영애",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503175651.5.jpg"
+        },
+        {
+            "AWARD_NUM": 53,
+            "DIVISION": "special",
+            "PRIZE_NM": "Instyle 스타일상",
+            "PROGRAM_NM": "김하늘",
+            "PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503173831.8.jpg"
+        }
+    ]
+}

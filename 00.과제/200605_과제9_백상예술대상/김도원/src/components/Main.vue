@@ -1,7 +1,7 @@
 <template>
 	<Fragment>
 		<Visual/>
-		<Dday/>
+		<Dday :dday="`July 11, 2020 06:00:00`" />
 		<Vod/>
 		<Sector/>
 		<Notice/>
