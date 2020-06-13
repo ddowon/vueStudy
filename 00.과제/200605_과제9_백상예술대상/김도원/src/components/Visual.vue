@@ -16,7 +16,7 @@
 				<strong>2020년 6월 5일 (금) 오후 4시 50분</strong><!-- 20200514 -->
 				<span>일산 KINTEX</span>
 			</h2>
-			<a class="box-btn" href="/intro"><span>자세히 보기</span></a>
+			<a class="box-btn" href="/about"><span>자세히 보기</span></a>
 		</div><!-- .container-inner -->
 	</div><!-- .info-wrap -->
 </Fragment>
@@ -29,10 +29,6 @@
 		name: 'visual',
 		components: {
 			Fragment
-		},
-		props: {
-			msg: String
 		}
 	}
-
 </script>

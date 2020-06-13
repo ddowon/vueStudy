@@ -1,15 +1,15 @@
 <template>
-	<Main/>
+	<Home />
 </template>
 
 <script>
 	// @ is an alias to /src
-	import Main from '@/components/Main.vue'
+	import Home from '@/components/Home.vue'
 
 	export default {
-		name: 'Home',
+		name: 'home',
 		components: {
-			Main
+			Home
 		}
 	}
 </script>

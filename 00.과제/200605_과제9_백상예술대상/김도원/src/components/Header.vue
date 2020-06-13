@@ -1,8 +1,8 @@
 <template>
 	<div class="header-wrap">
 		<div class="container-inner">
-			<HeaderLogo/>
-			<HeaderNav/>
+			<HeaderLogo />
+			<HeaderNav />
 		</div><!-- .container-inner -->
 	</div><!-- .header-wrap -->
 </template>
@@ -14,11 +14,6 @@
 		name: 'Header',
 		components: {
 			HeaderLogo, HeaderNav
-		},
-		props: {
-			msg: String
 		}
 	}
-
 </script>
-

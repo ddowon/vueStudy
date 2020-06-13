@@ -1,5 +1,5 @@
 <template>
-	<div class="about-page">
+	<div class="vote-page">
 	</div>
 </template>
 

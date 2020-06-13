@@ -1,26 +1,26 @@
 <template>
-	<div class="dday-wrap ani-visible">
+	<div class="dday-wrap ani-visible" v-if="distance > 0">
 		<div class="container-inner">
 			<div class="dday">
 				<h2>D-day</h2>
-				<div class="timer" id="timer-id">
+				<div class="timer">
 					<span class="day">
-						<span class="cnt" id="dday-day">{{day}}</span>
+						<span class="cnt">{{ day }}</span>
 						<span class="txt">일</span>
 					</span>
-					<em id="dday-p1">:</em>
+					<em>:</em>
 					<span class="hour">
-						<span class="cnt" id="dday-hour">{{hour}}</span>
+						<span class="cnt">{{ hour }}</span>
 						<span class="txt">시</span>
 					</span>
-					<em id="dday-p2">:</em>
+					<em>:</em>
 					<span class="min">
-						<span class="cnt" id="dday-min">{{minutes}}</span>
+						<span class="cnt">{{ minutes }}</span>
 						<span class="txt">분</span>
 					</span>
-					<em id="dday-p3">:</em>
+					<em>:</em>
 					<span class="sec">
-						<span class="cnt" id="dday-sec">{{seconds}}</span>
+						<span class="cnt">{{ seconds }}</span>
 						<span class="txt">초</span>
 					</span>
 				</div><!-- .timer -->
@@ -39,44 +39,35 @@
 			today: new Date().getTime(),
 		}),
 		computed: {
-			countDownDate() {
-				return new Date(this.dday).getTime()
-			},
 			distance() {
-				return this.countDownDate - this.today
+				return new Date(this.dday).getTime() - this.today
 			},
 			day() {
-				let d = String(Math.floor(this.distance / (1000 * 60 * 60 * 24)))
-				d.length === 1 ? `0${d}` : d
-				return d
+				let d = Math.floor(this.distance / (1000 * 60 * 60 * 24))
+				return d < 10 ? `0${d}` : d
 			},
 			hour() {
-				let h = String(Math.floor((this.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))
-				h.length === 1 ? `0${h}` : h
-				return h
+				let h = Math.floor((this.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+				return h < 10 ? `0${h}` : h
 			},
 			minutes() {
-				let m = String(Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60)))
-				m.length === 1 ? `0${m}` : m
-				return m
+				let m = Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60))
+				return m < 10 ? `0${m}` : m
 			},
 			seconds() {
-				let s = String(Math.floor((this.distance % (1000 * 60)) / 1000))
-				s.length === 1 ? `0${s}` : s
-				return s
-			}			
+				let s = Math.floor((this.distance % (1000 * 60)) / 1000)
+				return s < 10 ? `0${s}` : s
+			}
 		},
-		mounted(){
+		mounted() {
 			this.dDayCount()
 		},
 		methods: {
-			dDayCount(){
+			dDayCount() {
 				setInterval(() => {
-					this.today =  new Date().getTime()
-
-				},1000)
+					this.today = new Date().getTime()
+				}, 1000)
 			}
 		}
 	}
-
 </script>

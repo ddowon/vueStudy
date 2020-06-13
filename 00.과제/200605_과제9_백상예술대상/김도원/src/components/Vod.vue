@@ -20,7 +20,7 @@
 			<div class="more">
 				<a class="box-btn" href="/replay"><span>영상 더보기</span></a>
 			</div><!-- .more -->
-			<VodPop v-show="isPopShowing" :item="currentVodItem" :isPopShowing="isPopShowing" @closePop="closePop"/>
+			<VodPop v-show="isPopShowing" :item="currentVodItem" :isPopShowing="isPopShowing" @closePop="closePop" />
 		</div><!-- .container-inner -->
 	</div><!-- .vod-wrap -->
 </template>
@@ -39,28 +39,25 @@
 			currentVodItem: {},
 			imgPath: 'http://fs.jtbc.joins.com/joydata/CP00000001/prog/enter/100sangarts/img/',
 			vodItems: [
-				{title:'문화캠페인, 전미도 배우 편 - 6월 5일 금요일 오후 4시 50분', imgFile: '20200602_165418_788_1.jpg', src: 'xqFvYsy4wE4'},
-				{title:'문화캠페인, 박해수 배우 편 - 6월 5일 금요일 오후 4시 50분', imgFile: '20200605_103518_770_1.jpg', src: 'M7qGVk14GG0'},
-				{title:'문화캠페인, 박명훈 배우 편 - 6월 5일 금요일 오후 4시 50분', imgFile: '20200603_103619_215_1.jpg', src: 'lG0Ys-2d4MA'}
+				{ title: '문화캠페인, 전미도 배우 편 - 6월 5일 금요일 오후 4시 50분', imgFile: '20200602_165418_788_1.jpg', src: 'xqFvYsy4wE4' },
+				{ title: '문화캠페인, 박해수 배우 편 - 6월 5일 금요일 오후 4시 50분', imgFile: '20200605_103518_770_1.jpg', src: 'M7qGVk14GG0' },
+				{ title: '문화캠페인, 박명훈 배우 편 - 6월 5일 금요일 오후 4시 50분', imgFile: '20200603_103619_215_1.jpg', src: 'lG0Ys-2d4MA' }
 			],
 			settings: {
-				"arrow": true,
-				"edgeFriction": 0.35,
-				"infinite": false,
-				"speed": 500,
-				"slidesToShow": 1,
-				"slidesToScroll": 1
+				'arrow': true,
+				'edgeFriction': 0.35,
+				'infinite': false,
+				'speed': 500,
+				'slidesToShow': 1,
+				'slidesToScroll': 1
 			}
 		}),
-		computed: {
-
-		},
 		methods: {
-			openPop(item){
+			openPop(item) {
 				this.currentVodItem = item
 				this.isPopShowing = true
 			},
-			closePop(){
+			closePop() {
 				this.isPopShowing = false
 			}
 		}

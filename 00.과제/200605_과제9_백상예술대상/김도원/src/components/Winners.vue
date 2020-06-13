@@ -1,10 +1,10 @@
 <template>
-	<div class="notice-page">
+	<div class="awards-page">
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'notice'
+	name: 'winners'
 }
 </script>

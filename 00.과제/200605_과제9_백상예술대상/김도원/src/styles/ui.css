@@ -45,7 +45,8 @@ textarea, input {-webkit-appearance: none; -webkit-border-radius: 0;}
 	transition: none;
 }
 .header-wrap .gnb a:focus,
-.header-wrap .gnb a:hover {font-weight:500;}
+.header-wrap .gnb a:hover,
+.header-wrap .gnb li.on a {font-weight:500;}
 .header-wrap .gnb li.m2 a:focus,
 .header-wrap .gnb li.m2 a:hover {margin:0 -1px;}
 .footer-wrap {position:relative; height:220px; background-color:#001111; color:#fff;}
@@ -191,12 +192,13 @@ textarea, input {-webkit-appearance: none; -webkit-border-radius: 0;}
 .dday-wrap .dday {position:relative; top:16px; display:inline-block; padding-left:150px; vertical-align:top;}
 .dday-wrap .dday h2 {position:absolute; left:0; top:0; font-size:28px; font-weight:100; letter-spacing:2px;}
 .dday-wrap .dday span,
-.dday-wrap .dday em {display:inline-block; vertical-align:top;}
+.dday-wrap .dday em {display:inline-block;}
 .dday-wrap .dday em {width:15px; margin-top:-3px;}
 .chrome .dday-wrap .dday em {margin-top:1px;}
 .dday-wrap .timer {letter-spacing:6px;}
 .dday-wrap .day,
 .dday-wrap .hour,
+.dday-wrap .min,
 .dday-wrap .sec {position:relative;}
 .dday-wrap .cnt,
 .dday-wrap .dday em {font-size:28px; line-height:32px}

@@ -1,10 +1,10 @@
 <template>
-	<div class="notice-page">
+	<div class="vod-page">
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'notice'
+	name: 'replay'
 }
 </script>

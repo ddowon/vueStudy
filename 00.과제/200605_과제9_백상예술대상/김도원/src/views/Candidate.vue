@@ -1,6 +1,5 @@
 <template>
-	<Candidate/>
-
+	<Candidate />
 </template>
 
 <script>

@@ -1,10 +1,10 @@
 <template>
 	<Fragment>
-		<Visual/>
+		<Visual />
 		<Dday :dday="`July 11, 2020 06:00:00`" />
-		<Vod/>
-		<Sector/>
-		<Notice/>
+		<Vod />
+		<Sector />
+		<LatestNotice />
 	</Fragment>
 </template>
 
@@ -14,14 +14,11 @@
 	import Dday from '@/components/Dday.vue'
 	import Vod from '@/components/Vod.vue'
 	import Sector from '@/components/Sector.vue'
-	import Notice from '@/components/Notice.vue'
+	import LatestNotice from '@/components/LatestNotice.vue'
 	export default {
-		name: 'Main',
+		name: 'home',
 		components: {
-			Fragment, Visual, Dday, Vod, Sector, Notice
-		},
-		props: {
+			Fragment, Visual, Dday, Vod, Sector, LatestNotice
 		}
 	}
-
 </script>

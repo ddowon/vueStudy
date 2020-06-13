@@ -1,10 +1,8 @@
 <template>
-	<div id="app">
-		<div class="container-wrap main-page">
-			<Header/>
-			<router-view />
-			<Footer/>
-		</div>
+	<div id="app" class="container-wrap" :class="classObject">
+		<Header />
+		<router-view />
+		<Footer />
 	</div>
 </template>
 <script>
@@ -15,8 +13,13 @@
 		components: {
 			Header, Footer
 		},
-		props: {
-			msg: String
+		computed: {
+			classObject() {
+				return {
+					'main-page': this.$route.name === 'home',
+					'sub-page': this.$route.name !== 'home'
+				}
+			}
 		}
 	}
 </script>

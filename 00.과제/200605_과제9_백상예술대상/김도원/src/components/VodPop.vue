@@ -16,7 +16,7 @@
 
 <script>
 	export default {
-		props: ['isPopShowing', 'item'],
+		props: [ 'isPopShowing', 'item' ],
 		data: () => ({
 		}),
 		watch: {
@@ -37,19 +37,15 @@
 		},
 		methods: {
 			playVideo() {
-				console.log('재생')
 				this.player.playVideo()
 			},
 			stopVideo() {
-				console.log('정지')
 				this.player.stopVideo()
 			},
-			closePop(){
+			closePop() {
 				this.$emit('closePop')
 				this.stopVideo()
 			}
-
 		}
 	}
-
 </script>

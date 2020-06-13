@@ -29,10 +29,6 @@
 
 <script>
 	export default {
-		name: 'Footer',
-		props: {
-			msg: String
-		}
+		name: 'Footer'
 	}
-
 </script>

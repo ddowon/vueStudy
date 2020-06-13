@@ -3,12 +3,11 @@
 		<div class="container-inner">
 			<h2>56회 후보자 · 작품</h2>
 			<div class="button">
-				<a href="#" v-for="(item, index) in tabList"
-				:key="item.id"
-				:id="`division_${item.id}`"
-				:class="['box-btn', item.id, {'on': index === currentDivisionIdx}]"
-				@click.prevent="changeDivision(index, item.id)">
-					<span>{{item.title}}</span>
+				<a href="#" v-for="item in tabList"
+				:key="item.division"
+				:class="[ 'box-btn', item.division, { 'on': item.division === currentDivision } ]"
+				@click.prevent="changeDivision(item.division)">
+					<span>{{ item.title }}</span>
 				</a>
 			</div>
 		</div><!-- .container-inner -->
@@ -17,17 +16,11 @@
 
 <script>
 	export default {
-		name: '',
-		props: ['tabList', 'currentDivisionIdx'],
-		data: () => ({
-			
-		}),
+		props: [ 'tabList', 'currentDivision' ],
 		methods: {
-			changeDivision(idx, itemId) {
-				this.$emit('changeDivision', idx, itemId)
+			changeDivision(division) {
+				this.$emit('changeDivision', division)
 			}
 		}
 	}
-
 </script>
-

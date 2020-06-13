@@ -19,8 +19,8 @@ body {min-height: 100%;}
 } 
 .container-wrap .sector-wrap .button a {width:312px;}
 .sector-wrap .button a span {line-height:99px;}
-.main-page.container-wrap a.drama:focus span, 
-.main-page.container-wrap a.drama:hover span {background-color:#cce3ea;}
+.main-page.container-wrap a.play:focus span, 
+.main-page.container-wrap a.play:hover span {background-color:#cce3ea;}
 .sub-page.container-wrap .sector-title {border-bottom:1px solid #dddddd;}
 .container-wrap .list-more a.box-btn:hover, .about-page a.box-btn:hover,
 .container-wrap .notice-page a.box-btn:hover {background-color:#005124; border-color:#005124;}
@@ -43,16 +43,16 @@ body {min-height: 100%;}
 .container-wrap .sector-wrap .button a.movie span {border-color:#f6ccac; color:#f6ccac;}
 .container-wrap .sector-wrap .button a.movie:hover span {color:#ea4800;}
 .container-wrap .sector-wrap .button a.movie:hover span:after {background-color:#f6ccac;}
-.container-wrap .sector-wrap .button a.drama span {border-color:#cce3ea; color:#cce3ea;}
-.container-wrap .sector-wrap .button a.drama:hover span {color:#0069ac;background:#cce3ea;}
-.container-wrap .sector-wrap .button a.drama:hover span:after {background-color:#cce3ea;}
+.container-wrap .sector-wrap .button a.play span {border-color:#cce3ea; color:#cce3ea;}
+.container-wrap .sector-wrap .button a.play:hover span {color:#0069ac;background:#cce3ea;}
+.container-wrap .sector-wrap .button a.play:hover span:after {background-color:#cce3ea;}
 
 /* 시상식 소개 */
 .about-page .guideline-wrap {background:url(http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png) repeat-y 50% 0 / cover; background-size:100% auto;}
 .container-wrap .about-page .guideline-wrap .guideline-sector .guideline-title span {background:linear-gradient( to right, #035424, #165420 )}
 .about-page .sector-title-wrap .prize-sector .movie dt {background:#fc621f}
 .about-page .sector-title-wrap .prize-sector .tv dt {background:#005424;}
-.about-page .sector-title-wrap .prize-sector .drama dt {background:#00a0d0;}
+.about-page .sector-title-wrap .prize-sector .play dt {background:#00a0d0;}
 .container-wrap .about-page .guideline-wrap .guideline-sector {border:1px solid rgba(255, 255, 255, 0.5);}
 
 /* 후보자 */
@@ -62,15 +62,15 @@ body {min-height: 100%;}
 .container-wrap .candidate-page .nominee-title-wrap .button .box-btn {margin-left:-1px; border:1px solid #999;}
 .candidate-page .nominee-title-wrap .button .movie.on, 
 .candidate-page .nominee-title-wrap .button .movie.on:hover {background:#fc621f;border-color:#fc621f;}
-.container-wrap .candidate-page .nominee-title-wrap .button .drama:hover {background:transparent; }
+.container-wrap .candidate-page .nominee-title-wrap .button .play:hover {background:transparent; }
 .candidate-page .nominee-title-wrap .button .tv:hover span {color:#005424;}
-.candidate-page .nominee-title-wrap .button .drama:hover span {color:#00a0d0;}
+.candidate-page .nominee-title-wrap .button .play:hover span {color:#00a0d0;}
 .candidate-page .nominee-title-wrap .button .movie:hover span {color:#fc621f}
-.container-wrap .candidate-page .nominee-title-wrap .button .drama.on {background:#00a0d0; border-color:#00a0d0;}
+.container-wrap .candidate-page .nominee-title-wrap .button .play.on {background:#00a0d0; border-color:#00a0d0;}
 .container-wrap .candidate-page .nominated-wrap {background:url('http://images.jtbc.joins.com/baeksang/2020/bg_line2020.png') repeat-y 50% 0 / cover; background-size:100%;}
-.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector01 {background:#005424}
-.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector02 {background:#fc621f;}
-.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector03 {background:#00a0d0;}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector-tv {background:#005424}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector-movie {background:#fc621f;}
+.candidate-page .nominee-list-wrap .nominee-award-sector .nominee-sector.sector-play {background:#00a0d0;}
 .candidate-page .about-page .guideline-wrap .guideline-sector {border:1px solid #82aa92;}
 
 /* 수상자 */ 

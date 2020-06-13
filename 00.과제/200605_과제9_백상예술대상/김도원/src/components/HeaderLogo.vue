@@ -4,11 +4,6 @@
 
 <script>
 	export default {
-		name: 'headerLogo',
-		props: {
-			msg: String
-		}
+		name: 'headerLogo'
 	}
-
 </script>
-
