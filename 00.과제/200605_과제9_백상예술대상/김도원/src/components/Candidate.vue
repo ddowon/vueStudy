@@ -39,8 +39,8 @@
 			// currentPrize가 변경되는 경우는 딱 2가지 이기 때문 (1. 탭이 바뀔 때, 카테고리를 눌렀을 때)
 			currentDivision: {
 				handler(newVal, oldVal) {
-					if (newVal) {
-						this.currentPrize = this.currentTab.initCode
+					if (newVal && !this.$route.params.prize_id) {
+						this.setPrize(this.currentTab.initCode)
 					}
 				},
 				immediate: true
@@ -63,10 +63,17 @@
 			// 초기값 설정
 			// 만약, router에서 division이나 initCode를 부여 받는다면 초기값이 달라짐
 			// ex) candidates/movie --> this.setDivision('movie') / this.setPrize('M01')
-			this.setDivision(this.tabList[0].division)
+			
+			let division = (this.$route.params.division) ? (this.$route.params.division) : this.tabList[0].division
+			this.setDivision(division)
+
+			let prize = (this.$route.params.prize_id) ? (this.$route.params.prize_id) : this.currentTab.initCode
+			this.setPrize(prize)
 
 			this.fetchPrizes()
 			this.fetchCandidates()
+		},
+		mounted() {
 		},
 		methods: {
 			// 아래의 setDivision, setPrize 메서드는 추후 Vuex의 mutations에서 사용
@@ -74,7 +81,7 @@
 				this.currentDivision = division
 			},
 			setPrize(cd) {
-				this.currentPrize = cd
+				this.currentPrize = cd.toUpperCase()
 			},
 			// 아래의 fetchPrizes, fetchCandidates 메서드는 추후 Vuex의 actions에서 사용
 			fetchPrizes() {

@@ -39,6 +39,18 @@ const routes = [
 		component: Candidate
 	},
 	{
+		path: '/candidate/:division',
+		name: 'candidate',
+		meta: { title: '56회 후보자/작품' },
+		component: Candidate
+	},
+	{
+		path: '/candidate/:division/:prize_id',
+		name: 'candidate',
+		meta: { title: '56회 후보자/작품'},
+		component: Candidate
+	},
+	{
 		path: '/replay',
 		name: 'replay',
 		meta: { title: '다시보기' },
@@ -72,7 +84,7 @@ const routes = [
 const router = new VueRouter({
 	mode: 'history',
 	base: process.env.BASE_URL,
-	linkExactActiveClass: 'on',
+	linkActiveClass: 'on',
 	routes
 })
 
