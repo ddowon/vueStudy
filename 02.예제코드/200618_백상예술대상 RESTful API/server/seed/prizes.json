@@ -1,0 +1,147 @@
+[{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T01",
+		"PRIZE_NM": "드라마 작품상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T02",
+		"PRIZE_NM": "예능 작품상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T03",
+		"PRIZE_NM": "교양 작품상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T04",
+		"PRIZE_NM": "연출상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T05",
+		"PRIZE_NM": "극본상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T06",
+		"PRIZE_NM": "예술상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T07",
+		"PRIZE_NM": "남자 최우수 연기상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T08",
+		"PRIZE_NM": "여자 최우수 연기상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T09",
+		"PRIZE_NM": "남자 조연상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T10",
+		"PRIZE_NM": "여자 조연상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T11",
+		"PRIZE_NM": "남자 신인 연기상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T12",
+		"PRIZE_NM": "여자 신인 연기상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T13",
+		"PRIZE_NM": "남자 TV예능상"
+	},
+	{
+		"DIVISION": "tv",
+		"PRIZE_CD": "T14",
+		"PRIZE_NM": "여자 TV예능상"
+	},
+	{
+		"DIVISION": "play",
+		"PRIZE_CD": "P01",
+		"PRIZE_NM": "백상 연극상"
+	},
+	{
+		"DIVISION": "play",
+		"PRIZE_CD": "P02",
+		"PRIZE_NM": "젊은 연극상"
+	},
+	{
+		"DIVISION": "play",
+		"PRIZE_CD": "P03",
+		"PRIZE_NM": "남자 최우수 연기상"
+	},
+	{
+		"DIVISION": "play",
+		"PRIZE_CD": "P04",
+		"PRIZE_NM": "여자 최우수 연기상"
+	},
+
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M01",
+		"PRIZE_NM": "작품상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M02",
+		"PRIZE_NM": "감독상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M03",
+		"PRIZE_NM": "시나리오상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M04",
+		"PRIZE_NM": "예술상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M05",
+		"PRIZE_NM": "신인 감독상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M06",
+		"PRIZE_NM": "남자 최우수 연기상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M07",
+		"PRIZE_NM": "여자 최우수 연기상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M08",
+		"PRIZE_NM": "남자 조연상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M09",
+		"PRIZE_NM": "여자 조연상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M10",
+		"PRIZE_NM": "남자 신인 연기상"
+	},
+	{
+		"DIVISION": "movie",
+		"PRIZE_CD": "M11",
+		"PRIZE_NM": "여자 신인 연기상"
+	}
+]

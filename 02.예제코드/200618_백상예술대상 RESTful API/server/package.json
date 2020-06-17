@@ -6,6 +6,7 @@
   "scripts": {
     "start": "set NODE_ENV=production&&node ./server",
     "dev": "set NODE_ENV=development&&nodemon ./server.js",
+    "seed": "set NODE_ENV=production&&node ./seed/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

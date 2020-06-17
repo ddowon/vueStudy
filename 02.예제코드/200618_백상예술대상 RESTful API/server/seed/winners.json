@@ -1,0 +1,715 @@
+[{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "TV부문 대상",
+		"PROGRAM_NM": "김혜자",
+		"NAME": "눈이 부시게",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/1.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "드라마 작품상",
+		"PROGRAM_NM": "나의 아저씨",
+		"NAME": "tvN",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/2.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "예능 작품상",
+		"PROGRAM_NM": "전지적 참견 시점",
+		"NAME": "MBC",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/3.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "교양 작품상",
+		"PROGRAM_NM": "저널리즘 토크쇼J",
+		"NAME": "KBS 1TV",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/4.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "연출상",
+		"PROGRAM_NM": "조현탁",
+		"NAME": "SKY 캐슬",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/5.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 최우수 연기상",
+		"PROGRAM_NM": "이병헌",
+		"NAME": "미스터 션샤인",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/6.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 최우수 연기상",
+		"PROGRAM_NM": "염정아",
+		"NAME": "SKY 캐슬",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/7.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 조연상",
+		"PROGRAM_NM": "김병철",
+		"NAME": "SKY 캐슬",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/8.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 조연상",
+		"PROGRAM_NM": "이정은",
+		"NAME": "눈이 부시게",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/9.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 신인 연기상",
+		"PROGRAM_NM": "장기용",
+		"NAME": "이리와 안아줘",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/10.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 신인 연기상",
+		"PROGRAM_NM": "김혜윤",
+		"NAME": "SKY 캐슬",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/11.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 예능상",
+		"PROGRAM_NM": "전현무",
+		"NAME": "나 혼자 산다",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/12.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 예능상",
+		"PROGRAM_NM": "이영자",
+		"NAME": "전지적 참견 시점",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/13.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "극본상",
+		"PROGRAM_NM": "박해영",
+		"NAME": "나의 아저씨",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/14.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "tv",
+		"PRIZE_NM": "예술상",
+		"PROGRAM_NM": "박성진",
+		"NAME": "VFX-알함브라 궁전의 추억",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/tv/15.png"
+	},
+
+
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "영화부문 대상",
+		"PROGRAM_NM": "정우성",
+		"NAME": "증인",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/1.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "작품상",
+		"PROGRAM_NM": "윤종빈",
+		"NAME": "공작",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/2.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "감독상",
+		"PROGRAM_NM": "강형철",
+		"NAME": "스윙키즈",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/3.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "신인 감독상",
+		"PROGRAM_NM": "이지원",
+		"NAME": "미쓰백",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/4.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 최우수 연기상",
+		"PROGRAM_NM": "이성민",
+		"NAME": "공작",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/5.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 최우수 연기상",
+		"PROGRAM_NM": "한지민",
+		"NAME": "미쓰백",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/6.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 조연상",
+		"PROGRAM_NM": "김주혁",
+		"NAME": "독전",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/7.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 조연상",
+		"PROGRAM_NM": "권소현",
+		"NAME": "미쓰백",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/8.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 신인 연기상",
+		"PROGRAM_NM": "김영광",
+		"NAME": "너의 결혼식",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/9.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 신인 연기상",
+		"PROGRAM_NM": "이재인",
+		"NAME": "사바하",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/10.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "시나리오상",
+		"PROGRAM_NM": "곽경택·김태균",
+		"NAME": "암수살인",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/11.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "movie",
+		"PRIZE_NM": "예술상",
+		"PROGRAM_NM": "홍경표",
+		"NAME": "촬영-버닝",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/movie/12.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "play",
+		"PRIZE_NM": "젊은 연극상",
+		"PROGRAM_NM": "성수연",
+		"NAME": "배우-액트리스원: 국<br>민로봇배우 1호",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/drama/1.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "special",
+		"PRIZE_NM": "V LIVE 인기상",
+		"PROGRAM_NM": "도경수",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/special/1.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "special",
+		"PRIZE_NM": "V LIVE 인기상",
+		"PROGRAM_NM": "이지은",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/special/2.png"
+	},
+	{
+		"AWARD_NUM": 55,
+		"DIVISION": "special",
+		"PRIZE_NM": "바자 아이콘상",
+		"PROGRAM_NM": "김혜수",
+		"PHOTO_URI": "http://images.jtbc.joins.com/baeksang/2019/awards/special/3.png"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "TV부문 대상",
+		"PROGRAM_NM": "비밀의 숲",
+		"NAME": "tvN",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050400174618.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "드라마 작품상",
+		"PROGRAM_NM": "마더",
+		"NAME": "tvN",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032815352984.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "예능 작품상",
+		"PROGRAM_NM": "효리네 민박",
+		"NAME": "JTBC",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032814484623.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "교양 작품상",
+		"PROGRAM_NM": "떈뽀걸즈",
+		"NAME": "KBS",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032815423999.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "연출상",
+		"PROGRAM_NM": "김윤철",
+		"NAME": "품위있는 그녀",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032915504223.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 최우수 연기상",
+		"PROGRAM_NM": "조승우",
+		"NAME": "비밀의 숲",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/20180328110357.2.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 최우수 연기상",
+		"PROGRAM_NM": "김남주",
+		"NAME": "미스티",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032811113536.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 조연상",
+		"PROGRAM_NM": "박호산",
+		"NAME": "슬기로운 깜빵생활",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032811242636.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 조연상",
+		"PROGRAM_NM": "예지원",
+		"NAME": "키스 먼저 할까요?",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032916514592.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 신인 연기상",
+		"PROGRAM_NM": "양세종",
+		"NAME": "사랑의 온도",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/20180329155728.4.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 신인 연기상",
+		"PROGRAM_NM": "허율",
+		"NAME": "마더",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032916073444.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 예능상",
+		"PROGRAM_NM": "서장훈",
+		"NAME": "아는 형님, 너는 내 운명",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018033009133494.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 예능상",
+		"PROGRAM_NM": "송은이",
+		"NAME": "전지적 참견 시점, 컨텐츠랩비보 판벌려",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018033009213931.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "극본상",
+		"PROGRAM_NM": "이수연",
+		"NAME": "비밀의 숲",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/03/2018032916580616.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "tv",
+		"PRIZE_NM": "예술상",
+		"PROGRAM_NM": "최성우",
+		"NAME": "촬영-순례",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040310164232.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "영화부문 대상",
+		"PROGRAM_NM": "장준환",
+		"NAME": "1987",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050400234593.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "작품상",
+		"PROGRAM_NM": "황동혁",
+		"NAME": "남한산성",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040316371095.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "감독상",
+		"PROGRAM_NM": "김용화",
+		"NAME": "신과함께-죄와 벌",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040316393535.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "신인 감독상",
+		"PROGRAM_NM": "강윤성",
+		"NAME": "범죄도시",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040316413289.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 최우수 연기상",
+		"PROGRAM_NM": "김윤석",
+		"NAME": "1987",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040615412999.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 최우수 연기상",
+		"PROGRAM_NM": "나문희",
+		"NAME": "아이 캔 스피크",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040615434117.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 조연상",
+		"PROGRAM_NM": "박희순",
+		"NAME": "1987",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040616362931.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 조연상",
+		"PROGRAM_NM": "이수경",
+		"NAME": "침묵",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040618071942.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 신인 연기상",
+		"PROGRAM_NM": "구교환",
+		"NAME": "꿈의 제인",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040317063538.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 신인 연기상",
+		"PROGRAM_NM": "최희서",
+		"NAME": "박열",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040615460425.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "시나리오상",
+		"PROGRAM_NM": "김경찬",
+		"NAME": "1987",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040915570020.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "movie",
+		"PRIZE_NM": "예술상",
+		"PROGRAM_NM": "진종현",
+		"NAME": "VFX-신과함께-죄와 벌",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/04/2018040413294283.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "special",
+		"PRIZE_NM": "바자 아이콘상",
+		"PROGRAM_NM": "나나",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050323115395.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "special",
+		"PRIZE_NM": "스타센추리 남자 인기상",
+		"PROGRAM_NM": "정해인",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050400003454.jpg"
+	},
+	{
+		"AWARD_NUM": 54,
+		"DIVISION": "special",
+		"PRIZE_NM": "스타센추리 여자 인기상",
+		"PROGRAM_NM": "수지",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2018/05/2018050322361673.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "TV부문 대상",
+		"PROGRAM_NM": "김은숙",
+		"NAME": "도깨비",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050319130874.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "드라마 작품상",
+		"PROGRAM_NM": "디어 마이 프렌즈",
+		"NAME": "tvN",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040313354887.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "예능 작품상",
+		"PROGRAM_NM": "SBS",
+		"NAME": "미운 우리 새끼",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040313564031.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "교양 작품상",
+		"PROGRAM_NM": "썰전",
+		"NAME": "JTBC",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/20170403134602.3.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "연출상",
+		"PROGRAM_NM": "유인식",
+		"NAME": "낭만닥터 김사부",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314072032.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 최우수 연기상",
+		"PROGRAM_NM": "공유",
+		"NAME": "도깨비",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314245239.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 최우수 연기상",
+		"PROGRAM_NM": "서현진",
+		"NAME": "또! 오해영",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314383015.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 신인 연기상",
+		"PROGRAM_NM": "김민석",
+		"NAME": "닥터스",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314400348.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 신인 연기상",
+		"PROGRAM_NM": "이세영",
+		"NAME": "월계수 양복점 신사들",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314511103.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 예능상",
+		"PROGRAM_NM": "양세형",
+		"NAME": "양세형의 숏터뷰",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040315030026.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 예능상",
+		"PROGRAM_NM": "박나래",
+		"NAME": "나 혼자 산다",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040618145569.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "극본상",
+		"PROGRAM_NM": "노희경",
+		"NAME": "디어 마이 프렌즈",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314541454.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "남자 인기상",
+		"PROGRAM_NM": "박보검",
+		"NAME": "구르미 그린 달빛",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050318250922.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "tv",
+		"PRIZE_NM": "여자 인기상",
+		"PROGRAM_NM": "김유정",
+		"NAME": "구르미 그린 달빛",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050318290063.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "영화부문 대상",
+		"PROGRAM_NM": "박찬욱",
+		"NAME": "아가씨",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503192115.8.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "작품상",
+		"PROGRAM_NM": "나홍진",
+		"NAME": "곡성",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040313120218.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "감독상",
+		"PROGRAM_NM": "김지운",
+		"NAME": "밀정",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040618244266.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "신인 감독상",
+		"PROGRAM_NM": "연상호",
+		"NAME": "부산행",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040622235956.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 최우수 연기상",
+		"PROGRAM_NM": "송강호",
+		"NAME": "밀정",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040416434701.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 최우수 연기상",
+		"PROGRAM_NM": "손예진",
+		"NAME": "덕혜옹주",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040416534493.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 조연상",
+		"PROGRAM_NM": "김의성",
+		"NAME": "부산행",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040314184013.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 조연상",
+		"PROGRAM_NM": "김소진",
+		"NAME": "더킹",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040612280375.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 신인 연기상",
+		"PROGRAM_NM": "류준열",
+		"NAME": "더킹",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040618163964.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 신인 연기상",
+		"PROGRAM_NM": "이상희",
+		"NAME": "연애담",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040416455917.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "시나리오상",
+		"PROGRAM_NM": "윤가은",
+		"NAME": "우리들",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/04/2017040517465134.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "남자 인기상",
+		"PROGRAM_NM": "도경수",
+		"NAME": "형",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503183026.1.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "movie",
+		"PRIZE_NM": "여자 인기상",
+		"PROGRAM_NM": "윤아",
+		"NAME": "공조",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/2017050318321739.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "special",
+		"PRIZE_NM": "공로상",
+		"PROGRAM_NM": "김영애",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503175651.5.jpg"
+	},
+	{
+		"AWARD_NUM": 53,
+		"DIVISION": "special",
+		"PRIZE_NM": "Instyle 스타일상",
+		"PROGRAM_NM": "김하늘",
+		"PHOTO_URI": "http://fs.jtbc.joins.com/service/undefined/images/2017/05/20170503173831.8.jpg"
+	}
+]
