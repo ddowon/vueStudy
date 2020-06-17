@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
+    "api": "json-server --watch api/db.json",
     "build": "vue-cli-service build",
     "buildDev": "vue-cli-service build --mode development"
   },
