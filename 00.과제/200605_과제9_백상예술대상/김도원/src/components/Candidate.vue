@@ -15,7 +15,7 @@
 </template>
 
 <script>
-	const API_URI = process.env.VUE_APP_API_URI
+	const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
 
 	// import { mapState, mapActions, mapGetters } from 'vuex'
 	import { Fragment } from 'vue-fragment'

@@ -1,5 +1,4 @@
 const devMode = process.env.NODE_ENV !== 'production'
-const API_URI = process.env.VUE_APP_API_URI
 const path = require('path')
 
 module.exports = {
