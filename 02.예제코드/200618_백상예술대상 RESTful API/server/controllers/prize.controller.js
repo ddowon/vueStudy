@@ -17,7 +17,7 @@ exports.findByDivision = function (req, res) {
 		if (!doc) {
 			res.status(404).json({ message: '해당 상을 찾을 수 없습니다.' });
 		} else {
-			res.status(200).json(docs);
+			res.status(200).json(doc);
 		}
 	}).catch(function (err) {
 		res.status(500).json({ error: err });
@@ -29,7 +29,7 @@ exports.findByPrizeCode = function (req, res) {
 		if (!doc) {
 			res.status(404).json({ message: '해당 상을 찾을 수 없습니다.' });
 		} else {
-			res.status(200).json(docs);
+			res.status(200).json(doc);
 		}
 	}).catch(function (err) {
 		res.status(500).json({ error: err });

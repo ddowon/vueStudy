@@ -13,7 +13,7 @@ exports.create = function (req, res, next) {
 	});
 
 	board.save().then(function (doc) {
-		res.status(200).json(docs);
+		res.status(200).json(doc);
 	}).catch(function (err) {
 		res.status(500).json({ error: err });
 	});
@@ -36,7 +36,7 @@ exports.findById = function (req, res, next) {
 		if (!doc) {
 			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
 		}
-		res.status(200).json(docs);
+		res.status(200).json(doc);
 	}).catch(function (err) {
 		if (err.kind === 'ObjectId') {
 			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
@@ -54,7 +54,7 @@ exports.update = function (req, res, next) {
 		if (!doc) {
 			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
 		}
-		res.status(200).json(docs);
+		res.status(200).json(doc);
 	}).catch(function (err) {
 		if (err.kind === 'ObjectId') {
 			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
@@ -68,7 +68,7 @@ exports.delete = function (req, res, next) {
 		if (!doc) {
 			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
 		}
-		res.status(200).json(docs);
+		res.status(200).json(doc);
 	}).catch(function (err) {
 		return res.status(500).json({ error: err });
 	});
