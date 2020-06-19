@@ -4,7 +4,7 @@ import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import Candidate from '@/views/Candidate.vue'
 import Replay from '@/views/Replay.vue'
-import Winners from '@/views/Winners.vue'
+import Winner from '@/views/Winner.vue'
 import Vote from '@/views/Vote.vue'
 import Notice from '@/views/Notice.vue'
 
@@ -57,10 +57,10 @@ const routes = [
 		component: Replay
 	},
 	{
-		path: '/winners',
-		name: 'winners',
+		path: '/winner',
+		name: 'winner',
 		meta: { title: '역대 수상' },
-		component: Winners
+		component: Winner
 	},
 	{
 		path: '/vote',
