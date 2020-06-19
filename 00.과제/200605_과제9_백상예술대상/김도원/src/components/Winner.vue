@@ -7,6 +7,7 @@
 		</div>
 		<div class="awards-list-wrap">
 			<div class="container-inner">
+				<SelectBox :currentTimes="currentTimes" :selectBoxList="selectBoxList" @changeTimes="changeTimes"/>
 				<div class="awards-select-con">
 					<div class="awards-title sector-title">
 						<strong>{{currentTimes}}회 백상예술대상 수상자 · 작품</strong>
@@ -58,21 +59,27 @@
 </template>
 
 <script>
+import SelectBox from '@/components/SelectBox.vue'
 import FeaturedWinner from '@/components/FeaturedWinner.vue'
 import WinnerList from '@/components/WinnerList.vue'
 export default {
 	name: 'winner',
 	components: {
-		FeaturedWinner, WinnerList
+		SelectBox, FeaturedWinner, WinnerList
 	},
 	data:() => ({
-		winnerList: [
-			{division: 'tv', winner: []},
-			{division: 'movie', winner: []},
-			{division: 'play', winner: []},
-			{division: 'special', winner: []},
+		selectBoxList: [
+			{ times: '55' },
+			{ times: '54' },
+			{ times: '53' }
 		],
-		currentTimes: '54'
+		winnerList: [
+			{ division: 'tv', winner: [] },
+			{ division: 'movie', winner: [] },
+			{ division: 'play', winner: [] },
+			{ division: 'special', winner: [] },
+		],
+		currentTimes: '55'
 	}),
 	computed: {
 		tvFeaturedWinner() {
@@ -115,27 +122,46 @@ export default {
 				return !item.PRIZE_NM.includes('대상')
 			})
 		}
+		
 	},
 	created() {
-		this.fetchDivision(this.currentTimes)
+		this.currentTimes = (this.$route.params.times) ?  (this.$route.params.times) : this.currentTimes
+
+		let selectedTimes = (this.$route.params.times) ?  (this.$route.params.times) : this.currentTimes
+		this.fetchDivision(selectedTimes)
+
 	},
 	mounted() {
 
 	},
 	methods: {
 		fetchDivision(award_num) {
+
 			this.winnerList.map((item, index) => {
-				this.axios.get(`http://baeksang-api.herokuapp.com/api/winners/${award_num}`)
+				this.axios.get(`http://baeksang-api.herokuapp.com/api/winners/${award_num}/${item.division}`)
 				.then((res) => {
-					res.data.forEach((data, index) => {
-						if( item.division == data.DIVISION ){
-							item.winner.push(data)
-						}
-					})
+					item.winner = res.data
 				}).catch((err) => {
 					console.log(err)
 				})
 			})
+
+			// this.winnerList.map((item, index) => {
+			// 	this.axios.get(`http://baeksang-api.herokuapp.com/api/winners/${award_num}`)
+			// 	.then((res) => {
+			// 		res.data.forEach((data, index) => {
+			// 			if( item.division == data.DIVISION ){
+			// 				item.winner.push(data)
+			// 			}
+			// 		})
+			// 	}).catch((err) => {
+			// 		console.log(err)
+			// 	})
+			// })
+		},
+		changeTimes(times) {
+			this.currentTimes = times
+			this.fetchDivision(times)
 		}
 	}
 }

@@ -63,6 +63,12 @@ const routes = [
 		component: Winner
 	},
 	{
+		path: '/winner/:times',
+		name: 'winner',
+		meta: { title: '역대 수상' },
+		component: Winner
+	},
+	{
 		path: '/vote',
 		name: 'vote',
 		meta: { title: '투표하기' },
