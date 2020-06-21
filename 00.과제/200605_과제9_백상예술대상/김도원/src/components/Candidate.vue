@@ -1,8 +1,7 @@
 <template>
 	<div class="candidate-page">
 		<CandidateTab
-			:tabList="tabList"
-			@changeDivision="setDivision" />
+			:tabList="tabList" />
 		<CandidateCategory
 			:prizeList="currentTab.prizes"
 			:currentPrize="currentPrize"
@@ -76,8 +75,6 @@
 
 			this.fetchPrizes()
 			this.fetchCandidates()
-		},
-		mounted() {
 		},
 		methods: {
 			// 아래의 setDivision, setPrize 메서드는 추후 Vuex의 mutations에서 사용

@@ -1,7 +1,7 @@
 <template>
-	<div class="awards-prize" v-if="featuredWinner">
+	<div class="awards-prize">
 		<div class="awards-prize-con">
-			<span class="list-thumb" :style="`background:url() no-repeat; background-size:100% 100%;`">
+			<span class="list-thumb" :style="`background-image:url(${featuredWinner.PHOTO_URI});background-repeat:no-repeat;background-size:100% 100%`">
 				<img :src="featuredWinner.PHOTO_URI" alt="">
 			</span>
 			<span class="title">
@@ -15,22 +15,6 @@
 
 <script>
 export default {
-	props: ['featuredWinner'],
-	data:() => ({
-	
-	}),
-	computed: {
-		
-	},
-	created() {
-		
-	},
-	mounted() {
-
-	},
-	methods: {
-	
-	}
+	props: [ 'featuredWinner' ]
 }
-
 </script>

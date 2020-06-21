@@ -54,13 +54,14 @@ const routes = [
 		path: '/winner',
 		name: 'winner',
 		meta: { title: '역대 수상' },
-		component: Winner
+		// /winner로 접근하면 winner/55로 redirect 처리
+		redirect: { name: 'winner_times', params: { times: '55' } }
 	},
 	{
 		path: '/winner/:times',
 		name: 'winner_times',
-		props: true,
 		meta: { title: '역대 수상' },
+		props: true,
 		component: Winner
 	},
 	{
