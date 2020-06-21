@@ -10,15 +10,6 @@ import Notice from '@/views/Notice.vue'
 
 Vue.use(VueRouter)
 
-// export default new VueRouter({	
-// 	routes: [
-// 		{ path: '/', name: 'Home', meta: { title: '메인' }, component: Home },
-// 		{ path: '/candidate', meta: { title: '56회 후보자/작품' }, component: Candidate }
-// 	]
-// })
-
-
-
 const routes = [
 	{
 		path: '/',
@@ -36,18 +27,21 @@ const routes = [
 		path: '/candidate',
 		name: 'candidate',
 		meta: { title: '56회 후보자/작품' },
-		component: Candidate
+		// /candidate로 접근하면 candidate/tv로 redirect 처리
+		redirect: { name: 'candidate_division', params: { division: 'tv' } }
 	},
 	{
 		path: '/candidate/:division',
-		name: 'candidate',
+		name: 'candidate_division',
 		meta: { title: '56회 후보자/작품' },
+		props: true,
 		component: Candidate
 	},
 	{
 		path: '/candidate/:division/:prize_id',
-		name: 'candidate',
-		meta: { title: '56회 후보자/작품'},
+		name: 'candidate_division_prize_id',
+		meta: { title: '56회 후보자/작품' },
+		props: true,
 		component: Candidate
 	},
 	{
@@ -64,7 +58,8 @@ const routes = [
 	},
 	{
 		path: '/winner/:times',
-		name: 'winner',
+		name: 'winner_times',
+		props: true,
 		meta: { title: '역대 수상' },
 		component: Winner
 	},
