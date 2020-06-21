@@ -7,7 +7,9 @@
     "start": "set NODE_ENV=production&&node ./server",
     "dev": "set NODE_ENV=development&&nodemon ./server.js",
     "seed": "set NODE_ENV=production&&node ./seed/seed.js",
+    "seed2": "set NODE_ENV=production&&node ./seed/seed-notices.js&&node ./seed/seed-users.js",
     "seed-dev": "set NODE_ENV=development&&node ./seed/seed.js",
+    "seed2-dev": "set NODE_ENV=development&&node ./seed/seed-notices.js&&node ./seed/seed-users.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,7 +28,7 @@
     "express": "^4.17.1",
     "extend": "^3.0.2",
     "mongoose": "^5.9.19",
-    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-sequence": "^5.2.2",
     "nodemailer": "^6.4.10",
     "nodemailer-smtp-transport": "^2.7.4"
   },

@@ -14,14 +14,16 @@ const prizesRouter = require('./routes/prizes');
 const candidatesRouter = require('./routes/candidates');
 const winnersRouter = require('./routes/winners');
 const replaysRouter = require('./routes/replays');
-const boardRouter = require('./routes/board');
+const noticeRouter = require('./routes/notice');
+const userRouter = require('./routes/user');
 
 app.use('/', indexRouter);
 app.use('/api/prizes', prizesRouter);
 app.use('/api/candidates', candidatesRouter);
 app.use('/api/winners', winnersRouter);
 app.use('/api/replays', replaysRouter);
-app.use('/api/board/notice', boardRouter);
+app.use('/api/notice', noticeRouter);
+app.use('/api/user', userRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {

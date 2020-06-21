@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const connection = mongoose.createConnection(process.env.MONGODB_URI);
-
 const CandidateSchema = new Schema({
 	CANDIDATE_ID: { type: String },
 	PROGRAM_NM: { type: String, required: true },
@@ -14,6 +12,6 @@ const CandidateSchema = new Schema({
 	PHOTO_URI: { type: String }
 });
 
-const Candidate = connection.model('Candidate', CandidateSchema);
+const Candidate = mongoose.model('Candidate', CandidateSchema);
 
 module.exports = Candidate;

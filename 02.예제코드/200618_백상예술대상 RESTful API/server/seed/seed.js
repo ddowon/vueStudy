@@ -23,7 +23,7 @@ Prize.count({}, function (err, count) {
 				exit();
 			})
 			.catch(function (err) {
-				console.log(err)
+				console.log(err);
 				console.log('JSON_PRIZES 초기 데이터를 입력하는 데 에러가 발생했습니다.');
 			});
 	}
@@ -41,7 +41,7 @@ Candidate.count({}, function (err, count) {
 				exit();
 			})
 			.catch(function (err) {
-				console.log(err)
+				console.log(err);
 				console.log('JSON_CANDIDATES 초기 데이터를 입력하는 데 에러가 발생했습니다.');
 			});
 	}
@@ -59,7 +59,7 @@ Winner.count({}, function (err, count) {
 				exit();
 			})
 			.catch(function (err) {
-				console.log(err)
+				console.log(err);
 				console.log('JSON_WINNERS 초기 데이터를 입력하는 데 에러가 발생했습니다.');
 			});
 	}
@@ -77,7 +77,7 @@ Replay.count({}, function (err, count) {
 				exit();
 			})
 			.catch(function (err) {
-				console.log(err)
+				console.log(err);
 				console.log('JSON_REPLAYS 초기 데이터를 입력하는 데 에러가 발생했습니다.');
 			});
 	}

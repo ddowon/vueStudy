@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const connection = mongoose.createConnection(process.env.MONGODB_URI);
-
 const ReplaySchema = new Schema({
 	REG_DT: { type: Date, required: true },
 	VOD_TITLE: { type: String, required: true },
@@ -12,6 +10,6 @@ const ReplaySchema = new Schema({
 	IMG_FILE_URL: { type: String, required: true }
 });
 
-const Replay = connection.model('Replay', ReplaySchema);
+const Replay = mongoose.model('Replay', ReplaySchema);
 
 module.exports = Replay;
