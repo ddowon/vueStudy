@@ -22,15 +22,15 @@
   "author": "Haneul Cho",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "extend": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.19",
-    "mongoose-sequence": "^5.2.2",
-    "nodemailer": "^6.4.10",
-    "nodemailer-smtp-transport": "^2.7.4"
+    "mongoose-sequence": "^5.2.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

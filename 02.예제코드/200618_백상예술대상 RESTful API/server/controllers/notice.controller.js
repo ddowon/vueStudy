@@ -37,13 +37,13 @@ exports.findAll = function (req, res, next) {
 exports.findById = function (req, res, next) {
 	Notice.findOne({ id: req.params.id }).then(function (result) {
 		if (!result) {
-			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json(result);
 		}
 	}).catch(function (err) {
 		if (err.kind === 'ObjectId') {
-			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			return res.status(500).json({ error: err });
 		}
@@ -57,13 +57,13 @@ exports.update = function (req, res, next) {
 
 	Notice.findOneAndUpdate({ id: req.params.id }, { $set: req.body }).then(function (result) {
 		if (!result) {
-			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json();
 		}
 	}).catch(function (err) {
 		if (err.kind === 'ObjectId') {
-			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			return res.status(500).json({ error: err });
 		}
@@ -73,7 +73,7 @@ exports.update = function (req, res, next) {
 exports.delete = function (req, res, next) {
 	Notice.findOneAndDelete({ id: req.params.id }).then(function (result) {
 		if (!result) {
-			return res.status(404).json({ message: '해당 게시글을 찾을 수 없습니다. (' + req.params.id  + '번)'});
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json(result);
 		}
