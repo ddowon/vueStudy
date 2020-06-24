@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 const ReplaySchema = new Schema({
 	REG_DT: { type: Date, required: true },
@@ -10,6 +11,7 @@ const ReplaySchema = new Schema({
 	IMG_FILE_URL: { type: String, required: true }
 });
 
+ReplaySchema.plugin(mongoosePaginate);
 const Replay = mongoose.model('Replay', ReplaySchema);
 
 module.exports = Replay;

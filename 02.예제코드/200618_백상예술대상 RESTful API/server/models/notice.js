@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const mongoosePaginate = require('mongoose-paginate-v2');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const NoticeSchema = new Schema({
@@ -18,6 +19,7 @@ const NoticeSchema = new Schema({
 	tags: { type: [] }
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } });
 
+NoticeSchema.plugin(mongoosePaginate);
 NoticeSchema.plugin(AutoIncrement, { id: 'notice_counter', inc_field: 'id' });
 const Notice = mongoose.model('Notice', NoticeSchema);
 

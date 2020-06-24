@@ -1,6 +1,14 @@
 const Notice = require('../models/notice');
 
-exports.create = function (req, res, next) {
+const myCustomLabels = {
+	docs: 'itemsList',
+	limit: 'itemPerPage',
+	totalDocs: 'totalItemCount',
+	totalPages: 'totalPageCount',
+	page: 'currentPage'
+};
+
+exports.create = (req, res, next) => {
 	if (!req.body.title) {
 		return res.status(400).json({ message: '글 제목을 입력해 주세요.' });
 	}
@@ -15,33 +23,43 @@ exports.create = function (req, res, next) {
 		tags: (req.body.tags) ? req.body.tags : []
 	});
 
-	notice.save().then(function (result) {
+	notice.save().then((result) => {
 		res.status(201).json(result);
-	}).catch(function (err) {
+	}).catch((err) => {
 		res.status(500).json({ error: err });
 	});
 };
 
-exports.findAll = function (req, res, next) {
-	Notice.find().then(function (result) {
-		if (!result) {
-			res.status(404).json({ message: '등록된 게시글이 없습니다.' });
+exports.findAll = (req, res, next) => {
+	const options = {
+		page: req.query.page || 1,
+		limit: req.query.size || 10,
+		customLabels: myCustomLabels
+	};
+	Notice.paginate({}, options).then((result) => {
+		if (!result || !result.itemsList.length) {
+			return res.status(404).json({ message: '등록된 게시글이 없습니다.' });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		res.status(500).json({ error: err });
 	});
 };
 
-exports.findById = function (req, res, next) {
-	Notice.findOne({ id: req.params.id }).then(function (result) {
-		if (!result) {
+exports.findById = (req, res, next) => {
+	const options = {
+		page: req.query.page || 1,
+		limit: req.query.size || 10,
+		customLabels: myCustomLabels
+	};
+	Notice.paginate({ 'id': req.params.id }, options).then((result) => {
+		if (!result || !result.itemsList.length) {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		if (err.kind === 'ObjectId') {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
@@ -50,18 +68,18 @@ exports.findById = function (req, res, next) {
 	});
 };
 
-exports.update = function (req, res, next) {
+exports.update = (req, res, next) => {
 	if (!req.body.title || !req.body.contents) {
 		return res.status(400).json({ message: '입력 필드에 내용을 입력해 주세요.' });
 	}
 
-	Notice.findOneAndUpdate({ id: req.params.id }, { $set: req.body }).then(function (result) {
+	Notice.findOneAndUpdate({ id: req.params.id }, { $set: req.body }).then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json();
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		if (err.kind === 'ObjectId') {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
@@ -70,14 +88,14 @@ exports.update = function (req, res, next) {
 	});
 };
 
-exports.delete = function (req, res, next) {
-	Notice.findOneAndDelete({ id: req.params.id }).then(function (result) {
+exports.delete = (req, res, next) => {
+	Notice.findOneAndDelete({ id: req.params.id }).then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };
