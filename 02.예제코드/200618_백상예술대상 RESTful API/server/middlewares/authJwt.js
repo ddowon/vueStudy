@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken');
 
 const secret_key = process.env.SECRET_KEY;
 
-exports.verifyToken = function (req, res, next) {
+exports.verifyToken = (req, res, next) => {
 	let token = req.header('x-access-token') || req.body.accessToken || req.query.accessToken;
 	if (!token) {
 		return res.status(403).json({ message: "인증 토큰값이 없습니다!" });
 	}
 
-	jwt.verify(token, secret_key, function (err, decoded) {
+	jwt.verify(token, secret_key, (err, decoded) => {
 		if (err) {
 			return res.status(401).json({ message: '인증 토큰값이 잘못되었습니다!' });
 		}
@@ -19,8 +19,8 @@ exports.verifyToken = function (req, res, next) {
 	});
 };
 
-exports.isAdmin = function (req, res, next) {
-	User.findOne({ email: req.user.email }).exec(function (err, user) {
+exports.isAdmin = (req, res, next) => {
+	User.findOne({ email: req.user.email }).exec((err, user) => {
 		if (err) {
 			return res.status(500).json({ error: err });
 		}

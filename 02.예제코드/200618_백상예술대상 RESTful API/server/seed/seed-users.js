@@ -10,13 +10,13 @@ const JSON_USERS = require('./users.json');
 var done = 0;
 for (var i = 0; i < JSON_USERS.length; i++) {
 	var user = new User(JSON_USERS[i]);
-	user.save().then(function (result) {
+	user.save().then((result) => {
 		done++;
 		if (done === JSON_USERS.length) {
 			console.log(`JSON_USERS 초기 데이터 입력 완료!`);
 			exit();
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		console.log(err);
 		console.log(`JSON_USERS 초기 데이터를 입력하는 데 에러가 발생했습니다.`);
 	});

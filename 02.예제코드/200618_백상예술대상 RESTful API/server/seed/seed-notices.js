@@ -10,13 +10,13 @@ const JSON_NOTICES = require('./notices.json');
 var done = 0;
 for (var i = 0; i < JSON_NOTICES.length; i++) {
 	var notice = new Notice(JSON_NOTICES[i]);
-	notice.save().then(function (result) {
+	notice.save().then((result) => {
 		done++;
 		if (done === JSON_NOTICES.length) {
 			console.log(`JSON_NOTICES 초기 데이터 입력 완료!`);
 			exit();
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		console.log(err);
 		console.log(`JSON_NOTICES 초기 데이터를 입력하는 데 에러가 발생했습니다.`);
 	});

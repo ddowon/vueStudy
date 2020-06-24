@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const secret_key = process.env.SECRET_KEY;
 const Roles = [ 'user', 'admin' ];
 
-exports.create = function (req, res, next) {
+exports.create = (req, res, next) => {
 	if (!req.body.email) {
 		return res.status(400).json({ message: '이메일을 입력해 주세요.' });
 	}
@@ -16,27 +16,27 @@ exports.create = function (req, res, next) {
 		return res.status(400).json({ message: '비밀번호를 입력해 주세요.' });
 	}
 	if (req.body.roles) {
-		for (let i = 0; i < req.body.roles.length; i++) {
-			if (!Roles.includes(req.body.roles[i])) {
-				return res.status(400).json({ message: `'${req.body.roles[i]}'는 존재하지 않는 권한 입니다!` });
+		return req.body.roles.map((role) => {
+			if (!Roles.includes(role)) {
+				return res.status(400).json({ message: `'${role}'는 존재하지 않는 권한 입니다!` });
 			}
-		}
+		});
 	}
 
-	User.findOne({ email: req.body.email }).then(function (result) {
+	User.findOne({ email: req.body.email }).then((result) => {
 		if (result) {
 			return res.status(400).json({ message: '이미 존재하는 이메일 입니다!' });
 		}
-	}).catch(function (err) {
-		return res.status(500).json({ error: err });
+	}).catch((err) => {
+		res.status(500).json({ error: err });
 	});
 
-	User.findOne({ name: req.body.name }).then(function (result) {
+	User.findOne({ name: req.body.name }).then((result) => {
 		if (result) {
 			return res.status(400).json({ message: '이미 존재하는 닉네임 입니다!' });
 		}
-	}).catch(function (err) {
-		return res.status(500).json({ error: err });
+	}).catch((err) => {
+		res.status(500).json({ error: err });
 	});
 
 	const salt = bcrypt.genSaltSync(10);
@@ -48,14 +48,14 @@ exports.create = function (req, res, next) {
 		password: password
 	});
 
-	user.save().then(function (result) {
+	user.save().then((result) => {
 		res.status(201).json({ message: `회원가입 완료! (${result})` });
-	}).catch(function (err) {
+	}).catch((err) => {
 		res.status(500).json({ error: err });
 	});
 };
 
-exports.signin = function (req, res, next) {
+exports.signin = (req, res, next) => {
 	if (!req.body.email) {
 		return res.status(400).json({ message: '이메일을 입력해 주세요.' });
 	}
@@ -63,7 +63,7 @@ exports.signin = function (req, res, next) {
 		return res.status(400).json({ message: '비밀번호를 입력해 주세요.' });
 	}
 
-	User.findOne({ email: req.body.email }).then(function (user) {
+	User.findOne({ email: req.body.email }).then((user) => {
 		if (!user) {
 			return res.status(404).json({ message: `해당 회원을 찾을 수 없습니다. (${req.body.email})` });
 		}
@@ -85,36 +85,36 @@ exports.signin = function (req, res, next) {
 			error: null,
 			data: { accessToken: token }
 		});
-	}).catch(function (err) {
+	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };
 
-exports.findAll = function (req, res, next) {
-	User.find().then(function (result) {
+exports.findAll = (req, res, next) => {
+	User.find().then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `가입된 회원이 없습니다.` });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };
 
-exports.findById = function (req, res, next) {
-	User.findOne({ id: req.params.id, email: req.user.email }).then(function (result) {
+exports.findById = (req, res, next) => {
+	User.findOne({ id: req.params.id, email: req.user.email }).then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email}번)` });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };
 
-exports.update = function (req, res, next) {
+exports.update = (req, res, next) => {
 	if (req.body.password) {
 		var salt = bcrypt.genSaltSync(10);
 		var password = bcrypt.hashSync(req.body.password, salt);
@@ -127,25 +127,25 @@ exports.update = function (req, res, next) {
 		var username = req.user.name;
 	}
 
-	User.findOneAndUpdate({ id: req.params.id, email: req.user.email }, { name: username, password: password }).then(function (result) {
+	User.findOneAndUpdate({ id: req.params.id, email: req.user.email }, { name: username, password: password }).then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email}번)` });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };
 
-exports.delete = function (req, res, next) {
-	User.findOneAndDelete({ id: req.params.id, email: req.user.email }).then(function (result) {
+exports.delete = (req, res, next) => {
+	User.findOneAndDelete({ id: req.params.id, email: req.user.email }).then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email}번)` });
 		} else {
 			res.status(200).json(result);
 		}
-	}).catch(function (err) {
+	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };

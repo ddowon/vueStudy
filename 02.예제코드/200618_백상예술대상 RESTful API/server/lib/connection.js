@@ -14,23 +14,23 @@ if (process.env.NODE_ENV === 'production') {
 	mongoose.set('debug', true);
 }
 
-mongoose.connect(process.env.MONGODB_URI, { useUnifiedTopology: true, useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false }, function (err) {
+mongoose.connect(process.env.MONGODB_URI, { useUnifiedTopology: true, useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false }, (err) => {
 	if (err) {
 		return console.log('데이터베이스에 접속하는 중 문제가 발생했습니다!' + err);
 	}
 	console.log('데이터베이스 접속 성공!');
 });
 
-db.on('error', function () {
+db.on('error', () => {
 	console.log('통신 오류가 발생했습니다!');
 });
 
-db.on('disconnected', function () {
+db.on('disconnected', () => {
 	console.log('연결이 끊겼습니다. 연결을 재시도합니다.');
 });
 
-process.on('SIGINT', function () {
-	db.close(function () {
+process.on('SIGINT', () => {
+	db.close(() => {
 		console.log('데이터베이스 접속이 해제되었습니다.');
 		process.exit(0);
 	});
