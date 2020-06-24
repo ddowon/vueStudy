@@ -21,6 +21,7 @@ const winnersRouter = require('./routes/winners');
 const replaysRouter = require('./routes/replays');
 const noticeRouter = require('./routes/notice');
 const userRouter = require('./routes/user');
+const authRouter = require('./routes/auth');
 
 app.use('/', indexRouter);
 app.use('/api/prizes', prizesRouter);
@@ -29,6 +30,7 @@ app.use('/api/winners', winnersRouter);
 app.use('/api/replays', replaysRouter);
 app.use('/api/notice', noticeRouter);
 app.use('/api/user', userRouter);
+app.use('/api/auth', authRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
