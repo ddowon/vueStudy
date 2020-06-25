@@ -1,7 +1,13 @@
 <template>
 	<div class="candidate-page">
-		<CandidateTab
-			:tabList="tabList" />
+		<div class="nominee-title-wrap sub-title">
+			<div class="container-inner">
+				<h2>56회 후보자 · 작품</h2>
+				<CandidateTab
+					:routerTo="routerTo" :tabList="tabList" />
+			</div><!-- .container-inner -->
+		</div><!-- .nominee-title-wrap -->
+		
 		<CandidateCategory
 			:prizeList="currentTab.prizes"
 			:currentPrize="currentPrize"
@@ -27,13 +33,18 @@
 		},
 		data: () => ({
 			tabList: [
-				{ title: 'TV부문', division: 'tv', initCode: 'T01', prizes: [], candidates: [] },
-				{ title: '영화부문', division: 'movie', initCode: 'M01', prizes: [], candidates: [] },
-				{ title: '연극부문', division: 'play', initCode: 'P01', prizes: [], candidates: [] }
+				{ title: 'TV부문', id: 'tv', initCode: 'T01', prizes: [], candidates: [] },
+				{ title: '영화부문', id: 'movie', initCode: 'M01', prizes: [], candidates: [] },
+				{ title: '연극부문', id: 'play', initCode: 'P01', prizes: [], candidates: [] }
 			],
 			currentDivision: null,
-			currentPrize: null
+			currentPrize: null,
+			routerTo: {
+				name: 'candidate_division',
+				paramsName: 'division'	
+			}, 
 		}),
+		
 		watch: {
 			// 탭이 바뀔 때마다 1번탭 카테고리를 강제로 부여하려면, currentDivision이 바뀔 때마다 currentPrize를 initCode로 설정하면 효율적
 			// currentPrize가 변경되는 경우는 딱 2가지 이기 때문 (1. 탭이 바뀔 때, 2. 카테고리를 눌렀을 때)
@@ -56,7 +67,7 @@
 			// 만약 currentTab이 없이 currentDivision만 가지고 하위 컴포넌트에서 title을 보여주려면 마크업 구조를 변경하거나 하드 코딩해야 함
 			currentTab() {
 				return this.tabList.find((item) => {
-					return item.division === this.currentDivision
+					return item.id === this.currentDivision
 				})
 			}
 		},
@@ -78,7 +89,7 @@
 		},
 		methods: {
 			// 아래의 setDivision, setPrize 메서드는 추후 Vuex의 mutations에서 사용
-			setDivision(division = this.tabList[0].division) {
+			setDivision(division = this.tabList[0].id) {
 				this.currentDivision = division
 			},
 			setPrize(cd = this.currentTab.initCode) {
@@ -89,7 +100,7 @@
 			// 최초 1회만 상 목록 data를 fetch하도록 axios 요청을 최소화
 			fetchPrizes() {
 				this.tabList.map((item, idx) => {
-					this.axios.get(`${API_URI}/prizes/${item.division}`)
+					this.axios.get(`${API_URI}/prizes/${item.id}`)
 					.then((res) => {
 						if (res.data.length) {
 							item.prizes = res.data
@@ -103,7 +114,7 @@
 			// 상 목록과 마찬가지로 최초 1회만 후보 목록 data를 fetch 한 후, CandidateList.vue에서 fetch한 data를 filter 메서드로 정렬처리 하면 성능이 개선됨
 			fetchCandidates() {
 				this.tabList.map((item, idx) => {
-					this.axios.get(`${API_URI}/candidates/${item.division}`)
+					this.axios.get(`${API_URI}/candidates/${item.id}`)
 					.then((res) => {
 						if (res.data.length) {
 							item.candidates = res.data

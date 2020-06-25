@@ -48,7 +48,14 @@ const routes = [
 		path: '/replay',
 		name: 'replay',
 		meta: { title: '다시보기' },
-		component: Replay
+		// replay로 접근하면 replay/56로 redirect 처리
+		redirect: { name: 'replay_times', params: { replay_times: '56' } }
+	},
+	{
+		path: '/replay/:replay_times',
+		name: 'replay_times',
+		meta: { title: '다시보기' },
+		component: Replay,
 	},
 	{
 		path: '/winner',
