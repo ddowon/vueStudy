@@ -8,8 +8,8 @@
 </template>
 
 <script>
-	import HeaderLogo from '@/components/HeaderLogo.vue'
-	import HeaderNav from '@/components/HeaderNav.vue'
+	import HeaderLogo from '@/components/common/HeaderLogo.vue'
+	import HeaderNav from '@/components/common/HeaderNav.vue'
 	export default {
 		name: 'Header',
 		components: {
