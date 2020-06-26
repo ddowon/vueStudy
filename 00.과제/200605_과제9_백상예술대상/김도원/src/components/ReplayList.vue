@@ -16,7 +16,6 @@
 						</a>
 					</li>
 				</ul>
-				<VodMore :hasNextPage="hasNextPage" @moreVodList="moreVodList"/>
 			</div>
 		</div>
 		<VodPop v-show="isPopShowing" :item="currentVodItem" :isPopShowing="isPopShowing" @closePop="closePop" />
@@ -24,32 +23,25 @@
 </template>
 
 <script>
-
-
 import { Fragment } from 'vue-fragment'
 import VodPop from '@/components/VodPop.vue'
-import VodMore from '@/components/VodMore.vue'
+
 export default {
-	name: 'replay_times',
-	components: { Fragment, VodPop, VodMore },
-	props: [ 'vodList', 'currentTimes', 'hasNextPage' ],
+	components: {
+		Fragment, VodPop
+	},
+	props: [ 'vodList' ],
 	data: () => ({
 		isPopShowing: false,
-		currentVodItem: {'src': ''},
-		
+		currentVodItem: { 'src': '' }
 	}),
-
 	methods: {
 		openPop(item) {
-			this.currentVodItem['src'] = item
+			this.currentVodItem.src = item
 			this.isPopShowing = true
 		},
 		closePop() {
 			this.isPopShowing = false
-		},
-
-		moreVodList() { 
-			this.$emit('moreVodList')
 		}
 	}
 }

@@ -7,7 +7,7 @@
 			</button>
 			<!-- 동영상 영역 -->
 			<div class="replay-area">
-				<youtube :video-id="item.src" ref="youtube" :width="1008" :height="567"></youtube>
+				<youtube :video-id="item.src" ref="youtube" width="1008" height="567"></youtube>
 			</div>
 			<!-- //동영상 영역 -->
 		</div>
@@ -17,8 +17,6 @@
 <script>
 	export default {
 		props: [ 'isPopShowing', 'item' ],
-		data: () => ({
-		}),
 		watch: {
 			isPopShowing: {
 				handler(newVal, oldVal) {
