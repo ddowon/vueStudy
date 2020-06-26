@@ -10,7 +10,7 @@
 			</li> -->
 
 			<!--
-				// CandidateTab.vue와 마찬가지로 탭 클릭 시 브라우저 URL을 변경하기 위해 vue-router의 router-link를 적용
+				// PageTab.vue와 마찬가지로 탭 클릭 시 브라우저 URL을 변경하기 위해 vue-router의 router-link를 적용
 				// router-link를 적용하면 changeTimes 부모로 $emit 처리하지 않아도 됨
 				// 마찬가지로 active class도 현재 route에 따라 설정되므로 selectBoxList만 남게 됨
 				// ex) 55회 클릭 -> http://BASE_URL/winner/54

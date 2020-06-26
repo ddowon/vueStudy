@@ -24,34 +24,30 @@
 			<span>{{ item.title }}</span>
 		</router-link> -->
 
-
 		<router-link v-for="item in tabList"
 			:key="item.id"
-			:to="routerToOptions(item.id)"
+			:to="{ name: tabOptions.routerName, params: { [tabOptions.routerParamsName]: item.id } }"
 			:class="[ 'box-btn', item.id ]">
 			<span>{{ item.title }}</span>
 		</router-link>
 
+		<template v-if="tabOptions.moreLinks">
+			<a v-for="link in tabOptions.moreLinks"
+			:key="link.href"
+			:href="link.href"
+			:target="link.target"
+			class="box-btn more-btn">
+				<span>{{ link.title }}</span>
+				<em class="ico-more"></em>
+			</a>
+		</template>
 	</div>
 </template>
-
 <script>
 	export default {
 		props: {
-			routerTo: { type: Object },
+			tabOptions: { type: Object },
 			tabList: { type: Array }
-		},
-		methods: {
-			routerToOptions(val) {
-				let options = {
-					name: '', params: {}
-				}
-				options.name = this.routerTo.name
-				options.params[this.routerTo.paramsName] = val
-				
-				return options
-			}
 		}
-		
 	}
 </script>

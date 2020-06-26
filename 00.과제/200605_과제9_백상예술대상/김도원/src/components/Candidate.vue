@@ -3,8 +3,9 @@
 		<div class="nominee-title-wrap sub-title">
 			<div class="container-inner">
 				<h2>56회 후보자 · 작품</h2>
-				<CandidateTab
-					:routerTo="routerTo" :tabList="tabList" />
+				<PageTab
+					:tabOptions="tabOptions"
+					:tabList="tabList" />
 			</div><!-- .container-inner -->
 		</div><!-- .nominee-title-wrap -->
 		
@@ -23,13 +24,14 @@
 
 	// import { mapState, mapActions, mapGetters } from 'vuex'
 	import { Fragment } from 'vue-fragment'
-	import CandidateTab from '@/components/CandidateTab.vue'
+	import PageTab from '@/components/common/PageTab.vue'
 	import CandidateCategory from '@/components/CandidateCategory.vue'
 	import CandidateList from '@/components/CandidateList.vue'
+
 	export default {
 		name: 'candidate',
 		components: {
-			Fragment, CandidateTab, CandidateCategory, CandidateList
+			Fragment, PageTab, CandidateCategory, CandidateList
 		},
 		data: () => ({
 			tabList: [
@@ -39,16 +41,16 @@
 			],
 			currentDivision: null,
 			currentPrize: null,
-			routerTo: {
-				name: 'candidate_division',
-				paramsName: 'division'	
-			}, 
+			tabOptions: {
+				routerName: 'candidate_division',
+				routerParamsName: 'division'
+			},
 		}),
 		
 		watch: {
 			// 탭이 바뀔 때마다 1번탭 카테고리를 강제로 부여하려면, currentDivision이 바뀔 때마다 currentPrize를 initCode로 설정하면 효율적
 			// currentPrize가 변경되는 경우는 딱 2가지 이기 때문 (1. 탭이 바뀔 때, 2. 카테고리를 눌렀을 때)
-			// CandidateTab.vue의 탭 클릭 시 브라우저 URL을 변경하기 위해 changeDivision을 부모로 $emit 처리하지 않고 $router.push 처리함
+			// PageTab.vue의 탭 클릭 시 브라우저 URL을 변경하기 위해 changeDivision을 부모로 $emit 처리하지 않고 $router.push 처리함
 			// 이에 따라 watch 대상을 currentDivision에서 $route.params.division으로 변경
 			// $route.params.division이 변경되면 setDivision과 setPrize를 호출함
 			'$route.params.division': {
