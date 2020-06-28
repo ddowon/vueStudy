@@ -1,4 +1,5 @@
 const Notice = require('../models/notice');
+const fs = require('fs');
 
 const myCustomLabels = {
 	docs: 'itemsList',
@@ -6,6 +7,17 @@ const myCustomLabels = {
 	totalDocs: 'totalItemCount',
 	totalPages: 'totalPageCount',
 	page: 'currentPage'
+};
+
+const deleteFile = (files) => {
+	files.map((file) => {
+		fs.unlink(file.path, (err) => {
+			if (err) {
+				console.log(err)
+				return;
+			}
+		})
+	});
 };
 
 exports.create = (req, res, next) => {
@@ -16,11 +28,26 @@ exports.create = (req, res, next) => {
 		return res.status(400).json({ message: '글 내용을 입력해 주세요.' });
 	}
 
+	let url = req.protocol + '://' + req.get('host') + '/'
+	req.body.files = []
+	if (req.files.length) {
+		req.files.map((file, index) => {
+			req.body.files[index] = {
+				'name': file.originalname,
+				'url': url + file.destination + file.filename,
+				'type': file.mimetype,
+				'size': file.size,
+				'path': file.path
+			}
+		})
+	}
+
 	const notice = new Notice({
 		title: req.body.title,
 		contents: req.body.contents,
 		writer: (req.body.id) ? req.body.id : '',
-		tags: (req.body.tags) ? req.body.tags : []
+		tags: (req.body.tags) ? req.body.tags : [],
+		files: req.body.files
 	});
 
 	notice.save().then((result) => {
@@ -73,13 +100,38 @@ exports.update = (req, res, next) => {
 		return res.status(400).json({ message: '입력 필드에 내용을 입력해 주세요.' });
 	}
 
+	let url = req.protocol + '://' + req.get('host') + '/'
+	if (req.files.length) {
+		req.body.files = []
+		req.files.map((file, index) => {
+			req.body.files[index] = {
+				'name': file.originalname,
+				'url': url + file.destination + file.filename,
+				'type': file.mimetype,
+				'size': file.size,
+				'path': file.path
+			}
+		})
+	}
+
+	// 글 수정 시, Front에서 넘어온 delete_files 체크박스 있으면 해당 파일 삭제
+	if (req.body.delete_files.length) {
+		deleteFile(req.body.delete_files);
+	}
+
 	Notice.findOneAndUpdate({ id: req.params.id }, { $set: req.body }).then((result) => {
 		if (!result) {
+			if (req.body.files.length) {
+				deleteFile(req.body.files);
+			}
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
 			res.status(200).json();
 		}
 	}).catch((err) => {
+		if (req.body.files.length) {
+			deleteFile(req.body.files);
+		}
 		if (err.kind === 'ObjectId') {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
@@ -93,6 +145,9 @@ exports.delete = (req, res, next) => {
 		if (!result) {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
+			if (result.files.length) {
+				deleteFile(result.files);
+			}
 			res.status(200).json(result);
 		}
 	}).catch((err) => {

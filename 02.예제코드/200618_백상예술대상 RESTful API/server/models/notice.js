@@ -14,6 +14,7 @@ const NoticeSchema = new Schema({
 		likes: { type: Number, default: 0 },
 		created_at: { type: Date, default: Date.now }
 	}],
+	files: { type: [] },
 	views: { type: Number, default: 0 },
 	likes: { type: Number, default: 0 },
 	tags: { type: [] }
