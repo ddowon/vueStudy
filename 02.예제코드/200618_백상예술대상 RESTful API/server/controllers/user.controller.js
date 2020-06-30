@@ -68,7 +68,7 @@ exports.signin = (req, res, next) => {
 			return res.status(404).json({ message: `해당 회원을 찾을 수 없습니다. (${req.body.email})` });
 		}
 
-		var passwordIsValid = bcrypt.compareSync(
+		let passwordIsValid = bcrypt.compareSync(
 			req.body.password,
 			user.password
 		);
@@ -77,13 +77,26 @@ exports.signin = (req, res, next) => {
 			return res.status(401).json({ accessToken: null, message: '비밀번호가 맞지 않습니다!' });
 		}
 
-		var token = jwt.sign({ id: user.id, name: user.name, role: user.role, email: user.email }, secret_key, {
+		let token = jwt.sign({ id: user.id, name: user.name, role: user.role, email: user.email }, secret_key, {
 			expiresIn: '24h'
 		});
 
-		res.header('x-access-token', token).status(200).json({
-			error: null,
-			data: { accessToken: token }
+		User.findOneAndUpdate({ email: req.body.email }, { $set: { authToken: token } }, { returnOriginal: false }).then((result) => {
+			return res.status(200).json({ accessToken: result.authToken });
+		});
+	}).catch((err) => {
+		return res.status(500).json({ error: err });
+	});
+};
+
+exports.generateSwaggerToken = (req, res, next) => {
+	User.findOne({ email: 'test@test.com' }).then((user) => {
+		let token = jwt.sign({ id: user.id, name: user.name, role: 'admin', email: user.email }, secret_key, {
+			expiresIn: '24h'
+		});
+
+		User.findOneAndUpdate({ email: 'test@test.com' }, { $set: { authToken: token } }, { returnOriginal: false }).then((result) => {
+			return res.status(200).json({ accessToken: result.authToken });
 		});
 	}).catch((err) => {
 		return res.status(500).json({ error: err });
@@ -105,7 +118,7 @@ exports.findAll = (req, res, next) => {
 exports.findById = (req, res, next) => {
 	User.findOne({ id: req.params.id, email: req.user.email }).then((result) => {
 		if (!result) {
-			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email}번)` });
+			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email})` });
 		} else {
 			res.status(200).json(result);
 		}
@@ -127,9 +140,9 @@ exports.update = (req, res, next) => {
 		var username = req.user.name;
 	}
 
-	User.findOneAndUpdate({ id: req.params.id, email: req.user.email }, { name: username, password: password }).then((result) => {
+	User.findOneAndUpdate({ id: req.params.id, email: req.user.email }, { $set: { name: username, password: password } }, { returnOriginal: false }).then((result) => {
 		if (!result) {
-			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email}번)` });
+			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email})` });
 		} else {
 			res.status(200).json(result);
 		}
@@ -141,7 +154,7 @@ exports.update = (req, res, next) => {
 exports.delete = (req, res, next) => {
 	User.findOneAndDelete({ id: req.params.id, email: req.user.email }).then((result) => {
 		if (!result) {
-			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email}번)` });
+			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email})` });
 		} else {
 			res.status(200).json(result);
 		}

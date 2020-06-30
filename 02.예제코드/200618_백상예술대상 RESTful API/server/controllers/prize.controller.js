@@ -14,8 +14,8 @@ exports.findAll = (req, res) => {
 
 exports.findByDivision = (req, res) => {
 	Prize.find({ 'DIVISION': req.params.division }).then((result) => {
-		if (!result) {
-			res.status(404).json({ message: '해당 상을 찾을 수 없습니다.' });
+		if (!result || !result.length) {
+			res.status(404).json({ message: '해당 부문을 찾을 수 없습니다.' });
 		} else {
 			res.status(200).json(result);
 		}
@@ -25,8 +25,9 @@ exports.findByDivision = (req, res) => {
 };
 
 exports.findByPrizeCode = (req, res) => {
+	req.params.prize_cd = req.params.prize_cd.toUpperCase()
 	Prize.find({ 'DIVISION': req.params.division, 'PRIZE_CD': req.params.prize_cd }).then((result) => {
-		if (!result) {
+		if (!result || !result.length) {
 			res.status(404).json({ message: '해당 상을 찾을 수 없습니다.' });
 		} else {
 			res.status(200).json(result);
