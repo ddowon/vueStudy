@@ -101,8 +101,6 @@ body {min-height: 100%;}
 
 /* 공지사항 */
 .sub-page .notice-page .sector-title {border-bottom:none;}
-.paging .curpage.active, 
-.paging .curpage:hover {background:#005124; border:1px solid #005124;}
 
 /* 404 */
 .sub-page .null-page a.box-btn:focus, 

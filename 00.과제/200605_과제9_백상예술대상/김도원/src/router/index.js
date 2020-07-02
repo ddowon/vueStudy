@@ -81,6 +81,12 @@ const routes = [
 		path: '/notice',
 		name: 'notice',
 		meta: { title: '공지사항' },
+		redirect: { name: 'notice_page', params: { notice_page: '1' } }
+	},
+	{
+		path: '/notice/:notice_page',
+		name: 'notice_page',
+		meta: { title: '공지사항' },
 		component: Notice
 	},
 	{
