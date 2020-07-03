@@ -15,8 +15,11 @@
 				<BoardList 
 					:info="noticeInfo" />
 				<BoardPagination 
+					:routerName="noticeInfo.routerName" 
+					:routerParamsName="noticeInfo.routerParamsName" 
 					:totalPage="noticeInfo.totalPage" 
 					:pageRange="noticeInfo.pageRange" 
+					:currentPage="$route.params.notice_list_page"
 					@changePaging="changePaging" />
 			</div>
 		</div>
@@ -37,16 +40,18 @@
 		data: () => ({
 			noticeInfo: {
 				title: '공지사항',
+				routerName: 'notice_list',
+				routerParamsName: 'notice_list_page',
 				pageRange: 10,
 				totalPage: Number,
 				list: []
 			}
 		}),
 		watch: {
-			'$route.params.notice_page': {
+			'$route.params.notice_list_page': {
 				handler(newVal, oldVal) {
 					if (newVal && oldVal) {
-						this.fetchList(this.$route.params.notice_page)
+						this.fetchList(this.$route.params.notice_list_page)
 					}
 				},
 				deep: true,
@@ -54,11 +59,11 @@
 			}
 		},
 		created() {
-			this.fecthList(this.$route.params.notice_page);
+			this.fetchList(this.$route.params.notice_list_page);
 		},
 
 		methods: {
-			fecthList(pageNum, size = 5) {
+			fetchList(pageNum, size = 5) {
 				this.axios.get(`${API_URI}/notice?page=${pageNum}&size=${size}`)
 				.then((res) => {
 					if (res.data) {
@@ -70,7 +75,7 @@
 				})
 			},
 			changePaging(num) {
-				this.fecthList(num)
+				this.fetchList(num)
 			}
 		}
 	}

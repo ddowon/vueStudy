@@ -81,12 +81,12 @@ const routes = [
 		path: '/notice',
 		name: 'notice',
 		meta: { title: '공지사항' },
-		redirect: { name: 'notice_page', params: { notice_page: '1' } }
+		redirect: { name: 'notice_list', params: { notice_list_page: '1' } }
 	},
 	{
-		path: '/notice/:notice_page',
-		name: 'notice_page',
-		meta: { title: '공지사항' },
+		path: '/notice/list/:notice_list_page',
+		name: 'notice_list',
+		meta: { title: '공지사항 글 목록' },
 		component: Notice
 	},
 	{
@@ -104,3 +104,23 @@ const router = new VueRouter({
 })
 
 export default router
+
+
+router.beforeEach((to, from, next) => {
+	let isRequireAuth = to.matched.some((route) => {
+		return route.meta.requireAuth
+	})
+	if (isRequireAuth) {
+		firebase.auth().onAuthStateChanged(user => {
+			if (user) {
+				Store.dispatch('setUser', user)
+				next()
+			} else {
+				alert(`관리자만 접근 가능한 페이지입니다.\n로그인 해 주세요!`)
+				next({ path: '/login' })
+			}
+		})
+	} else {
+		next()
+	}
+})

@@ -3,6 +3,7 @@
 		:page-count="Number(totalPage)"
 		:page-range="Number(pageRange)"
 		:click-handler="clickCallback"
+		:force-page="Number(currentPage)"
 		:prev-text="'first page'"
 		:next-text="'last page'"
 		:container-class="'paging'"
@@ -21,9 +22,8 @@ export default {
 	components: {
 		Paginate, 
 	},
-	props: [ 'totalPage', 'pageRange' ],
+	props: [ 'routerName', 'routerParamsName', 'totalPage', 'pageRange', 'currentPage' ],
 	data: () => ({
-		currentPage: ''
 	}),
 	watch: {
 	},
@@ -31,8 +31,11 @@ export default {
 	},
 	methods: {
 		clickCallback(pageNum) {
-			this.currentPage = pageNum
-			this.$emit('changePaging', pageNum)
+			
+			// this.$emit('changePaging', pageNum)
+
+			this.$router.push({name: this.routerName, params: { 'notice_list_page': pageNum, size: 5}})
+			
 		}
 	}
 }

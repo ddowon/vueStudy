@@ -3,15 +3,18 @@
 		<Header />
 		<router-view />
 		<Footer />
+		<!-- <SignIn /> -->
 	</div>
 </template>
 <script>
 	import Header from '@/components/common/Header.vue'
 	import Footer from '@/components/common/Footer.vue'
+	import SignIn from '@/components/common/SignIn.vue'
+
 	export default {
 		name: 'app',
 		components: {
-			Header, Footer
+			Header, Footer, SignIn
 		},
 		computed: {
 			classObject() {

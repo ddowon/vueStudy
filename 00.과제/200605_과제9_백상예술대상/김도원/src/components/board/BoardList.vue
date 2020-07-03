@@ -19,7 +19,7 @@
 				<td class="title">
 					<a :href="`/noticeView/${item.id}?pageNo=1&amp;pageSize=5`">{{item.title}}</a>
 				</td>
-				<td>{{item.updated_at}}</td>
+				<td>{{writeDate(item.updated_at)}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -42,7 +42,17 @@ export default {
 	},
 
 	methods: {
-		
+		writeDate(time) {
+			let writeTime = this.$moment(time)
+			let today = this.$moment()
+			let diff = today.diff(writeTime, 'days')
+
+			if (diff < 3) { 
+				return `${diff}일 전`
+			} else { 
+				return this.$moment(time).format('YYYY-MM-DD')
+			}
+		}
 	}
 }
 </script>

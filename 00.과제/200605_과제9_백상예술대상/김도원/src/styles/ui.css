@@ -295,3 +295,13 @@ textarea, input {-webkit-appearance: none; -webkit-border-radius: 0;}
 .sector-wrap .button a.nominate-end:hover span .bg {background:url(http://images.jtbc.joins.com/baeksang/btn_bg_nominate_end_on.png) no-repeat;}
 
 /* //css */
+
+/* 우측 상단 내 정보, 회원가입, 로그인 */
+.account {position:absolute;top:10px;right:10px}
+.account ul {display:flex;justify-content:center}
+.account ul li {position:relative}
+.account ul li:first-child:after {display:none}
+.account ul li:after {content:'';display:block;position:absolute;top:7px;left:0;width:1px;height:11px;background-color:#ccc}
+.account ul li a {padding:5px 10px;font-size:14px}
+.account ul li a:hover {color:#f77b24;text-decoration:underline;font-weight:bold}
+.account ul li.signUp a {color:#f77b24}
