@@ -64,8 +64,8 @@ a.btn_file_save.big:focus,a.btn_file_save.big:hover{background:#f5f5f5}
 .tbl_other a:focus,
 .tbl_other a:hover{color:#00306e; text-decoration:underline}
 .tbl_other li strong .ico{display:inline-block;width:12px;height:7px;margin-left:26px;vertical-align:middle;}
-.tbl_other li.pre strong .ico{background:url('http://images.jtbc.joins.com/baeksang/list_prev.png') no-repeat;}
-.tbl_other li.nex strong .ico {margin-left:30px; background:url('http://images.jtbc.joins.com/baeksang/list_next.png') no-repeat;}
+.tbl_other li.prev strong .ico{background:url('http://images.jtbc.joins.com/baeksang/list_prev.png') no-repeat;}
+.tbl_other li.next strong .ico {margin-left:30px; background:url('http://images.jtbc.joins.com/baeksang/list_next.png') no-repeat;}
 .tb_view .filesave_wrap{position:relative; margin:0 0 40px 20px;}
 .tb_view .filesave_wrap .filesave_list.on{display:block}
 .tb_view .filesave_wrap .filesave_list{position:absolute;z-index:1;top:0;left:150px;display:none;min-width:200px;padding:15px 34px 15px 20px;border:1px solid #ccc;background:#fff;box-shadow:3px 3px 3px #ececec}

@@ -15,27 +15,16 @@
 </template>
 
 <script>
-
 import Paginate from 'vuejs-paginate'
 
 export default {
 	components: {
-		Paginate, 
+		Paginate
 	},
-	props: [ 'routerName', 'routerParamsName', 'totalPage', 'pageRange', 'currentPage' ],
-	data: () => ({
-	}),
-	watch: {
-	},
-	created() {
-	},
+	props: [ 'totalPage', 'pageRange', 'currentPage' ],
 	methods: {
 		clickCallback(pageNum) {
-			
-			// this.$emit('changePaging', pageNum)
-
-			this.$router.push({name: this.routerName, params: { 'notice_list_page': pageNum, size: 5}})
-			
+			this.$emit('changePaging', pageNum)
 		}
 	}
 }

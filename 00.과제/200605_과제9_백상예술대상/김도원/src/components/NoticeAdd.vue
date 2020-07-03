@@ -1,22 +1,22 @@
 <template>
-	<div class="notice-page">
+	<div class="tlb-wrap">
+		<div class="container-inner">
+
+		</div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'notice',
-	props: {
+	components: {
 	},
 	data: () => ({
 	}),
-	computed: {
-
+	watch: {
 	},
-	mounted() {
+	created() {
 	},
 	methods: {
-
 	}
 }
 </script>

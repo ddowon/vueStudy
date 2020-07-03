@@ -7,6 +7,10 @@ import Replay from '@/views/Replay.vue'
 import Winner from '@/views/Winner.vue'
 import Vote from '@/views/Vote.vue'
 import Notice from '@/views/Notice.vue'
+import NoticeList from '@/components/NoticeList.vue'
+import NoticeView from '@/components/NoticeView.vue'
+import NoticeAdd from '@/components/NoticeAdd.vue'
+import NoticeUpdate from '@/components/NoticeUpdate.vue'
 
 Vue.use(VueRouter)
 
@@ -81,13 +85,45 @@ const routes = [
 		path: '/notice',
 		name: 'notice',
 		meta: { title: '공지사항' },
-		redirect: { name: 'notice_list', params: { notice_list_page: '1' } }
-	},
-	{
-		path: '/notice/list/:notice_list_page',
-		name: 'notice_list',
-		meta: { title: '공지사항 글 목록' },
-		component: Notice
+		component: Notice,
+		redirect: { name: 'notice_list', params: { page: '1' } },
+		children: [
+			{
+				// path: '/notice/list/:page' 와 동일 (notice_list_page를 page로 줄여 쓴 이유는 이미 라우트 path에서 notice/list로 경로를 특정하고 있기 때문 - 동어반복이라 page로 줄임)
+				// props: true 설정 시 route.params 정보를 설정한 컴포넌트의 props에 할당할 수 있음
+				// 즉, NoticeList 컴포넌트에서 부모-자식 컴포넌트의 관계처럼 props: [ 'page' ]를 사용하면 this.$route.params.page와 동일한 값을 this.page로 축약 사용할 수 있음
+				path: 'list/:page',
+				name: 'notice_list',
+				meta: { title: '공지사항 글 목록' },
+				component: NoticeList,
+				props: true
+			},
+			{
+				// path: '/notice/view/:id' 와 동일
+				// props: true 설정 시 route.params 정보를 설정한 컴포넌트의 props에 할당할 수 있음
+				// 즉, NoticeView 컴포넌트에서 부모-자식 컴포넌트의 관계처럼 props: [ 'id' ]를 사용하면 this.$route.params.id와 동일한 값을 this.id로 축약 사용할 수 있음
+				path: 'view/:id',
+				name: 'notice_view',
+				meta: { title: '공지사항 글 보기' },
+				component: NoticeView,
+				props: true
+			},
+			{
+				// path: '/notice/add' 와 동일
+				path: 'add',
+				name: 'notice_add',
+				meta: { title: '공지사항 글 쓰기' },
+				component: NoticeAdd
+			},
+			{
+				// path: '/notice/update/:id' 와 동일
+				path: 'update/:id',
+				name: 'notice_update',
+				meta: { title: '공지사항 글 수정' },
+				component: NoticeUpdate,
+				props: true
+			}
+		]
 	},
 	{
 		// 페이지가 없을 경우 메인 화면으로 이동하도록
@@ -103,24 +139,23 @@ const router = new VueRouter({
 	routes
 })
 
+// router.beforeEach((to, from, next) => {
+// 	let isRequireAuth = to.matched.some((route) => {
+// 		return route.meta.requireAuth
+// 	})
+// 	if (isRequireAuth) {
+// 		firebase.auth().onAuthStateChanged(user => {
+// 			if (user) {
+// 				Store.dispatch('setUser', user)
+// 				next()
+// 			} else {
+// 				alert(`관리자만 접근 가능한 페이지입니다.\n로그인 해 주세요!`)
+// 				next({ path: '/login' })
+// 			}
+// 		})
+// 	} else {
+// 		next()
+// 	}
+// })
+
 export default router
-
-
-router.beforeEach((to, from, next) => {
-	let isRequireAuth = to.matched.some((route) => {
-		return route.meta.requireAuth
-	})
-	if (isRequireAuth) {
-		firebase.auth().onAuthStateChanged(user => {
-			if (user) {
-				Store.dispatch('setUser', user)
-				next()
-			} else {
-				alert(`관리자만 접근 가능한 페이지입니다.\n로그인 해 주세요!`)
-				next({ path: '/login' })
-			}
-		})
-	} else {
-		next()
-	}
-})
