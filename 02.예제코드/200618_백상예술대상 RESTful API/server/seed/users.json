@@ -1,12 +1,12 @@
 [{
 		"email": "test@test.com",
 		"name": "테스트계정",
-		"password": "test"
+		"password": "$2a$10$UivZpaJ72aMCRLDIjnEXje1PzHLOWYcUeAuPeZQ4If1vbCdJgRO/e"
 	},
 	{
 		"email": "admin@admin.com",
 		"name": "하늘입니다",
 		"password": "test",
-		"role": "admin"
+		"role": "$2a$10$UivZpaJ72aMCRLDIjnEXje1PzHLOWYcUeAuPeZQ4If1vbCdJgRO/e"
 	}
 ]

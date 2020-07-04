@@ -5,15 +5,10 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const NoticeSchema = new Schema({
 	id: { type: Number },
+	ip: { type: String, default: '' },
 	title: { type: String, trim: true, required: true },
 	contents: { type: String, trim: true, required: true },
-	writer: { type: String, ref: 'User' },
-	comments: [{
-		contents: { type: String, trim:true, required: true },
-		writer: { type: String, ref: 'User' },
-		likes: { type: Number, default: 0 },
-		created_at: { type: Date, default: Date.now }
-	}],
+	writer: { type: String, ref: 'User', default: null },
 	files: { type: [] },
 	views: { type: Number, default: 0 },
 	likes: { type: Number, default: 0 },

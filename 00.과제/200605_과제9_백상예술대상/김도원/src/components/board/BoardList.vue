@@ -25,7 +25,7 @@
 					updated_at은 최종 수정일을 뜻하므로, 작성일인 created_at을 표기
 					method명 빼고는 수정사항 없음! ^0^
 				-->
-				<td>{{ formatDate(item.updated_at) }}</td>
+				<td>{{ formatDate(item.created_at) }}</td>
 			</tr>
 		</tbody>
 	</table>

@@ -45,13 +45,13 @@ exports.create = (req, res, next) => {
 	const notice = new Notice({
 		title: req.body.title,
 		contents: req.body.contents,
-		writer: (req.body.id) ? req.body.id : '',
+		writer: req.user.name,
 		tags: (req.body.tags) ? req.body.tags : [],
 		files: req.body.files
 	});
 
 	notice.save().then((result) => {
-		res.status(201).json(result);
+		res.status(201).json({ message: `공지사항 게시판 글 작성 완료! (${result})` });
 	}).catch((err) => {
 		res.status(500).json({ error: err });
 	});
@@ -61,6 +61,8 @@ exports.findAll = (req, res, next) => {
 	const options = {
 		page: req.query.page || 1,
 		limit: req.query.size || 10,
+		sort: { 'id': -1 },
+		select: '-files -tags -contents -updated_at -__v',
 		customLabels: myCustomLabels
 	};
 	Notice.paginate({}, options).then((result) => {
@@ -78,6 +80,7 @@ exports.findById = (req, res, next) => {
 	const options = {
 		page: req.query.page || 1,
 		limit: req.query.size || 10,
+		select: '-__v',
 		customLabels: myCustomLabels
 	};
 	Notice.paginate({ 'id': req.params.id }, options).then((result) => {
@@ -126,7 +129,7 @@ exports.update = (req, res, next) => {
 			}
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
-			res.status(200).json();
+			return res.status(200).json({ message: `공지사항 게시판 글 수정 완료! (${result})` });
 		}
 	}).catch((err) => {
 		if (req.body.files.length) {
@@ -148,7 +151,7 @@ exports.delete = (req, res, next) => {
 			if (result.files.length) {
 				deleteFile(result.files);
 			}
-			res.status(200).json(result);
+			return res.status(200).json({ message: `공지사항 게시판 글 삭제 완료! (${result})` });
 		}
 	}).catch((err) => {
 		return res.status(500).json({ error: err });

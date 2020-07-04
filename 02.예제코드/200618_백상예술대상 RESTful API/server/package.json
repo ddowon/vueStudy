@@ -8,8 +8,10 @@
     "dev": "set NODE_ENV=development&&nodemon ./server.js",
     "seed": "set NODE_ENV=production&&node ./seed/seed.js",
     "seed2": "set NODE_ENV=production&&node ./seed/seed-notices.js&&node ./seed/seed-users.js",
+    "seed3": "set NODE_ENV=production&&node ./seed/seed-notices_comments.js",
     "seed-dev": "set NODE_ENV=development&&node ./seed/seed.js",
     "seed2-dev": "set NODE_ENV=development&&node ./seed/seed-notices.js&&node ./seed/seed-users.js",
+    "seed3-dev": "set NODE_ENV=development&&node ./seed/seed-notices_comments.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -5,7 +5,18 @@ const jwt = require('jsonwebtoken');
 const secret_key = process.env.SECRET_KEY;
 const Roles = [ 'user', 'admin' ];
 
-exports.create = (req, res, next) => {
+const signToken = (user) => new Promise((resolve, reject) => {
+	jwt.sign({ id: user.id, name: user.name, role: user.role, email: user.email }, secret_key, {
+		expiresIn: '24h'
+	}, (err, token) => {
+		if (err) {
+			reject(err)
+		}
+		resolve(token)
+	})
+})
+
+exports.signup = (req, res, next) => {
 	if (!req.body.email) {
 		return res.status(400).json({ message: '이메일을 입력해 주세요.' });
 	}
@@ -77,13 +88,13 @@ exports.signin = (req, res, next) => {
 			return res.status(401).json({ accessToken: null, message: '비밀번호가 맞지 않습니다!' });
 		}
 
-		let token = jwt.sign({ id: user.id, name: user.name, role: user.role, email: user.email }, secret_key, {
-			expiresIn: '24h'
-		});
-
-		User.findOneAndUpdate({ email: req.body.email }, { $set: { authToken: token } }, { returnOriginal: false }).then((result) => {
-			return res.status(200).json({ accessToken: result.authToken });
-		});
+		return Promise.resolve(user);
+	}).then((user) => {
+		return signToken(user);
+	}).then((token) => {
+		return User.findOneAndUpdate({ email: req.body.email }, { $set: { authToken: token } }, { returnOriginal: false });
+	}).then((result) => {
+		return res.status(200).json({ success: true, accessToken: result.authToken, user: { id: result.id, name: result.name, role: result.role, email: result.email } });
 	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
@@ -91,20 +102,20 @@ exports.signin = (req, res, next) => {
 
 exports.generateSwaggerToken = (req, res, next) => {
 	User.findOne({ email: 'test@test.com' }).then((user) => {
-		let token = jwt.sign({ id: user.id, name: user.name, role: 'admin', email: user.email }, secret_key, {
-			expiresIn: '24h'
-		});
-
-		User.findOneAndUpdate({ email: 'test@test.com' }, { $set: { authToken: token } }, { returnOriginal: false }).then((result) => {
-			return res.status(200).json({ accessToken: result.authToken });
-		});
+		return Promise.resolve(user);
+	}).then((user) => {
+		return signToken(user);
+	}).then((token) => {
+		return User.findOneAndUpdate({ email: 'test@test.com' }, { $set: { authToken: token } }, { returnOriginal: false });
+	}).then((result) => {
+		return res.status(200).json({ success: true, accessToken: result.authToken, user: { id: result.id, name: result.name, role: result.role, email: result.email } });
 	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
 };
 
 exports.findAll = (req, res, next) => {
-	User.find().then((result) => {
+	User.find().sort({ 'id': -1 }).then((result) => {
 		if (!result) {
 			return res.status(404).json({ message: `가입된 회원이 없습니다.` });
 		} else {

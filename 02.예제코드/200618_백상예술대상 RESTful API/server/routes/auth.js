@@ -67,7 +67,7 @@ const authJwt = require('../middlewares/authJwt.js');
  */
 
 // 회원가입
-router.post('/signup', users.create);
+router.post('/signup', users.signup);
 
 // 로그인
 router.post('/signin', users.signin);
