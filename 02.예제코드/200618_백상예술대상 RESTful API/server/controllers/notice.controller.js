@@ -45,7 +45,7 @@ exports.create = (req, res, next) => {
 	const notice = new Notice({
 		title: req.body.title,
 		contents: req.body.contents,
-		writer: req.user.name,
+		author: req.user._id,
 		tags: (req.body.tags) ? req.body.tags : [],
 		files: req.body.files
 	});
@@ -59,10 +59,16 @@ exports.create = (req, res, next) => {
 
 exports.findAll = (req, res, next) => {
 	const options = {
+		populate: {
+			path: 'author',
+			options: {
+				select: 'name'
+			}
+		},
 		page: req.query.page || 1,
 		limit: req.query.size || 10,
 		sort: { 'id': -1 },
-		select: '-files -tags -contents -updated_at -__v',
+		select: '-_id -ip -files -tags -contents -comments -updated_at -__v',
 		customLabels: myCustomLabels
 	};
 	Notice.paginate({}, options).then((result) => {
@@ -78,6 +84,21 @@ exports.findAll = (req, res, next) => {
 
 exports.findById = (req, res, next) => {
 	const options = {
+		populate: [
+			{
+				path: 'comments',
+				options: {
+					sort: { 'id': 1 },
+					select: 'id author display_name contents created_at cnt'
+				}
+			},
+			{
+				path: 'author',
+				options: {
+					select: 'name'
+				}
+			}
+		],
 		page: req.query.page || 1,
 		limit: req.query.size || 10,
 		select: '-__v',
@@ -116,6 +137,8 @@ exports.update = (req, res, next) => {
 			}
 		})
 	}
+
+	req.body.delete_files = [];
 
 	// 글 수정 시, Front에서 넘어온 delete_files 체크박스 있으면 해당 파일 삭제
 	if (req.body.delete_files.length) {

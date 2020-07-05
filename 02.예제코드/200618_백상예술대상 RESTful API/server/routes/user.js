@@ -96,15 +96,15 @@ const authJwt = require('../middlewares/authJwt.js');
  */
 
 // 모든 회원정보 보기(관리자만)
-router.get('/', [ authJwt.verifyToken, authJwt.isAuthentication, authJwt.isAdmin ], users.findAll);
+router.get('/', [ authJwt.isAuthentication, authJwt.isAdmin ], users.findAll);
 
 // 회원정보 보기
-router.get('/:id', [ authJwt.verifyToken, authJwt.isAuthentication ], users.findById);
+router.get('/:id', [ authJwt.isAuthentication ], users.findById);
 
 // 회원정보 수정
-router.put('/edit/:id', [ authJwt.verifyToken, authJwt.isAuthentication ], users.update);
+router.put('/edit/:id', [ authJwt.isAuthentication ], users.update);
 
 // 회원 탈퇴
-router.delete('/delete/:id', [ authJwt.verifyToken, authJwt.isAuthentication ], users.delete);
+router.delete('/delete/:id', [ authJwt.isAuthentication ], users.delete);
 
 module.exports = router;

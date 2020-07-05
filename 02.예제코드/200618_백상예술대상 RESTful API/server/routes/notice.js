@@ -86,7 +86,7 @@ const fileUpload = require('../middlewares/fileUpload.js');
  *         description: 게시글 내용
  *         required: true
  *         type: string
- *       - name: files
+ *       - name: images
  *         in: formData
  *         description: 게시글에 삽입할 첨부파일 (jpg, jpeg, png, gif)
  *         required: false
@@ -123,7 +123,7 @@ const fileUpload = require('../middlewares/fileUpload.js');
  *         description: 수정할 게시글 내용
  *         required: false
  *         type: string
- *       - name: files
+ *       - name: images
  *         in: formData
  *         description: 수정/삭제할 첨부파일 (jpg, jpeg, png, gif)
  *         required: false
@@ -205,12 +205,12 @@ const fileUpload = require('../middlewares/fileUpload.js');
  *       - name: name
  *         in: formData
  *         description: 닉네임
- *         required: true
+ *         required: false
  *         type: string
  *       - name: password
  *         in: formData
  *         description: 비밀번호
- *         required: true
+ *         required: false
  *         type: string
  *       - name: contents
  *         in: formData
@@ -226,6 +226,8 @@ const fileUpload = require('../middlewares/fileUpload.js');
  *         description: 댓글 내용/닉네임/비밀번호를 입력해 주세요.
  *       404:
  *         description: 댓글을 작성 할 게시글 번호가 없습니다.
+ *     security:
+ *       - JWT: []
  * /notice/{pr_id}/comment/delete/{id}:
  *   delete:
  *     tags: [Notice]
@@ -247,7 +249,7 @@ const fileUpload = require('../middlewares/fileUpload.js');
  *       - name: password
  *         in: formData
  *         description: 비밀번호
- *         required: true
+ *         required: false
  *         type: string
  *     responses:
  *       200:
@@ -258,25 +260,27 @@ const fileUpload = require('../middlewares/fileUpload.js');
  *         description: 비밀번호가 맞지 않습니다!
  *       404:
  *         description: 댓글을 삭제할 게시글 번호가 없습니다. | 해당 댓글을 찾을 수 없습니다.
+ *     security:
+ *       - JWT: []
  */
 
 router.get('/', notices.findAll);
 router.get('/:id', notices.findById);
 
 // 글작성, 글수정 회원만
-router.post('/add', [ authJwt.verifyToken, authJwt.isAuthentication, fileUpload.uploadImage ], notices.create);
-router.put('/update/:id', [ authJwt.verifyToken, authJwt.isAuthentication, fileUpload.uploadImage ], notices.update);
+router.post('/add', [ authJwt.isAuthentication, fileUpload.uploadImage ], notices.create);
+router.put('/update/:id', [ authJwt.isAuthentication, fileUpload.uploadImage ], notices.update);
 
 // 글삭제 회원만
-router.delete('/delete/:id', [ authJwt.verifyToken, authJwt.isAuthentication ], notices.delete);
+router.delete('/delete/:id', [ authJwt.isAuthentication ], notices.delete);
 
 // 댓글 가져오기
 router.get('/:pr_id/comment', noticesComments.findAllByParentId);
 
 // 댓글작성
-router.post('/:pr_id/comment/add', noticesComments.create);
+router.post('/:pr_id/comment/add', [ authJwt.isLogged ], noticesComments.create);
 
 // 댓글삭제
-router.delete('/:pr_id/comment/delete/:id', noticesComments.delete);
+router.delete('/:pr_id/comment/delete/:id', [ authJwt.isLogged ], noticesComments.delete);
 
 module.exports = router;

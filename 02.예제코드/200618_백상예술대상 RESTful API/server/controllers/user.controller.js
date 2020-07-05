@@ -14,7 +14,7 @@ const signToken = (user) => new Promise((resolve, reject) => {
 		}
 		resolve(token)
 	})
-})
+});
 
 exports.signup = (req, res, next) => {
 	if (!req.body.email) {
@@ -115,61 +115,92 @@ exports.generateSwaggerToken = (req, res, next) => {
 };
 
 exports.findAll = (req, res, next) => {
-	User.find().sort({ 'id': -1 }).then((result) => {
-		if (!result) {
-			return res.status(404).json({ message: `가입된 회원이 없습니다.` });
-		} else {
-			res.status(200).json(result);
-		}
-	}).catch((err) => {
-		return res.status(500).json({ error: err });
-	});
+	if (!req.isAdmin) {
+		return res.status(403).json({ message: '관리자 페이지 접근 권한이 없습니다!' });
+	}
+	if (req.isAdmin) {
+		User.find().sort({ 'id': -1 }).then((result) => {
+			if (!result) {
+				return res.status(404).json({ message: `가입된 회원이 없습니다.` });
+			} else {
+				res.status(200).json(result);
+			}
+		}).catch((err) => {
+			return res.status(500).json({ error: err });
+		});
+	}
 };
 
 exports.findById = (req, res, next) => {
-	User.findOne({ id: req.params.id, email: req.user.email }).then((result) => {
-		if (!result) {
-			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email})` });
-		} else {
-			res.status(200).json(result);
-		}
-	}).catch((err) => {
-		return res.status(500).json({ error: err });
-	});
+	if (!req.isLogged) {
+		return res.status(403).json({ message: '회원만 접근할 수 있습니다. 로그인 해 주세요.' });
+	}
+	if (req.isLogged) {
+		let findCondition = (!req.isAdmin) ? { id: req.params.id, email: req.user.email } : { id: req.params.id };
+		User.findOne(findCondition).then((result) => {
+			if (!result) {
+				return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id})` });
+			} else {
+				res.status(200).json(result);
+			}
+		}).catch((err) => {
+			return res.status(500).json({ error: err });
+		});
+	}
 };
 
 exports.update = (req, res, next) => {
-	if (req.body.password) {
-		var salt = bcrypt.genSaltSync(10);
-		var password = bcrypt.hashSync(req.body.password, salt);
-	} else {
-		var password = req.user.password;
+	if (!req.isLogged) {
+		return res.status(403).json({ message: '회원만 접근할 수 있습니다. 로그인 해 주세요.' });
 	}
-	if (req.body.name) {
-		var username = req.body.name;
-	} else {
-		var username = req.user.name;
-	}
+	if (req.isLogged) {
+		let findCondition = (!req.isAdmin) ? { id: req.params.id, email: req.user.email } : { id: req.params.id };
 
-	User.findOneAndUpdate({ id: req.params.id, email: req.user.email }, { $set: { name: username, password: password } }, { returnOriginal: false }).then((result) => {
-		if (!result) {
-			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email})` });
-		} else {
-			res.status(200).json(result);
-		}
-	}).catch((err) => {
-		return res.status(500).json({ error: err });
-	});
+		User.findOne(findCondition).then((result) => {
+			if (!result) {
+				return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id})` });
+			} else {
+				if (req.body.password) {
+					var salt = bcrypt.genSaltSync(10);
+					var password = bcrypt.hashSync(req.body.password, salt);
+				} else {
+					var password = result.password;
+				}
+				if (req.body.name) {
+					var username = req.body.name;
+				} else {
+					var username = result.name;
+				}
+				User.findOneAndUpdate(findCondition, { $set: { name: username, password: password } }, { returnOriginal: false }).then((result) => {
+					if (!result) {
+						return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id})` });
+					} else {
+						return res.status(200).json(result);
+					}
+				}).catch((err) => {
+					return res.status(500).json({ error: err });
+				});
+			}
+		}).catch((err) => {
+			return res.status(500).json({ error: err });
+		});
+	}
 };
 
 exports.delete = (req, res, next) => {
-	User.findOneAndDelete({ id: req.params.id, email: req.user.email }).then((result) => {
-		if (!result) {
-			return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id}, ${req.user.email})` });
-		} else {
-			res.status(200).json(result);
-		}
-	}).catch((err) => {
-		return res.status(500).json({ error: err });
-	});
+	if (!req.isLogged) {
+		return res.status(403).json({ message: '회원만 접근할 수 있습니다. 로그인 해 주세요.' });
+	}
+	if (req.isLogged) {
+		let findCondition = (!req.isAdmin) ? { id: req.params.id, email: req.user.email } : { id: req.params.id };
+		User.findOneAndDelete(findCondition).then((result) => {
+			if (!result) {
+				return res.status(404).json({ message: `잘못된 접근입니다! (${req.params.id})` });
+			} else {
+				res.status(200).json(result);
+			}
+		}).catch((err) => {
+			return res.status(500).json({ error: err });
+		});
+	}
 };
