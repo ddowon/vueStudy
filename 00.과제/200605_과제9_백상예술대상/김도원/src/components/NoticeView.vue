@@ -1,8 +1,8 @@
 <template>
 	<div class="tlb-wrap">
 		<div class="container-inner">
-			<BoardView 
-				:item="noticeData" />
+			<BoardView :id="id" board-id="notice" />
+			<!-- 글보기 데이터 도원님이 구현할 부분 -->
 		</div>
 	</div>
 </template>
@@ -16,18 +16,10 @@
 		},
 		props: [ 'id' ],
 		data: () => ({
-			// 도원님 공간
 		}),
-		watch: {
-			// 도원님 공간
-		},
 		created() {
-			// 도원님 공간
 		},
 		methods: {
-			fetchItemById(id = 1) {
-				// 도원님 공간
-			}
 		}
 	}
 </script>

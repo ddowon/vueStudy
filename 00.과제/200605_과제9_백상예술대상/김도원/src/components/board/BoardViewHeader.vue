@@ -1,11 +1,18 @@
 <template>
-	<h3 class="veiw_tit">제56회 백상예술대상 디지털 생중계 관련 안내 </h3>
+	<Fragment>
+		<h3 class="veiw_tit" v-html="item.title">
+		</h3>
+		<div class="author">{{ item.author.name }}</div>
+		<div class="cnt_view">{{ item.cnt.view }}</div>
+	</Fragment>
 </template>
 
 <script>
-
+import { Fragment } from 'vue-fragment'
 export default {
+	props: [ 'item' ],
 	components: {
+		Fragment
 	},
 	data: () => ({
 	}),

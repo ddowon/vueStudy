@@ -8,6 +8,12 @@
 				:pageRange="noticeInfo.pageRange"
 				:currentPage="page"
 				@changePaging="chagePage" />
+
+			<div class="button">
+				<router-link :to="{ name: 'notice_add' }" class="box-btn">
+					<span>글쓰기</span>
+				</router-link>
+			</div>
 		</div>
 	</div>
 </template>

@@ -1,18 +1,21 @@
 <template>
 	<div class="tlb-wrap">
 		<div class="container-inner">
-
+			<BoardWriteForm />
 		</div>
 	</div>
 </template>
 
-<script>
+<script> 
+import BoardWriteForm from '@/components/board/BoardWriteForm'
 export default {
 	components: {
+		BoardWriteForm
 	},
 	data: () => ({
 	}),
 	watch: {
+
 	},
 	created() {
 	},
