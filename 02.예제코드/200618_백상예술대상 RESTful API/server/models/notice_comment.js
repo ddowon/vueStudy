@@ -15,6 +15,8 @@ const NoticeCommentSchema = new Schema({
 		min: 8,
 		max: 1024
 	},
+	likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	dislikes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 	cnt: {
 		like: { type: Number, default: 0 },
 		dislike: { type: Number, default: 0 }

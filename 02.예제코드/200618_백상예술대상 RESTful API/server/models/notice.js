@@ -11,10 +11,13 @@ const NoticeSchema = new Schema({
 	contents: { type: String, trim: true, required: true },
 	comments: [{ type: Schema.Types.ObjectId, ref: 'Notice_Comment' }],
 	files: { type: [] },
+	likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	dislikes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 	cnt: {
 		comment: { type: Number, default: 0 },
 		view: { type: Number, default: 0 },
-		like: { type: Number, default: 0 }
+		like: { type: Number, default: 0 },
+		dislike: { type: Number, default: 0 }
 	},
 	tags: { type: [] }
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } });

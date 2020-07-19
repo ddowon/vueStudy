@@ -51,7 +51,7 @@ exports.create = (req, res, next) => {
 	});
 
 	notice.save().then((result) => {
-		res.status(201).json({ message: `공지사항 게시판 글 작성 완료! (${result})` });
+		res.status(201).json({ message: `공지사항 게시판 글 작성 완료!` });
 	}).catch((err) => {
 		res.status(500).json({ error: err });
 	});
@@ -163,6 +163,76 @@ exports.update = (req, res, next) => {
 		} else {
 			return res.status(500).json({ error: err });
 		}
+	});
+};
+
+exports.like = (req, res, next) => {
+	if (!req.params.id) {
+		return res.status(404).json({ message: `추천할 게시글 번호가 없습니다. (${req.params.id}번)` });
+	}
+	if (!req.isLogged) {
+		return res.status(403).json({ message: `추천 기능은 회원만 사용가능 합니다.` });
+	}
+
+	Notice.findOne({ id: req.params.id }).then((result) => {
+		if (!result) {
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
+		}
+		if (result.author && result.author.equals(req.user._id)) {
+			return res.status(400).json({ message: `내가 쓴 게시글은 추천할 수 없습니다.` });
+		}
+		if (result.likes.includes(req.user._id)) {
+			return res.status(400).json({ message: `이미 추천한 게시글입니다.` });
+		}
+		if (result.dislikes.includes(req.user._id)) {
+			return res.status(400).json({ message: `이미 비추천한 게시글입니다. 추천할 수 없습니다.` });
+		}
+		Notice.findOneAndUpdate({ id: req.params.id }, { $push: { likes: req.user._id }, $inc: { 'cnt.like': 1 } }, { returnOriginal: false }).then((result) => {
+			if (!result) {
+				return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
+			} else {
+				return res.status(200).json({ message: `공지사항 게시판 글 추천 완료!` });
+			}
+		}).catch((err) => {
+			return res.status(500).json({ error: err });
+		});
+	}).catch((err) => {
+		return res.status(500).json({ error: err });
+	});
+};
+
+exports.dislike = (req, res, next) => {
+	if (!req.params.id) {
+		return res.status(404).json({ message: `비추천할 게시글 번호가 없습니다. (${req.params.id}번)` });
+	}
+	if (!req.isLogged) {
+		return res.status(403).json({ message: `비추천 기능은 회원만 사용가능 합니다.` });
+	}
+
+	Notice.findOne({ id: req.params.id }).then((result) => {
+		if (!result) {
+			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
+		}
+		if (result.author && result.author.equals(req.user._id)) {
+			return res.status(400).json({ message: `내가 쓴 게시글은 비추천할 수 없습니다.` });
+		}
+		if (result.dislikes.includes(req.user._id)) {
+			return res.status(400).json({ message: `이미 비추천한 게시글입니다.` });
+		}
+		if (result.likes.includes(req.user._id)) {
+			return res.status(400).json({ message: `이미 추천한 게시글입니다. 비추천할 수 없습니다.` });
+		}
+		Notice.findOneAndUpdate({ id: req.params.id }, { $push: { dislikes: req.user._id }, $inc: { 'cnt.dislike': 1 } }, { returnOriginal: false }).then((result) => {
+			if (!result) {
+				return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
+			} else {
+				return res.status(200).json({ message: `공지사항 게시판 글 비추천 완료!` });
+			}
+		}).catch((err) => {
+			return res.status(500).json({ error: err });
+		});
+	}).catch((err) => {
+		return res.status(500).json({ error: err });
 	});
 };
 
