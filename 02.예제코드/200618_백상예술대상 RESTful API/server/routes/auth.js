@@ -64,6 +64,18 @@ const authJwt = require('../middlewares/authJwt.js');
  *         description: 비밀번호가 맞지 않습니다!
  *       404:
  *         description: 해당 회원을 찾을 수 없습니다.
+ * /auth/check:
+ *   get:
+ *     tags: [Auth]
+ *     summary: 토큰 검증하기
+ *     description: JWT 인증 토큰값을 검증하고 검증에 성공하면 회원 기본 정보를 반환합니다.
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: 토큰 검증에 따른 JSON 데이터 요청 성공
+ *     security:
+ *       - JWT: []
  */
 
 // 회원가입
@@ -71,6 +83,9 @@ router.post('/signup', users.signup);
 
 // 로그인
 router.post('/signin', users.signin);
+
+// Front-End에서 받은 토큰이 올바른지 체크
+router.get('/check', [ authJwt.isAuthentication ], users.checkToken);
 
 // swagger용 토큰 발급
 router.get('/swagger', users.generateSwaggerToken);

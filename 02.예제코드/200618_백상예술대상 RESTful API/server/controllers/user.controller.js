@@ -1,20 +1,8 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const authJwt = require('../middlewares/authJwt.js');
 
-const secret_key = process.env.SECRET_KEY;
 const Roles = [ 'user', 'admin' ];
-
-const signToken = (user) => new Promise((resolve, reject) => {
-	jwt.sign({ id: user.id, name: user.name, role: user.role, email: user.email }, secret_key, {
-		expiresIn: '24h'
-	}, (err, token) => {
-		if (err) {
-			reject(err)
-		}
-		resolve(token)
-	})
-});
 
 exports.signup = (req, res, next) => {
 	if (!req.body.email) {
@@ -85,16 +73,16 @@ exports.signin = (req, res, next) => {
 		);
 
 		if (!passwordIsValid) {
-			return res.status(401).json({ accessToken: null, message: '비밀번호가 맞지 않습니다!' });
+			return res.status(401).json({ token: null, message: '비밀번호가 맞지 않습니다!' });
 		}
 
 		return Promise.resolve(user);
 	}).then((user) => {
-		return signToken(user);
+		return authJwt.signToken(user);
 	}).then((token) => {
 		return User.findOneAndUpdate({ email: req.body.email }, { $set: { authToken: token } }, { returnOriginal: false });
 	}).then((result) => {
-		return res.status(200).json({ success: true, accessToken: result.authToken, user: { id: result.id, name: result.name, role: result.role, email: result.email } });
+		return res.status(200).json({ success: true, token: result.authToken, user: { id: result.id, name: result.name, role: result.role, email: result.email } });
 	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
@@ -104,14 +92,23 @@ exports.generateSwaggerToken = (req, res, next) => {
 	User.findOne({ email: 'test@test.com' }).then((user) => {
 		return Promise.resolve(user);
 	}).then((user) => {
-		return signToken(user);
+		return authJwt.signToken(user);
 	}).then((token) => {
 		return User.findOneAndUpdate({ email: 'test@test.com' }, { $set: { authToken: token } }, { returnOriginal: false });
 	}).then((result) => {
-		return res.status(200).json({ success: true, accessToken: result.authToken, user: { id: result.id, name: result.name, role: result.role, email: result.email } });
+		return res.status(200).json({ success: true, token: result.authToken, user: { id: result.id, name: result.name, role: result.role, email: result.email } });
 	}).catch((err) => {
 		return res.status(500).json({ error: err });
 	});
+};
+
+exports.checkToken = (req, res, next) => {
+	if (!req.user || !req.isLogged) {
+		return res.status(200).json({ success: false });
+	}
+	if (req.user && req.isLogged) {
+		return res.status(200).json({ success: true, token: req.token, user: { id: req.user.id, name: req.user.name, role: req.user.role, email: req.user.email } });
+	}
 };
 
 exports.findAll = (req, res, next) => {

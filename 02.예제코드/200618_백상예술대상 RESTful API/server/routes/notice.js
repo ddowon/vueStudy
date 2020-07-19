@@ -268,19 +268,19 @@ router.get('/', notices.findAll);
 router.get('/:id', notices.findById);
 
 // 글작성, 글수정 회원만
-router.post('/add', [ authJwt.isAuthentication, fileUpload.uploadImage ], notices.create);
-router.put('/update/:id', [ authJwt.isAuthentication, fileUpload.uploadImage ], notices.update);
+router.post('/add', [ authJwt.isAuthentication, authJwt.isMember, fileUpload.uploadImage ], notices.create);
+router.put('/update/:id', [ authJwt.isAuthentication, authJwt.isMember, fileUpload.uploadImage ], notices.update);
 
 // 글삭제 회원만
-router.delete('/delete/:id', [ authJwt.isAuthentication ], notices.delete);
+router.delete('/delete/:id', [ authJwt.isAuthentication, authJwt.isMember ], notices.delete);
 
 // 댓글 가져오기
 router.get('/:pr_id/comment', noticesComments.findAllByParentId);
 
 // 댓글작성
-router.post('/:pr_id/comment/add', [ authJwt.isLogged ], noticesComments.create);
+router.post('/:pr_id/comment/add', [ authJwt.isAuthentication ], noticesComments.create);
 
 // 댓글삭제
-router.delete('/:pr_id/comment/delete/:id', [ authJwt.isLogged ], noticesComments.delete);
+router.delete('/:pr_id/comment/delete/:id', [ authJwt.isAuthentication ], noticesComments.delete);
 
 module.exports = router;

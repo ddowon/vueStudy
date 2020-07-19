@@ -3,99 +3,101 @@ const jwt = require('jsonwebtoken');
 
 const secret_key = process.env.SECRET_KEY;
 
-const verifyToken = (token) => {
-	let result = { success: false, errorCode: 403, message: '인증 토큰값이 없습니다!' };
-	if (token) {
-		jwt.verify(token, secret_key, (err, decoded) => {
-			if (err) {
-				result = { success: false, errorCode: 401, message: '인증 토큰값이 잘못되었습니다!' };
-			}
-	
-			result = { success: true, token: token, decoded: decoded };
-		});
-	}
-	return result;
-};
-
-exports.isLogged = (req, res, next) => {
-	req.isLogged = false;
-	req.isAdmin = false;
-
-	// 보안을 위해 무조건 header에서 토큰값을 가져옴
-	// let token = req.headers['x-access-token'] || req.body.accessToken || req.query.accessToken;
-	let token = req.headers['x-access-token'];
-
-	if (token) {
-		let checkToken = verifyToken(token);
-
-		if (checkToken.success) {
-			// req.user에 담긴 값 - id: user.id, name: user.name, role: user.role, email: user.email
-			req.user = checkToken.decoded;
-			req.user.token = checkToken.token;
-
-			User.findOne({ email: req.user.email }).then((user) => {
-				if (user && (user.authToken === req.user.token)) {
-					// populate 처리를 위한 _id값 저장
-					req.user._id = user._id;
-					req.isLogged = true;
-					req.isAdmin = (user.role === 'admin') ? true : false;
-				}
-				next();
-			}).catch((err) => {
-				return res.status(500).json({ error: err });
-			});
+const signToken = (user) => new Promise((resolve, reject) => {
+	jwt.sign({ id: user.id, name: user.name, role: user.role, email: user.email }, secret_key, {
+		expiresIn: '72h'
+	}, (err, token) => {
+		if (err) {
+			reject(err);
 		}
-	} else {
-		next();
+		resolve(token);
+	});
+});
+
+const verifyToken = (token) => new Promise((resolve, reject) => {
+	jwt.verify(token, secret_key, (err, decoded) => {
+		if (err) {
+			reject(err);
+		}
+		resolve(decoded);
+	});
+});
+
+const verifyUser = (email, token) => User.findOne({ email: email }).then((user) => {
+	let result = { success: false, code: 404, message: '가입된 회원이 아니거나 탈퇴한 회원입니다!' };
+
+	if (user.authToken !== token) {
+		result.code = 401;
+		result.message = '인증 토큰값이 마지막 발급 인증 토큰값과 일치하지 않습니다!';
 	}
-};
+
+	if (user && user.authToken === token) {
+		result.success = true;
+		result.code = 200;
+		result.message = '회원 검증에 성공했습니다!';
+		result.user = user;
+	}
+
+	return result;
+}).catch((err) => {
+	return { success: false, code: 401, message: '회원 검증에 실패했습니다!' };
+});
+
+exports.signToken = signToken;
 
 exports.isAuthentication = (req, res, next) => {
 	req.isLogged = false;
 	req.isAdmin = false;
 
 	let token = req.headers['x-access-token'];
-	let checkToken = verifyToken(token);
 
-	if (checkToken.success) {
-		req.user = checkToken.decoded;
-		req.user.token = checkToken.token;
+	if (!token) {
+		console.log('인증 토큰값이 없습니다!');
+	}
 
-		User.findOne({ email: req.user.email }).then((user) => {
-			if (!user) {
-				return res.status(404).json({ message: `가입된 회원이 아니거나 탈퇴한 회원입니다. (${req.user.email})` });
-			}
-	
-			if (user.authToken !== req.user.token) {
-				return res.status(401).json({ message: '인증 토큰값이 마지막 발급 인증 토큰값과 일치하지 않습니다!' });
-			}
+	if (token === 'guest') {
+		console.log('인증 토큰값이 guest입니다. 비회원으로 인식합니다.');
+	}
 
-			req.user._id = user._id;
-			req.isLogged = true;
-			req.isAdmin = (user.role === 'admin') ? true : false;
-			next();
+	if (token && token !== 'guest') {
+		verifyToken(token).then((decoded) => {
+			verifyUser(decoded.email, token).then((result) => {
+				if (result.success) {
+					req.token = token;
+					req.user = decoded;
+					req.user._id = result.user._id;
+					req.isLogged = true;
+					req.isAdmin = (result.user.role === 'admin') ? true : false;
+				}
+				console.log(`code: ${result.code}, message: ${result.message}`);
+				next();
+			}).catch((err) => {
+				console.log(`code: ${err.code}, message: ${err.message}`);
+				next();
+			});
 		}).catch((err) => {
-			return res.status(500).json({ error: err });
+			console.log('인증 토큰 검증에 실패했습니다!');
+			next();
 		});
 	} else {
-		return res.status(checkToken.errorCode).json({ message: checkToken.message });
+		next();
+	}
+};
+
+exports.isMember = (req, res, next) => {
+	if (!req.user || !req.isLogged) {
+		return res.status(403).json({ message: '접근 권한이 없습니다. 회원만 접근 가능합니다!' });
+	}
+	if (req.user && req.isLogged) {
+		next();
 	}
 };
 
 exports.isAdmin = (req, res, next) => {
-	User.findOne({ email: req.user.email }).then((user) => {
-		if (!user) {
-			req.isAdmin = false
-			return res.status(404).json({ message: `가입된 회원이 아니거나 탈퇴한 회원입니다. (${req.user.email})` });
-		}
-
-		if (user.role !== 'admin') {
-			req.isAdmin = false
-			return res.status(403).json({ message: '관리자 페이지 접근 권한이 없습니다!' });
-		}
-
+	if (!req.user || !req.isLogged || !req.isAdmin) {
+		return res.status(403).json({ message: '접근 권한이 없습니다. 관리자만 접근 가능합니다!' });
+	}
+	if (req.user && req.isLogged && req.isAdmin) {
 		next();
-	}).catch((err) => {
-		return res.status(500).json({ error: err });
-	});
+	}
 };
