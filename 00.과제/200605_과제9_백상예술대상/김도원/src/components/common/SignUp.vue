@@ -80,7 +80,7 @@
 						console.log(res.data)
 					}
 				}).catch((err) => {
-					console.log(err)
+					console.error(`${err.response.status}: ${err.response.data.message}`)
 				})
 			}
 		}

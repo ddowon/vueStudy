@@ -175,7 +175,7 @@ export default {
 					item.winners = (res.data.length) ? res.data : []
 					this.setTimes(times)
 				}).catch((err) => {
-					console.log(err)
+					console.error(`${err.response.status}: ${err.response.data.message}`)
 				})
 			})
 
@@ -197,7 +197,7 @@ export default {
 			// 		console.log('회차 데이터가 없습니다.')
 			// 	}
 			// }).catch((err) => {
-			// 	console.log(err)
+			// 	console.error(`${err.response.status}: ${err.response.data.message}`)
 			// })
 		}
 	}

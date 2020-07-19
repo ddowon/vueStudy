@@ -108,7 +108,7 @@
 							item.prizes = res.data
 						}
 					}).catch((err) => {
-						console.log(err)
+						console.error(`${err.response.status}: ${err.response.data.message}`)
 					})
 				})
 			},
@@ -122,7 +122,7 @@
 							item.candidates = res.data
 						}
 					}).catch((err) => {
-						console.log(err)
+						console.error(`${err.response.status}: ${err.response.data.message}`)
 					})
 				})
 			},

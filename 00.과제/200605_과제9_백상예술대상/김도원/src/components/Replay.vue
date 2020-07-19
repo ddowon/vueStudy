@@ -76,7 +76,7 @@ export default {
 					this.setPageInformation(times, res.data.currentPage, res.data.hasNextPage)
 				}
 			}).catch((err) => {
-				console.log(err)
+				console.error(`${err.response.status}: ${err.response.data.message}`)
 			})
 		},
 		moreVodList() {

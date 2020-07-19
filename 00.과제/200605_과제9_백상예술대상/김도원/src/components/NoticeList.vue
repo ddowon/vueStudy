@@ -85,7 +85,7 @@
 						this.noticeInfo.list = res.data.itemsList
 					}
 				}).catch((err) => {
-					console.log(err)
+					console.error(`${err.response.status}: ${err.response.data.message}`)
 				})
 			},
 			chagePage(pageNum) {
