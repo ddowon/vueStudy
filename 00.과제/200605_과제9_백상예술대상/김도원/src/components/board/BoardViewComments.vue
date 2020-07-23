@@ -4,7 +4,10 @@
 			댓글이 0일 경우
 		-->
 		<!-- <h3 class="comment_count">댓글을 남겨 주세요.</h3> -->
-		<h3 class="comment_count">댓글 <strong>10</strong></h3>
+		<h3 class="comment_count">댓글 <strong>{{comments.length}}</strong></h3>
+		<div class="comment_refresh">
+			<button type="button" class="btn btn-comment_refresh"><span>댓글 새로고침</span></button>
+		</div>
 		<div class="comment_write">
 			<!--
 				이름, 비밀번호칸은 비회원일 때만 보여주세요.
@@ -33,21 +36,26 @@
 							비회원이 작성한 댓글은 무조건 삭제 버튼(+ 비밀번호 입력칸)이 있고,
 							회원이 작성한 댓글은 본인 댓글에만 삭제 버튼을 보여 주세요.
 						-->
-						<input name="comment_delete_password" type="password" class="ipt_keyword ipt_password" n4maxlength="50" placeholder="댓글의 비밀번호를 입력해 주세요." required="">
-						<button type="button" class="btn btn-delete active"><span>삭제</span></button>
+						<template>
+							<input name="comment_delete_password" type="password" ref="deletPasswordInput" v-model="deletePassword" class="ipt_keyword ipt_password" n4maxlength="50" placeholder="댓글의 비밀번호를 입력해 주세요." required="">
+							<button type="button" class="btn btn-delete active" @click="removeComments(comment.id)"><span>삭제</span></button>
+							<button type="button" class="btn btn-cancel" @click="removeDeleteInput(comment.id)"><span>취소</span></button>
+						</template>
+
 					</div>
 				</div>
 				<div class="comment_contents">
 					<p>{{ comment.contents }}</p>
 				</div>
 				<div class="comment_footer">
-					<button type="button" class="btn btn-upvote">좋아요<span>{{ comment.cnt.like }}</span></button>
-					<button type="button" class="btn btn-downvote">싫어요<span>{{ comment.cnt.dislike }}</span></button>
+					<button type="button" class="btn btn-upvote" @click="like(comment.id)">좋아요<span>{{ comment.cnt.like }}</span></button>
+					<button type="button" class="btn btn-downvote" @click="dislike(comment.id)">싫어요<span>{{ comment.cnt.dislike }}</span></button>
 				</div>
 			</li>
 		</ul>
 	</div>
 </template>
+
 
 <script>
 const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
@@ -61,7 +69,8 @@ export default {
 	data: () => ({
 		name: null,
 		password: null,
-		contents: null
+		contents: null,
+		deletePassword: null
 	}),
 	computed: {
 		// 자, 지금 도원님이 로그인/로그아웃부터 생각하느냐고 머리가 복잡해서 vuex를 먼저 작업하시는 거 같은데,
@@ -71,7 +80,7 @@ export default {
 
 		// 비회원으로 댓글 작성 -> 작성된 댓글의 출력 -> 회원으로 댓글 작성 고고고고고고
 
-		...mapGetters('user', [ 'isLogged', 'currentToken' ])
+		...mapGetters('user', [ 'isLogged', 'currentUser', 'currentToken' ])
 	},
 	watch: {
 	},
@@ -89,8 +98,23 @@ export default {
 				contents: this.contents
 			}
 			let headers = {
-				'x-access-token': null
+				'x-access-token': 'guest'
 			}
+			if (!this.isLogged) {
+				if (!this.name){
+					alert('이름을 입력해주세요.')
+					return false
+				}
+				if (!this.password){
+					alert('비밀번호를 입력해주세요.')
+					return false
+				}
+				if (!this.contents){
+					alert('댓글을 입력해주세요.')
+					return false
+				}
+			}
+
 			if (this.isLogged) {
 				// 키값에 -가 들어가니 아래처럼 변경했어요.
 				headers['x-access-token'] = this.currentToken
@@ -99,12 +123,11 @@ export default {
 				formData.password = this.password
 			}
 
-			console.log(headers)
-			console.log(formData)
+			console.log(this.pr_id)
 			this.axios.post(`${API_URI}/notice/${this.pr_id}/comment/add`, formData, { 
 				headers: headers })
 			.then((res) => {
-				console.log(res.data)
+				// console.log(res.data)
 				this.$emit('forceKeyUpdate')
 
 				// 블로그 글이랑은 좀 다른데요..
@@ -116,11 +139,66 @@ export default {
 				// 그러면 댓글이 작성되고 나면 mounted 또는 watch 이벤트를 타게 되거든요. 다시금?
 				// created도 타는지 확인해 봅시다.
 
-
+				// console.log(formData)
 
 				// this.$router.push({ name: 'notice_view', params: { 'id': this.pr_id } }).catch(() => {})
 			}).catch((err) => {
 				console.log(err)
+			})
+
+		},
+		removeComments(id) {
+			let formData = {
+				password : this.deletePassword
+			}
+			let headers = {
+				'x-access-token': 'guest'
+			}
+			
+			if (this.isLogged) {
+				headers['x-access-token'] = this.currentToken
+			}
+
+			this.axios.delete(`${API_URI}/notice/${this.pr_id}/comment/delete/${id}`, formData, { 
+				headers: headers })
+			.then((res) => {
+				console.log(res.data)
+			}).catch((err) => {
+				console.error(err.response.data.message)
+			})			
+		},
+		like(id) {
+			let headers = {
+				'x-access-token': 'guest'
+			}
+
+			if (this.isLogged) {
+				headers['x-access-token'] = this.currentToken
+			}
+			this.axios.put(`${API_URI}/notice/${this.pr_id}/comment/like/${id}`, null, {
+				headers: headers
+			})
+			.then((res) => {
+				this.$emit('forceKeyUpdate')
+			}).catch((err) => {
+				alert(err.response.data.message)
+			})
+		},
+		dislike(id) {
+			let headers = {
+				'x-access-token': 'guest'
+			}
+
+			if (this.isLogged) {
+				headers['x-access-token'] = this.currentToken
+			}
+			this.axios.put(`${API_URI}/notice/${this.pr_id}/comment/dislike/${id}`, null, {
+				headers: headers
+			})
+			.then((res) => {
+				this.$emit('forceKeyUpdate')
+			}).catch((err) => {
+				alert(err.response.data.message)
 			})
 		}
 	}

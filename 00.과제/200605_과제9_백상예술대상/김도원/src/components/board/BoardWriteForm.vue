@@ -13,7 +13,7 @@
 							<label for="post-name" class="ipt_label">이름</label>
 							<input id="post-name" name="name" type="text" class="ipt_keyword ipt_name"  v-model="name" n4maxlength="10" placeholder="이름을 입력해 주세요." required>
 							<label for="post-password" class="ipt_label">비밀번호</label>
-							<input id="post-password" name="password" type="password" class="ipt_keyword ipt_password" v-model="password" n4maxlength="50" placeholder="비밀번호를 입력해 주세요." required>
+							<input id="post-password" name="password" type="password" class="ipt_keyword ipt_password" v-model="password" autocomplete="new-password" n4maxlength="50" placeholder="비밀번호를 입력해 주세요." required>
 						</div>
 						<div class="ipt_wrap">
 							<label for="post-title" class="ipt_label">제목</label>
@@ -57,6 +57,7 @@ import { mapGetters, mapActions, mapState } from 'vuex'
 
 export default {
 	name: 'notice_add',
+	props: [ 'item' ],
 	components: {
 	},
 	data: () => ({
@@ -74,8 +75,14 @@ export default {
 		)
 	},
 	created() {
+		this.fetchItem()
 	},
 	methods: {
+		fetchItem() {
+			if (this.item) {
+				this.name = this.item.name
+			}
+		},
 		handleImages() {
 			console.log('파일첨부에서 뭔가 바꼈구나...?!')
 			this.images = this.$refs.boardImage.files[0]
@@ -99,10 +106,10 @@ export default {
 			this.axios.post(`${API_URI}/notice/add`, formData, {
 				headers: headers
 			}).then((res) => {
-				console.log(res.data)
 				this.$router.push({ name: 'notice_view', params: { id: res.data.id } })
+				console.log(res.data)
 			}).catch((err) => {
-				console.log(err)
+				alert(err.response.data.message)
 			})
 		}
 	}

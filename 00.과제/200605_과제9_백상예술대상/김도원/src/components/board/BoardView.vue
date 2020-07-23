@@ -21,23 +21,25 @@
 			이번 예제에서는 부모 게시글 id값과 route.params.id를 동일하게 설정해주었지만
 			db에서 보면 _id라고 각 데이터 document의 고유 _id가 있어요. 보여드릴게요.
 
-저게 실제 데이터의 고유 id값이구요, 저는 쉽게 데이터를 프론트에 내려주려고 라우트 id랑 게시글 id랑 일치시킨 거예요. ㅋㅋㅋㅋㅋㅋ 만약 저게 구현이 안 되어있으면, _id 고유 값을 사용해야 합니다. (이걸 auto increment by primary key라고 합니다.)
+			저게 실제 데이터의 고유 id값이구요, 저는 쉽게 데이터를 프론트에 내려주려고 라우트 id랑 게시글 id랑 일치시킨 거예요. ㅋㅋㅋㅋㅋㅋ 만약 저게 구현이 안 되어있으면, _id 고유 값을 사용해야 합니다. (이걸 auto increment by primary key라고 합니다.)
 
-http://localhost:8080/notice/view/12 이게 아니라
-http://localhost:8080/notice/view/5f01fa8ffcd78e5f04e251ae
+			http://localhost:8080/notice/view/12 이게 아니라
+			http://localhost:8080/notice/view/5f01fa8ffcd78e5f04e251ae
 
-근데 사용자가 보기 불편하니까 백단에서 새로운 게시글이 작성될 때마다
-직전 게시글 번호 +1을 해서 0부터 n까지 고유키를 자동 증가시켜주는 거예요. 이해되시면 동그라미 ㅇㅇㅇㅇ
-그럼 다 지운다.? ㅋㅋㅋㅋㅋㅋㅋㅋ 지워요? -->
+			근데 사용자가 보기 불편하니까 백단에서 새로운 게시글이 작성될 때마다
+			직전 게시글 번호 +1을 해서 0부터 n까지 고유키를 자동 증가시켜주는 거예요. 이해되시면 동그라미 ㅇㅇㅇㅇ
+			그럼 다 지운다.? ㅋㅋㅋㅋㅋㅋㅋㅋ 지워요? -->
 
+
+			<BoardViewFooter />
 			<BoardViewComments :pr_id="item.id" :comments="item.comments" :key="refreshKey" @forceKeyUpdate="changeRefreshKey" />
 		</template>
-		<BoardViewFooter />
 	</div>
 </template>
 
 <script>
 const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
+import { mapGetters, mapActions, mapState } from 'vuex'
 
 import BoardViewHeader from '@/components/board/BoardViewHeader.vue'
 import BoardViewContents from '@/components/board/BoardViewContents.vue'
@@ -64,6 +66,11 @@ export default {
 			immediate: true
 		}
 	},
+	computed: {
+		...mapGetters(
+			'user', [ 'currentToken', 'currentUser', 'isLogged' ]
+		)
+	},
 	created() {
 		this.changeRefreshKey()
 		this.fetchItemById(this.id)
@@ -79,13 +86,47 @@ export default {
 			// 도원님 공간
 			this.axios.get(`${API_URI}/${this.boardId}/${id}`)
 			.then((res) => {
-				console.log(res.data)
+				// console.log(res.data)
 				if (res.data) {
+
+					console.log(res.data.itemsList[0])
 					this.item = res.data.itemsList[0]
 				}
 			}).catch((err) => {
+				// console.log(err)
+			})
+		},
+		removeItem(id) {
+
+			if (!this.isLogged) {
+				return alert('로그인 해 주세요!')
+			}
+
+			let headers = {
+				'x-access-token': 'guest'
+			}
+			
+			if (this.isLogged) {
+				headers['x-access-token'] = this.currentToken
+			}
+
+			this.axios.delete(`${API_URI}/notice/delete/${id}`, {
+				headers: headers
+			})
+			.then((res) => {
+				console.log(res.data)
+				alert('삭제되었습니다.')
+				this.$router.push({ name: 'notice_list', params: { page: '1' }})
+			}).catch((err) => {
 				console.log(err)
 			})
+
+		},
+		updateItem(id) {
+			if (!this.isLogged) {
+				return alert('로그인 해 주세요!')
+			}
+			this.$router.push({ name: 'notice_update', params: { id: id } })
 		}
 	}
 }

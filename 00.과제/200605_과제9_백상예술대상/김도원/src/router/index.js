@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import axios from 'axios'
+import store from '@/store'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import Candidate from '@/views/Candidate.vue'
@@ -11,8 +13,11 @@ import NoticeList from '@/components/NoticeList.vue'
 import NoticeView from '@/components/NoticeView.vue'
 import NoticeAdd from '@/components/NoticeAdd.vue'
 import NoticeUpdate from '@/components/NoticeUpdate.vue'
+import user from '../store/modules/user'
 
 Vue.use(VueRouter)
+
+const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
 
 const routes = [
 	{
@@ -112,7 +117,7 @@ const routes = [
 				// path: '/notice/add' 와 동일
 				path: 'add',
 				name: 'notice_add',
-				meta: { title: '공지사항 글 쓰기' },
+				meta: { title: '공지사항 글 쓰기', requireAuth: true },
 				component: NoticeAdd
 			},
 			{
@@ -137,6 +142,50 @@ const router = new VueRouter({
 	base: process.env.BASE_URL,
 	linkActiveClass: 'on',
 	routes
+})
+
+router.beforeEach((to, from, next) => {
+
+	let token = localStorage.getItem('bs_token')
+	let isRequireAuth = to.matched.some((route) => {
+		return route.meta.requireAuth
+	})
+
+
+
+
+	//로그인 유지
+	if (token) {
+		axios.get(`${API_URI}/auth/check`, {
+			headers: {
+				'x-access-token': token
+			}
+		}).then((res) => {
+			store.dispatch('user/setUser', res.data)
+			
+		}).catch((err) => {
+			console.error(err)
+		})
+	}
+	
+	//관리자 페이지 접근 시
+	console.log(from)
+	if (isRequireAuth) {
+		if (!store.getters['user/isLogged']) {
+			alert('관리자만 접근 가능합니다.')
+			return false
+
+		} 
+		if (!store.getters['user/currentUser'].role === 'user') {
+			alert('관리자만 접근 가능합니다.')
+			return false
+		}
+		next()
+	} else { 
+		next()
+	}
+
+
 })
 
 // router.beforeEach((to, from, next) => {

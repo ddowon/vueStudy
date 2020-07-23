@@ -148,13 +148,22 @@ body {min-height: 100%;}
 .board_write .ipt_contents {box-sizing:border-box;width:100%;height:100%;padding:22px;border:0;outline:0;font-size:18px;line-height:28px;font-family:"Noto Sans KR","Malgun Gothic","맑은 고딕",tahoma,sans-serif;font-weight:300;letter-spacing:-0.5px;color:#454545}
 .board_write .bw_editor {background-color:#ffffff;height:450px;box-sizing:border-box;border:1px solid #aaa}
 .board_write a.box-btn.primary {margin-left:2px;color:#fff;background-color:#f77b25;border-color:#f77b25}
+
+
+
 /* 팝업 */
 .banner-layerpopup.on.about {margin-left:-625px; padding:8px 8px 40px; display:block; width:456px; height:542px; color:#fff;background:#000;}
 .about .popup-check span,
 .about .popup-close button span {color:#fff;}
 
 /* 댓글 */
-.comment_wrap {margin-top:40px;}
+.comment_wrap {position:relative;margin-top:50px}
+.comment_wrap .comment_refresh {position:absolute;top:-10px;right:0}
+.comment_wrap .comment_refresh .btn {overflow:hidden;padding:5px 9px;text-align:left;text-indent:-9999px;font-size:0;border:1px solid #ddd;transition:background 400ms ease}
+.comment_wrap .comment_refresh .btn:hover, .comment_wrap .comment_refresh .btn:focus {background-color:#f1f1f1}
+.comment_wrap .comment_refresh .btn:before {position:absolute;top:0;left:10px;content:'';display:block;background:url(https://i.imgur.com/SAMM6j6.png) no-repeat 0 0}
+.comment_wrap .comment_refresh .btn span {display:block;text-indent:0;color:#666;font-size:14px;font-weight:300;padding-left:20px}
+.comment_wrap .comment_refresh .btn.btn-comment_refresh:before {top:8px;width:14px;height:17px;background-position:-144px -39px}
 .comment_wrap .comment_count {padding-bottom:4px;font-size:20px;margin-bottom:25px;border-bottom:2px solid #555}
 .comment_wrap .comment_count > strong {margin-left:2px;font-size:18px;color:#f77b25}
 .comment_wrap .comment_write:after {position:relative;content:'';display:block;clear:both}
@@ -166,9 +175,11 @@ body {min-height: 100%;}
 .comment_wrap .ipt_name, .comment_wrap .ipt_password {width:180px;margin-right:20px}
 .comment_wrap .ipt_title {width:600px}
 .comment_wrap .ipt_contents {box-sizing:border-box;width:calc(100% - 160px);height:120px;padding:15px 22px;border:0;outline:0;font-size:15px;line-height:1.4;font-weight:300;letter-spacing:-0.5px;color:#454545;border:1px solid #ddd;transition:border 400ms ease}
+.comment_wrap .ipt_contents.update {width:calc(100%);margin-top:3px}
 .comment_wrap .ipt_contents:focus {border-color:#bbb}
 .comment_wrap .ipt_keyword,
 .comment_wrap .ipt_contents,
+.comment_wrap .comment_refresh button,
 .comment_wrap .comment_list .comment_contents,
 .comment_wrap .comment_list button,
 .comment_wrap a.box-btn {font-family:"Noto Sans KR","Malgun Gothic","맑은 고딕",tahoma,sans-serif;outline:0}
@@ -177,12 +188,18 @@ body {min-height: 100%;}
 .comment_wrap a.box-btn.primary:focus {background-color:#005124;border-color:#005124}
 .comment_wrap .comment_list .ipt_password {width:220px;height:34px;margin-right:2px;line-height:34px}
 .comment_wrap .comment_list .btn {position:relative;overflow:hidden;margin-right:5px;padding:6px 10px;text-align:left;text-indent:-9999px;font-size:0;border:1px solid #ddd;transition:background 400ms ease}
+.comment_wrap .comment_list .btn:last-child {margin-right:0}
 .comment_wrap .comment_list .btn:hover, .comment_wrap .comment_list .btn:focus {background-color:#f1f1f1}
 .comment_wrap .comment_list .btn:before {position:absolute;top:0;left:10px;content:'';display:block;background:url(https://i.imgur.com/SAMM6j6.png) no-repeat 0 0}
 .comment_wrap .comment_list .btn span {display:block;text-indent:0;color:#666;font-size:14px;font-weight:300;padding-left:20px}
+.comment_wrap .comment_list .btn.btn-update span,
+.comment_wrap .comment_list .btn.btn-delete span,
+.comment_wrap .comment_list .btn.btn-cancel span {padding-left:0}
+.comment_wrap .comment_list .btn.btn-update.active {border:1px solid #222;background-color:#222}
+.comment_wrap .comment_list .btn.btn-update.active > span {color:#fff}
 .comment_wrap .comment_list .btn.btn-delete.active {border:1px solid #222;background-color:#222}
 .comment_wrap .comment_list .btn.btn-delete.active > span {color:#fff}
-.comment_wrap .comment_list .btn.btn-delete:before {top:8px;width:18px;height:18px;background-position:-124px -39px}
+.comment_wrap .comment_list .btn.btn-delete:before {top:8px;width:18px;height:18px;background:none}
 .comment_wrap .comment_list .btn.btn-upvote:before {top:8px;width:17px;height:16px;background-position:-125px -267px}
 .comment_wrap .comment_list .btn.btn-downvote:before {top:9px;width:17px;height:16px;background-position:-143px -267px}
 .comment_wrap .comment_list li {padding:20px 22px;border-bottom:1px solid #ddd}
@@ -193,3 +210,17 @@ body {min-height: 100%;}
 .comment_wrap .comment_list .comment_header .btns {float:right}
 .comment_wrap .comment_list .comment_contents {margin-bottom:10px;font-size:16px;line-height:1.4;letter-spacing:-0.5px;color:#454545;word-break:break-word}
 .comment_wrap .comment_list .comment_footer {margin-top:16px;font-size:0;line-height:0}
+
+/* 추천, 비추천, 글 수정, 글 삭제 */
+.bv_footer .button {margin:-10px 0 20px 0;text-align:right}
+.bv_footer .button a.box-btn {width:70px;margin-left:5px}
+.bv_footer .button a.box-btn span {font-size:15px;line-height:34px}
+.bv_footer .button a.box-btn span > span {font-size:16px;font-weight:500;margin-left:5px}
+.bv_footer .button a.box-btn.btn-like span > span {color:#f77b25}
+.bv_footer .button a.box-btn.btn-dislike span > span {color:#0082eb}
+.bv_footer .button.button_center {margin:0 0 30px 0;padding-left:20px;text-align:center}
+.bv_footer .button.button_center a.box-btn > span {padding:24px 0 0}
+.bv_footer .button.button_center a.box-btn {position:relative;width:82px}
+.bv_footer .button.button_center a.box-btn:before {position:absolute;top:0;left:50%;margin-left:-8.5px;content:'';display:block;background:url(https://i.imgur.com/SAMM6j6.png) no-repeat 0 0}
+.bv_footer .button.button_center a.box-btn.btn-like:before {top:10px;width:17px;height:16px;background-position:-125px -267px}
+.bv_footer .button.button_center a.box-btn.btn-dislike:before {top:11px;width:17px;height:16px;background-position:-143px -267px}

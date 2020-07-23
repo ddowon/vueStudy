@@ -77,7 +77,6 @@
 				})
 				.then((res) => {
 					if (res.data) {
-						console.log(res.data)
 					}
 				}).catch((err) => {
 					console.error(`${err.response.status}: ${err.response.data.message}`)
