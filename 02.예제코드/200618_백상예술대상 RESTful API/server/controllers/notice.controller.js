@@ -51,7 +51,7 @@ exports.create = (req, res, next) => {
 	});
 
 	notice.save().then((result) => {
-		res.status(201).json({ message: `공지사항 게시판 글 작성 완료!` });
+		res.status(201).json({ message: `공지사항 게시판 글 작성 완료! (${result})`, id: result.id });
 	}).catch((err) => {
 		res.status(500).json({ error: err });
 	});
@@ -99,16 +99,28 @@ exports.findById = (req, res, next) => {
 				}
 			}
 		],
+		lean: true,
 		page: req.query.page || 1,
 		limit: req.query.size || 10,
 		select: '-__v',
 		customLabels: myCustomLabels
 	};
-	Notice.paginate({ 'id': req.params.id }, options).then((result) => {
+	Notice.paginate({ id: req.params.id }, options).then((result) => {
 		if (!result || !result.itemsList.length) {
 			return res.status(404).json({ message: `해당 게시글을 찾을 수 없습니다. (${req.params.id}번)` });
 		} else {
-			res.status(200).json(result);
+			result.itemsList[0].id = req.params.id;
+			Notice.find({ _id: { $lt: result.itemsList[0]._id } }).lean().select('id title cnt -_id').limit(1).then((result_prev) => {
+				result.itemsList[0].prevItem = (result_prev[0]) ? result_prev[0] : null;
+				Notice.find({ _id: { $gt: result.itemsList[0]._id } }).lean().select('id title cnt -_id').limit(1).then((result_next) => {
+					result.itemsList[0].nextItem = (result_next[0]) ? result_next[0] : null;
+					res.status(200).json(result);
+				}).catch((err) => {
+					return res.status(500).json({ error: err });
+				});
+			}).catch((err) => {
+				return res.status(500).json({ error: err });
+			});
 		}
 	}).catch((err) => {
 		if (err.kind === 'ObjectId') {
