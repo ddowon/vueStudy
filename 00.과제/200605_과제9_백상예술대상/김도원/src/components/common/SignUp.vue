@@ -1,9 +1,9 @@
 <template>
-	<div class="dim-wrap" v-show="openSignUp" @click.self="closeSignUp">
+	<div class="dim-wrap" v-show="openSignUp" @click.self="setSignUp(false)">
 		<div class="dim-con sign-form-wrap">
 			<form class="sign-form">
 				<h3 class="form-title"><span>회원가입</span>
-				<button type="button" @click.prevent="closeSignUp">×</button></h3>
+				<button type="button" @click.prevent="setSignUp(false)">×</button></h3>
 				<div class="form-group">
 					<div class="callout -info">
 						<h4>지금 가입하시면 혜택을 드려요!</h4>
@@ -44,7 +44,7 @@
 
 <script>
 const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	props: {
@@ -55,7 +55,7 @@ export default {
 		password: null
 	}),
 	computed: {
-		...mapState(
+		...mapGetters(
 			'ui', [ 'openSignUp' ]
 		)
 	},
@@ -63,14 +63,15 @@ export default {
 	},
 	methods: {
 		...mapActions(
-			'ui', [ 'closeSignUp', 'openSignIn' ]
+			'ui', [ 'setSignIn', 'setSignUp' ]
 		),
 		openSignInModal() {
-			this.closeSignUp()
-			this.openSignIn()
+			this.setSignUp(false)
+			this.setSignIn()
 		},
 		// signUp 메서드를 Vuex Action으로 옮겨 주세요.
 		signUp() {
+			this.$store.dispatch('auth/signUp', { email: this.email, password: this.password })
 			this.axios.post(`${API_URI}/auth/signup`, {
 				email: this.email,
 				name: this.name,
