@@ -11,7 +11,7 @@
 
 		<router-link v-for="item in tabList"
 			:key="item.id"
-			:to="{ name: tabOptions.routerName, params: { [tabOptions.routerParamsName]: item.id } }"
+			:to="{ name: tabOptions.routeName, params: { [tabOptions.routeParamsName]: item.id } }"
 			:class="[ 'box-btn', item.id ]">
 			<span>{{ item.title }}</span>
 		</router-link>

@@ -26,7 +26,7 @@
 				<div class="comment_header">
 					<div class="info">
 						<span class="nickname">{{ comment.display_name }}</span>
-						<span class="date">{{ comment.created_at }}</span>
+						<span class="date">{{ formatDate(comment.created_at, 'YY-MM-DD HH:mm') }}</span>
 					</div>
 					<div class="btns">
 						<!--
@@ -199,6 +199,16 @@ export default {
 			}).catch((err) => {
 				alert(err.response.data.message)
 			})
+		},
+		formatDate(time, displayFormat = 'YYYY-MM-DD') {
+			// BoardList.vue에도 formatDate 메서드를 중복 사용하는데, 어떻게 하면 코드를 한 번만 호출할 수 있을까요?
+			let created_at = this.$moment(time)
+			let compareDate = this.$moment().subtract(1, 'days')
+
+			if (created_at.isSameOrAfter(compareDate, 'day')) {
+				return created_at.fromNow()
+			}
+			return created_at.format(displayFormat)
 		}
 	}
 }

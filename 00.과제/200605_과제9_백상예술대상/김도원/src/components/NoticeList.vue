@@ -34,7 +34,7 @@ export default {
 	data: () => ({
 		noticeInfo: {
 			title: '공지사항',
-			routerName: 'notice',
+			routeName: 'notice',
 			itemPerPage: 5,
 			pageRange: 10,
 			totalPage: null,
@@ -89,7 +89,7 @@ export default {
 		},
 		chagePage(pageNum) {
 			this.$router.push({
-				name: `${this.noticeInfo.routerName}_list`,
+				name: `${this.noticeInfo.routeName}_list`,
 				params: { 'page': pageNum }
 			})
 		}

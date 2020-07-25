@@ -28,14 +28,13 @@ export default {
 		PageTab, ReplayList, ReplayMore
 	},
 	data: () => ({
-		routerName: 'replay', 
 		tabList: [
 			{ title: '56회 백상', id: '56' },
 			{ title: '55회 백상', id: '55' }
 		],
 		tabOptions: {
-			routerName: 'replay_times',
-			routerParamsName: 'replay_times',
+			routeName: 'replay_times',
+			routeParamsName: 'replay_times',
 			moreLinks: [
 				{ href: 'http://tv.jtbc.joins.com/clip/pr10010312/pm10024332', title: '영상 더보기', target: '_blank' }
 			]

@@ -44,8 +44,8 @@ export default {
 		currentDivision: null,
 		currentPrize: null,
 		tabOptions: {
-			routerName: 'candidate_division',
-			routerParamsName: 'division'
+			routeName: 'candidate_division',
+			routeParamsName: 'division'
 		},
 	}),
 	
