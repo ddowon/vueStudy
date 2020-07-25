@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import axios from 'axios'
 import store from '@/store'
+import { appLocalStorage } from '@/utils/storage'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import Candidate from '@/views/Candidate.vue'
@@ -13,11 +13,9 @@ import NoticeList from '@/components/NoticeList.vue'
 import NoticeView from '@/components/NoticeView.vue'
 import NoticeAdd from '@/components/NoticeAdd.vue'
 import NoticeUpdate from '@/components/NoticeUpdate.vue'
-import user from '../store/modules/user'
+import Error404 from '@/components/common/Error404.vue'
 
 Vue.use(VueRouter)
-
-const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
 
 const routes = [
 	{
@@ -131,9 +129,14 @@ const routes = [
 		]
 	},
 	{
-		// 페이지가 없을 경우 메인 화면으로 이동하도록
+		path: '/404',
+		name: '404',
+		component: Error404
+	},
+	{
+		// 페이지가 없을 경우 404 화면으로 이동하도록
 		path: '*',
-		redirect: '/'
+		redirect: { name: '404' }
 	}
 ]
 
@@ -145,38 +148,23 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-
-	let token = localStorage.getItem('bs_token')
 	let isRequireAuth = to.matched.some((route) => {
 		return route.meta.requireAuth
 	})
 
-
-
-
-	//로그인 유지
-	if (token) {
-		axios.get(`${API_URI}/auth/check`, {
-			headers: {
-				'x-access-token': token
-			}
-		}).then((res) => {
-			store.dispatch('user/setUser', res.data)
-			
-		}).catch((err) => {
-			console.error(err)
-		})
+	// 로그인 유지
+	let token = appLocalStorage.getItem('bs_token')
+	if (token && !store.getters['auth/isLogged']) {
+		store.dispatch('auth/checkAuth', token)
 	}
-	
-	//관리자 페이지 접근 시
-	console.log(from)
+
+	// 관리자 페이지 접근 시
 	if (isRequireAuth) {
-		if (!store.getters['user/isLogged']) {
+		if (!store.getters['auth/isLogged']) {
 			alert('관리자만 접근 가능합니다.')
 			return false
-
 		} 
-		if (!store.getters['user/currentUser'].role === 'user') {
+		if (!store.getters['auth/currentUser'].role === 'user') {
 			alert('관리자만 접근 가능합니다.')
 			return false
 		}
@@ -184,27 +172,6 @@ router.beforeEach((to, from, next) => {
 	} else { 
 		next()
 	}
-
-
 })
-
-// router.beforeEach((to, from, next) => {
-// 	let isRequireAuth = to.matched.some((route) => {
-// 		return route.meta.requireAuth
-// 	})
-// 	if (isRequireAuth) {
-// 		firebase.auth().onAuthStateChanged(user => {
-// 			if (user) {
-// 				Store.dispatch('setUser', user)
-// 				next()
-// 			} else {
-// 				alert(`관리자만 접근 가능한 페이지입니다.\n로그인 해 주세요!`)
-// 				next({ path: '/login' })
-// 			}
-// 		})
-// 	} else {
-// 		next()
-// 	}
-// })
 
 export default router
