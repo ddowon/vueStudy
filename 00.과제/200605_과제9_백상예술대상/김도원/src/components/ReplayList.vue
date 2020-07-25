@@ -24,6 +24,7 @@
 
 <script>
 import { Fragment } from 'vue-fragment'
+
 import VodPop from '@/components/VodPop.vue'
 
 export default {

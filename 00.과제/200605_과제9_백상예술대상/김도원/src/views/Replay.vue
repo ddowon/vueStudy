@@ -3,12 +3,12 @@
 </template>
 
 <script>
-	import Replay from '@/components/Replay.vue'
+import Replay from '@/components/Replay.vue'
 
-	export default {
-		name: 'replay',
-		components: {
-			Replay
-		}
+export default {
+	name: 'replay',
+	components: {
+		Replay
 	}
+}
 </script>

@@ -15,35 +15,35 @@
 </template>
 
 <script>
-	export default {
-		props: [ 'isPopShowing', 'item' ],
-		watch: {
-			isPopShowing: {
-				handler(newVal, oldVal) {
-					if (newVal) {
-						setTimeout(() => {
-							this.playVideo()
-						},300)
-					}
+export default {
+	props: [ 'isPopShowing', 'item' ],
+	watch: {
+		isPopShowing: {
+			handler(newVal, oldVal) {
+				if (newVal) {
+					setTimeout(() => {
+						this.playVideo()
+					},300)
 				}
 			}
+		}
+	},
+	computed: {
+		player() {
+			return this.$refs.youtube.player
+		}
+	},
+	methods: {
+		playVideo() {
+			this.player.playVideo()
 		},
-		computed: {
-			player() {
-				return this.$refs.youtube.player
-			}
+		stopVideo() {
+			this.player.stopVideo()
 		},
-		methods: {
-			playVideo() {
-				this.player.playVideo()
-			},
-			stopVideo() {
-				this.player.stopVideo()
-			},
-			closePop() {
-				this.$emit('closePop')
-				this.stopVideo()
-			}
+		closePop() {
+			this.$emit('closePop')
+			this.stopVideo()
 		}
 	}
+}
 </script>

@@ -24,11 +24,12 @@
 </template>
 
 <script>
-	import { Fragment } from 'vue-fragment'
-	export default {
-		name: 'visual',
-		components: {
-			Fragment
-		}
+import { Fragment } from 'vue-fragment'
+
+export default {
+	name: 'visual',
+	components: {
+		Fragment
 	}
+}
 </script>

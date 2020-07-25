@@ -22,6 +22,7 @@
 
 <script>
 import FeaturedWinner from '@/components/FeaturedWinner.vue'
+
 export default {
 	props: [ 'winnerList' ],
 	components: {

@@ -8,23 +8,23 @@
 	</div>
 </template>
 <script>
-	import Header from '@/components/common/Header.vue'
-	import Footer from '@/components/common/Footer.vue'
-	import SignIn from '@/components/common/SignIn.vue'
-	import SignUp from '@/components/common/SignUp.vue'
+import Header from '@/components/common/Header.vue'
+import Footer from '@/components/common/Footer.vue'
+import SignIn from '@/components/common/SignIn.vue'
+import SignUp from '@/components/common/SignUp.vue'
 
-	export default {
-		name: 'app',
-		components: {
-			Header, Footer, SignIn, SignUp
-		},
-		computed: {
-			classObject() {
-				return {
-					'main-page': this.$route.name === 'home',
-					'sub-page': this.$route.name !== 'home'
-				}
+export default {
+	name: 'app',
+	components: {
+		Header, Footer, SignIn, SignUp
+	},
+	computed: {
+		classObject() {
+			return {
+				'main-page': this.$route.name === 'home',
+				'sub-page': this.$route.name !== 'home'
 			}
 		}
 	}
+}
 </script>

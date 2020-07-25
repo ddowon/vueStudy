@@ -9,6 +9,7 @@
 
 <script>
 import { Fragment } from 'vue-fragment'
+
 export default {
 	props: [ 'item' ],
 	components: {

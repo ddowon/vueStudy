@@ -3,12 +3,12 @@
 </template>
 
 <script>
-	import Intro from '@/components/Intro.vue'
+import Intro from '@/components/Intro.vue'
 
-	export default {
-		name: 'intro',
-		components: {
-			Intro
-		}
+export default {
+	name: 'intro',
+	components: {
+		Intro
 	}
+}
 </script>

@@ -14,21 +14,22 @@
 </template>
 
 <script>
-	import { mapGetters, mapActions } from 'vuex'
-	export default {
-		name: 'headerAside',
-		computed: {
-			...mapGetters(
-				'user', [ 'currentUser', 'isLogged' ]
-			)
-		},
-		methods: {
-			...mapActions(
-				'ui', [ 'openSignUp', 'openSignIn' ]
-			),
-			...mapActions(
-				'user', [ 'signOut' ]
-			)
-		}
+import { mapGetters, mapActions } from 'vuex'
+
+export default {
+	name: 'headerAside',
+	computed: {
+		...mapGetters(
+			'user', [ 'currentUser', 'isLogged' ]
+		)
+	},
+	methods: {
+		...mapActions(
+			'ui', [ 'openSignUp', 'openSignIn' ]
+		),
+		...mapActions(
+			'user', [ 'signOut' ]
+		)
 	}
+}
 </script>

@@ -7,7 +7,8 @@
 </template>
 
 <script> 
-import BoardWriteForm from '@/components/board/BoardWriteForm'
+import BoardWriteForm from '@/components/board/BoardWriteForm.vue'
+
 export default {
 	components: {
 		BoardWriteForm

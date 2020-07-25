@@ -39,37 +39,37 @@
 </template>
 
 <script>
-	const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
-	import { mapGetters, mapActions, mapState } from 'vuex'
+const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
+import { mapGetters, mapActions, mapState } from 'vuex'
 
-	export default {
-		props: {
+export default {
+	props: {
+	},
+	data: () => ({
+		email: null,
+		password: null,
+		isLogged: false
+	}),
+	computed: {
+		...mapState(
+			'ui', [ 'openSignIn' ]
+		)
+	},
+	mounted() {
+	},
+	methods: {
+		...mapActions(
+			'ui', [ 'closeSignIn', 'openSignUp' ]
+		),
+		openSignUpModal() {
+			this.closeSignIn()
+			this.openSignUp()
 		},
-		data: () => ({
-			email: null,
-			password: null,
-			isLogged: false
-		}),
-		computed: {
-			...mapState(
-				'ui', [ 'openSignIn' ]
-			)
-		},
-		mounted() {
-		},
-		methods: {
-			...mapActions(
-				'ui', [ 'closeSignIn', 'openSignUp' ]
-			),
-			openSignUpModal() {
-				this.closeSignIn()
-				this.openSignUp()
-			},
-			signIn() {
-				this.$store.dispatch('user/signIn', { email: this.email, password: this.password })
-			}
+		signIn() {
+			this.$store.dispatch('user/signIn', { email: this.email, password: this.password })
 		}
 	}
+}
 </script>
 <style>
 	/* 회원가입, 로그인 모달창 */

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-	export default {
-		name: 'headerNav'
-	}
+export default {
+	name: 'headerNav'
+}
 </script>

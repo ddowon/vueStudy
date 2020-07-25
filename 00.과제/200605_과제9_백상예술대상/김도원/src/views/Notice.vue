@@ -24,7 +24,7 @@
 </template>
 
 <script>
-	export default {
-		name: 'notice'
-	}
+export default {
+	name: 'notice'
+}
 </script>

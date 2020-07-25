@@ -54,16 +54,12 @@
 				<a class="youtube" href="https://www.youtube.com/channel/UCVXN28NHfphVQrdtjooc33g"
 					target="_blank"><span>유튜브</span></a>
 			</div><!-- .share -->
-
-
-			<!-- .banner -->
-
 		</div><!-- .container-inner -->
 	</div><!-- .notice-wrap -->
 </template>
 
 <script>
-	export default {
-		name: 'latestNotice'
-	}
+export default {
+	name: 'latestNotice'
+}
 </script>

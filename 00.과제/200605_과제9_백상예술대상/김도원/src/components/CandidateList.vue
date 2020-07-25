@@ -20,18 +20,18 @@
 </template>
 
 <script>
-	export default {
-		props: [ 'currentTab', 'currentPrize' ],
-		computed: {
-			// 아래의 candidateList computed는 추후 Vuex의 getters에서 사용
-			// state에서 사용해도 되지만, 어떤 값을 '필터링'해서 return 값이 나오는 경우라면 getters가 더 나은 방법
-			candidateList() {
-				if (this.currentTab) {
-					return this.currentTab.candidates.filter((item) => {
-						return item.PRIZE_CD === this.currentPrize
-					})
-				}
+export default {
+	props: [ 'currentTab', 'currentPrize' ],
+	computed: {
+		// 아래의 candidateList computed는 추후 Vuex의 getters에서 사용
+		// state에서 사용해도 되지만, 어떤 값을 '필터링'해서 return 값이 나오는 경우라면 getters가 더 나은 방법
+		candidateList() {
+			if (this.currentTab) {
+				return this.currentTab.candidates.filter((item) => {
+					return item.PRIZE_CD === this.currentPrize
+				})
 			}
 		}
 	}
+}
 </script>

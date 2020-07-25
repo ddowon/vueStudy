@@ -14,12 +14,12 @@
 </template>
 
 <script>
-	export default {
-		props: [ 'prizeList', 'currentPrize' ],
-		methods: {
-			changePrize(cd) {
-				this.$emit('changePrize', cd)
-			}
+export default {
+	props: [ 'prizeList', 'currentPrize' ],
+	methods: {
+		changePrize(cd) {
+			this.$emit('changePrize', cd)
 		}
 	}
+}
 </script>

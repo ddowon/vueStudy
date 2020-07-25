@@ -31,6 +31,7 @@
 <script>
 const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
 import { mapGetters } from 'vuex'
+
 export default {
 	props: [ 'item' ],
 	components: {

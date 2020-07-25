@@ -43,47 +43,48 @@
 </template>
 
 <script>
-	const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
-	import { mapGetters, mapActions, mapState } from 'vuex'
+const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
+import { mapGetters, mapActions, mapState } from 'vuex'
 
-	export default {
-		props: {
+export default {
+	props: {
+	},
+	data: () => ({
+		email: null,
+		name: null,
+		password: null
+	}),
+	computed: {
+		...mapState(
+			'ui', [ 'openSignUp' ]
+		)
+	},
+	mounted() {
+	},
+	methods: {
+		...mapActions(
+			'ui', [ 'closeSignUp', 'openSignIn' ]
+		),
+		openSignInModal() {
+			this.closeSignUp()
+			this.openSignIn()
 		},
-		data: () => ({
-			email: null,
-			name: null,
-			password: null
-		}),
-		computed: {
-			...mapState(
-				'ui', [ 'openSignUp' ]
-			)
-		},
-		mounted() {
-		},
-		methods: {
-			...mapActions(
-				'ui', [ 'closeSignUp', 'openSignIn' ]
-			),
-			openSignInModal() {
-				this.closeSignUp()
-				this.openSignIn()
-			},
-			signUp() {
-				this.axios.post(`${API_URI}/auth/signup`, {
-					email: this.email,
-					name: this.name,
-					password: this.password
-				})
-				.then((res) => {
-					if (res.data) {
-					}
-				}).catch((err) => {
-					console.error(`${err.response.status}: ${err.response.data.message}`)
-				})
-			}
+		// signUp 메서드를 Vuex Action으로 옮겨 주세요.
+		signUp() {
+			this.axios.post(`${API_URI}/auth/signup`, {
+				email: this.email,
+				name: this.name,
+				password: this.password
+			})
+			.then((res) => {
+				if (res.data) {
+				}
+			}).catch((err) => {
+				console.error(`${err.response.status}: ${err.response.data.message}`)
+			})
 		}
 	}
+}
 </script>
 <style>
 	/* 회원가입, 로그인 모달창 */

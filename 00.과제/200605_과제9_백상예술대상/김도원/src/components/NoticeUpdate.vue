@@ -10,7 +10,8 @@
 const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HTTPS_API_URI : process.env.VUE_APP_API_URI
 import { mapGetters, mapActions, mapState } from 'vuex'
 
-import BoardWriteForm from '@/components/board/BoardWriteForm'
+import BoardWriteForm from '@/components/board/BoardWriteForm.vue'
+
 export default {
 	props: [ 'id' ],
 	components: {
