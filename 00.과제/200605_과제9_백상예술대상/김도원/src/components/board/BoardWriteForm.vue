@@ -71,7 +71,7 @@ export default {
 	},
 	computed: {
 		...mapGetters(
-			'user', [ 'currentToken', 'currentUser', 'isLogged' ]
+			'auth', [ 'token', 'currentUser', 'isLogged' ]
 		)
 	},
 	created() {
@@ -100,7 +100,7 @@ export default {
 
 			const headers = {
 				'Content-Type': 'multipart/form-data',
-				'x-access-token': this.currentToken
+				'x-access-token': this.token
 			}
 
 			this.axios.post(`${API_URI}/notice/add`, formData, {

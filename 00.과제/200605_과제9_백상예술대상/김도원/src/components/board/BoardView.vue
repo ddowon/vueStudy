@@ -27,8 +27,7 @@
 			http://localhost:8080/notice/view/5f01fa8ffcd78e5f04e251ae
 
 			근데 사용자가 보기 불편하니까 백단에서 새로운 게시글이 작성될 때마다
-			직전 게시글 번호 +1을 해서 0부터 n까지 고유키를 자동 증가시켜주는 거예요. 이해되시면 동그라미 ㅇㅇㅇㅇ
-			그럼 다 지운다.? ㅋㅋㅋㅋㅋㅋㅋㅋ 지워요? -->
+			직전 게시글 번호 +1을 해서 0부터 n까지 고유키를 자동 증가시켜주는 거예요. -->
 
 
 			<BoardViewFooter />
@@ -68,7 +67,7 @@ export default {
 	},
 	computed: {
 		...mapGetters(
-			'user', [ 'currentToken', 'currentUser', 'isLogged' ]
+			'auth', [ 'token', 'currentUser', 'isLogged' ]
 		)
 	},
 	created() {
@@ -107,7 +106,7 @@ export default {
 			}
 			
 			if (this.isLogged) {
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			}
 
 			this.axios.delete(`${API_URI}/notice/delete/${id}`, {

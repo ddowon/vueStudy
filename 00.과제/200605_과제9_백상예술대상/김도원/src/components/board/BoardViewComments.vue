@@ -79,7 +79,7 @@ export default {
 
 		// 비회원으로 댓글 작성 -> 작성된 댓글의 출력 -> 회원으로 댓글 작성 고고고고고고
 
-		...mapGetters('user', [ 'isLogged', 'currentUser', 'currentToken' ])
+		...mapGetters('auth', [ 'isLogged', 'currentUser', 'token' ])
 	},
 	watch: {
 	},
@@ -91,7 +91,7 @@ export default {
 		},
 		addComments() {
 			// isLogged는 vuex에서 가져옵니다!
-			// currentToken도 vuex에서 가져옵니다!
+			// token도 vuex에서 가져옵니다!
 			// const는 수정을 할 수 없으니 let을 씁니다.
 			let formData = {
 				contents: this.contents
@@ -116,7 +116,7 @@ export default {
 
 			if (this.isLogged) {
 				// 키값에 -가 들어가니 아래처럼 변경했어요.
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			} else {
 				formData.name = this.name
 				formData.password = this.password
@@ -155,7 +155,7 @@ export default {
 			}
 			
 			if (this.isLogged) {
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			}
 
 			this.axios.delete(`${API_URI}/notice/${this.pr_id}/comment/delete/${id}`, formData, { 
@@ -172,7 +172,7 @@ export default {
 			}
 
 			if (this.isLogged) {
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			}
 			this.axios.put(`${API_URI}/notice/${this.pr_id}/comment/like/${id}`, null, {
 				headers: headers
@@ -189,7 +189,7 @@ export default {
 			}
 
 			if (this.isLogged) {
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			}
 			this.axios.put(`${API_URI}/notice/${this.pr_id}/comment/dislike/${id}`, null, {
 				headers: headers

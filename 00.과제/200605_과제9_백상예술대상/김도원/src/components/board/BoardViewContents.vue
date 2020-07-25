@@ -39,7 +39,7 @@ export default {
 	data: () => ({
 	}),
 	computed: {
-		...mapGetters('user', [ 'isLogged', 'currentToken' ])
+		...mapGetters('auth', [ 'isLogged', 'token' ])
 	},
 	watch: {
 	},
@@ -57,7 +57,7 @@ export default {
 			}
 			console.table(this.item)
 			if (this.isLogged) {
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			}
 			this.axios.put(`${API_URI}/notice/like/${id}`, null, {
 				headers: headers
@@ -75,7 +75,7 @@ export default {
 			}
 
 			if (this.isLogged) {
-				headers['x-access-token'] = this.currentToken
+				headers['x-access-token'] = this.token
 			}
 			this.axios.put(`${API_URI}/notice/dislike/${id}`, null, {
 				headers: headers
