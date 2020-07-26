@@ -18,7 +18,9 @@
 				</div><!-- .list -->
 			</div><!-- .wrap -->
 			<div class="more">
-				<a class="box-btn" href="/replay"><span>영상 더보기</span></a>
+				<router-link :to="{ name: 'replay' }" class="box-btn">
+					<span>영상 더보기</span>
+				</router-link>
 			</div><!-- .more -->
 			<VodPop v-show="isPopShowing" :item="currentVodItem" :isPopShowing="isPopShowing" @closePop="closePop" />
 		</div><!-- .container-inner -->

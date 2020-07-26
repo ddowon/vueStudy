@@ -13,8 +13,8 @@
 			<div class="bv_footer">
 				<template>
 					<div class="button button_center">
-						<a href="#" class="box-btn btn-like" @click="like(item.id)"><span>추천<span>{{item.cnt.like}}</span></span></a>
-						<a href="#" class="box-btn btn-dislike" @click="dislike(item.id)"><span>비추천<span>{{Number(item.cnt.dislike)}}</span></span></a>
+						<a href="#" class="box-btn btn-like" @click.prevent="like(item.id)"><span>추천<span>{{item.cnt.like}}</span></span></a>
+						<a href="#" class="box-btn btn-dislike" @click.prevent="dislike(item.id)"><span>비추천<span>{{Number(item.cnt.dislike)}}</span></span></a>
 					</div>
 				</template>
 				<template>

@@ -39,7 +39,9 @@
 					</div>
 					<div class="bw_footer">
 						<div class="button">
-							<a href="#" class="box-btn"><span>목록</span></a>
+							<router-link :to="{ name: 'notice' }" class="box-btn">
+								<span>목록</span>
+							</router-link>
 							<a href="#" class="box-btn primary" @click.prevent="addNotice"><span>글쓰기</span></a>
 						</div>
 					</div>

@@ -6,12 +6,14 @@
 			<div class="notice">
 				<div class="head">
 					<h3>공지사항</h3>
-					<a href="/noticeList"><span>더보기</span></a>
+					<router-link :to="{ name: 'notice' }">
+						<span>더보기</span>
+					</router-link>
 				</div><!-- .head -->
+
+				<!-- 도원님이 가장 최근 공지사항 게시글 2개 출력 구현할 부분 -->
 				<div class="list">
 					<ul>
-						<!-- repeat -->
-
 						<li>
 							<a href="/noticeView/7">
 								<strong>
@@ -25,7 +27,6 @@
 								<em>2020.06.05</em>
 							</a>
 						</li>
-
 						<li>
 							<a href="/noticeView/6">
 								<strong>
@@ -39,8 +40,6 @@
 								<em>2020.06.05</em>
 							</a>
 						</li>
-
-						<!-- //repeat -->
 					</ul>
 				</div><!-- .list -->
 			</div><!-- .notice -->
