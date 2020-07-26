@@ -1,6 +1,6 @@
 <template>
 	<div class="awards-con">
-		<FeaturedWinner
+		<WinnerListFeaturedItem
 			:featuredWinner="featuredWinner"
 			v-if="featuredWinner" />
 
@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import FeaturedWinner from '@/components/FeaturedWinner.vue'
+import WinnerListFeaturedItem from '@/components/winner/WinnerListFeaturedItem.vue'
 
 export default {
 	props: [ 'winnerList' ],
 	components: {
-		FeaturedWinner
+		WinnerListFeaturedItem
 	},
 	computed: {
 		// Winner.vue의 computed에서 반복 처리하던 부분을 리팩토링

@@ -1,14 +1,26 @@
 <template>
-	<Home />
+	<Fragment>
+		<Visual />
+		<Dday :dday="`July 11, 2020 06:00:00`" />
+		<Vod />
+		<Sector />
+		<LatestNotice />
+	</Fragment>
 </template>
 
 <script>
-import Home from '@/components/Home.vue'
+import { Fragment } from 'vue-fragment'
+
+import Visual from '@/components/home/Visual.vue'
+import Dday from '@/components/home/Dday.vue'
+import Vod from '@/components/home/Vod.vue'
+import Sector from '@/components/home/Sector.vue'
+import LatestNotice from '@/components/home/LatestNotice.vue'
 
 export default {
 	name: 'home',
 	components: {
-		Home
+		Fragment, Visual, Dday, Vod, Sector, LatestNotice
 	}
 }
 </script>

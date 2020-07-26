@@ -3,7 +3,7 @@
 		<div class="container-inner">
 			<BoardList 
 				:info="noticeInfo" />
-			<BoardPagination 
+			<BoardListPagination 
 				:totalPage="noticeInfo.totalPage"
 				:pageRange="noticeInfo.pageRange"
 				:currentPage="page"
@@ -23,12 +23,12 @@ const API_URI = (window.location.protocol === 'https:') ? process.env.VUE_APP_HT
 import { mapActions } from 'vuex'
 
 import BoardList from '@/components/board/BoardList.vue'
-import BoardPagination from '@/components/board/BoardPagination.vue'
+import BoardListPagination from '@/components/board/BoardListPagination.vue'
 
 export default {
 	name: 'noticeList',
 	components: {
-		BoardList, BoardPagination
+		BoardList, BoardListPagination
 	},
 	props: [ 'page' ],
 	data: () => ({

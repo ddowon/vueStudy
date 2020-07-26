@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import PageTab from '@/components/common/PageTab.vue'
+import PageTab from '@/components/BtnPageTab.vue'
 
 export default {
 	name: 'sector',
